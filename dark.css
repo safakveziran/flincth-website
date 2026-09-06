@@ -1,0 +1,102 @@
+/* Midnight edition. Layout is shared locally via styles.css; no light-site dependency. */
+:root {
+  color-scheme: dark;
+  --ink: #edf3ff;
+  --muted: #a5b3ca;
+  --blue: #80aaff;
+  --line: #273347;
+  --paper: #090e18;
+  --surface: #111b2b;
+  --raised: #19253a;
+  --action: #235cec;
+}
+body {
+  background: radial-gradient(ellipse 850px 580px at 50% 280px, #17346c36, transparent 80%), var(--paper);
+}
+::selection { background: #306ae0; color: #fff; }
+.skip, .nav-cta { background: var(--surface); }
+.nav-cta:hover { background: var(--raised); border-color: #57729b; }
+.brand img { filter: drop-shadow(0 3px 12px #195bff20); }
+.hero > .eyebrow { color: #a9bcda; }
+h1 { text-shadow: 0 5px 35px #00000025; }
+h1 > span { color: #89b2ff; }
+.status-dot { background: #6ed8b2; box-shadow: 0 0 0 4px #6ed8b210; }
+.primary {
+  background: var(--action);
+  border: 1px solid #527ff2;
+  box-shadow: 0 6px 25px #1757ea28, inset 0 1px 0 #ffffff14;
+}
+.primary:hover { background: #326af4; }
+.micro, .preview-note { color: #9aaac3; }
+.product-stage {
+  background: #101827;
+  border-color: #31415b;
+  box-shadow: 0 32px 80px -30px #0009, 0 0 70px -35px #387bf54d;
+}
+.stage-top, .stage-bottom { color: #a8b6cb; }
+.live-label { border-color: #384861; color: #a2b8da; background: #152136; }
+.desktop {
+  background: radial-gradient(ellipse at 90% 10%, #315b95, transparent 48%),
+    radial-gradient(ellipse at 15% 90%, #1c4fa9, transparent 65%),
+    linear-gradient(135deg, #111e37, #172e61 65%, #121d3b);
+}
+.mac-bar { background: #0b152c80; color: #d0def2; border-bottom: 1px solid #b8d6ff12; }
+.desktop-title { color: #b5d2ff80; }
+.window { background: #121d2e; border-color: #55698875; box-shadow: 0 18px 40px #0006; }
+.window-main { background: #101925; color: #dbe6f4; }
+.window-bar { background: #1a2638; color: #bac9df; border-color: #ffffff0c; }
+.editor-sidebar { background: #0c1421; color: #9baac0; }
+.editor-sidebar strong { color: #d4e1f3; }
+.muted { color: #91a3bf; }
+.window-side { background: #192537; color: #edf3ff; }
+.window-side .window-bar { background: #202e42; border-color: #33425a; }
+.note-kicker, .note-bottom { color: #a5b9d5; }
+.note-content p { color: #b3c1d6; }
+.note-rule { background: #34445d; }
+.setup-popover {
+  background: #152135f5;
+  border-color: #637c9e88;
+  box-shadow: 0 20px 48px #0007, inset 0 1px 0 #ffffff0b;
+}
+.popover-head > span, .popover-foot { color: #b2c2d9; }
+.setup-option:hover { background: #293a54; }
+.setup-option.active { background: var(--action); }
+.setup-option small, .setup-option kbd { opacity: 1; color: #aebed5; }
+.setup-option.active small, .setup-option.active kbd { color: #e0eaff; }
+.setup-icon { background: #839ec515; border-color: #58719360; }
+.writing-preview { background: #172130; color: #eef2fb; }
+.writing-preview small, .research-preview small { color: #a2b5d0; }
+.writing-preview p { color: #b2c0d5; }
+.research-preview { background: #121d30; }
+.research-cards > div { background: #202e45; border-color: #384b68; }
+.research-cards p { color: #b4c2d7; }
+.feature { background: linear-gradient(145deg, #192b49, #142036); border: 1px solid #2b405f; }
+.feature-label { color: #9db9e6; }
+.clipboard, .short-feature { background: #101927; border-color: var(--line); }
+.keyboard-feature { background: linear-gradient(135deg, #17243a, #111b2d); }
+.layout-diagram > div { background: #0e1a2d; border-color: #405d88; }
+.layout-diagram i { background: #466cb1; }
+.layout-diagram i:first-child { background: #6d9cf7; }
+.layout-diagram > span { color: #9bb7e2; }
+.snippet { background: #162237; border-color: #2c3e58; color: #b6c8e4; }
+.snippet.faint { opacity: .8; }
+.display-diagram { opacity: 1; }
+.display-diagram > span { border-color: #6483b5; }
+.display-diagram > span:after { background: #6483b5; }
+.display-diagram i { background: #385886; }
+.keys kbd { background: #23314a; border-color: #465a79; box-shadow: 0 3px 0 #0a1220; color: #e4edfb; }
+.keys > span { color: #a4b5ce; }
+.privacy-band { background: #0f1c31; border-block: 1px solid #283b5a; }
+.privacy-inner p { color: #bdcce1; }
+.privacy-caption { color: #a5bad7; }
+.steps article { border-color: #33435c; }
+.closing {
+  background: radial-gradient(ellipse at 50% 0, #254b8575, transparent 65%), #111d32;
+  border: 1px solid #314666;
+  box-shadow: inset 0 1px 0 #ffffff08;
+}
+.closing > img { filter: drop-shadow(0 6px 25px #2369ff30); }
+.coming-soon { background: #1c2b44; border-color: #496083; }
+footer { color: #9babc3; }
+footer > a:not(.brand) { color: #bbcde8; }
+footer > a:hover { color: #8db6ff; }
