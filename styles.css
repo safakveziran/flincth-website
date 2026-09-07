@@ -8,8 +8,7 @@
 /* Cookie choice */
 footer #consent-open{margin-left:0}
 .consent{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);box-shadow:0 -14px 40px -28px #17326355;padding:20px 0}
-.consent:focus{outline:none}
-.consent:focus-visible{outline:3px solid #ffb52f;outline-offset:-3px}
+.consent:focus,.consent:focus-visible{outline:none}
 .consent-inner{width:min(1200px,calc(100% - 80px));margin-inline:auto;display:flex;align-items:center;gap:34px}
 .consent-inner p{font-size:13px;line-height:1.6;margin:0;max-width:70ch}
 .consent-inner p b{color:var(--ink);font-weight:600}
