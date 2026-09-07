@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /Flincth-Website/
+
+Sitemap: https://flincth.com/sitemap.xml
