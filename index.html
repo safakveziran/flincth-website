@@ -32,13 +32,82 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Flincth",
-    "url": "https://flincth.com/",
-    "image": "https://flincth.com/assets/app-icon.png",
-    "description": "Flincth organizes your Mac into personal setups, with window layouts and a separate clipboard for each one.",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "macOS 14 or later"
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://flincth.com/#app",
+        "name": "Flincth",
+        "url": "https://flincth.com/",
+        "image": "https://flincth.com/assets/app-icon.png",
+        "description": "Flincth is a macOS menu bar utility that organizes a Mac into named setups. Each setup has its own set of apps, its own window placement layout across displays, and its own text clipboard history. Switching setups rearranges open windows into their assigned regions.",
+        "applicationCategory": "UtilitiesApplication",
+        "applicationSubCategory": "Window management",
+        "operatingSystem": "macOS 14 or later",
+        "softwareRequirements": "macOS 14 or later. Window placement additionally requires the user-installed \u201cFlincth Apply\u201d shortcut in Apple Shortcuts.",
+        "featureList": [
+          "Named setups, each with its own apps and window placements",
+          "Separate text clipboard history per setup, stored locally",
+          "Window placement into regions across multiple displays",
+          "Switching from the menu bar or by keyboard shortcut",
+          "No account, no server, and no network access"
+        ],
+        "publisher": { "@id": "https://flincth.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://flincth.com/#org",
+        "name": "Flincth",
+        "url": "https://flincth.com/",
+        "logo": "https://flincth.com/assets/app-icon.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://flincth.com/#website",
+        "url": "https://flincth.com/",
+        "name": "Flincth",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://flincth.com/#org" },
+        "about": { "@id": "https://flincth.com/#app" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://flincth.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What do I need to run Flincth?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Mac running macOS 14 or later. Window placement also requires the user-installed Flincth Apply shortcut. The app guides you through installing it in Apple Shortcuts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it move windows between desktops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Window placement works with open, non-full-screen windows on the current desktop. Flincth does not move windows between Mission Control desktops or into or out of macOS full screen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my clipboard leave my Mac?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Flincth keeps text clipboard history locally, with a separate history for each setup. It has no account, server, or network access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does changing one setup affect another?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Each setup keeps its own app membership, layout, and placements. Editing an app\u2019s placement in one setup leaves your other setups unchanged."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 

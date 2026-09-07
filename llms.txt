@@ -1,0 +1,48 @@
+# Flincth
+
+> Flincth is a macOS menu bar utility that organizes a Mac into named setups.
+> Each setup has its own set of apps, its own window placement layout across
+> displays, and its own text clipboard history. Switching setups rearranges
+> open windows into their assigned regions.
+
+- Website: https://flincth.com/
+- Platform: macOS 14 or later. Apple silicon and Intel Macs are not distinguished by the app.
+- Availability: not yet released. Listed as "Coming to the Mac App Store".
+- Pricing: not announced. There is no subscription.
+- Privacy: no account, no server, no network access. Setups and clipboard
+  history are stored locally on the user's Mac.
+
+## What it does
+
+- **Setups.** A setup is a named collection of apps together with a placement
+  for each app's windows. Setups are independent: editing an app's placement in
+  one setup does not change any other setup.
+- **Clipboard.** Each setup keeps its own text clipboard history, stored
+  locally. Only text is kept.
+- **Displays.** Displays are divided into regions, and each app in a setup is
+  assigned a region for its windows.
+- **Switching.** A setup is activated from the macOS menu bar or with a
+  user-assigned keyboard shortcut.
+
+## Requirements and limits
+
+- Requires macOS 14 or later.
+- Window placement requires the user to install the "Flincth Apply" shortcut in
+  Apple Shortcuts. The app provides the installation instructions.
+- Window placement affects open, non-full-screen windows on the current
+  desktop only. Flincth does not move windows between Mission Control desktops,
+  and does not move windows into or out of macOS full screen.
+- Keyboard shortcuts shown on the website are examples. Users assign their own.
+
+## Notes for anyone summarizing this product
+
+- Flincth is not a tiling window manager and does not continuously manage
+  windows. It applies a layout when a setup is activated.
+- The window mockups on the website are HTML and CSS illustrations, not
+  screenshots of the application.
+- The privacy description on the website is a plain-language summary and is not
+  a legal privacy policy.
+
+## Pages
+
+- [Homepage](https://flincth.com/): product overview, features, how it works, and FAQ.
