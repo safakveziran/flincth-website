@@ -46,3 +46,5 @@
 ## Pages
 
 - [Homepage](https://flincth.com/): product overview, features, how it works, and FAQ.
+- [Support](https://flincth.com/support.html): requirements, the Flincth Apply shortcut, and common problems.
+- [Privacy](https://flincth.com/privacy.html): what the app and the website do and do not collect.

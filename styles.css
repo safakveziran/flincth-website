@@ -6,12 +6,13 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
 
 /* Cookie choice */
-footer #consent-open{margin-left:0}
+footer [data-consent-open]{margin-left:0}
 .consent{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);box-shadow:0 -14px 40px -28px #17326355;padding:20px 0}
 .consent:focus,.consent:focus-visible{outline:none}
 .consent-inner{width:min(1200px,calc(100% - 80px));margin-inline:auto;display:flex;align-items:center;gap:34px}
 .consent-inner p{font-size:13px;line-height:1.6;margin:0;max-width:70ch}
 .consent-inner p b{color:var(--ink);font-weight:600}
+.consent-inner p a{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
 .consent-actions{display:flex;gap:12px;margin-left:auto;flex-shrink:0}
 .consent-actions button{padding:13px 26px;border-radius:9px;font-size:14px;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--ink);transition:background .2s,border-color .2s}
 .consent-actions button:hover{background:#eef3fb;border-color:#c3d0e4}
@@ -21,3 +22,20 @@ footer #consent-open{margin-left:0}
   .consent-actions{margin-left:0}
   .consent-actions button{flex:1}
 }
+
+/* Text pages: privacy, support, 404 */
+.doc{padding-block:70px 90px;max-width:760px}
+.doc h1{font-size:clamp(38px,4.4vw,58px);letter-spacing:-2.6px;margin:20px 0 14px}
+.doc .updated{font-size:12px;color:#7c889b;letter-spacing:.4px}
+.doc h2{font-size:26px;letter-spacing:-.9px;margin:46px 0 12px}
+.doc p,.doc li{font-size:16px;line-height:1.7}
+.doc ul{padding-left:20px;margin:12px 0}
+.doc li{margin-bottom:9px}
+.doc a:not(.button){color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+.doc .lead{font-size:19px;line-height:1.6;margin-top:18px}
+.doc .callout{border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:30px 0;background:#fff}
+.doc .callout p{margin:0;font-size:15px}
+.doc .back{display:inline-flex;gap:10px;font-size:14px;font-weight:600;margin-top:50px}
+.center-doc{text-align:center;padding-block:120px 130px;max-width:620px;margin-inline:auto}
+.center-doc h1{font-size:clamp(52px,8vw,86px);letter-spacing:-4px}
+.center-doc .hero-actions{margin-top:34px}

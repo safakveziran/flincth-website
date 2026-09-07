@@ -54,13 +54,14 @@
     if (choice === 'granted') loadAnalytics();
     else if (choice !== 'denied') open(null);
 
-    var link = document.getElementById('consent-open');
-    if (link) {
+    // A page may offer more than one way back to this choice.
+    var links = document.querySelectorAll('[data-consent-open]');
+    Array.prototype.forEach.call(links, function (link) {
       link.addEventListener('click', function (event) {
         event.preventDefault();
         open(link);
       });
-    }
+    });
   }
 
   if (document.readyState === 'loading') {
