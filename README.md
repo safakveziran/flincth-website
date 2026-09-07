@@ -9,6 +9,11 @@ Bu klasör açık temadan bağımsızdır. Koyu lacivert yüzeyler, açık metin
 - `dark.css`: Tüm sayfa ve etkileşimli önizleme durumları için koyu tema
 - `script.js`: Code / Write / Research temsili düzen seçicisi
 - `consent.js`: Çerez onay bandı ve onaya bağlı Google Analytics yüklemesi
+- `privacy.html`: Gizlilik politikası (site ve uygulama ayrı ayrı)
+- `support.html`: Destek ve sık karşılaşılan sorunlar
+- `404.html`: GitHub Pages hata sayfası
+- `assets/og-image.png`: 1200×630 paylaşım görseli (`og:image`, `twitter:image`)
+- `sitemap.xml`, `robots.txt`, `llms.txt`: Arama motoru ve asistan keşfi
 - `assets/app-icon.png`: Flincth projesindeki uygulama ikonu
 
 ## Yayından önce
@@ -22,3 +27,7 @@ Uygulama gizliliğini anlatan metin bir hukuki gizlilik politikası yerine geçm
 Harici font bağımlılığı yoktur. Sayfa, Google Analytics (GA4, ölçüm kimliği `G-4JBS4T9RZ0`) etiketini yükler; bu etiket üçüncü taraf JavaScript indirir, çerez kullanır ve ağ isteği yapar. Bu yalnızca web sitesi için geçerlidir — uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
 
 Çerez onayı `consent.js` ile yönetilir. Ziyaretçi kabul edene kadar hiçbir Google isteği yapılmaz; ret kaydedilir ve tekrar sorulmaz. Seçim `localStorage` içinde `flincth-analytics-consent` anahtarında tutulur ve altbilgideki “Cookies” bağlantısıyla değiştirilebilir. Onay akışı harici bir çerez hizmetine bağlı değildir.
+
+## Yayına almadan önce
+
+`privacy.html` ve `support.html` sayfalarındaki `support@flincth.com` adresi varsayılan olarak yazılmıştır. App Store başvurusundan önce bu adresin gerçekten çalıştığından emin olun veya kendi adresinizle değiştirin.

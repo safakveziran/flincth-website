@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e18">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="What the Flincth website and the Flincth app do and do not collect. The app has no account, no server and no network access.">
+  <title>Privacy — Flincth</title>
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="dark.css">
+  <script src="consent.js" defer></script>
+  <link rel="canonical" href="https://flincth.com/privacy.html">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Flincth">
+  <meta property="og:url" content="https://flincth.com/privacy.html">
+  <meta property="og:title" content="Privacy — Flincth">
+  <meta property="og:description" content="What the Flincth website and the Flincth app do and do not collect. The app has no account, no server and no network access.">
+  <meta property="og:image" content="https://flincth.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav wrap">
+    <a class="brand" href="/" aria-label="Flincth home"><img src="assets/app-icon.png" alt="" width="36" height="36">flincth</a>
+    <nav aria-label="Main navigation"><a href="/#features">Features</a><a href="/#how">How it works</a><a href="/#questions">FAQ</a></nav>
+    <a class="nav-cta" href="/#availability">Made for Mac <span aria-hidden="true">↗</span></a>
+  </header>
+  <main id="main" class="wrap doc">
+    <div class="eyebrow">PRIVACY</div>
+    <h1>What we collect,<br>and what we don’t.</h1>
+    <p class="updated">Last updated 7 September 2026</p>
+    <p class="lead">Flincth is made by one small team, and this page is written to be read rather than skimmed past. It covers two separate things: the Flincth app that runs on your Mac, and this website.</p>
+
+    <h2>The app</h2>
+    <p>The Flincth app has no account system, no server, and no network access. It does not send your setups, your window layouts, your clipboard history, or any usage data anywhere, because it has nowhere to send them.</p>
+    <p>Your setups and your clipboard history are stored locally on your Mac. Deleting the app removes them along with it. Nobody at Flincth can see them, recover them, or hand them to anyone else — not because of a policy, but because they never leave your machine.</p>
+    <div class="callout"><p>The one exception worth naming: Flincth uses the Apple Shortcuts app to place windows. What Shortcuts does is governed by Apple, not by us.</p></div>
+
+    <h2>This website</h2>
+    <p>The website is a set of static files. There are no accounts, no sign-up forms, no newsletter, and no comment fields, so there is nothing here for you to hand over in the first place.</p>
+    <p>Three things still happen when you visit, and you should know about all three.</p>
+    <ul>
+      <li><b>Hosting.</b> The site is served by GitHub Pages. Like any web server, GitHub receives your IP address and browser user agent in order to send you the page. This is handled under <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" rel="noopener">GitHub’s privacy statement</a>, and we neither see nor keep those logs.</li>
+      <li><b>Analytics, only if you say yes.</b> We would like to know roughly how many people visit, so the site can use Google Analytics. It loads only after you press Accept on the cookie banner. If you decline, or if you simply ignore the banner, no Google script is loaded and no request is made to Google at all.</li>
+      <li><b>Your cookie choice.</b> Whichever you pick is remembered in your browser’s local storage under the key <code>flincth-analytics-consent</code>. It stays on your device and is never sent anywhere.</li>
+    </ul>
+    <p>If you accepted and want to change your mind, use the <a href="#consent" data-consent-open>Cookies</a> link at the bottom of any page. Clearing your browser’s site data for flincth.com also erases the choice, and you will be asked again on your next visit.</p>
+
+    <h2>What Google Analytics sees</h2>
+    <p>Only if you accepted. It records the pages you view, roughly where in the world you are, and what kind of device and browser you use. Google shortens IP addresses before storing them, and this is not something we can switch off or configure. We use the data to count visits. We do not run advertising, we do not build profiles, and we do not sell or share this data with anyone else.</p>
+
+    <h2>Your rights</h2>
+    <p>If you are in the EU, the UK, or Türkiye, you have the right to ask what personal data is held about you, to ask for it to be corrected or deleted, and to withdraw consent at any time. Withdrawing consent for analytics takes one click on the Cookies link.</p>
+    <p>Because the app holds nothing and the website holds nothing beyond what is described above, most requests are answered quickly and with very little to report. Write to us and we will tell you exactly what exists.</p>
+
+    <h2>Changes</h2>
+    <p>If this policy changes in a way that affects you, the date at the top changes with it. We will not quietly start collecting something new under an old date.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about anything on this page: <a href="mailto:support@flincth.com">support@flincth.com</a>.</p>
+
+    <a class="back" href="/">← Back to Flincth</a>
+  </main>
+  <footer class="wrap"><a class="brand" href="/"><img src="assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">2026</span> Flincth</span><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a><a href="#consent" data-consent-open>Cookies</a><span class="footer-note">A little space. A better day.</span></footer>
+  <section class="consent" id="consent" role="region" aria-label="Cookie choice" tabindex="-1" hidden>
+    <div class="consent-inner">
+      <p><b>A quick choice about cookies.</b> This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and the Flincth app itself still has no network access either way. See the <a href="/privacy.html">privacy policy</a>.</p>
+      <div class="consent-actions">
+        <button type="button" id="consent-decline">Decline</button>
+        <button type="button" id="consent-accept">Accept</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
