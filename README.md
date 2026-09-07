@@ -8,6 +8,7 @@ Bu klasör açık temadan bağımsızdır. Koyu lacivert yüzeyler, açık metin
 - `styles.css`: Mobil uyumlu tasarım, hareket azaltma ve klavye odak stilleri
 - `dark.css`: Tüm sayfa ve etkileşimli önizleme durumları için koyu tema
 - `script.js`: Code / Write / Research temsili düzen seçicisi
+- `consent.js`: Çerez onay bandı ve onaya bağlı Google Analytics yüklemesi
 - `assets/app-icon.png`: Flincth projesindeki uygulama ikonu
 
 ## Yayından önce
@@ -20,4 +21,4 @@ Uygulama gizliliğini anlatan metin bir hukuki gizlilik politikası yerine geçm
 
 Harici font bağımlılığı yoktur. Sayfa, Google Analytics (GA4, ölçüm kimliği `G-4JBS4T9RZ0`) etiketini yükler; bu etiket üçüncü taraf JavaScript indirir, çerez kullanır ve ağ isteği yapar. Bu yalnızca web sitesi için geçerlidir — uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
 
-AB ve KVKK kapsamındaki ziyaretçiler için çerez onayı gerekebilir; sayfada henüz onay bandı yoktur.
+Çerez onayı `consent.js` ile yönetilir. Ziyaretçi kabul edene kadar hiçbir Google isteği yapılmaz; ret kaydedilir ve tekrar sorulmaz. Seçim `localStorage` içinde `flincth-analytics-consent` anahtarında tutulur ve altbilgideki “Cookies” bağlantısıyla değiştirilebilir. Onay akışı harici bir çerez hizmetine bağlı değildir.
