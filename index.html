@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="dark.css">
   <script src="script.js" defer></script>
+  <script src="consent.js" defer></script>
 
   <link rel="canonical" href="https://flincth.com/">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -111,15 +112,6 @@
   }
   </script>
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4JBS4T9RZ0"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4JBS4T9RZ0');
-  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -162,6 +154,15 @@
     <section class="faq wrap" id="questions"><div><div class="eyebrow">A FEW THINGS TO KNOW</div><h2>Good questions.</h2></div><div class="questions"><details><summary>What do I need to run Flincth?<span>+</span></summary><p>A Mac running macOS 14 or later. Window placement also requires the user-installed Flincth Apply shortcut. The app guides you through installing it in Apple Shortcuts.</p></details><details><summary>Can it move windows between desktops?<span>+</span></summary><p>No. Window placement works with open, non-full-screen windows on the current desktop. Flincth does not move windows between Mission Control desktops or into or out of macOS full screen.</p></details><details><summary>Does my clipboard leave my Mac?<span>+</span></summary><p>No. Flincth keeps text clipboard history locally, with a separate history for each setup. It has no account, server, or network access.</p></details><details><summary>Does changing one setup affect another?<span>+</span></summary><p>No. Each setup keeps its own app membership, layout, and placements. Editing an app’s placement in one setup leaves your other setups unchanged.</p></details></div></section>
     <section class="closing wrap" id="availability"><img src="assets/app-icon.png" alt="Flincth app icon" width="88" height="88"><div class="eyebrow">LESS FRICTION. MORE FLINCTH.</div><h2>Make space<br>for your next thing.</h2><p>Your Mac, a little more you.</p><div class="coming-soon"><span class="status-dot"></span> Coming to the Mac App Store</div><span class="micro">macOS 14 or later · No subscription</span></section>
   </main>
-  <footer class="wrap"><a class="brand" href="#"><img src="assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">2026</span> Flincth</span><a href="#questions">Questions? Start here ↗</a><span class="footer-note">A little space. A better day.</span></footer>
+  <footer class="wrap"><a class="brand" href="#"><img src="assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">2026</span> Flincth</span><a href="#questions">Questions? Start here ↗</a><a id="consent-open" href="#consent">Cookies</a><span class="footer-note">A little space. A better day.</span></footer>
+  <section class="consent" id="consent" role="region" aria-label="Cookie choice" tabindex="-1" hidden>
+    <div class="consent-inner">
+      <p><b>A quick choice about cookies.</b> This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and the Flincth app itself still has no network access either way.</p>
+      <div class="consent-actions">
+        <button type="button" id="consent-decline">Decline</button>
+        <button type="button" id="consent-accept">Accept</button>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

@@ -100,3 +100,10 @@ h1 > span { color: #89b2ff; }
 footer { color: #9babc3; }
 footer > a:not(.brand) { color: #bbcde8; }
 footer > a:hover { color: #8db6ff; }
+
+/* Cookie choice */
+.consent{background:#0d1524;border-top-color:var(--line)}
+.consent-inner p{color:var(--muted)}
+.consent-inner p b{color:var(--ink)}
+.consent-actions button{background:var(--surface);border-color:#3a4a64;color:var(--ink)}
+.consent-actions button:hover{background:var(--raised);border-color:#57729b}
