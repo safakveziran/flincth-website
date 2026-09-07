@@ -18,4 +18,6 @@ Pencere görselleri gerçek uygulama ekran görüntüsü değil, etkileşimli HT
 
 Uygulama gizliliğini anlatan metin bir hukuki gizlilik politikası yerine geçmez. App Store için ayrı destek ve gizlilik sayfaları hazırlanmalıdır.
 
-Harici font, analiz, çerez, ağ isteği veya üçüncü taraf JavaScript bağımlılığı yoktur.
+Harici font bağımlılığı yoktur. Sayfa, Google Analytics (GA4, ölçüm kimliği `G-4JBS4T9RZ0`) etiketini yükler; bu etiket üçüncü taraf JavaScript indirir, çerez kullanır ve ağ isteği yapar. Bu yalnızca web sitesi için geçerlidir — uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
+
+AB ve KVKK kapsamındaki ziyaretçiler için çerez onayı gerekebilir; sayfada henüz onay bandı yoktur.
