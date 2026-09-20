@@ -6,7 +6,7 @@
 > open windows into their assigned regions.
 
 - Website: https://flincth.com/
-- Platform: macOS 14 or later. Apple silicon and Intel Macs are not distinguished by the app.
+- Platform: macOS. Apple silicon and Intel Macs are not distinguished by the app.
 - Availability: not yet released. Listed as "Coming to the Mac App Store".
 - Pricing: not announced. There is no subscription.
 - Privacy: no account, no server, no network access. Setups and clipboard
@@ -26,7 +26,6 @@
 
 ## Requirements and limits
 
-- Requires macOS 14 or later.
 - Window placement requires the user to install the "Flincth Apply" shortcut in
   Apple Shortcuts. The app provides the installation instructions.
 - Window placement affects open, non-full-screen windows on the current
