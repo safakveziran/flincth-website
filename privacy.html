@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="dark.css">
   <script src="consent.js" defer></script>
+  <script src="notifications.js" defer></script>
   <link rel="canonical" href="https://flincth.com/privacy.html">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta property="og:type" content="website">
@@ -41,10 +42,11 @@
 
     <h2>This website</h2>
     <p>The website is a set of static files. There are no accounts, no sign-up forms, no newsletter, and no comment fields, so there is nothing here for you to hand over in the first place.</p>
-    <p>Three things still happen when you visit, and you should know about all three.</p>
+    <p>A few things still happen when you visit, and you should know about each of them.</p>
     <ul>
       <li><b>Hosting.</b> The site is served by GitHub Pages. Like any web server, GitHub receives your IP address and browser user agent in order to send you the page. This is handled under <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" rel="noopener">GitHub’s privacy statement</a>, and we neither see nor keep those logs.</li>
       <li><b>Analytics, only if you say yes.</b> We would like to know roughly how many people visit, so the site can use Google Analytics. It loads only after you press Accept on the cookie banner. If you decline, or if you simply ignore the banner, no Google script is loaded and no request is made to Google at all.</li>
+      <li><b>Notifications, only if you ask for them.</b> The footer carries a Notifications link. Nothing happens until you press it: only then is the OneSignal web push SDK loaded and your browser asked for permission. Once you are subscribed, OneSignal holds a browser push token and an anonymous subscription id for you, so that a notification can reach this browser. There is no name, no email address, and no way for us to tell who you are. Pressing the link again unsubscribes, and your browser’s own site settings can revoke the permission outright. See <a href="https://onesignal.com/privacy_policy" rel="noopener">OneSignal’s privacy policy</a>.</li>
       <li><b>Your cookie choice.</b> Whichever you pick is remembered in your browser’s local storage under the key <code>flincth-analytics-consent</code>. It stays on your device and is never sent anywhere.</li>
     </ul>
     <p>If you accepted and want to change your mind, use the <a href="#consent" data-consent-open>Cookies</a> link at the bottom of any page. Clearing your browser’s site data for flincth.com also erases the choice, and you will be asked again on your next visit.</p>
@@ -64,7 +66,7 @@
 
     <a class="back" href="/">← Back to Flincth</a>
   </main>
-  <footer class="wrap"><a class="brand" href="/"><img src="assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">2026</span> Flincth</span><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a><a href="#consent" data-consent-open>Cookies</a><span class="footer-note">A little space. A better day.</span></footer>
+  <footer class="wrap"><a class="brand" href="/"><img src="assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">2026</span> Flincth</span><a href="/privacy.html">Privacy</a><a href="/support.html">Support</a><a href="#consent" data-consent-open>Cookies</a><a href="#" data-notify-toggle hidden>Notifications</a><span class="footer-note">A little space. A better day.</span></footer>
   <section class="consent" id="consent" role="region" aria-label="Cookie choice" tabindex="-1" hidden>
     <div class="consent-inner">
       <p><b>A quick choice about cookies.</b> This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and the Flincth app itself still has no network access either way. See the <a href="/privacy.html">privacy policy</a>.</p>

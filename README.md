@@ -9,6 +9,8 @@ Bu klasör açık temadan bağımsızdır. Koyu lacivert yüzeyler, açık metin
 - `dark.css`: Tüm sayfa ve etkileşimli önizleme durumları için koyu tema
 - `script.js`: Code / Write / Research temsili düzen seçicisi
 - `consent.js`: Çerez onay bandı ve onaya bağlı Google Analytics yüklemesi
+- `notifications.js`: OneSignal web push aboneliği (altbilgideki Notifications bağlantısı)
+- `OneSignalSDKWorker.js`: OneSignal service worker (site kökünde durmalı)
 - `privacy.html`: Gizlilik politikası (site ve uygulama ayrı ayrı)
 - `support.html`: Destek ve sık karşılaşılan sorunlar
 - `404.html`: GitHub Pages hata sayfası
@@ -31,3 +33,18 @@ Harici font bağımlılığı yoktur. Sayfa, Google Analytics (GA4, ölçüm kim
 ## Yayına almadan önce
 
 `privacy.html` ve `support.html` sayfalarındaki `support@flincth.com` adresi varsayılan olarak yazılmıştır. App Store başvurusundan önce bu adresin gerçekten çalıştığından emin olun veya kendi adresinizle değiştirin.
+
+## Web bildirimleri (OneSignal)
+
+Web push, `notifications.js` ile yönetilir. App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) dosyanın başında tanımlıdır; App ID gizli bir değer değildir, tarayıcıya gönderilir.
+
+OneSignal panelinde kontrol edilmesi gerekenler:
+
+1. Site URL `https://flincth.com` olmalı ve "My site is not fully HTTPS" işaretli olmamalı.
+2. Otomatik istem (slide prompt / native prompt) kapalı kalsın; abonelik yalnızca altbilgideki bağlantıdan başlatılır.
+
+`OneSignalSDKWorker.js` dosyası site kökünde kalmalıdır; service worker kapsamı buna bağlıdır. OneSignal, GitHub Pages üzerinde kendi dosyalarını yerleştiremediği için bu dosya depoda tutulur.
+
+Push desteklemeyen tarayıcılarda (ör. ana ekrana eklenmemiş iOS Safari) altbilgideki Notifications bağlantısı gizli kalır ve hiçbir OneSignal isteği yapılmaz.
+
+Analytics gibi bu da yalnızca web sitesi içindir: uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
