@@ -3,7 +3,7 @@
 // "Notifications" link, and the browser's own permission prompt follows from
 // that click rather than from page load.
 (function () {
-  var APP_ID = '';
+  var APP_ID = 'b1a1845c-01c6-4927-be28-07d290bed717';
   var SDK = 'https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js';
   var links, sdkLoading = false;
 

@@ -36,14 +36,15 @@ Harici font bağımlılığı yoktur. Sayfa, Google Analytics (GA4, ölçüm kim
 
 ## Web bildirimleri (OneSignal)
 
-Web push, `notifications.js` ile yönetilir. Yayına almadan önce tek bir adım gerekir:
+Web push, `notifications.js` ile yönetilir. App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) dosyanın başında tanımlıdır; App ID gizli bir değer değildir, tarayıcıya gönderilir.
 
-1. [OneSignal](https://dashboard.onesignal.com/) panelinde bir **Web** uygulaması oluşturun. Site URL olarak `https://flincth.com` girin ve "My site is not fully HTTPS" seçeneğini işaretlemeyin.
-2. OneSignal'in verdiği **App ID** değerini `notifications.js` dosyasının başındaki `var APP_ID = '';` satırına yazın.
-3. Panelde otomatik istem (slide prompt / native prompt) kapalı kalsın; abonelik yalnızca altbilgideki bağlantıdan başlatılır.
+OneSignal panelinde kontrol edilmesi gerekenler:
+
+1. Site URL `https://flincth.com` olmalı ve "My site is not fully HTTPS" işaretli olmamalı.
+2. Otomatik istem (slide prompt / native prompt) kapalı kalsın; abonelik yalnızca altbilgideki bağlantıdan başlatılır.
 
 `OneSignalSDKWorker.js` dosyası site kökünde kalmalıdır; service worker kapsamı buna bağlıdır. OneSignal, GitHub Pages üzerinde kendi dosyalarını yerleştiremediği için bu dosya depoda tutulur.
 
-App ID boş bırakıldığı sürece altbilgideki Notifications bağlantısı gizli kalır ve hiçbir OneSignal isteği yapılmaz. Aynı şey push desteklemeyen tarayıcılar (ör. ana ekrana eklenmemiş iOS Safari) için de geçerlidir.
+Push desteklemeyen tarayıcılarda (ör. ana ekrana eklenmemiş iOS Safari) altbilgideki Notifications bağlantısı gizli kalır ve hiçbir OneSignal isteği yapılmaz.
 
 Analytics gibi bu da yalnızca web sitesi içindir: uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
