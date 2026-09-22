@@ -11,8 +11,12 @@
     return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
   }
 
-  function label(text) {
-    Array.prototype.forEach.call(links, function (link) { link.textContent = text; });
+  // Each state's text comes from the link's data-label-* attributes, so the
+  // footer template can supply it in the page's language.
+  function label(state) {
+    Array.prototype.forEach.call(links, function (link) {
+      link.textContent = link.getAttribute('data-label-' + state) || link.textContent;
+    });
   }
 
   // OneSignal's own queue: functions pushed here run once the SDK is ready, so
@@ -47,7 +51,7 @@
   }
 
   function reflect(subscribed) {
-    label(subscribed ? 'Notifications on' : 'Notifications');
+    label(subscribed ? 'subscribed' : 'default');
   }
 
   function toggle() {
@@ -64,7 +68,7 @@
       }
       if (Notification.permission === 'denied') {
         // The browser will not ask again; only site settings can undo this.
-        label('Notifications blocked');
+        label('blocked');
         return;
       }
       OneSignal.Notifications.requestPermission();

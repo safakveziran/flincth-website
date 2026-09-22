@@ -1,6 +1,15 @@
 # Jekyll ayarları. GitHub Pages siteyi her yayında bu dosyaya göre derler.
 url: "https://flincth.com"
 
+# Her sayfanın dili. Kökteki sayfalar varsayılan dildedir; yeni bir dilin
+# klasörü için buraya bir blok ekleyin, o klasördeki sayfalar dili buradan alır:
+#
+#   - scope: { path: "tr" }
+#     values: { lang: tr }
+defaults:
+  - scope: { path: "" }
+    values: { lang: en }
+
 # Yayınlanmayacak geliştirme dosyaları.
 exclude:
   - Gemfile

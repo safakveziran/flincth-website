@@ -1,19 +1,25 @@
 {%- comment -%}
-  Tüm sayfaların ortak iskeleti. Ana sayfada (home: true) menü bağlantıları
-  sayfa içi çapalara, diğer sayfalarda ana sayfanın çapalarına gider.
-  Dosya yolları kök tabanlıdır (/styles.css); böylece 404 sayfası iç içe
-  bir adreste gösterildiğinde de stiller yüklenir.
+  Tüm sayfaların ortak iskeleti. Dil sayfanın lang değerinden (_config.yml),
+  metinler _data/i18n/<dil>.yml dosyasından gelir. Ana sayfada (ref: home)
+  menü bağlantıları sayfa içi çapalara, diğer sayfalarda o dildeki ana
+  sayfanın çapalarına gider. Dosya yolları kök tabanlıdır (/styles.css);
+  böylece 404 sayfası iç içe bir adreste gösterildiğinde de stiller yüklenir.
 {%- endcomment -%}
-{%- if page.home -%}
+{%- assign default_lang = site.data.languages[0].code -%}
+{%- assign lang = page.lang | default: default_lang -%}
+{%- assign language = site.data.languages | where: "code", lang | first -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- capture home_url %}{% include page-url.html ref="home" %}{% endcapture -%}
+{%- if page.ref == "home" -%}
   {%- assign base = "" -%}
   {%- assign home_link = "#" -%}
 {%- else -%}
-  {%- assign base = "/" -%}
-  {%- assign home_link = "/" -%}
+  {%- assign base = home_url -%}
+  {%- assign home_link = home_url -%}
 {%- endif -%}
 {%- assign page_url = site.url | append: page.url | replace: ".html", "" -%}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}"{% if language.dir == "rtl" %} dir="rtl"{% endif %}>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,18 +30,18 @@
   <link rel="icon" href="/assets/app-icon.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/dark.css">
-{%- if page.home %}
+{%- if page.ref == "home" %}
   <script src="/script.js" defer></script>
 {%- endif %}
   <script src="/consent.js" defer></script>
   <script src="/notifications.js" defer></script>
 {% include head-meta.html %}
-{%- if page.home %}
-{% include home-schema.html %}
+{%- if page.schema %}
+{% include {{ page.schema }} %}
 {%- endif %}
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="#main">{{ t.skip }}</a>
 {% include header.html %}
 {{ content }}
 {%- include footer.html %}

@@ -1,21 +1,32 @@
+---
+layout: null
+---
+{%- comment -%}
+  Arama motorları için site haritası. ref ve sitemap değeri olan her sayfa
+  otomatik eklenir; her dil sürümü diğer dillerdeki karşılıklarını listeler.
+{%- endcomment -%}
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+{%- assign _pages = site.pages | where_exp: "p", "p.sitemap" %}
+{%- for _language in site.data.languages %}
+  {%- for p in _pages %}
+    {%- if p.lang == _language.code %}
+      {%- assign _alts = _pages | where: "ref", p.ref %}
   <url>
-    <loc>https://flincth.com/</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>{{ site.url }}{{ p.url | replace: '.html', '' }}</loc>
+    <lastmod>{{ p.sitemap.lastmod | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>{{ p.sitemap.changefreq }}</changefreq>
+    <priority>{{ p.sitemap.priority }}</priority>
+      {%- if _alts.size > 1 %}
+        {%- for _l in site.data.languages %}
+          {%- assign _alt = _alts | where: "lang", _l.code | first %}
+          {%- if _alt %}
+    <xhtml:link rel="alternate" hreflang="{{ _l.code }}" href="{{ site.url }}{{ _alt.url | replace: '.html', '' }}"/>
+          {%- endif %}
+        {%- endfor %}
+      {%- endif %}
   </url>
-  <url>
-    <loc>https://flincth.com/support</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://flincth.com/privacy</loc>
-    <lastmod>2026-09-07</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+    {%- endif %}
+  {%- endfor %}
+{%- endfor %}
 </urlset>

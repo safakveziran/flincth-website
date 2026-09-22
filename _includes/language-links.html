@@ -1,0 +1,17 @@
+{%- comment -%}
+  Bu sayfanın diğer dillerdeki sürümlerine bağlantılar. Sayfa yalnızca tek
+  dilde varsa hiçbir şey yazılmaz; ikinci dil eklendiğinde kendiliğinden görünür.
+{%- endcomment -%}
+{%- if page.ref -%}
+  {%- assign _alts = site.pages | where: "ref", page.ref -%}
+  {%- if _alts.size > 1 -%}
+    {%- for _language in site.data.languages -%}
+      {%- if _language.code != lang -%}
+        {%- assign _alt = _alts | where: "lang", _language.code | first -%}
+        {%- if _alt -%}
+          <a class="language-link" href="{{ _alt.url | replace: '.html', '' }}" hreflang="{{ _language.code }}" lang="{{ _language.code }}" title="{{ t.footer.languages }}">{{ _language.name }}</a>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+{%- endif -%}

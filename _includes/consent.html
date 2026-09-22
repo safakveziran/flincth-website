@@ -1,9 +1,10 @@
-  <section class="consent" id="consent" role="region" aria-label="Cookie choice" tabindex="-1" hidden>
+{%- capture policy_link %}<a href="{% include page-url.html ref="privacy" %}">{{ t.consent.policy }}</a>{% endcapture -%}
+  <section class="consent" id="consent" role="region" aria-label="{{ t.consent.label }}" tabindex="-1" hidden>
     <div class="consent-inner">
-      <p><b>A quick choice about cookies.</b> This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and the Flincth app itself still has no network access either way. See the <a href="/privacy">privacy policy</a>.</p>
+      <p><b>{{ t.consent.title }}</b> {{ t.consent.text | replace: "[policy]", policy_link }}</p>
       <div class="consent-actions">
-        <button type="button" id="consent-decline">Decline</button>
-        <button type="button" id="consent-accept">Accept</button>
+        <button type="button" id="consent-decline">{{ t.consent.decline }}</button>
+        <button type="button" id="consent-accept">{{ t.consent.accept }}</button>
       </div>
     </div>
   </section>

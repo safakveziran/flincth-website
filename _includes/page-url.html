@@ -1,0 +1,9 @@
+{%- comment -%}
+  ref anahtarı include.ref olan sayfanın geçerli dildeki adresi. O sayfa bu
+  dile henüz çevrilmediyse varsayılan dildeki adres döner; bağlantı kırılmaz.
+{%- endcomment -%}
+{%- assign _target = site.pages | where: "ref", include.ref | where: "lang", lang | first -%}
+{%- unless _target -%}
+  {%- assign _target = site.pages | where: "ref", include.ref | where: "lang", default_lang | first -%}
+{%- endunless -%}
+{{- _target.url | replace: ".html", "" -}}

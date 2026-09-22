@@ -1,0 +1,12 @@
+# Sitenin yayınlandığı diller. İlk sıradaki varsayılan dildir: sayfaları kök
+# adreste (/privacy) durur ve hreflang="x-default" olarak işaretlenir. Diğer
+# diller kendi klasörlerinde yayınlanır (/tr/privacy).
+#
+#   code:   Klasör adı ve <html lang>, hreflang değeri (ISO 639-1)
+#   name:   Dil seçicide görünen ad, dilin kendi yazılışıyla
+#   locale: og:locale değeri
+#   dir:    Yazı yönü; sağdan sola diller için rtl
+- code: en
+  name: English
+  locale: en_US
+  dir: ltr

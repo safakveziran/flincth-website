@@ -1,1 +1,11 @@
-  <footer class="wrap"><a class="brand" href="{{ home_link }}"><img src="/assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</span>{% if page.home %}<a href="#questions">Questions? Start here ↗</a><a href="/support">Support</a><a href="/privacy">Privacy</a>{% else %}<a href="/privacy">Privacy</a><a href="/support">Support</a>{% endif %}<a href="#consent" data-consent-open>Cookies</a><a href="#" data-notify-toggle hidden>Notifications</a><span class="footer-note">A little space. A better day.</span></footer>
+{%- capture privacy_url %}{% include page-url.html ref="privacy" %}{% endcapture -%}
+{%- capture support_url %}{% include page-url.html ref="support" %}{% endcapture -%}
+  <footer class="wrap"><a class="brand" href="{{ home_link }}"><img src="/assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</span>
+  {%- if page.ref == "home" -%}
+    <a href="#questions">{{ t.footer.questions }}</a><a href="{{ support_url }}">{{ t.footer.support }}</a><a href="{{ privacy_url }}">{{ t.footer.privacy }}</a>
+  {%- else -%}
+    <a href="{{ privacy_url }}">{{ t.footer.privacy }}</a><a href="{{ support_url }}">{{ t.footer.support }}</a>
+  {%- endif -%}
+  <a href="#consent" data-consent-open>{{ t.footer.cookies }}</a><a href="#" data-notify-toggle data-label-default="{{ t.notifications.default }}" data-label-subscribed="{{ t.notifications.subscribed }}" data-label-blocked="{{ t.notifications.blocked }}" hidden>{{ t.notifications.default }}</a>
+  {%- include language-links.html -%}
+  <span class="footer-note">{{ t.footer.note }}</span></footer>
