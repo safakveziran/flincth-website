@@ -17,6 +17,7 @@ exclude:
   - vendor
   - .bundle
   - CLAUDE.md
+  - README.md
 
 # Old light-theme version; kept in the repository but not published.
   - Flincth-Website
