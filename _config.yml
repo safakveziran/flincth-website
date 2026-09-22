@@ -7,3 +7,6 @@ exclude:
   - Gemfile.lock
   - vendor
   - .bundle
+
+# Eski açık temalı sürüm; depoda duruyor ama yayınlanmıyor.
+  - Flincth-Website
