@@ -1,22 +1,22 @@
 {%- comment -%}
   Tüm sayfaların ortak iskeleti. Dil sayfanın lang değerinden (_config.yml),
-  metinler _data/i18n/<dil>.yml dosyasından gelir. Ana sayfada (ref: home)
-  menü bağlantıları sayfa içi çapalara, diğer sayfalarda o dildeki ana
-  sayfanın çapalarına gider. Dosya yolları kök tabanlıdır (/styles.css);
+  metinler _data/i18n/<dil>.yml dosyasından gelir. all_languages: true olan
+  sayfa (404) her dili ayrı bir blokta taşır ve tarayıcıda biri seçilir.
+  Ana sayfada (ref: home) menü bağlantıları sayfa içi çapalara, diğer
+  sayfalarda o dildeki ana sayfanın çapalarına gider. Dosya yolları kök tabanlıdır (/styles.css);
   böylece 404 sayfası iç içe bir adreste gösterildiğinde de stiller yüklenir.
 {%- endcomment -%}
 {%- assign default_lang = site.data.languages[0].code -%}
-{%- assign lang = page.lang | default: default_lang -%}
-{%- assign language = site.data.languages | where: "code", lang | first -%}
-{%- assign t = site.data.i18n[lang] -%}
-{%- capture home_url %}{% include page-url.html ref="home" %}{% endcapture -%}
-{%- if page.ref == "home" -%}
-  {%- assign base = "" -%}
-  {%- assign home_link = "#" -%}
+{%- include lang-vars.html lang=page.lang -%}
+{%- if page.strings -%}
+  {%- assign page_title = t[page.strings].title -%}
+  {%- assign page_description = t[page.strings].description -%}
 {%- else -%}
-  {%- assign base = home_url -%}
-  {%- assign home_link = home_url -%}
+  {%- assign page_title = page.title -%}
+  {%- assign page_description = page.description -%}
 {%- endif -%}
+{%- assign all_languages = false -%}
+{%- if page.all_languages and site.data.languages.size > 1 %}{% assign all_languages = true %}{% endif -%}
 {%- assign page_url = site.url | append: page.url | replace: ".html", "" -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}"{% if language.dir == "rtl" %} dir="rtl"{% endif %}>
@@ -25,8 +25,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#090e18">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="{{ page.description }}">
-  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <title>{{ page_title }}</title>
   <link rel="icon" href="/assets/app-icon.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="/dark.css">
@@ -36,15 +36,24 @@
   <script src="/consent.js" defer></script>
   <script src="/notifications.js" defer></script>
 {% include head-meta.html %}
+{%- if all_languages %}
+{% include language-picker-head.html %}
+{%- endif %}
 {%- if page.schema %}
 {% include {{ page.schema }} %}
 {%- endif %}
 </head>
 <body>
-  <a class="skip" href="#main">{{ t.skip }}</a>
-{% include header.html %}
-{{ content }}
-{%- include footer.html %}
-{% include consent.html %}
+{%- if all_languages %}
+  {%- for _language in site.data.languages %}
+    {%- include lang-vars.html lang=_language.code %}
+  <div class="lang-block" data-lang="{{ lang }}" data-title="{{ t[page.strings].title | default: page_title }}">
+{% include page-body.html %}
+  </div>
+  {%- endfor %}
+{% include language-picker-body.html %}
+{%- else %}
+{% include page-body.html %}
+{%- endif %}
 </body>
 </html>

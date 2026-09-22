@@ -1,0 +1,15 @@
+{%- comment -%}
+  include.lang dilinin değişkenlerini kurar: lang, language, t (metinler),
+  home_url ve menü bağlantılarının tabanı (base, home_link).
+{%- endcomment -%}
+{%- assign lang = include.lang -%}
+{%- assign language = site.data.languages | where: "code", lang | first -%}
+{%- assign t = site.data.i18n[lang] -%}
+{%- capture home_url %}{% include page-url.html ref="home" %}{% endcapture -%}
+{%- if page.ref == "home" -%}
+  {%- assign base = "" -%}
+  {%- assign home_link = "#" -%}
+{%- else -%}
+  {%- assign base = home_url -%}
+  {%- assign home_link = home_url -%}
+{%- endif -%}

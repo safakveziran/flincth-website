@@ -1,0 +1,5 @@
+  <a class="skip" href="#main">{{ t.skip }}</a>
+{% include header.html %}
+{% if page.body %}{% include {{ page.body }} %}{% else %}{{ content }}{% endif %}
+{%- include footer.html %}
+{% include consent.html %}

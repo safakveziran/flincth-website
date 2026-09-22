@@ -1,0 +1,32 @@
+{%- comment -%}
+  all_languages sayfaları (404) için: bütün diller aynı sayfada ayrı
+  .lang-block bloklarında durur. Bu betik boyamadan önce dili seçer: önce
+  adresteki dil klasörü (/tr/...), sonra tarayıcı dili, sonra varsayılan dil.
+  JavaScript yoksa varsayılan dil görünür.
+{%- endcomment -%}
+  <script>
+  (function () {
+    var languages = {{ site.data.languages | map: "code" | jsonify }};
+    var rtl = {{ site.data.languages | where: "dir", "rtl" | map: "code" | jsonify }};
+    var pick = languages.indexOf(location.pathname.split('/')[1]) > -1 ? location.pathname.split('/')[1] : null;
+    var preferred = navigator.languages || [navigator.language || ''];
+    for (var i = 0; !pick && i < preferred.length; i++) {
+      var wanted = String(preferred[i]).toLowerCase();
+      for (var j = 0; j < languages.length; j++) {
+        if (wanted === languages[j] || wanted.indexOf(languages[j] + '-') === 0) { pick = languages[j]; break; }
+      }
+    }
+    pick = pick || languages[0];
+    var root = document.documentElement;
+    root.lang = pick;
+    root.setAttribute('data-lang', pick);
+    if (rtl.indexOf(pick) > -1) root.dir = 'rtl';
+  })();
+  </script>
+  <style>
+    .lang-block{display:none}
+    html:not([data-lang]) .lang-block[data-lang="{{ site.data.languages[0].code }}"]{display:contents}
+{%- for _language in site.data.languages %}
+    html[data-lang="{{ _language.code }}"] .lang-block[data-lang="{{ _language.code }}"]{display:contents}
+{%- endfor %}
+  </style>

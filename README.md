@@ -17,6 +17,8 @@ Header, footer ve çerez bandı tek yerde durur; bir bağlantıyı değiştirmek
 - `_includes/schema/home.en.html`: Ana sayfanın JSON-LD yapılandırılmış verisi
 - `_includes/page-url.html`: Bir sayfanın geçerli dildeki adresini verir (bkz. Çok dilli yapı)
 - `_includes/language-links.html`: Footer'daki dil seçici
+- `_includes/lang-vars.html`, `_includes/page-body.html`: Dile göre değişkenler ve sayfa gövdesi (header, içerik, footer, çerez bandı)
+- `_includes/not-found.html`, `_includes/language-picker-*.html`: Çok dilli 404 sayfası
 - `_data/languages.yml`: Yayınlanan diller; ilki varsayılan dildir
 - `_data/i18n/en.yml`: Ortak parçaların metinleri
 - `_config.yml`, `Gemfile`: Jekyll ayarları ve GitHub Pages ile aynı sürümler
@@ -88,5 +90,7 @@ Her sayfanın üst bilgisinde bir `ref` anahtarı vardır (`home`, `privacy`, `s
    - `schema` değeri: `_includes/schema/home.en.html` dosyasını `home.tr.html` olarak kopyalayıp çevirin, `inLanguage` değerini `tr` yapın ve `tr/index.html` içinde `schema: schema/home.tr.html` yazın.
 6. Sayfa içeriğindeki bağlantıları o dilin adresleriyle değiştirin; örneğin gizlilik sayfasının sonundaki `← Back to Flincth` bağlantısı `/tr/` olmalı.
 
-`404.html` tek dillidir: GitHub Pages bütün site için yalnızca kökteki 404 sayfasını gösterir.
+7. 404 sayfası için ayrıca bir şey yapmanız gerekmez; metinleri 3. adımdaki dosyanın `not_found` bölümündedir.
+
+GitHub Pages bütün site için yalnızca kökteki `404.html` sayfasını gösterir. Bu yüzden 404 sayfası her dili kendi içinde ayrı bir blokta taşır ve hangisinin görüneceğine tarayıcı karar verir: önce adresteki dil klasörü (`/tr/olmayan-sayfa` → Türkçe), sonra tarayıcının dili, sonra varsayılan dil. JavaScript kapalıysa varsayılan dil görünür. Seçilmeyen diller sayfadan kaldırılır, böylece çerez bandı gibi parçalar tek kalır.
 

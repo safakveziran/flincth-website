@@ -34,4 +34,14 @@ consent:
   decline: Decline
   accept: Accept
 
+# 404 sayfası. heading içinde <br> kullanılabilir.
+not_found:
+  title: Page not found — Flincth
+  description: That page does not exist on flincth.com.
+  eyebrow: 404 — NOTHING HERE
+  heading: This space is<br>a little too empty.
+  text: The page you were looking for doesn’t exist, or it moved somewhere tidier.
+  back: Back to Flincth
+  faq: Read the FAQ
+
 og_image_alt: "Flincth: a place for every app. Space for every you."

@@ -1,0 +1,16 @@
+{%- comment -%}
+  Ertelenmiş betikler (consent.js, notifications.js) çalışmadan önce seçilmeyen
+  dilleri sayfadan kaldırır; kimlikler (#consent, #main) böylece tek kalır.
+{%- endcomment -%}
+  <script>
+  (function () {
+    var pick = document.documentElement.getAttribute('data-lang');
+    var blocks = document.querySelectorAll('.lang-block');
+    Array.prototype.forEach.call(blocks, function (block) {
+      if (block.getAttribute('data-lang') !== pick) { block.parentNode.removeChild(block); return; }
+      document.title = block.getAttribute('data-title');
+      while (block.firstChild) block.parentNode.insertBefore(block.firstChild, block);
+      block.parentNode.removeChild(block);
+    });
+  })();
+  </script>
