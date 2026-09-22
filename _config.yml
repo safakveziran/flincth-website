@@ -1,0 +1,9 @@
+# Jekyll ayarları. GitHub Pages siteyi her yayında bu dosyaya göre derler.
+url: "https://flincth.com"
+
+# Yayınlanmayacak geliştirme dosyaları.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle

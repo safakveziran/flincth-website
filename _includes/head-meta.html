@@ -1,0 +1,21 @@
+{%- unless page.robots contains "noindex" %}
+  <link rel="canonical" href="{{ page_url }}">
+{%- endunless %}
+  <meta name="robots" content="{{ page.robots | default: 'index, follow, max-image-preview:large' }}">
+  <meta name="apple-mobile-web-app-title" content="Flincth">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Flincth">
+  <meta property="og:url" content="{{ page_url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:image" content="{{ site.url }}/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Flincth: a place for every app. Space for every you.">
+  <meta property="og:locale" content="en_US">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.png">

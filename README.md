@@ -2,9 +2,21 @@
 
 Bu klasör açık temadan bağımsızdır. Koyu lacivert yüzeyler, açık metinler ve mavi vurgular `dark.css` içinde tanımlanır. Açık temalı orijinal klasör değiştirilmemiştir.
 
-`index.html` dosyasını tarayıcıda açın. Kurulum, paket yöneticisi, sunucu veya internet bağlantısı gerekmez.
+Site Jekyll ile derlenir. GitHub Pages bunu her yayında kendisi yapar; ek bir ayar veya GitHub Action gerekmez. Sayfalar artık tek başına tam HTML değildir, bu yüzden `index.html` dosyasını tarayıcıda doğrudan açmak çalışmaz. Yerelde önizlemek için (Ruby gerekir):
 
-- `index.html`: İngilizce içerik ve sayfa yapısı
+```sh
+bundle install
+bundle exec jekyll serve   # http://localhost:4000
+```
+
+Header, footer ve çerez bandı tek yerde durur; bir bağlantıyı değiştirmek için ilgili dosyayı bir kez düzenlemek yeterlidir:
+
+- `_layouts/default.html`: Tüm sayfaların ortak iskeleti (`<head>`, header, footer, çerez bandı). Sayfalar üstteki `---` bloğunda `layout: default`, `title` ve `description` verir; yalnızca `<main>` içeriğini taşır.
+- `_includes/header.html`, `_includes/footer.html`, `_includes/consent.html`: Ortak parçalar
+- `_includes/head-meta.html`: Canonical, Open Graph ve Twitter etiketleri (başlık ve açıklama sayfadan alınır)
+- `_includes/home-schema.html`: Ana sayfanın JSON-LD yapılandırılmış verisi
+- `_config.yml`, `Gemfile`: Jekyll ayarları ve GitHub Pages ile aynı sürümler
+- `index.html`: İngilizce ana sayfa içeriği
 - `styles.css`: Mobil uyumlu tasarım, hareket azaltma ve klavye odak stilleri
 - `dark.css`: Tüm sayfa ve etkileşimli önizleme durumları için koyu tema
 - `script.js`: Code / Write / Research temsili düzen seçicisi

@@ -1,0 +1,44 @@
+{%- comment -%}
+  Tüm sayfaların ortak iskeleti. Ana sayfada (home: true) menü bağlantıları
+  sayfa içi çapalara, diğer sayfalarda ana sayfanın çapalarına gider.
+  Dosya yolları kök tabanlıdır (/styles.css); böylece 404 sayfası iç içe
+  bir adreste gösterildiğinde de stiller yüklenir.
+{%- endcomment -%}
+{%- if page.home -%}
+  {%- assign base = "" -%}
+  {%- assign home_link = "#" -%}
+{%- else -%}
+  {%- assign base = "/" -%}
+  {%- assign home_link = "/" -%}
+{%- endif -%}
+{%- assign page_url = site.url | append: page.url | replace: ".html", "" -%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090e18">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="{{ page.description }}">
+  <title>{{ page.title }}</title>
+  <link rel="icon" href="/assets/app-icon.png">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/dark.css">
+{%- if page.home %}
+  <script src="/script.js" defer></script>
+{%- endif %}
+  <script src="/consent.js" defer></script>
+  <script src="/notifications.js" defer></script>
+{% include head-meta.html %}
+{%- if page.home %}
+{% include home-schema.html %}
+{%- endif %}
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+{% include header.html %}
+{{ content }}
+{%- include footer.html %}
+{% include consent.html %}
+</body>
+</html>
