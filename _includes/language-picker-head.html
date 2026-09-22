@@ -1,8 +1,8 @@
 {%- comment -%}
-  all_languages sayfaları (404) için: bütün diller aynı sayfada ayrı
-  .lang-block bloklarında durur. Bu betik boyamadan önce dili seçer: önce
-  adresteki dil klasörü (/tr/...), sonra tarayıcı dili, sonra varsayılan dil.
-  JavaScript yoksa varsayılan dil görünür.
+  For all_languages pages (404): every language sits on the same page in its
+  own .lang-block. This script picks one before first paint: the language
+  folder in the URL (/tr/...) first, then the browser language, then the
+  default language. Without JavaScript the default language shows.
 {%- endcomment -%}
   <script>
   (function () {

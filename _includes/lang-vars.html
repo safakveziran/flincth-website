@@ -1,6 +1,6 @@
 {%- comment -%}
-  include.lang dilinin değişkenlerini kurar: lang, language, t (metinler),
-  home_url ve menü bağlantılarının tabanı (base, home_link).
+  Sets up the variables for the include.lang language: lang, language,
+  t (copy), home_url and the base for menu links (base, home_link).
 {%- endcomment -%}
 {%- assign lang = include.lang -%}
 {%- assign language = site.data.languages | where: "code", lang | first -%}

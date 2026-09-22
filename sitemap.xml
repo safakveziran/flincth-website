@@ -2,8 +2,8 @@
 layout: null
 ---
 {%- comment -%}
-  Arama motorları için site haritası. ref ve sitemap değeri olan her sayfa
-  otomatik eklenir; her dil sürümü diğer dillerdeki karşılıklarını listeler.
+  Sitemap for search engines. Every page with a sitemap value is added
+  automatically, and each language version lists its counterparts.
 {%- endcomment -%}
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">

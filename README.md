@@ -1,96 +1,98 @@
 # Flincth website — Dark edition
 
-Bu klasör açık temadan bağımsızdır. Koyu lacivert yüzeyler, açık metinler ve mavi vurgular `dark.css` içinde tanımlanır. Açık temalı orijinal klasör değiştirilmemiştir.
+This site is independent of the light theme. Dark navy surfaces, light text and blue accents are defined in `dark.css`. The original light-theme folder has not been changed.
 
-Site Jekyll ile derlenir. GitHub Pages bunu her yayında kendisi yapar; ek bir ayar veya GitHub Action gerekmez. Sayfalar artık tek başına tam HTML değildir, bu yüzden `index.html` dosyasını tarayıcıda doğrudan açmak çalışmaz. Yerelde önizlemek için (Ruby gerekir):
+The site is built with Jekyll. GitHub Pages does this on every publish; no extra setting or GitHub Action is needed. Pages are no longer complete HTML files on their own, so opening `index.html` directly in a browser does not work. To preview locally (requires Ruby):
 
 ```sh
 bundle install
 bundle exec jekyll serve   # http://localhost:4000
 ```
 
-Header, footer ve çerez bandı tek yerde durur; bir bağlantıyı değiştirmek için ilgili dosyayı bir kez düzenlemek yeterlidir:
+The header, footer and cookie banner each live in one place; changing a link means editing one file once:
 
-- `_layouts/default.html`: Tüm sayfaların ortak iskeleti (`<head>`, header, footer, çerez bandı). Sayfalar üstteki `---` bloğunda `layout: default`, `title` ve `description` verir; yalnızca `<main>` içeriğini taşır.
-- `_includes/header.html`, `_includes/footer.html`, `_includes/consent.html`: Ortak parçalar
-- `_includes/head-meta.html`: Canonical, Open Graph ve Twitter etiketleri (başlık ve açıklama sayfadan alınır)
-- `_includes/schema/home.en.html`: Ana sayfanın JSON-LD yapılandırılmış verisi
-- `_includes/page-url.html`: Bir sayfanın geçerli dildeki adresini verir (bkz. Çok dilli yapı)
-- `_includes/language-links.html`: Footer'daki dil seçici
-- `_includes/lang-vars.html`, `_includes/page-body.html`: Dile göre değişkenler ve sayfa gövdesi (header, içerik, footer, çerez bandı)
-- `_includes/not-found.html`, `_includes/language-picker-*.html`: Çok dilli 404 sayfası
-- `_data/languages.yml`: Yayınlanan diller; ilki varsayılan dildir
-- `_data/i18n/en.yml`: Ortak parçaların metinleri
-- `_config.yml`, `Gemfile`: Jekyll ayarları ve GitHub Pages ile aynı sürümler
-- `index.html`: İngilizce ana sayfa içeriği
-- `styles.css`: Mobil uyumlu tasarım, hareket azaltma ve klavye odak stilleri
-- `dark.css`: Tüm sayfa ve etkileşimli önizleme durumları için koyu tema
-- `script.js`: Code / Write / Research temsili düzen seçicisi
-- `consent.js`: Çerez onay bandı ve onaya bağlı Google Analytics yüklemesi
-- `notifications.js`: OneSignal web push aboneliği (altbilgideki Notifications bağlantısı)
-- `OneSignalSDKWorker.js`: OneSignal service worker (site kökünde durmalı)
-- `privacy.html`: Gizlilik politikası (site ve uygulama ayrı ayrı)
-- `support.html`: Destek ve sık karşılaşılan sorunlar
-- `404.html`: GitHub Pages hata sayfası
-- `assets/og-image.png`: 1200×630 paylaşım görseli (`og:image`, `twitter:image`)
-- `sitemap.xml`: Site haritası; `sitemap` değeri olan sayfalardan otomatik üretilir, elle düzenlenmez
-- `robots.txt`, `llms.txt`: Arama motoru ve asistan keşfi
-- `assets/app-icon.png`: Flincth projesindeki uygulama ikonu
+- `_layouts/default.html`: Shared skeleton for every page (`<head>`, header, footer, cookie banner). Pages set `layout: default`, `title` and `description` in the `---` block at the top and carry only their `<main>` content.
+- `_includes/header.html`, `_includes/footer.html`, `_includes/consent.html`: Shared parts
+- `_includes/head-meta.html`: Canonical, Open Graph and Twitter tags (title and description come from the page)
+- `_includes/schema/home.en.html`: JSON-LD structured data for the home page
+- `_includes/page-url.html`: Returns a page's URL in the current language (see Multi-language setup)
+- `_includes/language-links.html`: Language switcher in the footer
+- `_includes/lang-vars.html`, `_includes/page-body.html`: Per-language variables and the page body (header, content, footer, cookie banner)
+- `_includes/not-found.html`, `_includes/language-picker-*.html`: Multi-language 404 page
+- `_data/languages.yml`: Published languages; the first one is the default
+- `_data/i18n/en.yml`: Copy for the shared parts
+- `_config.yml`, `Gemfile`: Jekyll settings and the same versions GitHub Pages uses
+- `index.html`: English home page content
+- `styles.css`: Responsive design, reduced motion and keyboard focus styles
+- `dark.css`: Dark theme for every page and every state of the interactive preview
+- `script.js`: Code / Write / Research illustrative layout switcher
+- `consent.js`: Cookie consent banner and consent-gated Google Analytics loading
+- `notifications.js`: OneSignal web push subscription (the Notifications link in the footer)
+- `OneSignalSDKWorker.js`: OneSignal service worker (must stay at the site root)
+- `privacy.html`: Privacy policy (website and app covered separately)
+- `support.html`: Support and common problems
+- `404.html`: GitHub Pages error page
+- `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
+- `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand
+- `robots.txt`, `llms.txt`: Search engine and assistant discovery
+- `assets/app-icon.png`: App icon from the Flincth project
 
-## Yayından önce
+## Code language
 
-Site yerel teslim için hazırlanmıştır; internete yayınlanmamıştır. App Store onayı henüz doğrulanmadığı için satış bağlantısı yerine “Coming to the Mac App Store” gösterilir. Yayına çıktığında bu alanı gerçek mağaza bağlantısıyla değiştirin. Fiyat bilerek belirtilmemiştir.
+All code, comments and documentation in this repository are written in English. The only exception is the site's translated content: translation files such as `_data/i18n/tr.yml` and translated pages contain text in their own language.
 
-Pencere görselleri gerçek uygulama ekran görüntüsü değil, etkileşimli HTML/CSS tanıtım temsilleridir; sayfada bu durum belirtilir. Kısayol tuşları da örnektir; kullanıcı uygulamada kendi kısayollarını atar. Gerçek pencere yerleşimi Flincth Apply Shortcut gerektirir.
+## Before release
 
-Uygulama gizliliğini anlatan metin bir hukuki gizlilik politikası yerine geçmez. App Store için ayrı destek ve gizlilik sayfaları hazırlanmalıdır.
+The site was prepared for local delivery and has not been published. Because App Store approval has not been confirmed yet, “Coming to the Mac App Store” is shown instead of a store link. Replace it with the real store link at launch. Pricing is deliberately not stated.
 
-Harici font bağımlılığı yoktur. Sayfa, Google Analytics (GA4, ölçüm kimliği `G-4JBS4T9RZ0`) etiketini yükler; bu etiket üçüncü taraf JavaScript indirir, çerez kullanır ve ağ isteği yapar. Bu yalnızca web sitesi için geçerlidir — uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
+The window visuals are not real app screenshots but interactive HTML/CSS illustrations, and the page says so. The keyboard shortcuts are examples too; users assign their own shortcuts in the app. Actual window placement requires the Flincth Apply shortcut.
 
-Çerez onayı `consent.js` ile yönetilir. Ziyaretçi kabul edene kadar hiçbir Google isteği yapılmaz; ret kaydedilir ve tekrar sorulmaz. Seçim `localStorage` içinde `flincth-analytics-consent` anahtarında tutulur ve altbilgideki “Cookies” bağlantısıyla değiştirilebilir. Onay akışı harici bir çerez hizmetine bağlı değildir.
+The text describing app privacy is not a substitute for a legal privacy policy. Separate support and privacy pages should be prepared for the App Store.
 
-## Yayına almadan önce
+There are no external font dependencies. The page loads the Google Analytics tag (GA4, measurement ID `G-4JBS4T9RZ0`); this tag downloads third-party JavaScript, uses cookies and makes network requests. This applies to the website only — the app itself still has no account, no server and no network access.
 
-`privacy.html` ve `support.html` sayfalarındaki `support@flincth.com` adresi varsayılan olarak yazılmıştır. App Store başvurusundan önce bu adresin gerçekten çalıştığından emin olun veya kendi adresinizle değiştirin.
+Cookie consent is handled by `consent.js`. No request is made to Google until the visitor accepts; a decline is remembered and not asked again. The choice is stored in `localStorage` under the `flincth-analytics-consent` key and can be changed with the “Cookies” link in the footer. The consent flow does not depend on an external cookie service.
 
-## Web bildirimleri (OneSignal)
+## Before going live
 
-Web push, `notifications.js` ile yönetilir. App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) dosyanın başında tanımlıdır; App ID gizli bir değer değildir, tarayıcıya gönderilir.
+The `support@flincth.com` address on `privacy.html` and `support.html` is a placeholder default. Before submitting to the App Store, make sure this address actually works or replace it with your own.
 
-OneSignal panelinde kontrol edilmesi gerekenler:
+## Web notifications (OneSignal)
 
-1. Site URL `https://flincth.com` olmalı ve "My site is not fully HTTPS" işaretli olmamalı.
-2. Otomatik istem (slide prompt / native prompt) kapalı kalsın; abonelik yalnızca altbilgideki bağlantıdan başlatılır.
+Web push is handled by `notifications.js`. The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
 
-`OneSignalSDKWorker.js` dosyası site kökünde kalmalıdır; service worker kapsamı buna bağlıdır. OneSignal, GitHub Pages üzerinde kendi dosyalarını yerleştiremediği için bu dosya depoda tutulur.
+Things to check in the OneSignal dashboard:
 
-Push desteklemeyen tarayıcılarda (ör. ana ekrana eklenmemiş iOS Safari) altbilgideki Notifications bağlantısı gizli kalır ve hiçbir OneSignal isteği yapılmaz.
+1. The site URL must be `https://flincth.com` and "My site is not fully HTTPS" must not be checked.
+2. Keep automatic prompts (slide prompt / native prompt) off; subscription starts only from the link in the footer.
 
-Analytics gibi bu da yalnızca web sitesi içindir: uygulamanın kendisi hâlâ hesapsız, sunucusuz ve ağ erişimsizdir.
+`OneSignalSDKWorker.js` must stay at the site root; the service worker scope depends on it. OneSignal cannot place its own files on GitHub Pages, so this file is kept in the repository.
 
-## Çok dilli yapı
+In browsers without push support (for example iOS Safari when the site is not added to the home screen) the Notifications link in the footer stays hidden and no OneSignal request is made.
 
-Site şu an yalnızca İngilizce yayınlanıyor, ama yeni bir dil eklemek için gereken altyapı hazır. Varsayılan dil (`_data/languages.yml` içindeki ilk dil) kök adreste durur (`/privacy`); diğer diller kendi klasöründe yayınlanır (`/tr/privacy`).
+Like analytics, this applies to the website only: the app itself still has no account, no server and no network access.
 
-Her sayfanın üst bilgisinde bir `ref` anahtarı vardır (`home`, `privacy`, `support`). Aynı sayfanın farklı dillerdeki sürümleri aynı `ref` değerini taşır. Şablon bu eşleşmeden şunları kendisi üretir:
+## Multi-language setup
 
-- `hreflang` ve `og:locale:alternate` etiketleri; varsayılan dil `x-default` olur
-- Footer'daki dil seçici. Sayfa yalnızca tek dilde varsa görünmez.
-- Header ve footer bağlantıları geçerli dildeki sayfalara gider. Bir sayfa o dile henüz çevrilmediyse bağlantı varsayılan dildeki sayfaya düşer, kırılmaz.
-- `sitemap.xml` içinde her dil sürümü ve karşılıkları
+The site is currently published in English only, but the infrastructure for adding a language is in place. The default language (the first entry in `_data/languages.yml`) lives at the root (`/privacy`); other languages are published in their own folder (`/tr/privacy`).
 
-### Yeni dil ekleme (örnek: Türkçe)
+Every page has a `ref` key in its front matter (`home`, `privacy`, `support`). Versions of the same page in different languages share the same `ref`. From this match the templates generate:
 
-1. `_data/languages.yml` dosyasına dili ekleyin (`code: tr`, `name: Türkçe`, `locale: tr_TR`, `dir: ltr`).
-2. `_config.yml` içindeki `defaults` listesine klasörün dilini ekleyin: `- scope: { path: "tr" }` / `values: { lang: tr }`.
-3. `_data/i18n/en.yml` dosyasını `_data/i18n/tr.yml` olarak kopyalayıp değerleri çevirin.
-4. Sayfaları `tr/` klasörüne kopyalayıp çevirin: `tr/index.html`, `tr/privacy.html`, `tr/support.html`. `ref` değerlerini değiştirmeyin; `title`, `description` ve içeriği çevirin.
-5. Ana sayfanın kopyasında şunları da çevirin:
-   - `#setup-data` bloğu: Önizlemedeki kurulum metinleri ve `{name} setup active` durumu. `{name}` yer tutucusunu koruyun.
-   - `schema` değeri: `_includes/schema/home.en.html` dosyasını `home.tr.html` olarak kopyalayıp çevirin, `inLanguage` değerini `tr` yapın ve `tr/index.html` içinde `schema: schema/home.tr.html` yazın.
-6. Sayfa içeriğindeki bağlantıları o dilin adresleriyle değiştirin; örneğin gizlilik sayfasının sonundaki `← Back to Flincth` bağlantısı `/tr/` olmalı.
+- `hreflang` and `og:locale:alternate` tags; the default language becomes `x-default`
+- The language switcher in the footer. It stays hidden while a page exists in only one language.
+- Header and footer links that point to pages in the current language. If a page is not translated into that language yet, the link falls back to the default language's page instead of breaking.
+- Every language version and its counterparts in `sitemap.xml`
 
-7. 404 sayfası için ayrıca bir şey yapmanız gerekmez; metinleri 3. adımdaki dosyanın `not_found` bölümündedir.
+### Adding a language (example: Turkish)
 
-GitHub Pages bütün site için yalnızca kökteki `404.html` sayfasını gösterir. Bu yüzden 404 sayfası her dili kendi içinde ayrı bir blokta taşır ve hangisinin görüneceğine tarayıcı karar verir: önce adresteki dil klasörü (`/tr/olmayan-sayfa` → Türkçe), sonra tarayıcının dili, sonra varsayılan dil. JavaScript kapalıysa varsayılan dil görünür. Seçilmeyen diller sayfadan kaldırılır, böylece çerez bandı gibi parçalar tek kalır.
+1. Add the language to `_data/languages.yml` (`code: tr`, `name: Türkçe`, `locale: tr_TR`, `dir: ltr`).
+2. Add the folder's language to the `defaults` list in `_config.yml`: `- scope: { path: "tr" }` / `values: { lang: tr }`.
+3. Copy `_data/i18n/en.yml` to `_data/i18n/tr.yml` and translate the values.
+4. Copy the pages into the `tr/` folder and translate them: `tr/index.html`, `tr/privacy.html`, `tr/support.html`. Keep the `ref` values; translate `title`, `description` and the content.
+5. In the home page copy, also translate:
+   - The `#setup-data` block: the setup copy in the preview and the `{name} setup active` status. Keep the `{name}` placeholder.
+   - The `schema` value: copy `_includes/schema/home.en.html` to `home.tr.html`, translate it, set `inLanguage` to `tr`, and write `schema: schema/home.tr.html` in `tr/index.html`.
+6. Replace links inside the page content with that language's URLs; for example the `← Back to Flincth` link at the end of the privacy page should point to `/tr/`.
+7. The 404 page needs nothing extra; its copy is in the `not_found` section of the file from step 3.
 
+GitHub Pages serves only the root `404.html` for the whole site. That is why the 404 page carries every language in its own block and the browser decides which one to show: the language folder in the URL first (`/tr/missing-page` → Turkish), then the browser language, then the default language. Without JavaScript the default language shows. The languages that were not picked are removed from the page, so parts like the cookie banner appear only once.

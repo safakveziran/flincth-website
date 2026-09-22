@@ -1,6 +1,6 @@
 {%- comment -%}
-  Bu sayfanın diğer dillerdeki sürümlerine bağlantılar. Sayfa yalnızca tek
-  dilde varsa hiçbir şey yazılmaz; ikinci dil eklendiğinde kendiliğinden görünür.
+  Links to this page's versions in other languages. Renders nothing while
+  the page exists in only one language, and appears once a second is added.
 {%- endcomment -%}
 {%- if page.ref -%}
   {%- assign _alts = site.pages | where: "ref", page.ref -%}

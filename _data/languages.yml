@@ -1,11 +1,11 @@
-# Sitenin yayınlandığı diller. İlk sıradaki varsayılan dildir: sayfaları kök
-# adreste (/privacy) durur ve hreflang="x-default" olarak işaretlenir. Diğer
-# diller kendi klasörlerinde yayınlanır (/tr/privacy).
+# Languages the site is published in. The first one is the default: its pages
+# live at the root (/privacy) and are marked hreflang="x-default". Other
+# languages are published in their own folder (/tr/privacy).
 #
-#   code:   Klasör adı ve <html lang>, hreflang değeri (ISO 639-1)
-#   name:   Dil seçicide görünen ad, dilin kendi yazılışıyla
-#   locale: og:locale değeri
-#   dir:    Yazı yönü; sağdan sola diller için rtl
+#   code:   Folder name and the <html lang> / hreflang value (ISO 639-1)
+#   name:   Name shown in the language switcher, written in that language
+#   locale: og:locale value
+#   dir:    Text direction; rtl for right-to-left languages
 - code: en
   name: English
   locale: en_US

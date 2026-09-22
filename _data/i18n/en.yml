@@ -1,7 +1,7 @@
-# Ortak parçaların (header, footer, çerez bandı) metinleri. Yeni bir dil için
-# bu dosyayı <kod>.yml adıyla kopyalayıp değerleri çevirin; anahtarları
-# değiştirmeyin. Eksik bir anahtar sayfada boş görünür. YAML on, off, yes, no
-# sözcüklerini doğru/yanlış olarak okur; bunları anahtar adı olarak kullanmayın.
+# Copy for the shared parts (header, footer, cookie banner). For a new
+# language, copy this file to <code>.yml and translate the values; leave the
+# keys unchanged. A missing key renders as empty text. YAML reads on, off, yes
+# and no as booleans, so never use them as key names.
 skip: Skip to content
 home_label: Flincth home
 
@@ -28,13 +28,13 @@ notifications:
 consent:
   label: Cookie choice
   title: A quick choice about cookies.
-  # [policy] yerine gizlilik politikası bağlantısı gelir.
+  # [policy] is replaced with a link to the privacy policy.
   text: This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and the Flincth app itself still has no network access either way. See the [policy].
   policy: privacy policy
   decline: Decline
   accept: Accept
 
-# 404 sayfası. heading içinde <br> kullanılabilir.
+# 404 page. heading may contain <br>.
 not_found:
   title: Page not found — Flincth
   description: That page does not exist on flincth.com.

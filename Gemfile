@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 
-# GitHub Pages ile aynı Jekyll ve eklenti sürümleri.
+# Same Jekyll and plugin versions as GitHub Pages.
 gem "github-pages", group: :jekyll_plugins

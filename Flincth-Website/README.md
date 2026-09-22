@@ -1,18 +1,18 @@
 # Flincth website
 
-`index.html` dosyasını tarayıcıda açın. Kurulum, paket yöneticisi, sunucu veya internet bağlantısı gerekmez.
+Open `index.html` in a browser. No installation, package manager, server or internet connection is needed.
 
-- `index.html`: İngilizce içerik ve sayfa yapısı
-- `styles.css`: Mobil uyumlu tasarım, hareket azaltma ve klavye odak stilleri
-- `script.js`: Code / Write / Research temsili düzen seçicisi
-- `assets/app-icon.png`: Flincth projesindeki uygulama ikonu
+- `index.html`: English content and page structure
+- `styles.css`: Responsive design, reduced motion and keyboard focus styles
+- `script.js`: Code / Write / Research illustrative layout switcher
+- `assets/app-icon.png`: App icon from the Flincth project
 
-## Yayından önce
+## Before release
 
-Site yerel teslim için hazırlanmıştır; internete yayınlanmamıştır. App Store onayı henüz doğrulanmadığı için satış bağlantısı yerine “Coming to the Mac App Store” gösterilir. Yayına çıktığında bu alanı gerçek mağaza bağlantısıyla değiştirin. Fiyat bilerek belirtilmemiştir.
+The site was prepared for local delivery and has not been published. Because App Store approval has not been confirmed yet, “Coming to the Mac App Store” is shown instead of a store link. Replace it with the real store link at launch. Pricing is deliberately not stated.
 
-Pencere görselleri gerçek uygulama ekran görüntüsü değil, etkileşimli HTML/CSS tanıtım temsilleridir; sayfada bu durum belirtilir. Kısayol tuşları da örnektir; kullanıcı uygulamada kendi kısayollarını atar. Gerçek pencere yerleşimi Flincth Apply Shortcut gerektirir.
+The window visuals are not real app screenshots but interactive HTML/CSS illustrations, and the page says so. The keyboard shortcuts are examples too; users assign their own shortcuts in the app. Actual window placement requires the Flincth Apply shortcut.
 
-Uygulama gizliliğini anlatan metin bir hukuki gizlilik politikası yerine geçmez. App Store için ayrı destek ve gizlilik sayfaları hazırlanmalıdır.
+The text describing app privacy is not a substitute for a legal privacy policy. Separate support and privacy pages should be prepared for the App Store.
 
-Harici font, analiz, çerez, ağ isteği veya üçüncü taraf JavaScript bağımlılığı yoktur.
+There are no external font, analytics, cookie, network request or third-party JavaScript dependencies.

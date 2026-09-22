@@ -1,6 +1,7 @@
 {%- comment -%}
-  ref anahtarı include.ref olan sayfanın geçerli dildeki adresi. O sayfa bu
-  dile henüz çevrilmediyse varsayılan dildeki adres döner; bağlantı kırılmaz.
+  URL of the page whose ref is include.ref, in the current language. If that
+  page is not translated yet, the default language's URL is returned instead,
+  so the link never breaks.
 {%- endcomment -%}
 {%- assign _target = site.pages | where: "ref", include.ref | where: "lang", lang | first -%}
 {%- unless _target -%}

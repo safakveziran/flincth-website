@@ -1,6 +1,6 @@
 {%- comment -%}
-  Ertelenmiş betikler (consent.js, notifications.js) çalışmadan önce seçilmeyen
-  dilleri sayfadan kaldırır; kimlikler (#consent, #main) böylece tek kalır.
+  Removes the languages that were not picked before the deferred scripts
+  (consent.js, notifications.js) run, so ids like #consent and #main stay unique.
 {%- endcomment -%}
   <script>
   (function () {

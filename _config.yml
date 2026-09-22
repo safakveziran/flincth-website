@@ -1,8 +1,8 @@
-# Jekyll ayarları. GitHub Pages siteyi her yayında bu dosyaya göre derler.
+# Jekyll settings. GitHub Pages builds the site with these on every publish.
 url: "https://flincth.com"
 
-# Her sayfanın dili. Kökteki sayfalar varsayılan dildedir; yeni bir dilin
-# klasörü için buraya bir blok ekleyin, o klasördeki sayfalar dili buradan alır:
+# Each page's language. Pages at the root are in the default language; add a
+# block here for each new language folder and its pages take the language from it:
 #
 #   - scope: { path: "tr" }
 #     values: { lang: tr }
@@ -10,12 +10,13 @@ defaults:
   - scope: { path: "" }
     values: { lang: en }
 
-# Yayınlanmayacak geliştirme dosyaları.
+# Development files that are not published.
 exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
   - .bundle
+  - CLAUDE.md
 
-# Eski açık temalı sürüm; depoda duruyor ama yayınlanmıyor.
+# Old light-theme version; kept in the repository but not published.
   - Flincth-Website

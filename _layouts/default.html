@@ -1,10 +1,11 @@
 {%- comment -%}
-  Tüm sayfaların ortak iskeleti. Dil sayfanın lang değerinden (_config.yml),
-  metinler _data/i18n/<dil>.yml dosyasından gelir. all_languages: true olan
-  sayfa (404) her dili ayrı bir blokta taşır ve tarayıcıda biri seçilir.
-  Ana sayfada (ref: home) menü bağlantıları sayfa içi çapalara, diğer
-  sayfalarda o dildeki ana sayfanın çapalarına gider. Dosya yolları kök tabanlıdır (/styles.css);
-  böylece 404 sayfası iç içe bir adreste gösterildiğinde de stiller yüklenir.
+  Shared skeleton for every page. The language comes from the page's lang
+  value (_config.yml) and the copy from _data/i18n/<lang>.yml. A page with
+  all_languages: true (404) carries every language in its own block and the
+  browser picks one. On the home page (ref: home) menu links point to in-page
+  anchors; elsewhere they point to the anchors on that language's home page.
+  Asset paths are root-relative (/styles.css) so the 404 page keeps its
+  styles when it is served at a nested URL.
 {%- endcomment -%}
 {%- assign default_lang = site.data.languages[0].code -%}
 {%- include lang-vars.html lang=page.lang -%}
