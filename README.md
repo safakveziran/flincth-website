@@ -32,6 +32,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `consent.js`: Cookie consent banner and consent-gated Google Analytics loading
 - `notifications.js`: OneSignal web push subscription (the Notifications link in the footer)
 - `OneSignalSDKWorker.js`: OneSignal service worker (must stay at the site root)
+- `manifest.webmanifest`: Web app manifest; iOS needs it to allow web push from the Home Screen
 - `privacy.html`: Privacy policy (app, browser extension and website covered separately)
 - `chrome.html`, `firefox.html`, `edge.html`: Browser extension landing pages (see Browser extension pages)
 - `support.html`: Support and common problems
@@ -95,7 +96,7 @@ Things to check in the OneSignal dashboard:
 
 `OneSignalSDKWorker.js` must stay at the site root; the service worker scope depends on it. OneSignal cannot place its own files on GitHub Pages, so this file is kept in the repository.
 
-In browsers without push support (for example iOS Safari when the site is not added to the home screen) the Notifications link in the footer stays hidden and no OneSignal request is made.
+In browsers without push support the notification controls stay hidden and no OneSignal request is made. On iPhone and iPad every browser (Safari, Chrome and the rest) is WebKit, which offers web push only to sites opened from the Home Screen; the closing section tells those visitors so. That path needs `manifest.webmanifest` with `"display": "standalone"`, which the layout links on every page.
 
 Like analytics, this applies to the website only: the app itself still has no account, no server and no network access.
 

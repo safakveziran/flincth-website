@@ -153,8 +153,9 @@
     // control would only lead to a dead end. The fallbacks stay visible.
     if (!APP_ID || !supported()) {
       each(controls, function (control) { control.hidden = true; });
-      // iPhone and iPad Safari offer web push only to Home Screen web apps,
-      // so tell those visitors how to get the button rather than nothing.
+      // On iPhone and iPad every browser is WebKit, and WebKit offers web
+      // push only to Home Screen web apps (which is why the site has a
+      // manifest). Tell those visitors how to get the button.
       if (APP_ID && isAppleMobile()) {
         each(document.querySelectorAll('[data-notify-ios-hint]'), function (el) { el.hidden = false; });
       }

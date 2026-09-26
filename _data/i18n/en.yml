@@ -32,9 +32,10 @@ notify:
   error: Couldn’t turn on notifications. Try again.
   # Header link shown instead of the button where the browser has no web push.
   fallback: Launch status
-  # Shown under the closing section on iPhone and iPad, where Safari offers
-  # web push only to sites added to the Home Screen.
-  ios_hint: On iPhone or iPad, add this site to your Home Screen, open it from there, and the Notify me button will appear.
+  # Shown under the closing section on iPhone and iPad, where every browser
+  # (Safari, Chrome and the rest all use WebKit) offers web push only to sites
+  # opened from the Home Screen. That also needs manifest.webmanifest.
+  ios_hint: "On iPhone or iPad, tap Share, then Add to Home Screen. Open Flincth from your Home Screen and the Notify me button will appear."
 
 footer:
   help: Help
