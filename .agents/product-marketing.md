@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v1
+**Document version:** v2
 **Last updated:** 2026-09-26
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
@@ -13,7 +13,7 @@
 - *Flincth for Mac* is a menu bar app. Each setup chooses which apps are part of
   a kind of work; switching setups places their windows into regions across
   your displays and switches to that setup's own text clipboard history.
-- *Flincth for Chrome* (Firefox and Edge planned) splits one browser tab into
+- *Flincth for Chrome, Firefox and Edge* splits one browser tab into
   panes, puts a site in each, saves that as a workspace and switches workspaces
   with a click or shortcut.
 **Product category:** Mac window manager / clipboard manager; browser split-screen
@@ -118,4 +118,5 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v2 (2026-09-26) — Firefox and Edge versions are built; no longer "planned".
 - v1 (2026-09-26) — Initial context, auto-drafted from the repositories.

@@ -56,8 +56,8 @@ the Mac app and works without it.
 - **Privacy.** Collects no data and makes no network requests of its own. No
   site access is requested at install; access is requested one site at a time
   when that site is assigned to a pane, and can be revoked.
-- **Availability.** Not yet released. Chrome: coming to the Chrome Web Store.
-  Firefox and Microsoft Edge: planned.
+- **Availability.** Not yet released. Built for Chrome, Firefox (140 or later)
+  and Microsoft Edge; coming to their stores.
 
 ## Pages
 
@@ -65,5 +65,5 @@ the Mac app and works without it.
 - [Support](https://flincth.com/support): requirements, the Flincth Apply shortcut, and common problems.
 - [Privacy](https://flincth.com/privacy): what the app, the browser extension and the website do and do not collect.
 - [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome.
-- [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox (planned).
-- [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (planned).
+- [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox.
+- [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge.

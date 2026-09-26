@@ -73,13 +73,13 @@ Cookie consent is handled by `consent.js`. No request is made to Google until th
 `/chrome`, `/firefox` and `/edge` introduce the Flincth browser extension, a separate product from the Mac app. The three pages share one template, `_includes/extension-landing.html`; each page file is only front matter (`browser`, `ref`, `strings`).
 
 - Shared copy is in the `extension` section of `_data/i18n/<lang>.yml`; each browser's own copy (title, status, availability and shortcut answers) is in `extension_chrome`, `extension_firefox` and `extension_edge`. `[browser]` in a shared value is replaced with the browser's name.
-- `_data/browsers.yml` lists the browsers in display order with their store links. While `store_url` is empty the page shows the status line ("Coming to the Chrome Web Store", "Planned for …") instead of an install button. When a listing goes live, set its `store_url` and update that browser's `status` and `availability_a` copy.
+- `_data/browsers.yml` lists the browsers in display order with their store links. While `store_url` is empty the page shows the status line ("Coming to the Chrome Web Store", "Coming to Firefox Add-ons", …) instead of an install button. When a listing goes live, set its `store_url` and update that browser's `status` and `availability_a` copy.
 - On these pages the header menu points to the page's own sections.
 - Every page reaches every product two ways: the Products menu in the header (`_includes/products-menu.html`, a `<details>` element that `nav.js` closes on an outside click or Escape) and the Products column in the footer. Both list macOS (the home page), Chrome, Firefox and Edge; names and notes are in the `products` section of the translation file. To add a product, add its `ref` to the list at the top of both includes and its keys to `products`.
 - `_includes/schema/extension.html` produces each page's JSON-LD.
 - When translating, copy the three page files into the language folder unchanged; all of their text comes from the translation file.
 
-As of this writing the extension is built for Chrome only and not yet published; Firefox and Edge are planned (see `spec.md` §18 in the extension repository). Keep the pages' status copy in step with that.
+As of this writing the extension is built for Chrome, Firefox (140 or later) and Edge, and published in none of their stores yet (see `docs/publishing-to-firefox-and-edge.md` in the extension repository). Keep the pages' status copy in step with that.
 
 ## Before going live
 

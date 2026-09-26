@@ -60,8 +60,8 @@ the Mac App Store and the browser stores.
   network access. Pricing is not announced.
 - Window placement needs the user-installed "Flincth Apply" Shortcut. Windows
   never cross Mission Control desktops and never enter or leave full screen.
-- The extension is built for Chrome and not yet published; Firefox and Edge are
-  planned. It collects no data and makes no network requests of its own.
+- The extension is built for Chrome, Firefox (140+) and Edge, and not yet
+  published in any store. It collects no data and makes no network requests of its own.
 - Vocabulary: the Mac app says *setup* (code says workspace); the extension
   says *workspace*. Keep them apart on the site.
 - The website itself uses consent-gated Google Analytics and opt-in OneSignal
