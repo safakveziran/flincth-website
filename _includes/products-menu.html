@@ -8,7 +8,7 @@
   {%- for _ref in products -%}
     {%- capture _url %}{% include page-url.html ref=_ref %}{% endcapture -%}
     {%- assign _note_key = _ref | append: "_note" -%}
-    {%- if _ref == "home" %}{% assign _icon = "/assets/app-icon.png" %}{% else %}{% assign _icon = "/assets/extension-icon.png" %}{% endif -%}
+    {%- if _ref == "home" %}{% assign _icon = "/assets/app-icon-64.png" %}{% else %}{% assign _icon = "/assets/extension-icon.png" %}{% endif -%}
   <li><a href="{{ _url }}"{% if page.ref == _ref %} aria-current="page"{% endif %}><img src="{{ _icon }}" width="28" height="28" alt=""><span><b>{{ t.products[_ref] }}</b><small>{{ t.products[_note_key] }}</small></span></a></li>
   {%- endfor -%}
 </ul></details>

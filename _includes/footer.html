@@ -1,7 +1,7 @@
 {%- assign products = "home,chrome,firefox,edge" | split: "," -%}
 {%- capture privacy_url %}{% include page-url.html ref="privacy" %}{% endcapture -%}
 {%- capture support_url %}{% include page-url.html ref="support" %}{% endcapture -%}
-  <footer class="wrap"><a class="brand" href="{{ home_link }}"><img src="/assets/app-icon.png" width="28" height="28" alt="">flincth</a><span>© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</span>
+  <footer class="wrap"><a class="brand" href="{{ home_link }}"><img src="/assets/app-icon-64.png" width="28" height="28" alt=""><span translate="no">flincth</span></a><span>© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</span>
   {%- if page.ref == "home" -%}
     <a href="#questions">{{ t.footer.questions }}</a><a href="{{ support_url }}">{{ t.footer.support }}</a><a href="{{ privacy_url }}">{{ t.footer.privacy }}</a>
   {%- else -%}

@@ -48,9 +48,9 @@ consent:
 
 # 404 page. heading may contain <br>.
 not_found:
-  title: Page not found — Flincth
+  title: Page not found | Flincth
   description: That page does not exist on flincth.com.
-  eyebrow: 404 — NOTHING HERE
+  eyebrow: Error 404
   heading: This space is<br>a little too empty.
   text: The page you were looking for doesn’t exist, or it moved somewhere tidier.
   back: Back to Flincth
@@ -148,8 +148,8 @@ extension:
   icon_alt: Flincth extension icon
 
 extension_chrome:
-  title: Flincth for Chrome — Split one tab into saved workspaces
-  description: "Flincth for Chrome splits a single tab into panes, puts a different site in each, and saves the arrangement as a workspace you can switch to with a click or a shortcut. No data collected."
+  title: "Flincth for Chrome: Split one tab into workspaces"
+  description: "Flincth for Chrome splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
   name: Chrome
   eyebrow: FLINCTH FOR CHROME
   status: Coming to the Chrome Web Store
@@ -159,8 +159,8 @@ extension_chrome:
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Chrome, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at chrome://extensions/shortcuts.
 
 extension_firefox:
-  title: Flincth for Firefox — Split one tab into saved workspaces
-  description: "Flincth for Firefox will split a single tab into panes, put a different site in each, and save the arrangement as a workspace you can switch to with a click or a shortcut. Planned; no data collected."
+  title: "Flincth for Firefox: Split one tab into workspaces"
+  description: "Flincth for Firefox, planned: split one tab into panes with a site in each, save it as a workspace and switch with a click or a shortcut."
   name: Firefox
   eyebrow: FLINCTH FOR FIREFOX
   status: Planned for Firefox Add-ons
@@ -170,8 +170,8 @@ extension_firefox:
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Firefox, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys under Manage Extension Shortcuts in about:addons.
 
 extension_edge:
-  title: Flincth for Microsoft Edge — Split one tab into saved workspaces
-  description: "Flincth for Microsoft Edge splits a single tab into panes, puts a different site in each, and saves the arrangement as a workspace you can switch to with a click or a shortcut. Planned; no data collected."
+  title: "Flincth for Microsoft Edge: Split one tab into workspaces"
+  description: "Flincth for Microsoft Edge, planned: split one tab into panes with a site in each, save it as a workspace and switch with a click or a shortcut."
   name: Edge
   eyebrow: FLINCTH FOR MICROSOFT EDGE
   status: Planned for Microsoft Edge Add-ons
