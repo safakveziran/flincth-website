@@ -33,6 +33,8 @@
   <link rel="stylesheet" href="/dark.css">
 {%- if page.ref == "home" %}
   <script src="/script.js" defer></script>
+{%- elsif page.browser %}
+  <script src="/extension.js" defer></script>
 {%- endif %}
   <script src="/consent.js" defer></script>
   <script src="/notifications.js" defer></script>

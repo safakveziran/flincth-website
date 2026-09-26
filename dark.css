@@ -113,3 +113,31 @@ footer > a:hover { color: #8db6ff; }
 .doc .updated{color:#8fa0bb}
 .doc .callout{background:var(--surface);border-color:#2f3d55}
 .doc a:not(.button){color:#8db6ff}
+
+/* Browser extension pages */
+.browser { background: #0c1422; border-color: #31415b; }
+.browser-chrome { background: #152136; }
+.browser-tab { background: #1c2a42; color: #dbe6f4; }
+.browser-address { background: #0e1829; }
+.split-header { background: #111b2b; border-color: #273347; }
+.workspace-tab { color: #a5b3ca; }
+.workspace-tab:hover { background: #1c2a42; }
+.workspace-tab.active { background: #22324d; border-color: #3a4f72; color: #edf3ff; }
+.pane { background: #121d2e; border-color: #2a3a54; }
+.pane-bar { background: #172438; border-color: #2a3a54; color: #d0def2; }
+.mode { border-color: #3a4f72; color: #b3c3db; background: #152136; }
+.mode-window { border-color: #4f6fa8; color: #c3d6ff; background: #1b2c4c; }
+.mode-launcher { border-color: #5a6f8e; color: #c9d5e6; }
+.sk-title { background: #33476a; }
+.sk-lines i, .sk-bubbles i, .sk-calendar i { background: #22324b; }
+.sk-bubbles i:nth-child(even) { background: #2c4270; }
+.sk-chart i, .sk-calendar i:nth-child(4), .sk-calendar i:nth-child(10) { background: #466cb1; }
+.sk-chart i:nth-child(6) { background: #6d9cf7; }
+.sk-video { background: #0a111d; color: #b5d2ffb0; }
+.launcher-icon, .launcher-open { border-color: #3a4f72; color: #c3d6ff; background: #172438; }
+.modes .snippet code { color: #b6c8e4; }
+.privacy-link { color: #8db6ff; }
+.browser-card { background: #101927; border-color: var(--line); }
+.browser-card:hover { border-color: #57729b; background: #131f31; }
+.browser-card-status { color: #a5b3ca; }
+.browser-card-arrow { color: #8db6ff; }

@@ -1,0 +1,13 @@
+# Browsers the Flincth extension has a landing page for, in display order.
+# Each landing page's front matter sets browser: <id> and ref: <id>; its copy is
+# in the extension_<id> section of _data/i18n/<lang>.yml.
+#
+#   id:        Page ref and the suffix of its i18n section
+#   store_url: Store listing. Leave empty until the listing is live; the page
+#              then shows the "coming" status instead of an install button.
+- id: chrome
+  store_url: ""
+- id: firefox
+  store_url: ""
+- id: edge
+  store_url: ""

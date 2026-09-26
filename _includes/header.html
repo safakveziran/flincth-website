@@ -1,5 +1,16 @@
+{%- comment -%}
+  On the browser extension pages (page.browser) the menu points to that
+  page's own sections instead of the Mac app's home page.
+{%- endcomment -%}
+{%- if page.browser -%}
+  {%- assign _nav = t.extension.nav -%}
+  {%- assign _nav_base = "" -%}
+{%- else -%}
+  {%- assign _nav = t.nav -%}
+  {%- assign _nav_base = base -%}
+{%- endif -%}
   <header class="nav wrap">
     <a class="brand" href="{{ home_link }}" aria-label="{{ t.home_label }}"><img src="/assets/app-icon.png" alt="" width="36" height="36">flincth</a>
-    <nav aria-label="{{ t.nav.label }}"><a href="{{ base }}#features">{{ t.nav.features }}</a><a href="{{ base }}#how">{{ t.nav.how }}</a><a href="{{ base }}#questions">{{ t.nav.faq }}</a></nav>
-    <a class="nav-cta" href="{{ base }}#availability">{{ t.nav.cta }} <span aria-hidden="true">↗</span></a>
+    <nav aria-label="{{ t.nav.label }}"><a href="{{ _nav_base }}#features">{{ _nav.features }}</a><a href="{{ _nav_base }}#how">{{ _nav.how }}</a><a href="{{ _nav_base }}#questions">{{ _nav.faq }}</a></nav>
+    <a class="nav-cta" href="{{ _nav_base }}#availability">{{ _nav.cta }} <span aria-hidden="true">↗</span></a>
   </header>

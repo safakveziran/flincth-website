@@ -1,0 +1,32 @@
+{%- comment -%}
+  JSON-LD for a browser extension landing page. Copy comes from the page's
+  extension_<browser> section, so each language and browser gets its own.
+{%- endcomment -%}
+{%- assign _b = t[page.strings] -%}
+{%- assign _page_url = site.url | append: page.url | replace: ".html", "" -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": {{ _page_url | append: "#extension" | jsonify }},
+        "name": {{ "Flincth for " | append: _b.name | jsonify }},
+        "url": {{ _page_url | jsonify }},
+        "image": "https://flincth.com/assets/extension-icon.png",
+        "description": {{ _b.description | jsonify }},
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": {{ _b.name | jsonify }},
+        "inLanguage": {{ lang | jsonify }},
+        "publisher": { "@id": "https://flincth.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://flincth.com/#org",
+        "name": "Flincth",
+        "url": "https://flincth.com/",
+        "logo": "https://flincth.com/assets/app-icon.png"
+      }
+    ]
+  }
+  </script>

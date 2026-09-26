@@ -26,16 +26,19 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `styles.css`: Responsive design, reduced motion and keyboard focus styles
 - `dark.css`: Dark theme for every page and every state of the interactive preview
 - `script.js`: Code / Write / Research illustrative layout switcher
+- `extension.js`: Workspace switcher in the browser extension pages' illustrative preview
 - `consent.js`: Cookie consent banner and consent-gated Google Analytics loading
 - `notifications.js`: OneSignal web push subscription (the Notifications link in the footer)
 - `OneSignalSDKWorker.js`: OneSignal service worker (must stay at the site root)
-- `privacy.html`: Privacy policy (website and app covered separately)
+- `privacy.html`: Privacy policy (app, browser extension and website covered separately)
+- `chrome.html`, `firefox.html`, `edge.html`: Browser extension landing pages (see Browser extension pages)
 - `support.html`: Support and common problems
 - `404.html`: GitHub Pages error page
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
 - `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand
 - `robots.txt`, `llms.txt`: Search engine and assistant discovery
 - `assets/app-icon.png`: App icon from the Flincth project
+- `assets/extension-icon.png`: Extension icon from the Flincth browser extension project (`public/icons/icon128.png`)
 
 ## Code language
 
@@ -52,6 +55,18 @@ The text describing app privacy is not a substitute for a legal privacy policy. 
 There are no external font dependencies. The page loads the Google Analytics tag (GA4, measurement ID `G-4JBS4T9RZ0`); this tag downloads third-party JavaScript, uses cookies and makes network requests. This applies to the website only — the app itself still has no account, no server and no network access.
 
 Cookie consent is handled by `consent.js`. No request is made to Google until the visitor accepts; a decline is remembered and not asked again. The choice is stored in `localStorage` under the `flincth-analytics-consent` key and can be changed with the “Cookies” link in the footer. The consent flow does not depend on an external cookie service.
+
+## Browser extension pages
+
+`/chrome`, `/firefox` and `/edge` introduce the Flincth browser extension, a separate product from the Mac app. The three pages share one template, `_includes/extension-landing.html`; each page file is only front matter (`browser`, `ref`, `strings`).
+
+- Shared copy is in the `extension` section of `_data/i18n/<lang>.yml`; each browser's own copy (title, status, availability and shortcut answers) is in `extension_chrome`, `extension_firefox` and `extension_edge`. `[browser]` in a shared value is replaced with the browser's name.
+- `_data/browsers.yml` lists the browsers in display order with their store links. While `store_url` is empty the page shows the status line ("Coming to the Chrome Web Store", "Planned for …") instead of an install button. When a listing goes live, set its `store_url` and update that browser's `status` and `availability_a` copy.
+- On these pages the header menu points to the page's own sections, and the footer links back to the Mac app's pages. Other pages carry a "Browser extension" link in the footer, pointing to `/chrome`.
+- `_includes/schema/extension.html` produces each page's JSON-LD.
+- When translating, copy the three page files into the language folder unchanged; all of their text comes from the translation file.
+
+As of this writing the extension is built for Chrome only and not yet published; Firefox and Edge are planned (see `spec.md` §18 in the extension repository). Keep the pages' status copy in step with that.
 
 ## Before going live
 

@@ -42,8 +42,28 @@
 - The privacy description on the website is a plain-language summary and is not
   a legal privacy policy.
 
+## Browser extension
+
+Flincth also has a separate browser extension. It is a different product from
+the Mac app and works without it.
+
+- **What it does.** Splits a single browser tab into panes, assigns a website
+  to each pane, saves the arrangement as a workspace, and switches between
+  saved workspaces with a click or a user-assigned keyboard shortcut.
+- **Pane modes.** A pane shows its site embedded in the tab, as a real browser
+  window aligned to the pane (for sites that refuse embedding or need the
+  user's signed-in session), or as a launcher card that opens a normal tab.
+- **Privacy.** Collects no data and makes no network requests of its own. No
+  site access is requested at install; access is requested one site at a time
+  when that site is assigned to a pane, and can be revoked.
+- **Availability.** Not yet released. Chrome: coming to the Chrome Web Store.
+  Firefox and Microsoft Edge: planned.
+
 ## Pages
 
 - [Homepage](https://flincth.com/): product overview, features, how it works, and FAQ.
 - [Support](https://flincth.com/support): requirements, the Flincth Apply shortcut, and common problems.
-- [Privacy](https://flincth.com/privacy): what the app and the website do and do not collect.
+- [Privacy](https://flincth.com/privacy): what the app, the browser extension and the website do and do not collect.
+- [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome.
+- [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox (planned).
+- [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (planned).
