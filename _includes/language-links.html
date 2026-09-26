@@ -9,7 +9,7 @@
       {%- if _language.code != lang -%}
         {%- assign _alt = _alts | where: "lang", _language.code | first -%}
         {%- if _alt -%}
-          <a class="language-link" href="{{ _alt.url | replace: '.html', '' }}" hreflang="{{ _language.code }}" lang="{{ _language.code }}" title="{{ t.footer.languages }}">{{ _language.name }}</a>
+          <li><a class="language-link" href="{{ _alt.url | replace: '.html', '' }}" hreflang="{{ _language.code }}" lang="{{ _language.code }}" title="{{ t.footer.languages }}">{{ _language.name }}</a></li>
         {%- endif -%}
       {%- endif -%}
     {%- endfor -%}

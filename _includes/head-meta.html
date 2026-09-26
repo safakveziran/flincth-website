@@ -1,4 +1,9 @@
 {%- assign indexed = true -%}
+{%- comment -%} A page may set og_image (a site path) and og_image_alt (a key
+  under its strings section); otherwise the Mac app's share image is used. {%- endcomment -%}
+{%- assign og_image = page.og_image | default: "/assets/og-image.png" -%}
+{%- assign og_image_alt = t.og_image_alt -%}
+{%- if page.og_image_alt %}{% assign og_image_alt = t[page.strings][page.og_image_alt] | default: t.extension[page.og_image_alt] %}{% endif -%}
 {%- if page.robots contains "noindex" %}{% assign indexed = false %}{% endif -%}
 {%- if indexed %}
   <link rel="canonical" href="{{ page_url }}">
@@ -23,10 +28,10 @@
   <meta property="og:url" content="{{ page_url }}">
   <meta property="og:title" content="{{ page_title }}">
   <meta property="og:description" content="{{ page_description }}">
-  <meta property="og:image" content="{{ site.url }}/assets/og-image.png">
+  <meta property="og:image" content="{{ site.url }}{{ og_image }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{{ t.og_image_alt }}">
+  <meta property="og:image:alt" content="{{ og_image_alt }}">
   <meta property="og:locale" content="{{ language.locale }}">
 {%- if page.ref %}
   {%- for _language in site.data.languages %}
@@ -42,4 +47,5 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ page_title }}">
   <meta name="twitter:description" content="{{ page_description }}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.png">
+  <meta name="twitter:image" content="{{ site.url }}{{ og_image }}">
+  <meta name="twitter:image:alt" content="{{ og_image_alt }}">

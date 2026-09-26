@@ -11,12 +11,11 @@
   --action: #235cec;
 }
 body {
-  background: radial-gradient(ellipse 850px 580px at 50% 280px, #17346c36, transparent 80%), var(--paper);
+  background: var(--paper);
 }
 ::selection { background: #306ae0; color: #fff; }
 .skip, .nav-cta { background: var(--surface); }
 .nav-cta:hover { background: var(--raised); border-color: #57729b; }
-.brand img { filter: drop-shadow(0 3px 12px #195bff20); }
 .hero > .eyebrow { color: #a9bcda; }
 h1 { text-shadow: 0 5px 35px #00000025; }
 h1 > span { color: #89b2ff; }
@@ -24,14 +23,14 @@ h1 > span { color: #89b2ff; }
 .primary {
   background: var(--action);
   border: 1px solid #527ff2;
-  box-shadow: 0 6px 25px #1757ea28, inset 0 1px 0 #ffffff14;
+  box-shadow: 0 4px 12px -4px #000a, inset 0 1px 0 #ffffff14;
 }
 .primary:hover { background: #326af4; }
 .micro, .preview-note { color: #9aaac3; }
 .product-stage {
   background: #101827;
   border-color: #31415b;
-  box-shadow: 0 32px 80px -30px #0009, 0 0 70px -35px #387bf54d;
+  box-shadow: 0 24px 48px -28px #000c;
 }
 .stage-top, .stage-bottom { color: #a8b6cb; }
 .live-label { border-color: #384861; color: #a2b8da; background: #152136; }
@@ -42,7 +41,7 @@ h1 > span { color: #89b2ff; }
 }
 .mac-bar { background: #0b152c80; color: #d0def2; border-bottom: 1px solid #b8d6ff12; }
 .desktop-title { color: #b5d2ff80; }
-.window { background: #121d2e; border-color: #55698875; box-shadow: 0 18px 40px #0006; }
+.window { background: #121d2e; border-color: #55698875; box-shadow: 0 12px 24px -8px #0008; }
 .window-main { background: #101925; color: #dbe6f4; }
 .window-bar { background: #1a2638; color: #bac9df; border-color: #ffffff0c; }
 .editor-sidebar { background: #0c1421; color: #9baac0; }
@@ -56,7 +55,7 @@ h1 > span { color: #89b2ff; }
 .setup-popover {
   background: #152135f5;
   border-color: #637c9e88;
-  box-shadow: 0 20px 48px #0007, inset 0 1px 0 #ffffff0b;
+  box-shadow: 0 12px 28px -8px #0009, inset 0 1px 0 #ffffff0b;
 }
 .popover-head > span, .popover-foot { color: #b2c2d9; }
 .setup-option:hover { background: #293a54; }
@@ -91,11 +90,11 @@ h1 > span { color: #89b2ff; }
 .privacy-caption { color: #a5bad7; }
 .steps article { border-color: #33435c; }
 .closing {
-  background: radial-gradient(ellipse at 50% 0, #254b8575, transparent 65%), #111d32;
+  background: #111d32;
   border: 1px solid #314666;
   box-shadow: inset 0 1px 0 #ffffff08;
 }
-.closing > img { filter: drop-shadow(0 6px 25px #2369ff30); }
+.closing > img { filter: drop-shadow(0 8px 16px #0008); }
 .coming-soon { background: #1c2b44; border-color: #496083; }
 footer { color: #9babc3; }
 footer > a:not(.brand) { color: #bbcde8; }
@@ -142,10 +141,15 @@ footer > a:hover { color: #8db6ff; }
 .browser-card-status { color: #a5b3ca; }
 .browser-card-arrow { color: #8db6ff; }
 
-/* Products menu and footer product links */
-.products-list { background: #111b2b; border-color: #31415b; box-shadow: 0 22px 50px -18px #000c; }
+/* Products menu and footer links */
+.products-list { background: #111b2b; border-color: #31415b; box-shadow: 0 16px 32px -16px #000c; }
 .products-list a:hover, .products-list a[aria-current] { background: #1c2a42; }
 .products-list small { color: #a5b3ca; }
 .products-menu summary:hover { color: #8db6ff; }
-.footer-products a { color: #bbcde8; }
-.footer-products a:hover { color: #8db6ff; }
+.footer-col a { color: #bbcde8; }
+.footer-col a:hover { color: #8db6ff; }
+.footer-title { color: #edf3ff; }
+
+/* Product badge, error code, browser cards */
+.product-badge { color: #c9d7ee; }
+.error-code { color: #a9bcda; }

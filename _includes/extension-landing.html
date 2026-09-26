@@ -33,14 +33,14 @@
 {%- endcapture -%}
   <main id="main" class="extension-page" data-browser="{{ page.browser }}">
     <section class="hero wrap">
-      <div class="eyebrow"><span class="status-dot"></span> {{ b.eyebrow }}</div>
+      <p class="product-badge"><img src="/assets/extension-icon.png" width="22" height="22" alt="">{{ b.label }}</p>
       <h1>{{ x.hero_title }}</h1>
       <p class="hero-copy">{{ x.hero_copy | replace: "[browser]", b.name }}</p>
       <div class="hero-actions">{{ hero_action }}<a class="text-link" href="#how">{{ x.hero_more }} <span aria-hidden="true">↓</span></a></div>
       <p class="micro">{{ x.micro | replace: " · ", " <span>·</span> " }}</p>
 
       <div class="product-stage" id="preview">
-        <div class="stage-top"><span><span class="tiny-logo">▥</span> {{ p.label }}</span><span class="live-label">{{ p.live }}</span></div>
+        <div class="stage-top"><span>{{ p.label }}</span><span class="live-label">{{ p.live }}</span></div>
         <div class="browser" data-workspace="work">
           <div class="browser-chrome">
             <span class="traffic"><i></i><i></i><i></i></span>
@@ -78,20 +78,20 @@
     </section>
 
     <section class="features wrap" id="features">
-      <div class="section-heading"><div><div class="eyebrow">{{ x.features_eyebrow }}</div><h2>{{ x.features_title }}</h2></div><p>{{ x.features_copy }}</p></div>
+      <div class="section-heading"><div><h2>{{ x.features_title }}</h2></div><p>{{ x.features_copy }}</p></div>
       <div class="feature-grid">
-        <article class="feature feature-large"><div class="feature-label">{{ x.feature_split_label }}</div><h3>{{ x.feature_split_title }}</h3><p>{{ x.feature_split_copy }}</p><div class="layout-diagram" aria-hidden="true"><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div></div></article>
-        <article class="feature clipboard"><div class="feature-label">{{ x.feature_modes_label }}</div><h3>{{ x.feature_modes_title }}</h3><p>{{ x.feature_modes_copy }}</p><ul class="modes"><li class="snippet"><span class="mode">{{ p.embed }}</span><code>{{ x.mode_embed }}</code></li><li class="snippet"><span class="mode mode-window">{{ p.window }}</span><code>{{ x.mode_window }}</code></li><li class="snippet"><span class="mode mode-launcher">{{ p.launcher }}</span><code>{{ x.mode_launcher }}</code></li></ul></article>
-        <article class="feature short-feature keyboard-feature"><div class="feature-label">{{ x.feature_keys_label }}</div><h3>{{ x.feature_keys_title }}</h3><p>{{ x.feature_keys_copy }}</p><div class="keys" aria-hidden="true"><kbd class="wide">Ctrl</kbd><kbd>⇧</kbd><kbd>1</kbd><span>{{ x.feature_keys_hint }}</span></div></article>
-        <article class="feature short-feature"><div class="feature-label">{{ x.feature_alive_label }}</div><h3>{{ x.feature_alive_title }}</h3><p>{{ x.feature_alive_copy }}</p></article>
+        <article class="feature feature-large"><h3>{{ x.feature_split_title }}</h3><p>{{ x.feature_split_copy }}</p><div class="layout-diagram" aria-hidden="true"><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div></div></article>
+        <article class="feature clipboard"><h3>{{ x.feature_modes_title }}</h3><p>{{ x.feature_modes_copy }}</p><ul class="modes"><li class="snippet"><span class="mode">{{ p.embed }}</span><code>{{ x.mode_embed }}</code></li><li class="snippet"><span class="mode mode-window">{{ p.window }}</span><code>{{ x.mode_window }}</code></li><li class="snippet"><span class="mode mode-launcher">{{ p.launcher }}</span><code>{{ x.mode_launcher }}</code></li></ul></article>
+        <article class="feature short-feature keyboard-feature"><h3>{{ x.feature_keys_title }}</h3><p>{{ x.feature_keys_copy }}</p><div class="keys" aria-hidden="true"><kbd class="wide">Ctrl</kbd><kbd>⇧</kbd><kbd>1</kbd><span>{{ x.feature_keys_hint }}</span></div></article>
+        <article class="feature short-feature"><h3>{{ x.feature_alive_title }}</h3><p>{{ x.feature_alive_copy }}</p></article>
       </div>
     </section>
 
-    <section class="privacy-band"><div class="wrap privacy-inner"><span class="privacy-symbol" aria-hidden="true">◎</span><h2>{{ x.privacy_title }}</h2><div><p>{{ x.privacy_copy | replace: "[browser]", b.name }}</p><span class="privacy-caption">{{ x.privacy_caption }}</span> <a class="privacy-link" href="{{ privacy_url }}#extension">{{ x.privacy_link }} <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="privacy-band"><div class="wrap privacy-inner"><h2>{{ x.privacy_title }}</h2><div><p>{{ x.privacy_copy | replace: "[browser]", b.name }}</p><span class="privacy-caption">{{ x.privacy_caption }}</span> <a class="privacy-link" href="{{ privacy_url }}#extension">{{ x.privacy_link }} <span aria-hidden="true">→</span></a></div></div></section>
 
-    <section class="how wrap" id="how"><div class="section-heading"><div><div class="eyebrow">{{ x.how_eyebrow }}</div><h2>{{ x.how_title }}</h2></div><p>{{ x.how_copy }}</p></div><div class="steps"><article><span>01</span><h3>{{ x.step1_title }}</h3><p>{{ x.step1_copy }}</p></article><article><span>02</span><h3>{{ x.step2_title }}</h3><p>{{ x.step2_copy | replace: "[browser]", b.name }}</p></article><article><span>03</span><h3>{{ x.step3_title }}</h3><p>{{ x.step3_copy }}</p></article></div></section>
+    <section class="how wrap" id="how"><div class="section-heading"><div><h2>{{ x.how_title }}</h2></div><p>{{ x.how_copy }}</p></div><div class="steps"><article><span>01</span><h3>{{ x.step1_title }}</h3><p>{{ x.step1_copy }}</p></article><article><span>02</span><h3>{{ x.step2_title }}</h3><p>{{ x.step2_copy | replace: "[browser]", b.name }}</p></article><article><span>03</span><h3>{{ x.step3_title }}</h3><p>{{ x.step3_copy }}</p></article></div></section>
 
-    <section class="faq wrap" id="questions"><div><div class="eyebrow">{{ x.faq_eyebrow }}</div><h2>{{ x.faq_title }}</h2></div><div class="questions">
+    <section class="faq wrap" id="questions"><div><h2>{{ x.faq_title }}</h2></div><div class="questions">
       <details><summary>{{ b.availability_q }}<span>+</span></summary><p>{{ b.availability_a }}</p></details>
       <details><summary>{{ x.faq_mac_q }}<span>+</span></summary><p>{{ x.faq_mac_a }}</p></details>
       <details><summary>{{ x.faq_window_q }}<span>+</span></summary><p>{{ x.faq_window_a }}</p></details>
@@ -100,15 +100,15 @@
       <details><summary>{{ x.faq_keys_q }}<span>+</span></summary><p>{{ b.keys_a }}</p></details>
     </div></section>
 
-    <section class="other-browsers wrap"><div class="eyebrow">{{ x.others_eyebrow }}</div><h2>{{ x.others_title }}</h2><div class="browser-cards">
+    <section class="other-browsers wrap"><h2>{{ x.others_title }}</h2><div class="browser-cards">
       {%- for _browser in site.data.browsers -%}
         {%- if _browser.id != page.browser -%}
           {%- assign _key = "extension_" | append: _browser.id -%}
           {%- capture _url %}{% include page-url.html ref=_browser.id %}{% endcapture -%}
-      <a class="browser-card" href="{{ _url }}"><span class="browser-card-name">{{ t[_key].eyebrow }}</span><span class="browser-card-status"><span class="status-dot"></span>{{ t[_key].status }}</span><span class="browser-card-arrow" aria-hidden="true">→</span></a>
+      <a class="browser-card" href="{{ _url }}"><span class="browser-card-name">{{ t[_key].label }}</span><span class="browser-card-status">{{ t[_key].status }}</span><span class="browser-card-arrow" aria-hidden="true">→</span></a>
         {%- endif -%}
       {%- endfor -%}
     </div></section>
 
-    <section class="closing wrap" id="availability"><img src="/assets/extension-icon.png" alt="{{ x.icon_alt }}" width="88" height="88"><div class="eyebrow">{{ x.closing_eyebrow }}</div><h2>{{ x.closing_title }}</h2><p>{{ x.closing_copy }}</p>{{ closing_action }}<span class="micro">{{ x.micro }}</span></section>
+    <section class="closing wrap" id="availability"><img src="/assets/extension-icon.png" alt="{{ x.icon_alt }}" width="88" height="88"><h2>{{ x.closing_title }}</h2><p>{{ x.closing_copy }}</p>{{ closing_action }}<span class="micro">{{ x.micro }}</span></section>
   </main>

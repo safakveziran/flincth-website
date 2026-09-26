@@ -1,4 +1,4 @@
-# Flincth website — Dark edition
+# Flincth website: dark edition
 
 This site is independent of the light theme. Dark navy surfaces, light text and blue accents are defined in `dark.css`. The original light-theme folder has not been changed.
 
@@ -12,7 +12,7 @@ bundle exec jekyll serve   # http://localhost:4000
 The header, footer and cookie banner each live in one place; changing a link means editing one file once:
 
 - `_layouts/default.html`: Shared skeleton for every page (`<head>`, header, footer, cookie banner). Pages set `layout: default`, `title` and `description` in the `---` block at the top and carry only their `<main>` content.
-- `_includes/header.html`, `_includes/footer.html`, `_includes/consent.html`: Shared parts
+- `_includes/header.html`, `_includes/footer.html`, `_includes/consent.html`: Shared parts (the footer groups links into Products, Help and Legal)
 - `_includes/products-menu.html`: Products menu in the header (macOS, Chrome, Firefox, Edge)
 - `_includes/head-meta.html`: Canonical, Open Graph and Twitter tags (title and description come from the page)
 - `_includes/schema/home.en.html`: JSON-LD structured data for the home page
@@ -39,8 +39,17 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
 - `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand
 - `robots.txt`, `llms.txt`: Search engine and assistant discovery
-- `assets/app-icon.png`: App icon from the Flincth project
+- `assets/app-icon.png`: App icon from the Flincth project (512 px source; `app-icon-64.png`, `-128`, `-192` are the sizes the pages load)
+- `assets/og-extension.png`: 1200×630 share image for the browser extension pages (set with `og_image` in their front matter)
 - `assets/extension-icon.png`: Extension icon from the Flincth browser extension project (`public/icons/icon128.png`)
+
+## Product and design context
+
+- `PRODUCT.md`: who the site is for, what each product does and what it must never claim (read by the Impeccable design skill).
+- `DESIGN.md`: colours, type, spacing and the do's and don'ts of the current look.
+- `.agents/product-marketing.md`: positioning, objections, voice and goals (read by the marketing skills).
+
+None of them is published. Keep them true when the product or the look changes.
 
 ## Code language
 
@@ -65,7 +74,7 @@ Cookie consent is handled by `consent.js`. No request is made to Google until th
 - Shared copy is in the `extension` section of `_data/i18n/<lang>.yml`; each browser's own copy (title, status, availability and shortcut answers) is in `extension_chrome`, `extension_firefox` and `extension_edge`. `[browser]` in a shared value is replaced with the browser's name.
 - `_data/browsers.yml` lists the browsers in display order with their store links. While `store_url` is empty the page shows the status line ("Coming to the Chrome Web Store", "Planned for …") instead of an install button. When a listing goes live, set its `store_url` and update that browser's `status` and `availability_a` copy.
 - On these pages the header menu points to the page's own sections.
-- Every page reaches every product two ways: the Products menu in the header (`_includes/products-menu.html`, a `<details>` element that `nav.js` closes on an outside click or Escape) and the Products row in the footer. Both list macOS (the home page), Chrome, Firefox and Edge; names and notes are in the `products` section of the translation file. To add a product, add its `ref` to the list at the top of both includes and its keys to `products`.
+- Every page reaches every product two ways: the Products menu in the header (`_includes/products-menu.html`, a `<details>` element that `nav.js` closes on an outside click or Escape) and the Products column in the footer. Both list macOS (the home page), Chrome, Firefox and Edge; names and notes are in the `products` section of the translation file. To add a product, add its `ref` to the list at the top of both includes and its keys to `products`.
 - `_includes/schema/extension.html` produces each page's JSON-LD.
 - When translating, copy the three page files into the language folder unchanged; all of their text comes from the translation file.
 

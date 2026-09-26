@@ -31,7 +31,9 @@ notify:
   blocked: Notifications are blocked in this browser
 
 footer:
-  questions: Questions? Start here ↗
+  help: Help
+  faq: FAQ
+  legal: Legal
   privacy: Privacy
   support: Support
   cookies: Cookies
@@ -52,12 +54,12 @@ consent:
   decline: Decline
   accept: Accept
 
-# 404 page. heading may contain <br>.
+# 404 page.
 not_found:
   title: Page not found | Flincth
   description: That page does not exist on flincth.com.
-  eyebrow: Error 404
-  heading: This space is<br>a little too empty.
+  code: Error 404
+  heading: This space is a little too empty.
   text: The page you were looking for doesn’t exist, or it moved somewhere tidier.
   back: Back to Flincth
   faq: Read the FAQ
@@ -67,14 +69,14 @@ og_image_alt: "Flincth: a place for every app. Space for every you."
 # Browser extension landing pages (/chrome, /firefox, /edge). The shared copy
 # is in extension; each browser's own copy is in extension_<browser>. In any
 # value, [browser] is replaced with that browser's name. Values that hold
-# <br> or <span> are rendered as HTML.
+# <span> are rendered as HTML.
 extension:
   nav:
     features: Features
     how: How it works
     faq: FAQ
     cta: Notify me at launch
-  hero_title: One tab.<br><span>Every site you need.</span>
+  hero_title: One tab. <span>Every site you need.</span>
   hero_copy: Flincth for [browser] splits a single tab into panes, puts a different site in each one, and saves the arrangement as a workspace. Switch workspaces with a click or a shortcut.
   hero_more: See how it works
   micro: No data collected · No account · No server
@@ -103,31 +105,25 @@ extension:
     search: Search
     video: Video
     comments: Comments
-  features_eyebrow: THE BROWSER, WITHOUT THE SHUFFLE
-  features_title: Every site in view.<br>Every time.
+  features_title: Every site in view. Every time.
   features_copy: Stop rebuilding the same four tabs side by side. Arrange them once, then switch.
-  feature_split_label: 01 / ONE TAB, MANY PANES
-  feature_split_title: Split the tab.<br>Keep the proportions.
+  feature_split_title: Split the tab. Keep the proportions.
   feature_split_copy: Start from a layout or split any pane in two. Drag the dividers until each site has the room it needs; the proportions are saved when you let go.
-  feature_modes_label: 02 / EVERY SITE, ITS OWN WAY
-  feature_modes_title: Some sites say no.<br>Flincth has a plan B.
+  feature_modes_title: Some sites say no. Flincth has a plan B.
   feature_modes_copy: Each pane shows its site in whichever way that site allows.
   mode_embed: Inside the tab, for most sites
   mode_window: A real window lined up with the pane, signed in as usual
   mode_launcher: A card that opens the site in a normal tab
-  feature_keys_label: 03 / A KEY FOR EACH WORKSPACE
-  feature_keys_title: Switch the whole<br>view at once.
+  feature_keys_title: Switch the whole view at once.
   feature_keys_copy: Click a workspace or press the shortcut you gave it. Layout and sites change together.
   feature_keys_hint: ⌘ ⇧ 1 on a Mac
-  feature_alive_label: 04 / RIGHT WHERE YOU LEFT IT
-  feature_alive_title: Leave mid-thought.<br>Come back to it.
+  feature_alive_title: Leave mid-thought. Come back to it.
   feature_alive_copy: Recent workspaces stay loaded while you are away, so a half-typed reply or a paused video is still there when you switch back.
-  privacy_title: Asks for nothing<br><span>it doesn’t need.</span>
+  privacy_title: Asks for nothing <span>it doesn’t need.</span>
   privacy_copy: No access to any site when you install it. [browser] asks for one site at a time, only when you put that site in a pane, and you can revoke it from the settings page. No analytics, no account, no server.
   privacy_caption: YOUR WORKSPACES STAY IN YOUR BROWSER.
   privacy_link: Read the privacy policy
-  how_eyebrow: FROM TAB CLUTTER TO ONE CLEAR VIEW
-  how_title: Arrange it once.<br>Switch all day.
+  how_title: Arrange it once. Switch all day.
   how_copy: Three steps, and the arrangement is yours to keep.
   step1_title: Make a workspace.
   step1_copy: Open Flincth from the toolbar, name a workspace and pick a layout.
@@ -135,7 +131,6 @@ extension:
   step2_copy: Type an address or pick one of your open tabs. [browser] asks permission for that one site.
   step3_title: Switch in a keystroke.
   step3_copy: Click a workspace, or press its shortcut. Everything you left open is where you left it.
-  faq_eyebrow: A FEW THINGS TO KNOW
   faq_title: Good questions.
   faq_mac_q: Is this the Flincth Mac app?
   faq_mac_a: No. The extension is a separate product that lives inside your browser. The Mac app arranges app windows across your displays; the extension arranges websites inside one tab. Each works without the other.
@@ -146,18 +141,17 @@ extension:
   faq_data_q: Does Flincth see what I do on those sites?
   faq_data_a: No. It never reads cookies, never looks at page content and never adds code to a page. Your workspaces and the addresses in them are stored in [browser] on your own device, and the extension makes no network requests of its own.
   faq_keys_q: Where do I set keyboard shortcuts?
-  others_eyebrow: OTHER BROWSERS
-  others_title: Flincth, wherever<br>you browse.
-  closing_eyebrow: ONE TAB. ROOM FOR EVERYTHING.
-  closing_title: Make room<br>in a single tab.
+  others_title: Flincth, wherever you browse.
+  closing_title: Make room in a single tab.
   closing_copy: Your browser, a little more arranged.
   icon_alt: Flincth extension icon
+  og_image_alt: "Flincth for Chrome, Firefox and Edge: one tab, every site you need."
 
 extension_chrome:
   title: "Flincth for Chrome: Split one tab into workspaces"
   description: "Flincth for Chrome splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
   name: Chrome
-  eyebrow: FLINCTH FOR CHROME
+  label: Flincth for Chrome
   status: Coming to the Chrome Web Store
   store_cta: Add to Chrome
   availability_q: When can I get it for Chrome?
@@ -168,7 +162,7 @@ extension_firefox:
   title: "Flincth for Firefox: Split one tab into workspaces"
   description: "Flincth for Firefox, planned: split one tab into panes with a site in each, save it as a workspace and switch with a click or a shortcut."
   name: Firefox
-  eyebrow: FLINCTH FOR FIREFOX
+  label: Flincth for Firefox
   status: Planned for Firefox Add-ons
   store_cta: Add to Firefox
   availability_q: Is there a Firefox version yet?
@@ -179,7 +173,7 @@ extension_edge:
   title: "Flincth for Microsoft Edge: Split one tab into workspaces"
   description: "Flincth for Microsoft Edge, planned: split one tab into panes with a site in each, save it as a workspace and switch with a click or a shortcut."
   name: Edge
-  eyebrow: FLINCTH FOR MICROSOFT EDGE
+  label: Flincth for Microsoft Edge
   status: Planned for Microsoft Edge Add-ons
   store_cta: Get it for Edge
   availability_q: Is there an Edge version yet?
