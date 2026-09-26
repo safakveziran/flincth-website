@@ -77,12 +77,12 @@ The `support@flincth.com` address on `privacy.html` and `support.html` is a plac
 
 ## Web notifications (OneSignal)
 
-Web push is handled by `notifications.js`. The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
+Web push is handled by `notifications.js`. It drives two kinds of control: the Notifications link in the footer (the whole subscription) and each product's **Notify me at launch** button (`_includes/notify-button.html`, `topic` = `mac`, `chrome`, `firefox` or `edge`). A button tags the subscription `launch_<topic>`, so a launch message can be sent in the OneSignal dashboard to a segment filtered on that tag. Where push is unsupported the buttons stay hidden and the "Coming to…" line marked `data-notify-fallback` shows instead. The button text is in the `notify` section of the translation file. When a product launches, replace its button with the store link (for the extensions, set `store_url` in `_data/browsers.yml`). The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
 
 Things to check in the OneSignal dashboard:
 
 1. The site URL must be `https://flincth.com` and "My site is not fully HTTPS" must not be checked.
-2. Keep automatic prompts (slide prompt / native prompt) off; subscription starts only from the link in the footer.
+2. Keep automatic prompts (slide prompt / native prompt) off; subscription starts only from the page's own buttons and the footer link.
 
 `OneSignalSDKWorker.js` must stay at the site root; the service worker scope depends on it. OneSignal cannot place its own files on GitHub Pages, so this file is kept in the repository.
 

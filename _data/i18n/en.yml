@@ -10,7 +10,7 @@ nav:
   features: Features
   how: How it works
   faq: FAQ
-  cta: Made for Mac
+  cta: Notify me at launch
 
 # Products menu in the header and the product links in the footer.
 products:
@@ -23,6 +23,12 @@ products:
   firefox_note: Browser extension · planned
   edge: Edge
   edge_note: Browser extension · planned
+
+# "Notify me at launch" buttons (notifications.js switches between the three).
+notify:
+  cta: Notify me at launch
+  subscribed: You’ll hear at launch
+  blocked: Notifications are blocked in this browser
 
 footer:
   questions: Questions? Start here ↗
@@ -67,7 +73,7 @@ extension:
     features: Features
     how: How it works
     faq: FAQ
-    cta: Get the extension
+    cta: Notify me at launch
   hero_title: One tab.<br><span>Every site you need.</span>
   hero_copy: Flincth for [browser] splits a single tab into panes, puts a different site in each one, and saves the arrangement as a workspace. Switch workspaces with a click or a shortcut.
   hero_more: See how it works
