@@ -1,9 +1,9 @@
 {%- comment -%}
   "Notify me at launch" button for one product (include.topic: mac, chrome,
-  firefox, edge). Hidden until notifications.js confirms the browser supports
+  firefox, edge). include.class replaces the default button styling. Hidden until notifications.js confirms the browser supports
   push; the text for each state comes from t.notify.
   The copy is looked up from the page's language directly, because page
   content (index.html) is rendered before the layout sets t.
 {%- endcomment -%}
 {%- assign _n = site.data.i18n[page.lang].notify -%}
-<button type="button" class="button primary notify-button" data-notify-toggle data-notify-topic="{{ include.topic }}" data-label-default="{{ _n.cta }}" data-label-subscribed="{{ _n.subscribed }}" data-label-blocked="{{ _n.blocked }}" aria-pressed="false" hidden>{{ _n.cta }}</button>
+<button type="button" class="{{ include.class | default: "button primary" }} notify-button" data-notify-toggle data-notify-topic="{{ include.topic }}" data-label-default="{{ _n.cta }}" data-label-subscribed="{{ _n.subscribed }}" data-label-blocked="{{ _n.blocked }}" data-label-error="{{ _n.error }}" aria-pressed="false" hidden>{{ _n.cta }}</button>

@@ -17,7 +17,7 @@
   var APP_ID = 'b1a1845c-01c6-4927-be28-07d290bed717';
   var SDK = 'https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js';
   var TAG_PREFIX = 'launch_';
-  var controls, sdkLoading = false;
+  var controls, sdkLoading = false, ready = null;
 
   function supported() {
     return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
@@ -44,9 +44,13 @@
     window.OneSignalDeferred.push(fn);
   }
 
+  function getTags(OneSignal) {
+    return (OneSignal.User.getTags && OneSignal.User.getTags()) || {};
+  }
+
   function reflect(OneSignal) {
     var optedIn = OneSignal.User.PushSubscription.optedIn;
-    var tags = OneSignal.User.getTags() || {};
+    var tags = getTags(OneSignal);
     each(controls, function (control) {
       var key = tagKey(control);
       var on = optedIn && (!key || !!tags[key]);
@@ -58,7 +62,9 @@
     if (sdkLoading) return;
     sdkLoading = true;
     queue(function (OneSignal) {
-      OneSignal.init({
+      // Kept as a promise so a click queued behind it waits for init to
+      // finish instead of talking to an SDK that is not ready yet.
+      ready = OneSignal.init({
         appId: APP_ID,
         serviceWorkerPath: '/OneSignalSDKWorker.js',
         serviceWorkerParam: { scope: '/' },
@@ -71,6 +77,7 @@
         });
         reflect(OneSignal);
       });
+      return ready;
     });
     var tag = document.createElement('script');
     tag.async = true;
@@ -85,37 +92,49 @@
   function toggle(control) {
     loadSdk();
     queue(function (OneSignal) {
-      var subscription = OneSignal.User.PushSubscription;
-      var key = tagKey(control);
-      var tags = OneSignal.User.getTags() || {};
+      return ready.then(function () {
+        return change(OneSignal, control);
+      }).catch(function (error) {
+        // Never fail silently: the control says so and the console says why.
+        setState(control, 'error');
+        if (window.console) console.error('Flincth notifications:', error);
+      });
+    });
+  }
 
-      if (subscription.optedIn) {
-        if (!key) {
-          subscription.optOut();
-        } else if (tags[key]) {
-          OneSignal.User.removeTag(key);
-          delete tags[key];
-          if (!hasLaunchTags(tags)) subscription.optOut();
-        } else {
-          OneSignal.User.addTag(key, '1');
-        }
-        reflect(OneSignal);
-        return;
-      }
+  function change(OneSignal, control) {
+    var subscription = OneSignal.User.PushSubscription;
+    var key = tagKey(control);
+    var tags = getTags(OneSignal);
 
-      if (Notification.permission === 'denied') {
-        // The browser will not ask again; only site settings can undo this.
-        setState(control, 'blocked');
-        return;
+    if (subscription.optedIn) {
+      if (!key) {
+        return Promise.resolve(subscription.optOut()).then(function () { reflect(OneSignal); });
+      } else if (tags[key]) {
+        OneSignal.User.removeTag(key);
+        delete tags[key];
+        if (!hasLaunchTags(tags)) subscription.optOut();
+      } else {
+        OneSignal.User.addTag(key, '1');
       }
-      // Tag first, so the subscription carries the product from its start.
-      if (key) OneSignal.User.addTag(key, '1');
-      if (Notification.permission === 'granted') {
-        // Permission survives an unsubscribe, so coming back needs no prompt.
-        subscription.optIn();
-        return;
-      }
-      OneSignal.Notifications.requestPermission();
+      reflect(OneSignal);
+      return;
+    }
+
+    if (Notification.permission === 'denied') {
+      // The browser will not ask again; only site settings can undo this.
+      setState(control, 'blocked');
+      return;
+    }
+    // Tag first, so the subscription carries the product from its start.
+    if (key) OneSignal.User.addTag(key, '1');
+    if (Notification.permission === 'granted') {
+      // Permission survives an unsubscribe, so coming back needs no prompt.
+      return subscription.optIn();
+    }
+    return OneSignal.Notifications.requestPermission().then(function () {
+      if (Notification.permission === 'denied') setState(control, 'blocked');
+      reflect(OneSignal);
     });
   }
 

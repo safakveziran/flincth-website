@@ -29,6 +29,7 @@ notify:
   cta: Notify me at launch
   subscribed: You’ll hear at launch
   blocked: Notifications are blocked in this browser
+  error: Couldn’t turn on notifications. Try again.
 
 footer:
   help: Help
