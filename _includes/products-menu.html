@@ -4,7 +4,7 @@
   outside click or Escape. Each entry's name and note come from t.products.
 {%- endcomment -%}
 {%- assign products = "home,chrome,firefox,edge" | split: "," -%}
-<details class="products-menu"><summary>{{ t.products.label }} <span aria-hidden="true">⌄</span></summary><ul class="products-list">
+<details class="products-menu"><summary>{{ t.products.label }}<svg class="chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="products-list">
   {%- for _ref in products -%}
     {%- capture _url %}{% include page-url.html ref=_ref %}{% endcapture -%}
     {%- assign _note_key = _ref | append: "_note" -%}

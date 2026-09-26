@@ -104,9 +104,9 @@ footer [data-consent-open]{margin-left:0}
 /* Products menu (header) */
 .nav nav{align-items:center}
 .products-menu{position:relative}
-.products-menu summary{display:flex;gap:6px;font-size:14px;font-weight:550}
-.products-menu summary span{font-size:13px;color:inherit;transition:transform .2s}
-.products-menu[open] summary span{transform:rotate(180deg)}
+.products-menu summary{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:550}
+.products-menu .chevron{flex-shrink:0;transition:transform .2s}
+.products-menu[open] .chevron{transform:rotate(180deg)}
 .products-menu summary:hover{color:var(--blue)}
 .products-list{position:absolute;top:calc(100% + 14px);left:-14px;z-index:30;list-style:none;margin:0;padding:8px;width:270px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 32px -16px #0f1a2e55}
 .products-list a{display:flex;align-items:center;gap:12px;padding:10px;border-radius:9px}
