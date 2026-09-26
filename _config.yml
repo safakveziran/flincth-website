@@ -18,6 +18,8 @@ exclude:
   - .bundle
   - CLAUDE.md
   - README.md
+  - PRODUCT.md
+  - DESIGN.md
 
 # Old light-theme version; kept in the repository but not published.
   - Flincth-Website
