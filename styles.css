@@ -177,7 +177,7 @@ h1>span{display:block}
 .footer-col li:has(>[hidden]){display:none}
 .site-footer a:not(.brand){margin:0;width:auto}
 .footer-col a[aria-current]{text-decoration:underline;text-underline-offset:3px}
-@media(max-width:700px){.site-footer{grid-template-columns:1fr 1fr;gap:28px 20px}.footer-brand{grid-column:1/-1}}
+@media(max-width:700px){.site-footer{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 16px}.footer-brand{grid-column:1/-1}}
 .section-heading{display:block;max-width:760px}
 .section-heading p{margin:16px 0 0;max-width:60ch}
 .nav-cta.notify-button{border:1px solid var(--line);color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
