@@ -12,10 +12,21 @@ nav:
   faq: FAQ
   cta: Made for Mac
 
+# Products menu in the header and the product links in the footer.
+products:
+  label: Products
+  home: macOS
+  home_note: Menu bar app for your Mac
+  chrome: Chrome
+  chrome_note: Browser extension
+  firefox: Firefox
+  firefox_note: Browser extension · planned
+  edge: Edge
+  edge_note: Browser extension · planned
+
 footer:
   questions: Questions? Start here ↗
   privacy: Privacy
-  extension: Browser extension
   support: Support
   cookies: Cookies
   note: A little space. A better day.

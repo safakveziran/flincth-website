@@ -141,3 +141,11 @@ footer > a:hover { color: #8db6ff; }
 .browser-card:hover { border-color: #57729b; background: #131f31; }
 .browser-card-status { color: #a5b3ca; }
 .browser-card-arrow { color: #8db6ff; }
+
+/* Products menu and footer product links */
+.products-list { background: #111b2b; border-color: #31415b; box-shadow: 0 22px 50px -18px #000c; }
+.products-list a:hover, .products-list a[aria-current] { background: #1c2a42; }
+.products-list small { color: #a5b3ca; }
+.products-menu summary:hover { color: #8db6ff; }
+.footer-products a { color: #bbcde8; }
+.footer-products a:hover { color: #8db6ff; }

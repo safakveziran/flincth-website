@@ -100,3 +100,22 @@ footer [data-consent-open]{margin-left:0}
 .browser-card-arrow{grid-column:2;grid-row:1/span 2;font-size:22px;color:var(--blue)}
 .extension-page .closing .coming-soon,.extension-page .closing .button{margin:6px 0 15px}
 @media(max-width:700px){.browser-chrome{height:32px}.browser-tab{padding-right:18px}.browser-address{display:none}.split-header{gap:8px;padding:0 8px}.split-mark{display:none}.workspace-tab{padding:5px 8px;gap:6px}.workspace-tab kbd{display:none}.split-plus{display:none}.panes{height:380px}.panes-work{grid-template-columns:1fr;grid-template-rows:1fr 1fr}.panes-work .pane:nth-child(n+3){display:none}.panes-research{grid-template-columns:1fr;grid-template-rows:1.4fr 1fr 1fr}.panes-research .pane:first-child{grid-row:auto}.panes-watch{grid-template-columns:1fr;grid-template-rows:1.3fr 1fr}.pane-body{padding:10px;gap:9px}.modes .mode{min-width:0}.modes .snippet{flex-wrap:wrap}.browser-cards{grid-template-columns:1fr;gap:14px;margin-top:26px}.browser-card{padding:22px 24px}.other-browsers{padding-bottom:55px}}
+
+/* Products menu (header) and product links (footer) */
+.nav nav{align-items:center}
+.products-menu{position:relative}
+.products-menu summary{display:flex;gap:6px;font-size:14px;font-weight:550}
+.products-menu summary span{font-size:13px;color:inherit;transition:transform .2s}
+.products-menu[open] summary span{transform:rotate(180deg)}
+.products-menu summary:hover{color:var(--blue)}
+.products-list{position:absolute;top:calc(100% + 14px);left:-14px;z-index:30;list-style:none;margin:0;padding:8px;width:270px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 20px 50px -20px #17326355}
+.products-list a{display:flex;align-items:center;gap:12px;padding:10px;border-radius:9px}
+.products-list a:hover,.products-list a[aria-current]{background:#eaf0fb}
+.products-list img{border-radius:7px;flex-shrink:0}
+.products-list b{display:block;font-size:14px;font-weight:600}
+.products-list small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
+.footer-products{width:100%;display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px}
+.footer-products>span{font-weight:600;letter-spacing:1.2px;font-size:10px;text-transform:uppercase}
+.footer-products a{color:#425577}
+.footer-products a[aria-current]{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:700px){.nav nav{display:flex}.nav nav>a{display:none}.products-menu summary{font-size:13px}.products-list{left:auto;right:-60px;width:250px}}

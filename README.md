@@ -13,6 +13,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 
 - `_layouts/default.html`: Shared skeleton for every page (`<head>`, header, footer, cookie banner). Pages set `layout: default`, `title` and `description` in the `---` block at the top and carry only their `<main>` content.
 - `_includes/header.html`, `_includes/footer.html`, `_includes/consent.html`: Shared parts
+- `_includes/products-menu.html`: Products menu in the header (macOS, Chrome, Firefox, Edge)
 - `_includes/head-meta.html`: Canonical, Open Graph and Twitter tags (title and description come from the page)
 - `_includes/schema/home.en.html`: JSON-LD structured data for the home page
 - `_includes/page-url.html`: Returns a page's URL in the current language (see Multi-language setup)
@@ -26,6 +27,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `styles.css`: Responsive design, reduced motion and keyboard focus styles
 - `dark.css`: Dark theme for every page and every state of the interactive preview
 - `script.js`: Code / Write / Research illustrative layout switcher
+- `nav.js`: Closes the header's Products menu on an outside click or Escape
 - `extension.js`: Workspace switcher in the browser extension pages' illustrative preview
 - `consent.js`: Cookie consent banner and consent-gated Google Analytics loading
 - `notifications.js`: OneSignal web push subscription (the Notifications link in the footer)
@@ -62,7 +64,8 @@ Cookie consent is handled by `consent.js`. No request is made to Google until th
 
 - Shared copy is in the `extension` section of `_data/i18n/<lang>.yml`; each browser's own copy (title, status, availability and shortcut answers) is in `extension_chrome`, `extension_firefox` and `extension_edge`. `[browser]` in a shared value is replaced with the browser's name.
 - `_data/browsers.yml` lists the browsers in display order with their store links. While `store_url` is empty the page shows the status line ("Coming to the Chrome Web Store", "Planned for …") instead of an install button. When a listing goes live, set its `store_url` and update that browser's `status` and `availability_a` copy.
-- On these pages the header menu points to the page's own sections, and the footer links back to the Mac app's pages. Other pages carry a "Browser extension" link in the footer, pointing to `/chrome`.
+- On these pages the header menu points to the page's own sections.
+- Every page reaches every product two ways: the Products menu in the header (`_includes/products-menu.html`, a `<details>` element that `nav.js` closes on an outside click or Escape) and the Products row in the footer. Both list macOS (the home page), Chrome, Firefox and Edge; names and notes are in the `products` section of the translation file. To add a product, add its `ref` to the list at the top of both includes and its keys to `products`.
 - `_includes/schema/extension.html` produces each page's JSON-LD.
 - When translating, copy the three page files into the language folder unchanged; all of their text comes from the translation file.
 
