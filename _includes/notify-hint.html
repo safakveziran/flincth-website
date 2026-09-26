@@ -1,0 +1,7 @@
+{%- comment -%}
+  Tells iPhone and iPad visitors how to get the "Notify me at launch" button:
+  Safari offers web push only to sites opened from the Home Screen.
+  notifications.js shows it only there, and only when push is unavailable.
+{%- endcomment -%}
+{%- assign _n = site.data.i18n[page.lang].notify -%}
+<p class="notify-hint" data-notify-ios-hint hidden>{{ _n.ios_hint }}</p>

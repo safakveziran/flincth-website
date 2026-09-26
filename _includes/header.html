@@ -20,7 +20,7 @@
 {%- assign _topic = nil -%}
 {%- if page.ref == "home" %}{% assign _topic = "mac" %}{% elsif page.browser %}{% assign _topic = page.browser %}{% endif -%}
 {%- if _topic %}
-    {% include notify-button.html topic=_topic class="nav-cta" %}<a class="nav-cta" href="#availability" data-notify-fallback>{{ _nav.cta }}</a>
+    {% include notify-button.html topic=_topic class="nav-cta" %}<a class="nav-cta" href="#availability" data-notify-fallback>{{ t.notify.fallback }}</a>
 {%- else %}
     <a class="nav-cta" href="{{ _nav_base }}#availability">{{ _nav.cta }}</a>
 {%- endif %}

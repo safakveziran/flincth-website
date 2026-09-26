@@ -11,8 +11,10 @@
 //   tags the subscription launch_<topic>, so a launch message can go only to
 //   the people who asked about that product. Pressing it again removes the
 //   tag, and removing the last tag ends the subscription.
-// Elements marked data-notify-fallback (the "Coming to…" line in a hero) stand
-// in for the button where push is not supported, and are hidden where it is.
+// Elements marked data-notify-fallback (the "Coming to…" line in a hero, the
+// header's "Launch status" link) stand in for the button where push is not
+// supported, and are hidden where it is. On iPhone and iPad, where Safari
+// offers push only from the Home Screen, data-notify-ios-hint explains how.
 (function () {
   var APP_ID = 'b1a1845c-01c6-4927-be28-07d290bed717';
   var SDK = 'https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js';
@@ -21,6 +23,12 @@
 
   function supported() {
     return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+  }
+
+  function isAppleMobile() {
+    // iPadOS reports itself as a Mac; touch support tells them apart.
+    return /iPhone|iPad|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   }
 
   function each(list, fn) { Array.prototype.forEach.call(list, fn); }
@@ -145,6 +153,11 @@
     // control would only lead to a dead end. The fallbacks stay visible.
     if (!APP_ID || !supported()) {
       each(controls, function (control) { control.hidden = true; });
+      // iPhone and iPad Safari offer web push only to Home Screen web apps,
+      // so tell those visitors how to get the button rather than nothing.
+      if (APP_ID && isAppleMobile()) {
+        each(document.querySelectorAll('[data-notify-ios-hint]'), function (el) { el.hidden = false; });
+      }
       return;
     }
     each(document.querySelectorAll('[data-notify-fallback]'), function (el) { el.hidden = true; });

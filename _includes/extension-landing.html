@@ -28,7 +28,7 @@
   {%- if browser_data.store_url != "" -%}
     <a class="button primary" href="{{ browser_data.store_url }}" rel="noopener">{{ b.store_cta }} <span aria-hidden="true">↗</span></a>
   {%- else -%}
-    <div class="closing-actions"><div class="coming-soon"><span class="status-dot"></span> {{ b.status }}</div>{{ notify_button }}</div>
+    <div class="closing-actions"><div class="coming-soon"><span class="status-dot"></span> {{ b.status }}</div>{{ notify_button }}</div>{% include notify-hint.html %}
   {%- endif -%}
 {%- endcapture -%}
   <main id="main" class="extension-page" data-browser="{{ page.browser }}">
