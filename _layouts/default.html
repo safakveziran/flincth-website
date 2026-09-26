@@ -19,6 +19,9 @@
 {%- assign all_languages = false -%}
 {%- if page.all_languages and site.data.languages.size > 1 %}{% assign all_languages = true %}{% endif -%}
 {%- assign page_url = site.url | append: page.url | replace: ".html", "" -%}
+{%- comment -%} Changes on every build, so browsers fetch fresh CSS and JS after
+  each deploy instead of reusing the copy GitHub Pages let them cache. {%- endcomment -%}
+{%- assign asset_version = site.time | date: "%s" -%}
 <!DOCTYPE html>
 <html lang="{{ lang }}"{% if language.dir == "rtl" %} dir="rtl"{% endif %}>
 <head>
@@ -31,16 +34,16 @@
   <link rel="icon" href="/assets/app-icon-64.png" sizes="64x64">
   <link rel="apple-touch-icon" href="/assets/app-icon-192.png">
   <link rel="manifest" href="/manifest.webmanifest">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/dark.css">
+  <link rel="stylesheet" href="/styles.css?v={{ asset_version }}">
+  <link rel="stylesheet" href="/dark.css?v={{ asset_version }}">
 {%- if page.ref == "home" %}
-  <script src="/script.js" defer></script>
+  <script src="/script.js?v={{ asset_version }}" defer></script>
 {%- elsif page.browser %}
-  <script src="/extension.js" defer></script>
+  <script src="/extension.js?v={{ asset_version }}" defer></script>
 {%- endif %}
-  <script src="/nav.js" defer></script>
-  <script src="/consent.js" defer></script>
-  <script src="/notifications.js" defer></script>
+  <script src="/nav.js?v={{ asset_version }}" defer></script>
+  <script src="/consent.js?v={{ asset_version }}" defer></script>
+  <script src="/notifications.js?v={{ asset_version }}" defer></script>
 {% include head-meta.html %}
 {%- if all_languages %}
 {% include language-picker-head.html %}
