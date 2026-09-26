@@ -24,7 +24,7 @@ web
 
 ## Product Purpose
 
-The site introduces two products and keeps interested visitors until launch:
+The site introduces two products and keeps interested visitors until launch. Flincth for Mac is the main product; the browser extension is a smaller companion and must never read as its equal:
 
 - **Flincth for Mac:** a sandboxed menu bar app. A *setup* chooses apps and
   keep/hide rules; switching setups places their windows into regions across

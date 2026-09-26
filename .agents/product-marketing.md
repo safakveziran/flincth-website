@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v2
+**Document version:** v3
 **Last updated:** 2026-09-26
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
@@ -16,6 +16,7 @@
 - *Flincth for Chrome, Firefox and Edge* splits one browser tab into
   panes, puts a site in each, saves that as a workspace and switches workspaces
   with a click or shortcut.
+**Product hierarchy:** Flincth for Mac is the main product. The browser extension is a companion, presented under "Also from Flincth".
 **Product category:** Mac window manager / clipboard manager; browser split-screen
 and tab workspace extension.
 **Product type:** Paid-or-free consumer utility software, sold through app stores. **(to confirm)**
@@ -118,5 +119,6 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v3 (2026-09-26) — Recorded the hierarchy: Mac app is the main product, the extension a companion.
 - v2 (2026-09-26) — Firefox and Edge versions are built; no longer "planned".
 - v1 (2026-09-26) — Initial context, auto-drafted from the repositories.

@@ -1,14 +1,22 @@
 {%- comment -%}
-  Products menu in the header: the Mac app and the browser extension pages.
-  A <details> element, so it opens without JavaScript; nav.js closes it on an
-  outside click or Escape. Each entry's name and note come from t.products.
+  Products menu in the header. Flincth for Mac is the main product and leads
+  the panel; the browser extension follows as a companion under "Also from
+  Flincth", with one link per browser. A <details> element, so it opens
+  without JavaScript; nav.js closes it on an outside click or Escape. Copy
+  comes from t.products.
 {%- endcomment -%}
-{%- assign products = "home,chrome,firefox,edge" | split: "," -%}
-<details class="products-menu"><summary>{{ t.products.label }}<svg class="chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><ul class="products-list">
-  {%- for _ref in products -%}
-    {%- capture _url %}{% include page-url.html ref=_ref %}{% endcapture -%}
-    {%- assign _note_key = _ref | append: "_note" -%}
-    {%- if _ref == "home" %}{% assign _icon = "/assets/app-icon-64.png" %}{% else %}{% assign _icon = "/assets/extension-icon.png" %}{% endif -%}
-  <li><a href="{{ _url }}"{% if page.ref == _ref %} aria-current="page"{% endif %}><img src="{{ _icon }}" width="28" height="28" alt=""><span><b>{{ t.products[_ref] }}</b><small>{{ t.products[_note_key] }}</small></span></a></li>
-  {%- endfor -%}
-</ul></details>
+{%- assign browsers = "chrome,firefox,edge" | split: "," -%}
+{%- capture _mac_url %}{% include page-url.html ref="home" %}{% endcapture -%}
+<details class="products-menu"><summary>{{ t.products.label }}<svg class="chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="products-panel">
+  <a class="product-main" href="{{ _mac_url }}"{% if page.ref == "home" %} aria-current="page"{% endif %}><img src="/assets/app-icon-128.png" width="44" height="44" alt=""><span><b>{{ t.products.mac }}</b><small>{{ t.products.mac_note }}</small></span></a>
+  <div class="product-side">
+    <p class="product-side-title">{{ t.products.also }}</p>
+    <p class="product-side-name"><img src="/assets/extension-icon.png" width="22" height="22" alt=""><span><b>{{ t.products.extension }}</b><small>{{ t.products.extension_note }}</small></span></p>
+    <ul class="product-browsers">
+      {%- for _ref in browsers -%}
+        {%- capture _url %}{% include page-url.html ref=_ref %}{% endcapture -%}
+      <li><a href="{{ _url }}"{% if page.ref == _ref %} aria-current="page"{% endif %}>{{ t.products[_ref] }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div></details>

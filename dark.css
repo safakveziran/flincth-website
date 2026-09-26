@@ -142,9 +142,13 @@ footer > a:hover { color: #8db6ff; }
 .browser-card-arrow { color: #8db6ff; }
 
 /* Products menu and footer links */
-.products-list { background: #111b2b; border-color: #31415b; box-shadow: 0 16px 32px -16px #000c; }
-.products-list a:hover, .products-list a[aria-current] { background: #1c2a42; }
-.products-list small { color: #a5b3ca; }
+.products-panel { background: #111b2b; border-color: #31415b; box-shadow: 0 16px 32px -16px #000c; }
+.product-main:hover, .product-main[aria-current] { background: #1c2a42; }
+.products-panel small, .product-side-title { color: #a5b3ca; }
+.product-side { border-color: #2a3a54; }
+.product-browsers a { border-color: #3a4f72; color: #dbe6f4; }
+.product-browsers a:hover, .product-browsers a[aria-current] { border-color: #8db6ff; color: #8db6ff; }
+.footer-subtitle { color: #a5b3ca; }
 .products-menu summary:hover { color: #8db6ff; }
 .footer-col a { color: #bbcde8; }
 .footer-col a:hover { color: #8db6ff; }

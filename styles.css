@@ -108,13 +108,21 @@ footer [data-consent-open]{margin-left:0}
 .products-menu .chevron{flex-shrink:0;transition:transform .2s}
 .products-menu[open] .chevron{transform:rotate(180deg)}
 .products-menu summary:hover{color:var(--blue)}
-.products-list{position:absolute;top:calc(100% + 14px);left:-14px;z-index:30;list-style:none;margin:0;padding:8px;width:270px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 32px -16px #0f1a2e55}
-.products-list a{display:flex;align-items:center;gap:12px;padding:10px;border-radius:9px}
-.products-list a:hover,.products-list a[aria-current]{background:#eaf0fb}
-.products-list img{border-radius:7px;flex-shrink:0}
-.products-list b{display:block;font-size:14px;font-weight:600}
-.products-list small{display:block;font-size:11px;font-weight:400;color:var(--muted);margin-top:2px}
-@media(max-width:700px){.nav nav{display:flex}.nav nav>a{display:none}.products-menu summary{font-size:13px}.products-list{left:auto;right:-60px;width:250px}}
+.products-panel{position:absolute;top:calc(100% + 14px);left:-14px;z-index:30;width:300px;padding:8px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 32px -16px #0f1a2e55}
+.product-main{display:flex;align-items:center;gap:14px;padding:12px;border-radius:10px}
+.product-main img{border-radius:10px;flex-shrink:0}
+.product-main b{display:block;font-size:16px;font-weight:650}
+.products-panel small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:2px}
+.product-side{margin-top:6px;padding:12px 12px 8px;border-top:1px solid var(--line)}
+.product-side-title{margin:0 0 10px;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.product-side-name{display:flex;align-items:flex-start;gap:10px;margin:0;font-size:13px;line-height:1.35}
+.product-side-name img{border-radius:5px;flex-shrink:0;margin-top:1px}
+.product-side-name b{font-weight:600}
+.product-browsers{list-style:none;display:flex;gap:6px;margin:10px 0 0 32px;padding:0}
+.product-browsers a{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border:1px solid var(--line);border-radius:100px;font-size:13px;font-weight:550}
+.product-main:hover,.product-main[aria-current]{background:#eaf0fb}
+.product-browsers a:hover,.product-browsers a[aria-current]{border-color:var(--blue);color:var(--blue)}
+@media(max-width:700px){.nav nav{display:flex}.nav nav>a{display:none}.products-menu summary{font-size:13px}.products-panel{position:fixed;top:72px;left:18px;right:18px;width:auto}}
 
 /* Quality floor: wrapping, tracking, text sizes and touch targets. Later in
    the cascade than the rules above on purpose, so it wins at equal specificity. */
@@ -184,3 +192,6 @@ h1>span{display:block}
 .nav-cta.notify-button[aria-pressed=true]{background:transparent}
 @media(max-width:700px){.nav-cta.notify-button{font-size:12px}}
 .notify-hint{max-width:46ch;margin:0 auto 14px;font-size:14px}
+.footer-subtitle{margin-top:10px;font-size:12px;font-weight:600;color:var(--muted)}
+.footer-sub a{padding-left:10px}
+.footer-main-product{font-weight:600}
