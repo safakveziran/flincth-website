@@ -19,8 +19,8 @@ web
 - **Browser extension:** people who keep three or four sites side by side
   (dashboard, document, chat, video) and rebuild that arrangement in tabs and
   windows whenever they change context.
-- **Site visitors today:** curious early adopters before launch. Neither
-  product is released yet, so the visitor cannot buy or install anything.
+- **Site visitors today:** people deciding whether to install. Flincth for Mac
+  is on the Mac App Store; the browser extension is not in its stores yet.
 
 ## Product Purpose
 
@@ -33,9 +33,9 @@ The site introduces two products and keeps interested visitors until launch. Fli
   into panes, puts a site in each, saves that as a workspace and switches
   workspaces with a click or shortcut.
 
-Success before launch: visitors understand what each product does within
-seconds and ask to be told when it ships. Success after launch: installs from
-the Mac App Store and the browser stores.
+Success: visitors understand what each product does within seconds, install
+Flincth for Mac from the Mac App Store, and ask to be told when the extension
+ships.
 
 ## Positioning
 
@@ -88,8 +88,8 @@ the Mac App Store and the browser stores.
 
 1. Say what it does and what it will not do, in the same breath.
 2. Local by design: privacy is a property of the product, not a policy.
-3. One clear action per page; before launch that action is "tell me when it
-   ships".
+3. One clear action per page: "Download on the Mac App Store" for the Mac
+   app, "Notify me at launch" for the extension until its stores are live.
 4. Show the real product as soon as it can be shown; label every illustration.
 
 ## Accessibility & Inclusion

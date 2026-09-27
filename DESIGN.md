@@ -118,7 +118,7 @@ pressed state once subscribed. Text links carry an arrow and 8 px vertical
 padding for touch.
 
 ### Status line
-"Coming to the Mac App Store" and its extension variants: a non-interactive
+"Coming to Firefox Add-ons" and the other extension variants: a non-interactive
 chip with the green dot. It stands in for the notify button where web push is
 unsupported.
 

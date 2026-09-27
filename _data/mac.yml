@@ -1,0 +1,5 @@
+# Flincth for Mac on the Mac App Store. Without a country code in the path,
+# Apple sends each visitor to their own storefront.
+store_url: "https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12"
+app_store_id: "6809227474"
+minimum_os: "14.0"

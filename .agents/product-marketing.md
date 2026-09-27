@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v3
+**Document version:** v4
 **Last updated:** 2026-09-26
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
@@ -112,13 +112,14 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 | Honest limits | Site and support page state every platform limit |
 
 ## Goals
-**Business goal:** a launch audience ready on day one for the Mac App Store and Chrome Web Store.
-**Conversion action (pre-launch):** subscribe to launch notifications for a product.
-**Conversion action (post-launch):** install from the store.
+**Business goal:** Mac App Store installs of Flincth for Mac (live at https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12); a launch audience for the browser extension stores.
+**Conversion action (Mac):** download from the Mac App Store.
+**Conversion action (extension, until its stores are live):** subscribe to launch notifications.
 **Current metrics:** unknown; GA4 is consent-gated. **(to confirm)**
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v4 (2026-09-27) — Flincth for Mac is live on the Mac App Store; conversion goals updated.
 - v3 (2026-09-26) — Recorded the hierarchy: Mac app is the main product, the extension a companion.
 - v2 (2026-09-26) — Firefox and Edge versions are built; no longer "planned".
 - v1 (2026-09-26) — Initial context, auto-drafted from the repositories.

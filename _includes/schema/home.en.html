@@ -11,7 +11,10 @@
         "description": "Flincth is a macOS menu bar utility that organizes a Mac into named setups. Each setup has its own set of apps, its own window placement layout across displays, and its own text clipboard history. Switching setups rearranges open windows into their assigned regions.",
         "applicationCategory": "UtilitiesApplication",
         "applicationSubCategory": "Window management",
-        "operatingSystem": "macOS",
+        "operatingSystem": "macOS 14 or later",
+        "downloadUrl": {{ site.data.mac.store_url | jsonify }},
+        "installUrl": {{ site.data.mac.store_url | jsonify }},
+        "sameAs": [{{ site.data.mac.store_url | jsonify }}],
         "softwareRequirements": "Window placement requires the user-installed \u201cFlincth Apply\u201d shortcut in Apple Shortcuts.",
         "featureList": [
           "Named setups, each with its own apps and window placements",
@@ -47,7 +50,7 @@
             "name": "What do I need to run Flincth?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A Mac. Window placement requires the user-installed Flincth Apply shortcut. The app guides you through installing it in Apple Shortcuts."
+              "text": "A Mac with macOS 14 or later, and Flincth from the Mac App Store. Window placement requires the user-installed Flincth Apply shortcut. The app guides you through installing it in Apple Shortcuts."
             }
           },
           {

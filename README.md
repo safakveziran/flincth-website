@@ -56,9 +56,9 @@ None of them is published. Keep them true when the product or the look changes.
 
 All code, comments and documentation in this repository are written in English. The only exception is the site's translated content: translation files such as `_data/i18n/tr.yml` and translated pages contain text in their own language.
 
-## Before release
+## Release notes
 
-The site was prepared for local delivery and has not been published. Because App Store approval has not been confirmed yet, “Coming to the Mac App Store” is shown instead of a store link. Replace it with the real store link at launch. Pricing is deliberately not stated.
+Flincth for Mac is live on the Mac App Store. Its link lives in one place, `_data/mac.yml` (`store_url`, without a country code so Apple routes each visitor to their own storefront); the home page buttons, the header CTA on every non-extension page and the JSON-LD read it from there; `llms.txt` is plain text and carries a copy. Pricing is deliberately not stated on the site.
 
 The window visuals are not real app screenshots but interactive HTML/CSS illustrations, and the page says so. The keyboard shortcuts are examples too; users assign their own shortcuts in the app. Actual window placement requires the Flincth Apply shortcut.
 
@@ -87,7 +87,7 @@ The `support@flincth.com` address on `privacy.html` and `support.html` is a plac
 
 ## Web notifications (OneSignal)
 
-Web push is handled by `notifications.js`. It drives two kinds of control: the Notifications link in the footer (the whole subscription) and each product's **Notify me at launch** button (in the hero, the closing section and, on product pages, the header) (`_includes/notify-button.html`, `topic` = `mac`, `chrome`, `firefox` or `edge`). A button tags the subscription `launch_<topic>`, so a launch message can be sent in the OneSignal dashboard to a segment filtered on that tag. Where push is unsupported the buttons stay hidden and the "Coming to…" line marked `data-notify-fallback` shows instead. The button text, including the error state shown when OneSignal fails, is in the `notify` section of the translation file; the error itself is logged to the console. When a product launches, replace its button with the store link (for the extensions, set `store_url` in `_data/browsers.yml`). The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
+Web push is handled by `notifications.js`. It drives two kinds of control: the Notifications link in the footer (the whole subscription) and each product's **Notify me at launch** button (in the hero, the closing section and, on product pages, the header) (`_includes/notify-button.html`, `topic` = `chrome`, `firefox` or `edge`; Flincth for Mac is live, so its pages link to the Mac App Store instead). A button tags the subscription `launch_<topic>`, so a launch message can be sent in the OneSignal dashboard to a segment filtered on that tag. Where push is unsupported the buttons stay hidden and the "Coming to…" line marked `data-notify-fallback` shows instead. The button text, including the error state shown when OneSignal fails, is in the `notify` section of the translation file; the error itself is logged to the console. When a product launches, replace its button with the store link (for the extensions, set `store_url` in `_data/browsers.yml`). The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
 
 Things to check in the OneSignal dashboard:
 
