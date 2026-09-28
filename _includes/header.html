@@ -20,10 +20,10 @@
 {%- endcomment -%}
 {%- assign _browser = site.data.browsers | where: "id", page.browser | first -%}
 {%- if _browser and _browser.store_url != "" %}
-    <a class="nav-cta" href="{{ _browser.store_url }}" rel="noopener">{{ t[page.strings].store_cta }}</a>
+    <a class="nav-cta" href="{{ _browser.store_url }}" target="_blank" rel="noopener">{{ t[page.strings].store_cta }}</a>
 {%- elsif page.browser %}
     {% include notify-button.html topic=page.browser class="nav-cta" %}<a class="nav-cta" href="#availability" data-notify-fallback>{{ t.notify.fallback }}</a>
 {%- else %}
-    <a class="nav-cta" href="{{ site.data.mac.store_url }}" rel="noopener">{{ t.nav.cta }}</a>
+    <a class="nav-cta" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{{ t.nav.cta }}</a>
 {%- endif %}
   </header>

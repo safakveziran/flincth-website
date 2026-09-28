@@ -20,14 +20,14 @@
 {%- capture notify_button %}{% include notify-button.html topic=page.browser %}{% endcapture -%}
 {%- capture hero_action -%}
   {%- if browser_data.store_url != "" -%}
-    <a class="button primary" href="{{ browser_data.store_url }}" rel="noopener">{{ b.store_cta }}</a>
+    <a class="button primary" href="{{ browser_data.store_url }}" target="_blank" rel="noopener">{{ b.store_cta }}</a>
   {%- else -%}
     {{ notify_button }}<div class="coming-soon" data-notify-fallback><span class="status-dot"></span> {{ b.status }}</div>
   {%- endif -%}
 {%- endcapture -%}
 {%- capture closing_action -%}
   {%- if browser_data.store_url != "" -%}
-    <div class="closing-actions"><a class="button primary" href="{{ browser_data.store_url }}" rel="noopener">{{ b.store_cta }}</a></div>
+    <div class="closing-actions"><a class="button primary" href="{{ browser_data.store_url }}" target="_blank" rel="noopener">{{ b.store_cta }}</a></div>
   {%- else -%}
     <div class="closing-actions"><div class="coming-soon"><span class="status-dot"></span> {{ b.status }}</div>{{ notify_button }}</div>{% include notify-hint.html %}
   {%- endif -%}
