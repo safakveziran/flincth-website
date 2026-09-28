@@ -17,6 +17,12 @@
         "description": {{ _b.description | jsonify }},
         "applicationCategory": "BrowserApplication",
         "operatingSystem": {{ _b.name | jsonify }},
+{%- assign _store = site.data.browsers | where: "id", page.browser | first -%}
+{%- if _store.store_url != "" %}
+        "downloadUrl": {{ _store.store_url | jsonify }},
+        "installUrl": {{ _store.store_url | jsonify }},
+        "sameAs": [{{ _store.store_url | jsonify }}],
+{%- endif %}
         "inLanguage": {{ lang | jsonify }},
         "publisher": { "@id": "https://flincth.com/#org" }
       },

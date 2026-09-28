@@ -182,8 +182,8 @@ extension_edge:
   description: "Flincth for Microsoft Edge splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
   name: Edge
   label: Flincth for Microsoft Edge
-  status: Coming to Microsoft Edge Add-ons
-  store_cta: Get it for Edge
-  availability_q: When can I get it for Edge?
-  availability_a: Soon. The Edge version is built and is being tested before it goes to Microsoft Edge Add-ons. This page will link to the listing once it is live.
+  status: Available on Microsoft Edge Add-ons
+  store_cta: Add to Edge
+  availability_q: Where do I get it for Edge?
+  availability_a: From Microsoft Edge Add-ons, using the Add to Edge button on this page. Installing it asks for no access to any site; Edge asks about one site at a time, when you put that site in a pane.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Edge, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at edge://extensions/shortcuts.

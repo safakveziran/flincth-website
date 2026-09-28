@@ -13,11 +13,15 @@
     <a class="brand" href="{{ home_link }}" aria-label="{{ t.home_label }}"><img src="/assets/app-icon-128.png" alt="" width="36" height="36"><span class="wordmark" translate="no">flincth</span></a>
     <nav aria-label="{{ t.nav.label }}">{% include products-menu.html %}<a href="{{ _nav_base }}#features">{{ _nav.features }}</a><a href="{{ _nav_base }}#how">{{ _nav.how }}</a><a href="{{ _nav_base }}#questions">{{ _nav.faq }}</a></nav>
 {%- comment -%}
-  On a browser extension page the header CTA is the same "Notify me at
-  launch" button as the hero's, for that browser (a "Launch status" link where
-  push is unsupported). Everywhere else it downloads Flincth for Mac.
+  On a browser extension page the header CTA installs that browser's
+  extension once its store link is set, and until then is the same "Notify
+  me at launch" button as the hero's (a "Launch status" link where push is
+  unsupported). Everywhere else it downloads Flincth for Mac.
 {%- endcomment -%}
-{%- if page.browser %}
+{%- assign _browser = site.data.browsers | where: "id", page.browser | first -%}
+{%- if _browser and _browser.store_url != "" %}
+    <a class="nav-cta" href="{{ _browser.store_url }}" rel="noopener">{{ t[page.strings].store_cta }}</a>
+{%- elsif page.browser %}
     {% include notify-button.html topic=page.browser class="nav-cta" %}<a class="nav-cta" href="#availability" data-notify-fallback>{{ t.notify.fallback }}</a>
 {%- else %}
     <a class="nav-cta" href="{{ site.data.mac.store_url }}" rel="noopener">{{ t.nav.cta }}</a>

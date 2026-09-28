@@ -20,7 +20,8 @@ web
   (dashboard, document, chat, video) and rebuild that arrangement in tabs and
   windows whenever they change context.
 - **Site visitors today:** people deciding whether to install. Flincth for Mac
-  is on the Mac App Store; the browser extension is not in its stores yet.
+  is on the Mac App Store; the browser extension is on Microsoft Edge Add-ons,
+  with Chrome and Firefox to follow.
 
 ## Product Purpose
 
@@ -60,8 +61,8 @@ ships.
   network access. Pricing is not announced.
 - Window placement needs the user-installed "Flincth Apply" Shortcut. Windows
   never cross Mission Control desktops and never enter or leave full screen.
-- The extension is built for Chrome, Firefox (140+) and Edge, and not yet
-  published in any store. It collects no data and makes no network requests of its own.
+- The extension is live on Microsoft Edge Add-ons; the Chrome and Firefox
+  (140+) versions are built and waiting for their stores. It collects no data and makes no network requests of its own.
 - Vocabulary: the Mac app says *setup* (code says workspace); the extension
   says *workspace*. Keep them apart on the site.
 - The website itself uses consent-gated Google Analytics and opt-in OneSignal
@@ -89,7 +90,8 @@ ships.
 1. Say what it does and what it will not do, in the same breath.
 2. Local by design: privacy is a property of the product, not a policy.
 3. One clear action per page: "Download on the Mac App Store" for the Mac
-   app, "Notify me at launch" for the extension until its stores are live.
+   app, "Add to <browser>" for the extension where its store is live, "Notify me at
+   launch" where it is not yet.
 4. Show the real product as soon as it can be shown; label every illustration.
 
 ## Accessibility & Inclusion
