@@ -18,7 +18,8 @@
   me at launch" button as the hero's (a "Launch status" link where push is
   unsupported). Everywhere else it downloads Flincth for Mac.
 {%- endcomment -%}
-{%- assign _browser = site.data.browsers | where: "id", page.browser | first -%}
+{%- assign _browser = nil -%}
+{%- if page.browser %}{% assign _browser = site.data.browsers | where: "id", page.browser | first %}{% endif -%}
 {%- if _browser and _browser.store_url != "" %}
     <a class="nav-cta" href="{{ _browser.store_url }}" target="_blank" rel="noopener">{{ t[page.strings].store_cta }}</a>
 {%- elsif page.browser %}
