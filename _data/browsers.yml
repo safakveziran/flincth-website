@@ -8,7 +8,7 @@
 #              of an install button. When you set it, also update that
 #              browser's status and availability copy in _data/i18n/<lang>.yml.
 - id: chrome
-  store_url: ""
+  store_url: "https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp"
 - id: firefox
   store_url: ""
 - id: edge

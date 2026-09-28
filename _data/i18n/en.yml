@@ -160,10 +160,10 @@ extension_chrome:
   description: "Flincth for Chrome splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
   name: Chrome
   label: Flincth for Chrome
-  status: Coming to the Chrome Web Store
+  status: Available on the Chrome Web Store
   store_cta: Add to Chrome
-  availability_q: When can I get it for Chrome?
-  availability_a: Soon. The Chrome version is built and is being tested before it goes to the Chrome Web Store. This page will link to the listing once it is live.
+  availability_q: Where do I get it for Chrome?
+  availability_a: From the Chrome Web Store, using the Add to Chrome button on this page. Installing it asks for no access to any site; Chrome asks about one site at a time, when you put that site in a pane.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Chrome, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at chrome://extensions/shortcuts.
 
 extension_firefox:
