@@ -64,7 +64,7 @@ The window visuals are not real app screenshots but interactive HTML/CSS illustr
 
 The text describing app privacy is not a substitute for a legal privacy policy. Separate support and privacy pages should be prepared for the App Store.
 
-There are no external font dependencies. The page loads the Google Analytics tag (GA4, measurement ID `G-4JBS4T9RZ0`); this tag downloads third-party JavaScript, uses cookies and makes network requests. This applies to the website only — the app itself still has no account, no server and no network access.
+There are no external font dependencies. The page loads the Google Analytics tag (GA4, measurement ID `G-4JBS4T9RZ0`); this tag downloads third-party JavaScript, uses cookies and makes network requests. This applies to the website only — the app itself has no account and no server of its own, and its only network use is the optional in-app announcements described in `privacy.html`.
 
 Cookie consent is handled by `consent.js`. No request is made to Google until the visitor accepts; a decline is remembered and not asked again. The choice is stored in `localStorage` under the `flincth-analytics-consent` key and can be changed with the “Cookies” link in the footer. The consent flow does not depend on an external cookie service.
 
@@ -98,7 +98,7 @@ Things to check in the OneSignal dashboard:
 
 In browsers without push support the notification controls stay hidden and no OneSignal request is made. On iPhone and iPad every browser (Safari, Chrome and the rest) is WebKit, which offers web push only to sites opened from the Home Screen; the closing section tells those visitors so. That path needs `manifest.webmanifest` with `"display": "standalone"`, which the layout links on every page.
 
-Like analytics, this applies to the website only: the app itself still has no account, no server and no network access.
+Like analytics, this applies to the website only: the app itself has no account and no server of its own, and its only network use is its optional in-app announcements (see `privacy.html`).
 
 ## Multi-language setup
 
