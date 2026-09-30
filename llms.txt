@@ -9,7 +9,8 @@
 - Platform: macOS. Apple silicon and Intel Macs are not distinguished by the app.
 - Availability: on the Mac App Store, https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12
 - Requirements: macOS 14 or later.
-- Pricing: not announced. There is no subscription.
+- Pricing: US$9.99, a one-time purchase on the Mac App Store. There is no
+  subscription, in-app purchase or trial.
 - Privacy: no account, no server, no network access. Setups and clipboard
   history are stored locally on the user's Mac.
 
