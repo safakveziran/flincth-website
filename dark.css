@@ -157,3 +157,22 @@ footer > a:hover { color: #8db6ff; }
 /* Product badge, error code, browser cards */
 .product-badge { color: #c9d7ee; }
 .error-code { color: #a9bcda; }
+
+/* Comparison pages */
+.compare-lead, .mode p, .fit li, .fit-both { color: var(--muted); }
+.mode, .fit { background: #101927; border-color: var(--line); }
+.mode-flincth, .fit-flincth { background: linear-gradient(145deg, #192b49, #142036); border-color: #2b405f; }
+.mode-desk { background: linear-gradient(135deg, #111e37, #172e61 65%, #121d3b); border: 1px solid #2b405f; }
+.mini-win { background: #1b2a44; border-color: #3a5173; box-shadow: 0 12px 24px -8px #0009; }
+.mini-ghost { background: transparent; border-color: #57729b; box-shadow: none; }
+.mini-moving { background: #22365a; border-color: #80aaff; }
+.mini-pointer { color: #89b2ff; }
+.mode-flincth .mini-win { background: #22365a; border-color: #5c80bd; }
+.mini-chip { background: var(--raised); border-color: #3a5173; color: var(--ink); }
+.mini-chip kbd { border-color: #4a5f80; color: var(--ink); }
+.table-scroll { border-color: var(--line); background: #0d1522; }
+.compare-table th, .compare-table td { border-color: var(--line); }
+.compare-table td { color: var(--muted); }
+.compare-table thead th { color: var(--ink); }
+.compare-table .col-flincth { background: #111e33; color: var(--ink); }
+.compare-table thead .col-flincth { color: #89b2ff; }
