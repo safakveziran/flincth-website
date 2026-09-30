@@ -38,7 +38,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `support.html`: Support and common problems
 - `404.html`: GitHub Pages error page
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
-- `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand
+- `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand. Each page's `sitemap.lastmod` is written by hand: update it in the same commit whenever the page's own content changes, or search engines learn to ignore it
 - `robots.txt`, `llms.txt`: Search engine and assistant discovery
 - `assets/app-icon.png`: App icon from the Flincth project (512 px source; `app-icon-64.png`, `-128`, `-192` are the sizes the pages load)
 - `assets/og-extension.png`: 1200×630 share image for the browser extension pages (set with `og_image` in their front matter)
