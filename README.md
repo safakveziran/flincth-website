@@ -38,7 +38,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `support.html`: Support and common problems
 - `404.html`: GitHub Pages error page
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
-- `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand
+- `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand. Each page's `sitemap.lastmod` is written by hand: update it in the same commit whenever the page's own content changes, or search engines learn to ignore it
 - `robots.txt`, `llms.txt`: Search engine and assistant discovery
 - `assets/app-icon.png`: App icon from the Flincth project (512 px source; `app-icon-64.png`, `-128`, `-192` are the sizes the pages load)
 - `assets/og-extension.png`: 1200×630 share image for the browser extension pages (set with `og_image` in their front matter)
@@ -64,7 +64,7 @@ The window visuals are not real app screenshots but interactive HTML/CSS illustr
 
 The text describing app privacy is not a substitute for a legal privacy policy. Separate support and privacy pages should be prepared for the App Store.
 
-There are no external font dependencies. The page loads the Google Analytics tag (GA4, measurement ID `G-4JBS4T9RZ0`); this tag downloads third-party JavaScript, uses cookies and makes network requests. This applies to the website only — the app itself still has no account, no server and no network access.
+There are no external font dependencies. The page loads the Google Analytics tag (GA4, measurement ID `G-4JBS4T9RZ0`); this tag downloads third-party JavaScript, uses cookies and makes network requests. This applies to the website only — the app itself has no account and no server of its own, and its only network use is the optional in-app announcements described in `privacy.html`.
 
 Cookie consent is handled by `consent.js`. No request is made to Google until the visitor accepts; a decline is remembered and not asked again. The choice is stored in `localStorage` under the `flincth-analytics-consent` key and can be changed with the “Cookies” link in the footer. The consent flow does not depend on an external cookie service.
 
@@ -98,7 +98,7 @@ Things to check in the OneSignal dashboard:
 
 In browsers without push support the notification controls stay hidden and no OneSignal request is made. On iPhone and iPad every browser (Safari, Chrome and the rest) is WebKit, which offers web push only to sites opened from the Home Screen; the closing section tells those visitors so. That path needs `manifest.webmanifest` with `"display": "standalone"`, which the layout links on every page.
 
-Like analytics, this applies to the website only: the app itself still has no account, no server and no network access.
+Like analytics, this applies to the website only: the app itself has no account and no server of its own, and its only network use is its optional in-app announcements (see `privacy.html`).
 
 ## Multi-language setup
 

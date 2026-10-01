@@ -1,7 +1,7 @@
 # Product Marketing Context
 
-**Document version:** v6
-**Last updated:** 2026-09-26
+**Document version:** v7
+**Last updated:** 2026-09-30
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
 > inferences waiting for the owner's review; everything else is taken from the
@@ -20,7 +20,7 @@
 **Product category:** Mac window manager / clipboard manager; browser split-screen
 and tab workspace extension.
 **Product type:** Paid-or-free consumer utility software, sold through app stores. **(to confirm)**
-**Business model:** Mac App Store only; no subscription; price not announced.
+**Business model:** Mac App Store only; US$9.99 one-time; no subscription, in-app purchase or trial.
 Extension pricing not stated. **(to confirm)**
 
 ## Target Audience
@@ -59,7 +59,7 @@ Paste, Maccy (clipboard managers). Each solves one half.
 ## Differentiation
 **Key differentiators:**
 - Window layout and clipboard history switch together, per setup.
-- No Accessibility permission, no account, no network access; sandboxed, Mac App Store only.
+- No Accessibility permission, no account; setups and clipboard never leave the Mac (only network use: opt-in feature announcements); sandboxed, Mac App Store only.
 - Applies a layout once when you switch, then leaves your windows alone.
 - Extension: sites that refuse embedding run as real windows aligned to the pane;
   no site permissions at install.
@@ -72,7 +72,7 @@ your screen or leaves your Mac.
 | "Why do I need a Shortcut?" | It is how a sandboxed app moves windows without Accessibility access; the app walks you through installing it once. |
 | "Is it a tiling window manager?" | No. It applies your layout when you switch and then leaves windows alone. |
 | "Can it move windows between desktops or into full screen?" | No. No app can do that through supported APIs; Flincth says so up front. |
-| "Does my clipboard leave my Mac?" | No. No server, no network access. |
+| "Does my clipboard leave my Mac?" | No. Setups and clipboard are never sent anywhere; the app only goes online for optional feature announcements. |
 | Extension: "Why does it ask for site permission?" | Only to show that one site inside a pane, only in Flincth's own tab. |
 
 **Anti-persona:** people who want windows auto-tiled continuously, or cross-desktop automation.
@@ -108,7 +108,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 **Value themes:**
 | Theme | Proof |
 |-------|-------|
-| Local by design | No account, server or network access (Mac); no data collected (extension) |
+| Local by design | No account, analytics or own server; setups and clipboard never leave the Mac (Mac); no data collected (extension) |
 | Honest limits | Site and support page state every platform limit |
 
 ## Goals
@@ -119,6 +119,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v7 (2026-09-30) — Price set (US$9.99 one-time); "no network access" replaced, since the app has opt-in OneSignal feature announcements.
 - v6 (2026-09-28) — Extension live on the Chrome Web Store (https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp).
 - v5 (2026-09-28) — Extension live on Microsoft Edge Add-ons (https://microsoftedge.microsoft.com/addons/detail/jmokpipnbkgmbdnplegjklaaklcclaea).
 - v4 (2026-09-27) — Flincth for Mac is live on the Mac App Store; conversion goals updated.
