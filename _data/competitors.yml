@@ -1,0 +1,10 @@
+# Competitor facts used by the comparison pages (and their llms.txt entries).
+# Prices are US Mac App Store prices as quoted strings with two decimals.
+# Re-check them, and update `checked`, at least once a quarter.
+checked: "30 September 2026"
+magnet:
+  name: Magnet
+  price: "4.99"
+maccy:
+  name: Maccy
+  price: "9.99"

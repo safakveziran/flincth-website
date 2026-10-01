@@ -1,3 +1,10 @@
+---
+layout: null
+---
+{%- comment -%}
+  Rendered by Jekyll so the price comes from _data/mac.yml and the
+  Comparisons list from pages marked `comparison: true`. Output is plain text.
+{%- endcomment -%}
 # Flincth
 
 > Flincth is a macOS menu bar utility that organizes a Mac into named setups.
@@ -9,7 +16,7 @@
 - Platform: macOS. Apple silicon and Intel Macs are not distinguished by the app.
 - Availability: on the Mac App Store, https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12
 - Requirements: macOS 14 or later.
-- Pricing: US$9.99, a one-time purchase on the Mac App Store. There is no
+- Pricing: US{% include usd.html amount=site.data.mac.price %}, a one-time purchase on the Mac App Store. There is no
   subscription, in-app purchase or trial.
 - Privacy: no account, no analytics and no server of its own. Setups and
   clipboard history are stored locally and never leave the user's Mac. The
@@ -75,3 +82,12 @@ the Mac app and works without it.
 - [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome (available now).
 - [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox.
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
+{%- assign _comparisons = site.pages | where: "comparison", true | sort: "title" %}
+{%- if _comparisons.size > 0 %}
+
+## Comparisons
+
+{% for p in _comparisons -%}
+- [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}

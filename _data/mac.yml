@@ -3,3 +3,6 @@
 store_url: "https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12"
 app_store_id: "6809227474"
 minimum_os: "14.0"
+# US Mac App Store price, the one place it is set. Keep it a quoted string with
+# two decimals ("9.99", "12.00"); pages print it after a "$" and do sums with it.
+price: "9.99"

@@ -39,7 +39,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `404.html`: GitHub Pages error page
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
 - `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand. Each page's `sitemap.lastmod` is written by hand: update it in the same commit whenever the page's own content changes, or search engines learn to ignore it
-- `robots.txt`, `llms.txt`: Search engine and assistant discovery
+- `robots.txt`, `llms.txt`: Search engine and assistant discovery (`llms.txt` is rendered by Jekyll for the price and the Comparisons list)
 - `assets/app-icon.png`: App icon from the Flincth project (512 px source; `app-icon-64.png`, `-128`, `-192` are the sizes the pages load)
 - `assets/og-extension.png`: 1200×630 share image for the browser extension pages (set with `og_image` in their front matter)
 - `assets/extension-icon.png`: Extension icon from the Flincth browser extension project (`public/icons/icon128.png`)
@@ -58,7 +58,13 @@ All code, comments and documentation in this repository are written in English. 
 
 ## Release notes
 
-Flincth for Mac is live on the Mac App Store. Its link lives in one place, `_data/mac.yml` (`store_url`, without a country code so Apple routes each visitor to their own storefront); the home page buttons, the header CTA on every non-extension page and the JSON-LD read it from there; `llms.txt` is plain text and carries a copy. Pricing is deliberately not stated on the site.
+Flincth for Mac is live on the Mac App Store. Its link lives in one place, `_data/mac.yml` (`store_url`, without a country code so Apple routes each visitor to their own storefront); the home page buttons, the header CTA on every non-extension page and the JSON-LD read it from there; `llms.txt` carries a copy of the link.
+
+The US price is set once, as `price` in `_data/mac.yml` (a quoted string with two decimals). `llms.txt` and the comparison pages read it from there and print it with `_includes/usd.html`, which always shows two decimals and also formats sums. Changing the price means editing that one line.
+
+### Comparison pages
+
+Pages such as `magnet-vs-flincth.html` compare Flincth with a competitor. They set `comparison: true` in their front matter and are reachable only from `sitemap.xml` and `llms.txt`, which lists every such page automatically. Never link them from the header, footer or any other page. Like every page they are addressed without `.html` (`/magnet-vs-flincth`). Competitor prices and the date they were checked live in `_data/competitors.yml`; re-check them at least once a quarter.
 
 The window visuals are not real app screenshots but interactive HTML/CSS illustrations, and the page says so. The keyboard shortcuts are examples too; users assign their own shortcuts in the app. Actual window placement requires the Flincth Apply shortcut.
 

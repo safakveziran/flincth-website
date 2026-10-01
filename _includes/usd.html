@@ -1,0 +1,9 @@
+{%- comment -%}
+  Prints a US dollar amount with two decimals: {% include usd.html amount="9.99" %}
+  prints $9.99. Pass a sum to add several prices: amount is any number or numeric
+  string, so 12 or "12.0" prints as $12.00.
+{%- endcomment -%}
+{%- assign _cents = include.amount | times: 100 | round -%}
+{%- assign _dollars = _cents | divided_by: 100 -%}
+{%- assign _rest = _cents | modulo: 100 | prepend: "0" | slice: -2, 2 -%}
+${{ _dollars }}.{{ _rest }}

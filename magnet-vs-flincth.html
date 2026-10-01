@@ -3,11 +3,17 @@ layout: default
 title: Magnet vs Flincth for Mac | Flincth
 description: "Magnet snaps one window at a time. Flincth for Mac puts your whole desk back with one switch: every app's window, the apps you don't need hidden, and a clipboard history for that work."
 ref: vs-magnet
+# Comparison pages are linked only from sitemap.xml and llms.txt, never from
+# the navigation, footer or other pages.
+comparison: true
 sitemap:
-  lastmod: 2026-09-30
+  lastmod: 2026-10-01
   changefreq: monthly
   priority: 0.6
 ---
+{%- assign mac = site.data.mac -%}
+{%- assign c = site.data.competitors -%}
+{%- assign bundle = c.magnet.price | plus: c.maccy.price -%}
   <main id="main" class="compare">
     <section class="compare-hero wrap">
       <h1>Magnet snaps a window. <span>Flincth sets up the whole desk.</span></h1>
@@ -56,10 +62,10 @@ sitemap:
         </table>
       </div>
       <div class="value-strip">
-        <div><span class="value-label">Magnet + a clipboard manager such as Maccy</span><span class="value-price">$14.98</span></div>
-        <div class="value-flincth"><span class="value-label">Flincth, both in one app</span><span class="value-price">$9.99</span></div>
+        <div><span class="value-label">{{ c.magnet.name }} + a clipboard manager such as {{ c.maccy.name }}</span><span class="value-price">{% include usd.html amount=bundle %}</span></div>
+        <div class="value-flincth"><span class="value-label">Flincth, both in one app</span><span class="value-price">{% include usd.html amount=mac.price %}</span></div>
       </div>
-      <p class="table-note">US Mac App Store prices, checked on 30 September 2026. Magnet also offers optional iCloud sync and runs on macOS 13; Flincth requires macOS 14 or later and keeps your setups on your Mac.</p>
+      <p class="table-note">US Mac App Store prices, checked on {{ c.checked }}. Magnet also offers optional iCloud sync and runs on macOS 13; Flincth requires macOS 14 or later and keeps your setups on your Mac.</p>
     </section>
 
     <section class="wrap compare-fit">
