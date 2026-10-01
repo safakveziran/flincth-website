@@ -8,3 +8,11 @@ magnet:
 maccy:
   name: Maccy
   price: "9.99"
+rectangle:
+  name: Rectangle
+  # Free and open source; downloaded from rectangleapp.com or Homebrew, not the Mac App Store.
+  price: "0.00"
+rectangle_pro:
+  name: Rectangle Pro
+  # One-time licence sold on rectangleapp.com (not the Mac App Store).
+  price: "9.99"
