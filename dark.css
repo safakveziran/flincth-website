@@ -183,3 +183,4 @@ footer > a:hover { color: #8db6ff; }
 .value-label, .table-note, .fit p { color: var(--muted); }
 .value-price { color: var(--ink); }
 .value-flincth .value-price { color: #89b2ff; }
+.mini-clip span { background: #1b2a44; border-color: #3a5173; color: #b8c6dc; box-shadow: 0 12px 24px -8px #0009; }

@@ -239,6 +239,8 @@ h1>span{display:block}
 .value-price{font-size:28px;font-weight:650;letter-spacing:-.6px}
 .table-note{font-size:13px;line-height:1.6;margin:16px 0 0;max-width:80ch}
 .fit p{margin:0;font-size:16px;line-height:1.65}
+.mini-clip{position:absolute;inset:16px 14%;display:flex;flex-direction:column;gap:8px}
+.mini-clip span{display:block;border:1px solid;border-radius:8px;padding:9px 12px;font-size:12px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .compare .faq{padding-top:96px}
 @media(max-width:700px){.compare-hero{padding-top:44px}.compare-lead{font-size:16px}.compare-modes,.fit-grid,.value-strip{grid-template-columns:1fr}.value-price{font-size:24px}.mark{width:16px;height:16px}.mode,.fit{padding:22px}.compare-table{font-size:13px}.compare-table th,.compare-table td{padding:12px 10px}.compare-table tbody th{width:28%}.compare-table td{width:36%}.compare-table-section,.compare-fit,.compare .faq{padding-top:64px}}
 @media(prefers-reduced-motion:no-preference){.mini-moving{animation:snap 2.4s ease-in-out infinite alternate}}

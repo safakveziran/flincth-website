@@ -11,7 +11,9 @@ layout: default
     competitor        key in _data/competitors.yml (its `name` is used below)
     heading           [first sentence, second sentence in blue]
     lead              hero paragraph
-    mode              {title, text}: the competitor's card
+    mode              {title, text, style?}: the competitor's card; style
+                      "clipboard" draws one mixed clipboard list instead of
+                      a window snapping into place
     table             {title, intro}
     rows              list of {label, flincth: [yes|no, text], them: [yes|no, text]}
                       (YAML reads a bare yes/no as true/false; both work)
@@ -39,10 +41,14 @@ layout: default
 
     <section class="wrap compare-modes" aria-label="How each app arranges windows">
       <article class="mode">
-        <div class="mode-desk" aria-hidden="true">
+        <div class="mode-desk{% if page.mode.style == "clipboard" %} mode-clipboard{% endif %}" aria-hidden="true">
+{%- if page.mode.style == "clipboard" %}
+          <div class="mini-clip"><span>Client call notes</span><span>SELECT * FROM orders</span><span>Flight confirmation</span><span>Draft intro paragraph</span></div>
+{%- else %}
           <div class="mini-win mini-ghost"></div>
           <div class="mini-win mini-left mini-moving"></div>
           <span class="mini-pointer">⇤</span>
+{%- endif %}
         </div>
         <h2>{{ page.mode.title }}</h2>
         <p>{{ page.mode.text }}</p>
