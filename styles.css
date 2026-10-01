@@ -231,7 +231,15 @@ h1>span{display:block}
 .fit ul{margin:0;padding-left:20px}
 .fit li{font-size:16px;line-height:1.65;margin-bottom:8px}
 .fit-both{max-width:62ch;margin:28px 0 0;font-size:16px;line-height:1.65}
+.cell-mark{display:flex;gap:10px;align-items:flex-start}
+.mark{flex:none;width:18px;height:18px;margin-top:2px;border-radius:50%;padding:3px;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.value-strip{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.value-strip>div{display:flex;align-items:center;justify-content:space-between;gap:16px;border:1px solid;border-radius:16px;padding:18px 24px}
+.value-label{font-size:15px;line-height:1.4}
+.value-price{font-size:28px;font-weight:650;letter-spacing:-.6px}
+.table-note{font-size:13px;line-height:1.6;margin:16px 0 0;max-width:80ch}
+.fit p{margin:0;font-size:16px;line-height:1.65}
 .compare .faq{padding-top:96px}
-@media(max-width:700px){.compare-hero{padding-top:44px}.compare-lead{font-size:16px}.compare-modes,.fit-grid{grid-template-columns:1fr}.mode,.fit{padding:22px}.compare-table{font-size:13px}.compare-table th,.compare-table td{padding:12px 10px}.compare-table tbody th{width:28%}.compare-table td{width:36%}.compare-table-section,.compare-fit,.compare .faq{padding-top:64px}}
+@media(max-width:700px){.compare-hero{padding-top:44px}.compare-lead{font-size:16px}.compare-modes,.fit-grid,.value-strip{grid-template-columns:1fr}.value-price{font-size:24px}.mark{width:16px;height:16px}.mode,.fit{padding:22px}.compare-table{font-size:13px}.compare-table th,.compare-table td{padding:12px 10px}.compare-table tbody th{width:28%}.compare-table td{width:36%}.compare-table-section,.compare-fit,.compare .faq{padding-top:64px}}
 @media(prefers-reduced-motion:no-preference){.mini-moving{animation:snap 2.4s ease-in-out infinite alternate}}
 @keyframes snap{0%,25%{left:38%;top:18%;width:44%;height:56%}75%,100%{left:4%;top:8%;width:45%;height:84%}}

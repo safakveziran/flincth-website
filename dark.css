@@ -176,3 +176,10 @@ footer > a:hover { color: #8db6ff; }
 .compare-table thead th { color: var(--ink); }
 .compare-table .col-flincth { background: #111e33; color: var(--ink); }
 .compare-table thead .col-flincth { color: #89b2ff; }
+.mark.yes { background: #235cec; stroke: #fff; }
+.mark.no { background: #1a2436; stroke: #7d8aa1; }
+.value-strip > div { background: #101927; border-color: var(--line); }
+.value-strip .value-flincth { background: linear-gradient(145deg, #192b49, #142036); border-color: #2b405f; }
+.value-label, .table-note, .fit p { color: var(--muted); }
+.value-price { color: var(--ink); }
+.value-flincth .value-price { color: #89b2ff; }
