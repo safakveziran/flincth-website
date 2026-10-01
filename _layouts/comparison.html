@@ -15,8 +15,9 @@ layout: default
     table             {title, intro}
     rows              list of {label, flincth: [yes|no, text], them: [yes|no, text]}
                       (YAML reads a bare yes/no as true/false; both work)
-    value             {label, sum: [competitor keys]}: prices added up for the
-                      left box; the right box is always Flincth's price
+    value             {label, sum: [competitor keys], flincth_label?}: prices
+                      added up for the left box; the right box is always
+                      Flincth's price (label defaults to "Flincth, both in one app")
     note              small print under the value strip
     reasons           {title, intro}; the four cards are shared, below
     fit_both          closing line of the reasons section
@@ -73,7 +74,7 @@ layout: default
       </div>
       <div class="value-strip">
         <div><span class="value-label">{{ page.value.label }}</span><span class="value-price">{% include usd.html amount=bundle %}</span></div>
-        <div class="value-flincth"><span class="value-label">Flincth, both in one app</span><span class="value-price">{% include usd.html amount=mac.price %}</span></div>
+        <div class="value-flincth"><span class="value-label">{{ page.value.flincth_label | default: "Flincth, both in one app" }}</span><span class="value-price">{% include usd.html amount=mac.price %}</span></div>
       </div>
       <p class="table-note">{{ page.note | replace: "[checked]", c.checked }}</p>
     </section>

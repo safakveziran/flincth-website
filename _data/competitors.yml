@@ -16,3 +16,11 @@ rectangle_pro:
   name: Rectangle Pro
   # One-time licence sold on rectangleapp.com (not the Mac App Store).
   price: "9.99"
+raycast:
+  name: Raycast
+  # Free plan; downloaded from raycast.com, not the Mac App Store.
+  price: "0.00"
+raycast_pro:
+  name: Raycast Pro
+  # Subscription: $10 a month or $96 a year (raycast.com/pricing). This is the yearly price.
+  price: "96.00"
