@@ -29,3 +29,8 @@ moom:
   # Moom 4, sold only on manytricks.com: one-time, at least one year of updates.
   # (Moom Classic, $6.99 on the Mac App Store, no longer gets new features.)
   price: "15.00"
+paste:
+  name: Paste
+  # Free download, then a subscription after a 7-day trial (pasteapp.io/pricing).
+  # This is the yearly price; the App Store also sells $3.99 monthly and $99.99 lifetime plans.
+  price: "29.99"
