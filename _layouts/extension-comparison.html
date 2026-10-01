@@ -1,0 +1,110 @@
+---
+layout: default
+---
+{%- comment -%}
+  Shared layout for "<competitor> alternative" pages about the Flincth
+  browser extension. Same structure and styles as _layouts/comparison.html
+  (the Mac app's), but the actions install the extension, there is no price
+  strip (the extension is free), and the cards and shared questions are about
+  the extension. See README.md, "Comparison pages".
+
+  Front matter:
+    competitor        key in _data/competitors.yml (its `name` is used below)
+    heading           [first sentence, second sentence in blue]
+    lead              hero paragraph
+    mode              {title, text, style?}: the competitor's card; style
+                      "windows" (default) draws two browser windows side by
+                      side, "tabs" draws a list of tab groups
+    table             {title, intro}
+    rows              list of {label, flincth: [yes|no, text], them: [yes|no, text]}
+                      (YAML reads a bare yes/no as true/false; both work)
+    note              small print under the table
+    reasons           {title, intro}; the four cards are shared, below
+    fit_both          closing line of the reasons section
+    faq               list of {q, a}, shown before the shared questions
+{%- endcomment -%}
+{%- assign them = site.data.competitors[page.competitor] -%}
+{%- assign chrome = site.data.browsers | where: "id", "chrome" | first -%}
+{%- assign edge = site.data.browsers | where: "id", "edge" | first -%}
+{%- capture yes_icon -%}<svg class="mark yes" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg><span class="visually-hidden">Yes. </span>{%- endcapture -%}
+{%- capture no_icon -%}<svg class="mark no" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 4.5l7 7m0-7l-7 7"/></svg><span class="visually-hidden">No. </span>{%- endcapture -%}
+{%- capture actions -%}<a class="button primary" href="{{ chrome.store_url }}" target="_blank" rel="noopener">Add to Chrome</a><a class="text-link" href="{{ edge.store_url }}" target="_blank" rel="noopener">Add to Edge <span aria-hidden="true">↗</span></a>{%- endcapture -%}
+  <main id="main" class="compare">
+    <section class="compare-hero wrap">
+      <h1>{{ page.heading[0] }} <span>{{ page.heading[1] }}</span></h1>
+      <p class="compare-lead">{{ page.lead }}</p>
+      <div class="hero-actions">{{ actions }}</div>
+    </section>
+
+    <section class="wrap compare-modes" aria-label="How each one shows several sites">
+      <article class="mode">
+        <div class="mode-desk" aria-hidden="true">
+{%- if page.mode.style == "tabs" %}
+          <div class="mini-tabs"><span><i></i>Project A <b>12 tabs</b></span><span><i></i>Project B <b>8 tabs</b></span><span><i></i>Reading <b>21 tabs</b></span></div>
+{%- else %}
+          <div class="mini-browser mini-browser-left"><div class="mini-bar"><i></i><i></i><i></i></div></div>
+          <div class="mini-browser mini-browser-right"><div class="mini-bar"><i></i><i></i><i></i></div></div>
+{%- endif %}
+        </div>
+        <h2>{{ page.mode.title }}</h2>
+        <p>{{ page.mode.text }}</p>
+      </article>
+      <article class="mode mode-flincth">
+        <div class="mode-desk" aria-hidden="true">
+          <div class="mini-browser mini-browser-one"><div class="mini-bar"><i></i><i></i><i></i></div><div class="mini-panes"><span></span><span></span><span></span></div></div>
+        </div>
+        <h2>Flincth: several sites, one tab.</h2>
+        <p>Split a single tab into as many as eight panes, put a site in each and drag the dividers to size them. Save it as a workspace and switch between workspaces with a click or a shortcut.</p>
+      </article>
+    </section>
+    <p class="wrap preview-note compare-note">Illustrative diagrams, not screenshots.</p>
+
+    <section class="wrap compare-table-section" id="glance">
+      <div class="section-heading"><h2>{{ page.table.title }}</h2><p>{{ page.table.intro }}</p></div>
+      <div class="table-scroll" role="region" aria-label="Flincth and {{ them.name }} compared" tabindex="0">
+        <table class="compare-table">
+          <thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col" class="col-flincth">Flincth</th><th scope="col">{{ them.name }}</th></tr></thead>
+          <tbody>
+{%- for row in page.rows %}
+            <tr><th scope="row">{{ row.label }}</th><td class="col-flincth"><span class="cell-mark">{% if row.flincth[0] == true or row.flincth[0] == "yes" %}{{ yes_icon }}{% else %}{{ no_icon }}{% endif %}{{ row.flincth[1] }}</span></td><td><span class="cell-mark">{% if row.them[0] == true or row.them[0] == "yes" %}{{ yes_icon }}{% else %}{{ no_icon }}{% endif %}{{ row.them[1] }}</span></td></tr>
+{%- endfor %}
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">{{ page.note | replace: "[checked]", site.data.competitors.checked_extensions }}</p>
+    </section>
+
+    <section class="wrap compare-fit">
+      <div class="section-heading"><h2>{{ page.reasons.title }}</h2><p>{{ page.reasons.intro }}</p></div>
+      <div class="fit-grid">
+        <article class="fit fit-flincth">
+          <h3>Everything for a task, in one tab</h3>
+          <p>Dashboard, document, chat and video side by side, in panes you size yourself. One tab to keep, not a stack of windows to line up.</p>
+        </article>
+        <article class="fit fit-flincth">
+          <h3>A workspace for each kind of work</h3>
+          <p>Save the sites and the split for each job, and switch between them with a click or a shortcut you choose.</p>
+        </article>
+        <article class="fit fit-flincth">
+          <h3>Signed-in sites still work</h3>
+          <p>A site that needs your session, or refuses to be shown in a pane, runs as a real browser window lined up with its pane.</p>
+        </article>
+        <article class="fit fit-flincth">
+          <h3>Nothing leaves your browser</h3>
+          <p>No account, no analytics and no network requests of its own. Workspaces are stored in your browser, and site access is asked for one site at a time.</p>
+        </article>
+      </div>
+      <p class="fit-both">{{ page.fit_both }}</p>
+    </section>
+
+    <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
+{%- for item in page.faq %}
+      <details><summary>{{ item.q }}<span>+</span></summary><p>{{ item.a }}</p></details>
+{%- endfor %}
+      <details><summary>Why does a site sometimes open as a window instead of a pane?<span>+</span></summary><p>Some sites refuse to be shown inside another page, and a site in a pane does not see your signed-in session. For those, Flincth opens a real browser window and keeps it lined up with the pane, so the site works exactly as it does in a normal tab.</p></details>
+      <details><summary>What does Flincth ask permission for?<span>+</span></summary><p>Nothing when you install it. When you put a site in a pane, your browser asks for access to that one site, and only then. Every site you have allowed is listed in Flincth’s settings and can be removed there.</p></details>
+      <details><summary>Does Flincth collect any data?<span>+</span></summary><p>No. Your workspaces are stored in your browser on your own device. Flincth has no account, no analytics and makes no network requests of its own.</p></details>
+    </div></section>
+
+    <section class="closing wrap"><img src="/assets/extension-icon.png" alt="Flincth extension icon" width="88" height="88" loading="lazy"><h2>The whole task, in one tab.</h2><p>Split it, save it, switch with a click.</p><div class="closing-actions">{{ actions }}</div><span class="micro">Free <span>·</span> No account <span>·</span> No data collected</span></section>
+  </main>

@@ -3,7 +3,7 @@ layout: null
 ---
 {%- comment -%}
   Rendered by Jekyll so the price comes from _data/mac.yml and the
-  Comparisons list from pages marked `comparison: true`. Output is plain text.
+  Comparisons lists from pages marked `comparison: true` (grouped by `product`). Output is plain text.
 {%- endcomment -%}
 # Flincth
 
@@ -83,11 +83,20 @@ the Mac app and works without it.
 - [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox.
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
 {%- assign _comparisons = site.pages | where: "comparison", true | sort: "title" %}
-{%- if _comparisons.size > 0 %}
+{%- assign _mac = _comparisons | where_exp: "p", "p.product != 'extension'" %}
+{%- assign _ext = _comparisons | where: "product", "extension" %}
+{%- if _mac.size > 0 %}
 
-## Comparisons
+## Comparisons: Flincth for Mac
 
-{% for p in _comparisons -%}
+{% for p in _mac -%}
+- [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
+{%- if _ext.size > 0 %}
+## Comparisons: Flincth browser extension
+
+{% for p in _ext -%}
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}

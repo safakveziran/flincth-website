@@ -184,3 +184,11 @@ footer > a:hover { color: #8db6ff; }
 .value-price { color: var(--ink); }
 .value-flincth .value-price { color: #89b2ff; }
 .mini-clip span { background: #1b2a44; border-color: #3a5173; color: #b8c6dc; box-shadow: 0 12px 24px -8px #0009; }
+.mini-browser { background: #1b2a44; border-color: #3a5173; box-shadow: 0 12px 24px -8px #0009; }
+.mini-bar { border-color: #2f4466; }
+.mini-bar i { background: #4a5f80; }
+.mode-flincth .mini-browser { border-color: #5c80bd; }
+.mini-panes span { background: #22365a; border-color: #5c80bd; }
+.mini-tabs span { background: #1b2a44; border-color: #3a5173; color: #b8c6dc; }
+.mini-tabs i { background: #57729b; }
+.mini-tabs b { color: #8fa0bb; }

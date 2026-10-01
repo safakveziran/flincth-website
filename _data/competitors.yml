@@ -42,3 +42,25 @@ cinch:
   name: Cinch
   # Mac App Store, Irradiated Software. Last update: 1.2.4, 4 October 2019.
   price: "6.99"
+
+# Browser extension competitors (pages use layout: extension-comparison).
+checked_extensions: "1 October 2026"
+tab_resize:
+  name: Tab Resize
+  # chromewebstore.google.com/detail/bkpenclhmiealbebdopglffmfdiilejc
+  # v3.0.1, 11 June 2024; 1,000,000 users. Resizes tabs into separate windows.
+dualless:
+  name: Dualless
+  # chromewebstore.google.com/detail/bgdpkilkheacbboffppjgceiplijhfpd
+  # v0.4.1, 29 December 2023; 1,000,000 users. Splits the browser into two windows.
+split_screen_chrome:
+  name: Split Screen for Google Chrome
+  # chromewebstore.google.com/detail/dnollkdkikklpdganoecjcmmlddbennb
+  # v3.2.0, 7 July 2026; 300,000 users. Tiles Chrome windows into grids.
+workona:
+  name: Workona
+  # chromewebstore.google.com/detail/ailcmbgekjpnablpdkmaaccecekgdhlh, workona.com/pricing
+  # v3.1.33, 15 January 2025; 200,000 users. Tab manager with cloud-synced spaces.
+chrome_split_view:
+  name: Chrome split view
+  # support.google.com/chrome/answer/16971124: two tabs side by side in one window.

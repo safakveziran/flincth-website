@@ -16,12 +16,18 @@
   On a browser extension page the header CTA installs that browser's
   extension once its store link is set, and until then is the same "Notify
   me at launch" button as the hero's (a "Launch status" link where push is
-  unsupported). Everywhere else it downloads Flincth for Mac.
+  unsupported). A page that is about the extension without being its landing
+  page (the extension comparison pages) sets store_browser: <id> to get that
+  browser's install button. Everywhere else it downloads Flincth for Mac.
 {%- endcomment -%}
 {%- assign _browser = nil -%}
 {%- if page.browser %}{% assign _browser = site.data.browsers | where: "id", page.browser | first %}{% endif -%}
 {%- if _browser and _browser.store_url != "" %}
     <a class="nav-cta" href="{{ _browser.store_url }}" target="_blank" rel="noopener">{{ t[page.strings].store_cta }}</a>
+{%- elsif page.store_browser %}
+    {%- assign _store = site.data.browsers | where: "id", page.store_browser | first %}
+    {%- assign _store_strings = "extension_" | append: page.store_browser %}
+    <a class="nav-cta" href="{{ _store.store_url }}" target="_blank" rel="noopener">{{ t[_store_strings].store_cta }}</a>
 {%- elsif page.browser %}
     {% include notify-button.html topic=page.browser class="nav-cta" %}<a class="nav-cta" href="#availability" data-notify-fallback>{{ t.notify.fallback }}</a>
 {%- else %}
