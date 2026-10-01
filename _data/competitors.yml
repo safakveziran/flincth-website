@@ -24,3 +24,8 @@ raycast_pro:
   name: Raycast Pro
   # Subscription: $10 a month or $96 a year (raycast.com/pricing). This is the yearly price.
   price: "96.00"
+moom:
+  name: Moom
+  # Moom 4, sold only on manytricks.com: one-time, at least one year of updates.
+  # (Moom Classic, $6.99 on the Mac App Store, no longer gets new features.)
+  price: "15.00"
