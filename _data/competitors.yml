@@ -38,3 +38,7 @@ divvy:
   name: Divvy
   # Mac App Store, Mizage LLC. Last update: 1.5.2, 23 August 2019.
   price: "13.99"
+cinch:
+  name: Cinch
+  # Mac App Store, Irradiated Software. Last update: 1.2.4, 4 October 2019.
+  price: "6.99"
