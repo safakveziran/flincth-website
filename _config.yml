@@ -23,10 +23,3 @@ exclude:
 
 # Old light-theme version; kept in the repository but not published.
   - Flincth-Website
-
-# jekyll-redirect-from ships with GitHub Pages. It lets a page list its old
-# addresses in `redirect_from`; each one becomes a small page that sends
-# visitors and search engines on to the new address (comparison pages that
-# moved from /<name>-vs-flincth to /<name>-alternative).
-plugins:
-  - jekyll-redirect-from
