@@ -21,6 +21,7 @@
     <nav class="footer-col" aria-label="{{ t.footer.help }}"><p class="footer-title">{{ t.footer.help }}</p><ul>
       <li><a href="{% if page.ref == "home" %}#questions{% else %}{{ home_url }}#questions{% endif %}">{{ t.footer.faq }}</a></li>
       <li><a href="{{ support_url }}"{% if page.ref == "support" %} aria-current="page"{% endif %}>{{ t.footer.support }}</a></li>
+      <li><a href="/blog/"{% if page.ref == "blog" or page.layout == "post" %} aria-current="page"{% endif %}>{{ t.footer.blog }}</a></li>
     </ul></nav>
     <nav class="footer-col" aria-label="{{ t.footer.legal }}"><p class="footer-title">{{ t.footer.legal }}</p><ul>
       <li><a href="{{ privacy_url }}"{% if page.ref == "privacy" %} aria-current="page"{% endif %}>{{ t.footer.privacy }}</a></li>

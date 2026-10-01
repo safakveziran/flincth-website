@@ -29,4 +29,13 @@ layout: null
     {%- endif %}
   {%- endfor %}
 {%- endfor %}
+{%- comment -%} Blog posts: lastmod is `updated` when a post sets it, else its date. {%- endcomment -%}
+{%- for p in site.posts %}
+  <url>
+    <loc>{{ site.url }}{{ p.url }}</loc>
+    <lastmod>{{ p.updated | default: p.date | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+{%- endfor %}
 </urlset>

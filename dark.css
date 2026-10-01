@@ -192,3 +192,14 @@ footer > a:hover { color: #8db6ff; }
 .mini-tabs span { background: #1b2a44; border-color: #3a5173; color: #b8c6dc; }
 .mini-tabs i { background: #57729b; }
 .mini-tabs b { color: #8fa0bb; }
+
+/* Blog */
+.post-meta, .post-list time, .blog-feed { color: #8fa0bb; }
+.post-body hr { background: var(--line); }
+.post-body blockquote { border-color: #3a5173; color: var(--muted); }
+.post-body code { background: var(--raised); color: var(--ink); }
+.post-body h2, .post-list-title { color: var(--ink); }
+.post-cta { background: linear-gradient(145deg, #192b49, #142036); border-color: #2b405f; }
+.post-list li, .post-list li:last-child { border-color: var(--line); }
+.post-list a:hover .post-list-title { color: #89b2ff; }
+.post-list-desc { color: var(--muted); }

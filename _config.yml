@@ -1,6 +1,11 @@
 # Jekyll settings. GitHub Pages builds the site with these on every publish.
 url: "https://flincth.com"
 
+# Used by jekyll-feed for the blog feed (/blog/feed.xml).
+title: Flincth
+description: "Notes on building Flincth, a Mac app that switches your whole desk and clipboard for each kind of work."
+author: Flincth
+
 # Each page's language. Pages at the root are in the default language; add a
 # block here for each new language folder and its pages take the language from it:
 #
@@ -9,6 +14,10 @@ url: "https://flincth.com"
 defaults:
   - scope: { path: "" }
     values: { lang: en }
+  # Blog posts live in _posts/ as YYYY-MM-DD-slug.md and are served at
+  # /blog/<slug>, without ".html" like every other page.
+  - scope: { path: "", type: posts }
+    values: { layout: post, permalink: /blog/:title }
 
 # Development files that are not published.
 exclude:
@@ -23,3 +32,9 @@ exclude:
 
 # Old light-theme version; kept in the repository but not published.
   - Flincth-Website
+
+# Plugins that ship with GitHub Pages.
+plugins:
+  - jekyll-feed
+feed:
+  path: blog/feed.xml

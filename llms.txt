@@ -82,11 +82,18 @@ the Mac app and works without it.
 - [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome (available now).
 - [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox.
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
+{%- if site.posts.size > 0 %}
+
+## Blog
+
+{% for p in site.posts -%}
+- [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
 {%- assign _comparisons = site.pages | where: "comparison", true | sort: "title" %}
 {%- assign _mac = _comparisons | where_exp: "p", "p.product != 'extension'" %}
 {%- assign _ext = _comparisons | where: "product", "extension" %}
 {%- if _mac.size > 0 %}
-
 ## Comparisons: Flincth for Mac
 
 {% for p in _mac -%}

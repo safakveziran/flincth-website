@@ -1,0 +1,20 @@
+---
+layout: default
+title: Blog | Flincth
+description: "Notes on building Flincth: why it exists, how it moves windows without Accessibility access, and how to set up a Mac for each kind of work."
+ref: blog
+sitemap:
+  lastmod: 2026-10-01
+  changefreq: weekly
+  priority: 0.6
+---
+  <main id="main" class="wrap doc blog-index">
+    <h1>Notes from building Flincth.</h1>
+    <p class="lead">Why it exists, how it works underneath, and how to get more out of a Mac that switches with your work.</p>
+    <ol class="post-list">
+{%- for post in site.posts %}
+      <li><a href="{{ post.url }}"><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%-d %B %Y" }}</time><span class="post-list-title">{{ post.title }}</span><span class="post-list-desc">{{ post.description }}</span></a></li>
+{%- endfor %}
+    </ol>
+    <p class="blog-feed">Follow along with the <a href="/blog/feed.xml">feed</a>, or on <a href="https://medium.com/@support_9084" rel="noopener">Medium</a>.</p>
+  </main>

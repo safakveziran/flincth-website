@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{%- comment -%}
+  A blog post. Front matter: title, description (also the share text),
+  date (from the file name), optional updated (YYYY-MM-DD) and optional
+  medium_url, the post's copy on Medium. Posts are written here first and
+  imported into Medium, which then points its canonical link back here;
+  see README.md, "Blog".
+{%- endcomment -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
+  <main id="main" class="wrap doc post">
+    <a class="post-back" href="/blog/">← All posts</a>
+    <article>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta"><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%-d %B %Y" }}</time> <span>·</span> {{ minutes }} min read{% if page.medium_url %} <span>·</span> <a href="{{ page.medium_url }}" rel="noopener">Also on Medium</a>{% endif %}</p>
+      <p class="lead">{{ page.description }}</p>
+      <div class="post-body">
+{{ content }}
+      </div>
+    </article>
+    <aside class="post-cta">
+      <img src="/assets/app-icon-128.png" alt="" width="56" height="56" loading="lazy">
+      <div><p class="post-cta-title">Flincth for Mac</p><p>Switch your whole desk and clipboard for each kind of work. One-time purchase, no account.</p></div>
+      <a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a>
+    </aside>
+    <a class="back" href="/blog/">← All posts</a>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.updated | default: page.date | date_to_xmlschema }}",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+  "author": { "@type": "Organization", "name": "Flincth", "url": "{{ site.url }}/" },
+  "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/app-icon-192.png" } },
+  "image": "{{ site.url }}/assets/og-image.png"{% if page.medium_url %},
+  "sameAs": "{{ page.medium_url }}"{% endif %}
+}
+</script>

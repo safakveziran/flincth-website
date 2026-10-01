@@ -12,6 +12,9 @@
 {%- if page.strings -%}
   {%- assign page_title = t[page.strings].title -%}
   {%- assign page_description = t[page.strings].description -%}
+{%- elsif page.layout == "post" -%}
+  {%- assign page_title = page.title | append: " | Flincth" -%}
+  {%- assign page_description = page.description -%}
 {%- else -%}
   {%- assign page_title = page.title -%}
   {%- assign page_description = page.description -%}

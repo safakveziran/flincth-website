@@ -62,6 +62,18 @@ Flincth for Mac is live on the Mac App Store. Its link lives in one place, `_dat
 
 The US price is set once, as `price` in `_data/mac.yml` (a quoted string with two decimals). `llms.txt` and the comparison pages read it from there and print it with `_includes/usd.html`, which always shows two decimals and also formats sums. Changing the price means editing that one line.
 
+### Blog
+
+Posts live in `_posts/` as `YYYY-MM-DD-slug.md` with `title` and `description` in their front matter (plus `updated: YYYY-MM-DD` after a substantive edit). They use `_layouts/post.html`, are served at `/blog/<slug>`, and are listed on `/blog/` (`blog/index.html`), in `sitemap.xml`, in `llms.txt` and in the feed at `/blog/feed.xml` (`jekyll-feed`, part of GitHub Pages). The footer links to the blog.
+
+**Medium.** Medium no longer issues API tokens (since 1 January 2025), so posts cannot be pushed there automatically. The site is the original; Medium gets a copy that points back:
+
+1. Publish the post here and wait until it is live.
+2. On Medium, use **Import a story** (https://medium.com/p/import) with the post's flincth.com address. Medium copies it and sets the story's canonical link to flincth.com, so search engines credit the site.
+3. Add the Medium address to the post as `medium_url:`. The post then shows an "Also on Medium" link.
+
+A story that appeared on Medium before the site (the first one did) should get the same canonical link by hand: on Medium open the story's **More settings → Advanced settings → Customize canonical link** and enter the flincth.com address.
+
 ### Comparison pages
 
 Pages such as `magnet-alternative.html`, `rectangle-alternative.html`, `raycast-alternative.html`, `moom-alternative.html`, `maccy-alternative.html`, `paste-alternative.html`, `divvy-alternative.html` and `cinch-alternative.html` compare Flincth with a competitor. They use `layout: comparison` (`_layouts/comparison.html`, which documents every front matter key) and hold only front matter: the competitor's key in `_data/competitors.yml`, the headline, the table rows and the FAQ. The Flincth card, the four reasons to switch, the shared questions and the closing call to action live in the layout. A new comparison is one new file. They set `comparison: true` in their front matter and are reachable only from `sitemap.xml` and `llms.txt`, which lists every such page automatically. Never link them from the header, footer or any other page. Like every page they are addressed without `.html` (`/magnet-alternative`). Browser extension comparisons (`tab-resize-alternative.html`, `dualless-alternative.html`, `split-screen-for-chrome-alternative.html`, `workona-alternative.html`, `chrome-split-view-alternative.html`) work the same way with `layout: extension-comparison`, plus `product: extension` (which groups them separately in `llms.txt`) and `store_browser: chrome` (which makes the header button install the extension). Competitor prices and the date they were checked live in `_data/competitors.yml`; re-check them at least once a quarter.
