@@ -34,3 +34,7 @@ paste:
   # Free download, then a subscription after a 7-day trial (pasteapp.io/pricing).
   # This is the yearly price; the App Store also sells $3.99 monthly and $99.99 lifetime plans.
   price: "29.99"
+divvy:
+  name: Divvy
+  # Mac App Store, Mizage LLC. Last update: 1.5.2, 23 August 2019.
+  price: "13.99"
