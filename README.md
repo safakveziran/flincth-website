@@ -66,6 +66,7 @@ The US price is set once, as `price` in `_data/mac.yml` (a quoted string with tw
 
 - **Sitemaps.** `robots.txt` lists `sitemap.xml` and the blog feed `blog/feed.xml`. Google reads a submitted sitemap on its own schedule; after adding pages, resubmit both in Search Console (Sitemaps) to have them read straight away.
 - **IndexNow.** `.github/workflows/indexnow.yml` runs after every GitHub Pages build (`page_build`) and sends the URLs whose sitemap `lastmod` is within the last three days to IndexNow, which Bing, Yandex, Seznam and Naver share. The key is the file `782a19638f1194e135120e3a823d5ff0.txt` at the site root; it is public by design and must stay in place. To resend every URL, run the workflow by hand from the Actions tab with **all** ticked. Google does not use IndexNow.
+- **Descriptions.** Keep every page's `description` between 25 and 160 characters; Bing Webmaster Tools reports longer ones as an error, and search results cut them off.
 - **Verification.** Yandex Webmaster and Bing Webmaster Tools codes go in `verification:` in `_config.yml`; the head then carries their meta tags. Google Search Console is verified through DNS.
 
 ### Blog
