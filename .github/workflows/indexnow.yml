@@ -1,0 +1,78 @@
+# Tells IndexNow (Bing, Yandex, Seznam, Naver and others share it) which
+# pages changed, right after GitHub Pages publishes the site.
+#
+# The key is public by design: search engines check it against
+# https://flincth.com/782a19638f1194e135120e3a823d5ff0.txt, the file at the site root. See README.md,
+# "IndexNow".
+name: IndexNow
+
+on:
+  page_build:          # fires when GitHub Pages finishes publishing main
+  workflow_dispatch:   # run by hand from the Actions tab
+    inputs:
+      all:
+        description: "Submit every URL in the sitemap, not only recent ones"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: true
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Submit changed URLs to IndexNow
+        env:
+          KEY: 782a19638f1194e135120e3a823d5ff0
+          ALL: ${{ inputs.all || false }}
+        run: |
+          set -euo pipefail
+          # Give the CDN a moment to serve the new build.
+          sleep 90
+          python3 - <<'PY'
+          import datetime, json, os, urllib.request, xml.etree.ElementTree as ET
+
+          host = "flincth.com"
+          key = os.environ["KEY"]
+          submit_all = os.environ.get("ALL") == "true"
+
+          with urllib.request.urlopen(f"https://{host}/sitemap.xml?nocache={datetime.datetime.utcnow().timestamp()}") as r:
+              root = ET.fromstring(r.read())
+          ns = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+
+          # A page counts as changed when its lastmod is within the last three
+          # days; sitemap.xml keeps lastmod accurate for every page and post.
+          since = datetime.date.today() - datetime.timedelta(days=3)
+          urls = []
+          for url in root.findall("s:url", ns):
+              loc = url.findtext("s:loc", namespaces=ns)
+              lastmod = url.findtext("s:lastmod", namespaces=ns) or ""
+              if submit_all or (lastmod and datetime.date.fromisoformat(lastmod[:10]) >= since):
+                  urls.append(loc)
+
+          if not urls:
+              print("No pages changed in the last three days; nothing to submit.")
+              raise SystemExit(0)
+
+          body = json.dumps({
+              "host": host,
+              "key": key,
+              "keyLocation": f"https://{host}/{key}.txt",
+              "urlList": urls,
+          }).encode()
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=body,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+          with urllib.request.urlopen(req) as r:
+              print(f"IndexNow answered {r.status} for {len(urls)} URL(s):")
+          for u in urls:
+              print("  " + u)
+          PY

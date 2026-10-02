@@ -1,6 +1,13 @@
 # Jekyll settings. GitHub Pages builds the site with these on every publish.
 url: "https://flincth.com"
 
+# Search engine ownership checks. Paste the code each webmaster tool gives for
+# its "meta tag" method; an empty value adds nothing. (Google Search Console is
+# verified through DNS and needs nothing here.)
+verification:
+  yandex: ""
+  bing: ""
+
 # Used by jekyll-feed for the blog feed (/blog/feed.xml).
 title: Flincth
 description: "Notes on building Flincth, a Mac app that switches your whole desk and clipboard for each kind of work."

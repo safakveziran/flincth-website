@@ -22,6 +22,12 @@
 {%- endif %}
   <meta name="robots" content="{{ page.robots | default: 'index, follow, max-image-preview:large' }}">
   <meta name="apple-mobile-web-app-title" content="Flincth">
+{%- if site.verification.yandex != "" and site.verification.yandex %}
+  <meta name="yandex-verification" content="{{ site.verification.yandex }}">
+{%- endif %}
+{%- if site.verification.bing != "" and site.verification.bing %}
+  <meta name="msvalidate.01" content="{{ site.verification.bing }}">
+{%- endif %}
 
   <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
 {%- if page.layout == 'post' %}
