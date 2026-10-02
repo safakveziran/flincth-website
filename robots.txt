@@ -17,3 +17,6 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://flincth.com/sitemap.xml
+# The blog feed doubles as a sitemap for new posts; search engines accept
+# Atom feeds here and pick up new posts from it sooner.
+Sitemap: https://flincth.com/blog/feed.xml
