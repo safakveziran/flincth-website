@@ -26,9 +26,10 @@ layout: default
 {%- assign them = site.data.competitors[page.competitor] -%}
 {%- assign chrome = site.data.browsers | where: "id", "chrome" | first -%}
 {%- assign edge = site.data.browsers | where: "id", "edge" | first -%}
+{%- assign firefox = site.data.browsers | where: "id", "firefox" | first -%}
 {%- capture yes_icon -%}<svg class="mark yes" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg><span class="visually-hidden">Yes. </span>{%- endcapture -%}
 {%- capture no_icon -%}<svg class="mark no" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 4.5l7 7m0-7l-7 7"/></svg><span class="visually-hidden">No. </span>{%- endcapture -%}
-{%- capture actions -%}<a class="button primary" href="{{ chrome.store_url }}" target="_blank" rel="noopener">Add to Chrome</a><a class="text-link" href="{{ edge.store_url }}" target="_blank" rel="noopener">Add to Edge <span aria-hidden="true">↗</span></a>{%- endcapture -%}
+{%- capture actions -%}<a class="button primary" href="{{ chrome.store_url }}" target="_blank" rel="noopener">Add to Chrome</a><a class="text-link" href="{{ edge.store_url }}" target="_blank" rel="noopener">Add to Edge <span aria-hidden="true">↗</span></a><a class="text-link" href="{{ firefox.store_url }}" target="_blank" rel="noopener">Add to Firefox <span aria-hidden="true">↗</span></a>{%- endcapture -%}
   <main id="main" class="compare">
     <section class="compare-hero wrap">
       <h1>{{ page.heading[0] }} <span>{{ page.heading[1] }}</span></h1>

@@ -10,6 +10,6 @@
 - id: chrome
   store_url: "https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp"
 - id: firefox
-  store_url: ""
+  store_url: "https://addons.mozilla.org/addon/flincth/"
 - id: edge
   store_url: "https://microsoftedge.microsoft.com/addons/detail/jmokpipnbkgmbdnplegjklaaklcclaea"

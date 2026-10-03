@@ -72,7 +72,8 @@ the Mac app and works without it.
   https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp
   Microsoft Edge: on Microsoft Edge Add-ons,
   https://microsoftedge.microsoft.com/addons/detail/jmokpipnbkgmbdnplegjklaaklcclaea
-  Firefox (140 or later): built, coming to Firefox Add-ons.
+  Firefox (140 or later): on Firefox Add-ons,
+  https://addons.mozilla.org/addon/flincth/
 
 ## Pages
 
@@ -80,7 +81,7 @@ the Mac app and works without it.
 - [Support](https://flincth.com/support): requirements, the Flincth Apply shortcut, and common problems.
 - [Privacy](https://flincth.com/privacy): what the app, the browser extension and the website do and do not collect.
 - [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome (available now).
-- [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox.
+- [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox (available now).
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
 {%- if site.posts.size > 0 %}
 

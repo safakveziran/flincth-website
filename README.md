@@ -104,7 +104,7 @@ Cookie consent is handled by `consent.js`. No request is made to Google until th
 - `_includes/schema/extension.html` produces each page's JSON-LD.
 - When translating, copy the three page files into the language folder unchanged; all of their text comes from the translation file.
 
-As of this writing the extension is live on the Chrome Web Store and Microsoft Edge Add-ons; Firefox (140 or later) is built and waiting for Firefox Add-ons (see `docs/publishing-to-firefox-and-edge.md` in the extension repository). Keep the pages' status copy in step with that.
+As of this writing the extension is live on the Chrome Web Store, Microsoft Edge Add-ons and Firefox Add-ons (Firefox 140 or later; see `docs/publishing-to-firefox-and-edge.md` in the extension repository). Keep the pages' status copy in step with that.
 
 ## Before going live
 

@@ -172,10 +172,10 @@ extension_firefox:
   description: "Flincth for Firefox splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
   name: Firefox
   label: Flincth for Firefox
-  status: Coming to Firefox Add-ons
+  status: Available on Firefox Add-ons
   store_cta: Add to Firefox
-  availability_q: When can I get it for Firefox?
-  availability_a: Soon. The Firefox version is built and is being tested before it goes to Firefox Add-ons. It needs Firefox 140 or later. This page will link to the listing once it is live.
+  availability_q: Where do I get it for Firefox?
+  availability_a: From Firefox Add-ons, using the Add to Firefox button on this page. It needs Firefox 140 or later. Installing it asks for no access to any site; Firefox asks about one site at a time, when you put that site in a pane.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Firefox, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys under Manage Extension Shortcuts in about:addons.
 
 extension_edge:

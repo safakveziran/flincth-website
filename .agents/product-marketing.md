@@ -1,7 +1,7 @@
 # Product Marketing Context
 
-**Document version:** v7
-**Last updated:** 2026-09-30
+**Document version:** v8
+**Last updated:** 2026-10-03
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
 > inferences waiting for the owner's review; everything else is taken from the
@@ -114,11 +114,12 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 ## Goals
 **Business goal:** Mac App Store installs of Flincth for Mac (live at https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12); a launch audience for the browser extension stores.
 **Conversion action (Mac):** download from the Mac App Store.
-**Conversion action (extension):** install from the browser's store where live (Chrome, Edge); elsewhere subscribe to launch notifications.
+**Conversion action (extension):** install from the browser's store (Chrome, Edge, Firefox).
 **Current metrics:** unknown; GA4 is consent-gated. **(to confirm)**
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v8 (2026-10-03) — Extension live on Firefox Add-ons (https://addons.mozilla.org/addon/flincth/); now in all three stores.
 - v7 (2026-09-30) — Price set (US$9.99 one-time); "no network access" replaced, since the app has opt-in OneSignal feature announcements.
 - v6 (2026-09-28) — Extension live on the Chrome Web Store (https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp).
 - v5 (2026-09-28) — Extension live on Microsoft Edge Add-ons (https://microsoftedge.microsoft.com/addons/detail/jmokpipnbkgmbdnplegjklaaklcclaea).
