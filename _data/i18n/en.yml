@@ -145,10 +145,10 @@ extension:
   faq_mac_a: No. The extension is a smaller companion that lives inside your browser. The Mac app, Flincth’s main product, arranges app windows across your displays; the extension arranges websites inside one tab. Each works without the other.
   faq_window_q: Why does a site open in a separate window?
   faq_window_a: Some sites refuse to be shown inside another page, and some keep you signed in with storage an embedded view cannot reach. For those, a pane can become a real browser window lined up with the pane, so the site behaves exactly as it does in a normal tab. Because it is a real window, it also appears in your window switcher and in screenshots.
-  faq_permission_q: Why does it ask permission for each site?
-  faq_permission_a: Flincth requests no site access when you install it. To show a site inside a pane it removes the one response header that blocks this, only for that site and only inside Flincth’s own tab. If you decline, the pane offers an attached window instead, which needs no permission at all.
+  faq_permission_q: How does website access work?
+  faq_permission_a: Chrome 1.0.2 offers optional all-sites access after installation. You may skip it to organize workspaces; every activation asks again if access is missing, and sites remain inactive without consent. Firefox retains individual site approval. Framing headers change only inside Flincth’s tab. Access can be revoked in your browser’s extension settings. Some sites require a normal window.
   faq_data_q: Does Flincth see what I do on those sites?
-  faq_data_a: No. It never reads cookies, never looks at page content and never adds code to a page. Your workspaces and the addresses in them are stored in [browser] on your own device, and the extension makes no network requests of its own.
+  faq_data_a: It never reads cookies, page content or form data. Bundled code tracks each pane’s address and provides Back and Forward. Workspaces and their latest addresses are stored in [browser] on your own device; nothing is sent to Flincth.
   faq_keys_q: Where do I set keyboard shortcuts?
   others_title: Flincth, wherever you browse.
   closing_title: Make room in a single tab.
@@ -164,7 +164,7 @@ extension_chrome:
   status: Available on the Chrome Web Store
   store_cta: Add to Chrome
   availability_q: Where do I get it for Chrome?
-  availability_a: From the Chrome Web Store, using the Add to Chrome button on this page. Installing it asks for no access to any site; Chrome asks about one site at a time, when you put that site in a pane.
+  availability_a: From the Chrome Web Store, using Add to Chrome. Chrome 1.0.2 offers optional all-sites access after installation. You can skip it to edit workspaces, but activating sites requires permission. Access is revocable in your browser’s extension settings.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Chrome, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at chrome://extensions/shortcuts.
 
 extension_firefox:
