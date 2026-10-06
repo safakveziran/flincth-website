@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Guides | Flincth
-description: "Step-by-step guides for Flincth for Mac: install the Flincth Apply shortcut, build setups, lay out your displays and use per-setup clipboard history."
+description: "Step-by-step guides for Flincth for Mac and the Flincth browser extension for Chrome, Firefox and Edge: setups, layouts, clipboard, split tabs."
 ref: guides
 sitemap:
   lastmod: 2026-10-06
@@ -9,11 +9,19 @@ sitemap:
   priority: 0.7
 ---
   <main id="main" class="wrap doc blog-index">
-    <h1>Guides for Flincth for Mac.</h1>
-    <p class="lead">Short, step-by-step guides, from the one-time shortcut install to a desk that switches with your work.</p>
+    <h1>Guides.</h1>
+    <p class="lead">Short, step-by-step guides, from the first install to a desk and a browser that switch with your work.</p>
+{%- assign mac_guides = site.guides | where_exp: "g", "g.product != 'extension'" | sort: "order" %}
+{%- assign extension_guides = site.guides | where: "product", "extension" | sort: "order" %}
+    <h2 class="guide-group" id="mac">Flincth for Mac</h2>
     <ol class="post-list">
-{%- assign guides = site.guides | sort: "order" %}
-{%- for g in guides %}
+{%- for g in mac_guides %}
+      <li><a href="{{ g.url }}"><span class="post-list-num">Guide {{ forloop.index }}</span><span class="post-list-title">{{ g.title }}</span><span class="post-list-desc">{{ g.description }}</span></a></li>
+{%- endfor %}
+    </ol>
+    <h2 class="guide-group" id="extension">Browser extension <span>Chrome, Firefox and Edge</span></h2>
+    <ol class="post-list">
+{%- for g in extension_guides %}
       <li><a href="{{ g.url }}"><span class="post-list-num">Guide {{ forloop.index }}</span><span class="post-list-title">{{ g.title }}</span><span class="post-list-desc">{{ g.description }}</span></a></li>
 {%- endfor %}
     </ol>

@@ -83,13 +83,22 @@ the Mac app and works without it.
 - [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome (available now).
 - [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox (available now).
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
-- [Guides](https://flincth.com/guides/): step-by-step guides for Flincth for Mac.
-{%- if site.guides.size > 0 %}
+- [Guides](https://flincth.com/guides/): step-by-step guides for Flincth for Mac and the browser extension.
+{%- assign _mac_guides = site.guides | where_exp: "g", "g.product != 'extension'" | sort: "order" %}
+{%- assign _ext_guides = site.guides | where: "product", "extension" | sort: "order" %}
+{%- if _mac_guides.size > 0 %}
 
 ## Guides: Flincth for Mac
 
-{% assign _guides = site.guides | sort: "order" -%}
-{% for p in _guides -%}
+{% for p in _mac_guides -%}
+- [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
+{%- if _ext_guides.size > 0 %}
+
+## Guides: Flincth browser extension
+
+{% for p in _ext_guides -%}
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}

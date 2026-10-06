@@ -84,9 +84,9 @@ A story that appeared on Medium before the site (the first one did) should get t
 
 ### Guides
 
-Step-by-step guides for Flincth for Mac live in `_guides/` (a Jekyll collection) as `slug.md`, with `title`, `description`, `order` (their place on `/guides/`) and `updated: YYYY-MM-DD` in their front matter. They use `_layouts/guide.html`, are served at `/guides/<slug>`, and are listed on `/guides/` (`guides/index.html`), in `sitemap.xml` (lastmod is `updated`), in `llms.txt` and in the footer's Help column. Update `updated` whenever a guide's steps change, so IndexNow resends it.
+Step-by-step guides live in `_guides/` (a Jekyll collection) as `slug.md`, with `title`, `description`, `order` (their place within their product on `/guides/`) and `updated: YYYY-MM-DD` in their front matter. Browser extension guides also set `product: extension`; everything else is a Flincth for Mac guide. `/guides/` and `llms.txt` list the two groups separately, Mac first, and an extension guide ends with the store buttons from `_data/browsers.yml` instead of the Mac App Store button. They use `_layouts/guide.html`, are served at `/guides/<slug>`, and are listed on `/guides/` (`guides/index.html`), in `sitemap.xml` (lastmod is `updated`), in `llms.txt` and in the footer's Help column. Update `updated` whenever a guide's steps change, so IndexNow resends it.
 
-Guides name the app's own menus and buttons (Workspace Manager…, Add Area, Choose App, FlincthApply v2, Settings → Clipboard…). They were checked against the Mac app's source and `spec.md`; when the app's interface changes, check the guides in the same release.
+Guides name each product's own menus and buttons (Workspace Manager…, Add Area, FlincthApply v2 in the Mac app; New workspace, Open as a window, Shortcuts that work anywhere in the extension). They were checked against each product's source and `spec.md`; when an interface changes, check its guides in the same release. The extension guides describe Chrome and Edge 1.0.2's all-sites access and Firefox's per-site access; update them when that model changes.
 
 ### Comparison pages
 

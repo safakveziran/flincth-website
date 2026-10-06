@@ -204,6 +204,8 @@ footer > a:hover { color: #8db6ff; }
 .post-list a:hover .post-list-title { color: #89b2ff; }
 .post-list-desc { color: var(--muted); }
 .post-list-num { color: #8fa0bb; }
+.guide-group { color: var(--ink); }
+.guide-group span { color: var(--muted); }
 .guide-more { border-color: var(--line); }
 .guide-more-title { color: var(--ink); }
 .guide-more a { color: #89b2ff; }

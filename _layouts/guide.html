@@ -2,16 +2,22 @@
 layout: default
 ---
 {%- comment -%}
-  A step-by-step guide for Flincth for Mac. Front matter: title,
-  description (also the share text), order (its place on /guides/) and
-  updated (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's
-  steps change). Menu and button names in a guide are the app's own, so
-  check them against the app when its interface changes; see README.md,
-  "Guides".
+  A step-by-step guide. Front matter: title, description (also the share
+  text), order (its place within its product on /guides/), updated
+  (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's steps
+  change) and optional product: extension for a browser extension guide
+  (otherwise it is a Flincth for Mac guide). Menu and button names in a
+  guide are the product's own, so check them when its interface changes;
+  see README.md, "Guides".
 {%- endcomment -%}
 {%- assign words = content | strip_html | number_of_words -%}
 {%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
-{%- assign others = site.guides | sort: "order" | where_exp: "g", "g.url != page.url" -%}
+{%- if page.product == "extension" -%}
+  {%- assign others = site.guides | where: "product", "extension" -%}
+{%- else -%}
+  {%- assign others = site.guides | where_exp: "g", "g.product != 'extension'" -%}
+{%- endif -%}
+{%- assign others = others | sort: "order" | where_exp: "g", "g.url != page.url" -%}
   <main id="main" class="wrap doc post guide">
     <a class="post-back" href="/guides/">← All guides</a>
     <article>
@@ -30,11 +36,23 @@ layout: default
 {%- endfor %}
       </ul>
     </nav>
+{%- if page.product == "extension" %}
+    <aside class="post-cta guide-cta-extension">
+      <img src="/assets/extension-icon.png" alt="" width="56" height="56" loading="lazy">
+      <div><p class="post-cta-title">Flincth for Chrome, Firefox and Edge</p><p>Split one tab into saved workspaces. Free, collects no data.</p></div>
+      <div class="guide-cta-stores">
+{%- for b in site.data.browsers %}{% if b.store_url != "" %}{% assign _strings = "extension_" | append: b.id %}
+        <a class="button primary" href="{{ b.store_url }}" target="_blank" rel="noopener">{{ site.data.i18n[page.lang][_strings].store_cta }}</a>
+{%- endif %}{% endfor %}
+      </div>
+    </aside>
+{%- else %}
     <aside class="post-cta">
       <img src="/assets/app-icon-128.png" alt="" width="56" height="56" loading="lazy">
       <div><p class="post-cta-title">Flincth for Mac</p><p>Switch your whole desk and clipboard for each kind of work. One-time purchase, no account.</p></div>
       <a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a>
     </aside>
+{%- endif %}
     <a class="back" href="/guides/">← All guides</a>
   </main>
 <script type="application/ld+json">
@@ -45,7 +63,11 @@ layout: default
   "description": {{ page.description | jsonify }},
   "dateModified": "{{ page.updated | date_to_xmlschema }}",
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+{%- if page.product == "extension" %}
+  "about": { "@type": "SoftwareApplication", "name": "Flincth browser extension", "operatingSystem": "Chrome, Firefox, Microsoft Edge", "applicationCategory": "BrowserApplication" },
+{%- else %}
   "about": { "@type": "SoftwareApplication", "name": "Flincth", "operatingSystem": "macOS", "applicationCategory": "UtilitiesApplication" },
+{%- endif %}
   "author": { "@type": "Organization", "name": "Flincth", "url": "{{ site.url }}/" },
   "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/app-icon-192.png" } },
   "image": "{{ site.url }}/assets/og-image.png"
