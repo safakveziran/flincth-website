@@ -12,18 +12,22 @@ sitemap:
     <h1>Guides.</h1>
     <p class="lead">Short, step-by-step guides, from the first install to a desk and a browser that switch with your work.</p>
 {%- assign mac_guides = site.guides | where_exp: "g", "g.product != 'extension'" | sort: "order" %}
-{%- assign extension_guides = site.guides | where: "product", "extension" | sort: "order" %}
     <h2 class="guide-group" id="mac">Flincth for Mac</h2>
     <ol class="post-list">
 {%- for g in mac_guides %}
       <li><a href="{{ g.url }}"><span class="post-list-num">Guide {{ forloop.index }}</span><span class="post-list-title">{{ g.title }}</span><span class="post-list-desc">{{ g.description }}</span></a></li>
 {%- endfor %}
     </ol>
-    <h2 class="guide-group" id="extension">Browser extension <span>Chrome, Firefox and Edge</span></h2>
+    <h2 class="guide-group" id="extension">Browser extension <span>The same five guides, written for each browser</span></h2>
+    <p class="guide-browser-nav">{% for gb in site.data.guide_browsers %}<a href="#{{ gb.id }}">{{ site.data.i18n[page.lang].products[gb.id] }}</a>{% endfor %}</p>
+{%- for gb in site.data.guide_browsers %}
+{%- assign browser_guides = site.guides | where: "guide_browser", gb.id | sort: "order" %}
+    <h3 class="guide-browser" id="{{ gb.id }}">{{ site.data.i18n[page.lang].products[gb.id] }}</h3>
     <ol class="post-list">
-{%- for g in extension_guides %}
+{%- for g in browser_guides %}
       <li><a href="{{ g.url }}"><span class="post-list-num">Guide {{ forloop.index }}</span><span class="post-list-title">{{ g.title }}</span><span class="post-list-desc">{{ g.description }}</span></a></li>
 {%- endfor %}
     </ol>
+{%- endfor %}
     <p class="blog-feed">Something not working? See <a href="/support">Support</a>. For the story behind Flincth, read the <a href="/blog/">blog</a>.</p>
   </main>

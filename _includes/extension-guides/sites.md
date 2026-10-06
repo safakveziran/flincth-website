@@ -1,14 +1,7 @@
----
-title: "When a Site Won't Show in a Flincth Pane: Windows and Tabs"
-description: "Some sites refuse to load inside another page or lose your sign-in there. Open them as an attached window or a tab, and keep them in your workspace."
-order: 3
-updated: 2026-10-06
-product: extension
----
-
+{% include extension-guides/vars.html %}
 Most sites display inside a Flincth pane without any fuss. A few don't:
 
-- Some sites **refuse to be shown inside another page** at all. The pane stays blank or shows an error.
+- Some sites **refuse to be shown inside another page** at all.{% if gb.access == "per-site" %} In {{ gb.name }}, the pane simply stays blank.{% else %} The pane stays blank or shows an error.{% endif %}
 - Some keep you **signed in** with storage that an embedded view can't reach. The pane shows the site, but as if you were signed out.
 
 Flincth doesn't try to force either. It gives each pane three ways to show its site, and you choose.
@@ -16,7 +9,7 @@ Flincth doesn't try to force either. It gives each pane three ways to show its s
 | Mode | What you see | Sign-in |
 | --- | --- | --- |
 | **Inside the pane** | The site, embedded in the tab | Depends on the site |
-| **Attached window** | A real browser window lined up over the pane | Exactly as in a normal tab |
+| **Attached window** | A real {{ gb.name }} window lined up over the pane | Exactly as in a normal tab |
 | **Opens in a tab** | A card in the pane that opens the site in a normal tab | Exactly as in a normal tab |
 
 ## When a site is slow
@@ -26,19 +19,26 @@ If a site hasn't finished loading after about eight seconds, the pane asks **Tro
 - **Keep showing this pane**, if it's just slow. The page keeps loading either way.
 - **Try again**.
 - **Open as a window**.
-- **Open in a tab**, which opens the site in a normal browser tab and leaves the pane as it is.
+- **Open in a tab**, which opens the site in a normal {{ gb.name }} tab and leaves the pane as it is.
 
 You can turn this prompt off in **Settings → Suggest alternatives when a site takes longer to load**.
-
+{% if gb.access == "per-site" %}
+A pane that stays blank in {{ gb.name }} won't always trigger this prompt, because {{ gb.name }} doesn't report a blocked page as slow. If a pane stays empty, open the site as a window.
+{% endif %}
 ## Open it as an attached window
 
 Click **Open as a window** in the pane's toolbar.
 
-The site opens in a real browser window placed exactly over its pane. It behaves as it does in an ordinary tab, with the same session and the same sign-in, and it stays part of your workspace:
+The site opens in a real {{ gb.name }} window placed exactly over its pane. It behaves as it does in an ordinary tab, with the same session and the same sign-in, and it stays part of your workspace:
 
 - It **follows its pane** when you resize the split.
 - It **minimises** when you switch to another tab or another workspace, and comes back when you return.
-- In **Chrome and Edge**, it also follows when you move the browser window, and if you nudge it slightly, it snaps back onto its pane. Firefox doesn't tell extensions when a window moves, so there you move it back yourself.
+{%- if gb.follows_moves %}
+- It **follows the browser** when you move the {{ gb.name }} window.
+- If you **nudge it** slightly, it snaps back onto its pane. Move it somewhere else on purpose and it stays where you put it.
+{%- else %}
+- If you move the {{ gb.name }} window or nudge the attached window, put it back yourself. {{ gb.name }} doesn't tell extensions when a window moves, so Flincth can't follow it. Resizing the split lines it up again.
+{%- endif %}
 
 Because it's a real window, it also appears in your window switcher and in screenshots of your screen.
 
@@ -58,15 +58,11 @@ The pane turns into a card saying *example.com opens in a normal tab*. Click **O
 
 This is the simplest option for a site you only check now and then.
 
-## In Firefox
-
-In Firefox, a site that blocks embedding stays blank in a pane rather than showing an error. If a pane stays empty, open the site as a window.
-
 ## Why Flincth doesn't do more
 
-Getting round a site's refusal or reaching its sign-in from inside another page would mean reading your cookies or weakening your browser's security. Flincth does neither. Moving the site into a real window, where its sign-in already works, solves the same problem without touching either.
+Getting round a site's refusal or reaching its sign-in from inside another page would mean reading your cookies or weakening {{ gb.name }}'s security. Flincth does neither. Moving the site into a real window, where its sign-in already works, solves the same problem without touching either.
 
 ## Next
 
-- [Keyboard shortcuts for switching workspaces](/guides/keyboard-shortcuts-for-browser-workspaces)
-- [Settings, backups and moving your workspaces](/guides/extension-settings-and-backups)
+- [Keyboard shortcuts for Flincth in {{ gb.name }}]({{ g }}/keyboard-shortcuts)
+- [Flincth settings and backups in {{ gb.name }}]({{ g }}/settings-and-backups)

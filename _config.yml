@@ -25,15 +25,17 @@ defaults:
   # /blog/<slug>, without ".html" like every other page.
   - scope: { path: "", type: posts }
     values: { layout: post, permalink: /blog/:title }
-  # Guides live in _guides/ as slug.md and are served at /guides/<slug>.
+  # Guides live in _guides/ (see the collection below).
   - scope: { path: "", type: guides }
     values: { layout: guide }
 
-# Step-by-step guides for Flincth for Mac (see README.md, "Guides").
+# Step-by-step guides (see README.md, "Guides"). Mac guides sit at the top of
+# _guides/ and are served at /guides/<slug>; browser extension guides sit in
+# _guides/<browser>/ and are served at /guides/<browser>/<slug>.
 collections:
   guides:
     output: true
-    permalink: /guides/:name
+    permalink: /guides/:path
 
 # Development files that are not published.
 exclude:
@@ -52,5 +54,6 @@ exclude:
 # Plugins that ship with GitHub Pages.
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
 feed:
   path: blog/feed.xml

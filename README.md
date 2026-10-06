@@ -36,7 +36,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `privacy.html`: Privacy policy (app, browser extension and website covered separately)
 - `chrome.html`, `firefox.html`, `edge.html`: Browser extension landing pages (see Browser extension pages)
 - `support.html`: Support and common problems
-- `guides/index.html`, `_guides/`, `_layouts/guide.html`: Step-by-step guides (see Guides)
+- `guides/index.html`, `_guides/`, `_layouts/guide.html`, `_includes/extension-guides/`, `_data/guide_browsers.yml`: Step-by-step guides (see Guides)
 - `404.html`: GitHub Pages error page
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
 - `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand. Each page's `sitemap.lastmod` is written by hand: update it in the same commit whenever the page's own content changes, or search engines learn to ignore it
@@ -84,9 +84,12 @@ A story that appeared on Medium before the site (the first one did) should get t
 
 ### Guides
 
-Step-by-step guides live in `_guides/` (a Jekyll collection) as `slug.md`, with `title`, `description`, `order` (their place within their product on `/guides/`) and `updated: YYYY-MM-DD` in their front matter. Browser extension guides also set `product: extension`; everything else is a Flincth for Mac guide. `/guides/` and `llms.txt` list the two groups separately, Mac first, and an extension guide ends with the store buttons from `_data/browsers.yml` instead of the Mac App Store button. They use `_layouts/guide.html`, are served at `/guides/<slug>`, and are listed on `/guides/` (`guides/index.html`), in `sitemap.xml` (lastmod is `updated`), in `llms.txt` and in the footer's Help column. Update `updated` whenever a guide's steps change, so IndexNow resends it.
+Step-by-step guides live in `_guides/` (a Jekyll collection), with `title`, `description`, `order` (their place within their group on `/guides/`) and `updated: YYYY-MM-DD` in their front matter. They use `_layouts/guide.html` and are listed on `/guides/` (`guides/index.html`), in `sitemap.xml` (lastmod is `updated`), in `llms.txt` and in the footer's Help column. Update `updated` whenever a guide's steps change, so IndexNow resends it.
 
-Guides name each product's own menus and buttons (Workspace Manager…, Add Area, FlincthApply v2 in the Mac app; New workspace, Open as a window, Shortcuts that work anywhere in the extension). They were checked against each product's source and `spec.md`; when an interface changes, check its guides in the same release. The extension guides describe Chrome and Edge 1.0.2's all-sites access and Firefox's per-site access; update them when that model changes.
+- **Flincth for Mac** guides are `_guides/<slug>.md`, served at `/guides/<slug>`.
+- **Browser extension** guides are written once per browser: `_guides/<browser>/<slug>.md`, served at `/guides/<browser>/<slug>`, with `product: extension`, `guide_browser: <id>` and `store_browser: <id>` (the header then installs that browser's extension). Each file holds only front matter and one include from `_includes/extension-guides/`, which carries the shared text; what differs per browser (store, toolbar pinning, the website-access model, extension settings paths, whether attached windows follow the browser) comes from `_data/guide_browsers.yml`. A new browser is one entry there plus five files. The first generic extension guide URLs redirect to the Chrome versions (`redirect_from`, `jekyll-redirect-from`).
+
+Guides name each product's own menus and buttons (Workspace Manager…, Add Area, FlincthApply v2 in the Mac app; New workspace, Open as a window, Shortcuts that work anywhere in the extension). They were checked against each product's source and `spec.md`; when an interface changes, check its guides in the same release. The extension guides describe Chrome and Edge 1.0.2's all-sites access and Firefox's per-site access (`access` in `_data/guide_browsers.yml`); update that when the model changes.
 
 ### Comparison pages
 

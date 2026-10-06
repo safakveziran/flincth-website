@@ -1,14 +1,7 @@
----
-title: "How to Split a Browser Tab into Your First Workspace"
-description: "Create a Flincth workspace: pick a layout, split and resize panes, put a site in each one, then rename, reorder and switch between workspaces."
-order: 2
-updated: 2026-10-06
-product: extension
----
+{% include extension-guides/vars.html %}
+A **workspace** is one {{ gb.name }} tab divided into panes, with a site in each: a dashboard beside a document, a chat under a video. Flincth saves the whole arrangement, so you build it once and switch back to it whenever you like.
 
-A **workspace** is one tab divided into panes, with a site in each: a dashboard beside a document, a chat under a video. Flincth saves the whole arrangement, so you build it once and switch back to it whenever you like.
-
-Install the extension first: [How to Install the Flincth Extension](/guides/install-the-flincth-browser-extension).
+Install the extension first: [How to Install Flincth in {{ gb.name }}]({{ g }}/install-flincth).
 
 ## 1. Create a workspace
 
@@ -16,7 +9,7 @@ Click the Flincth icon in the toolbar, then **New workspace**. Fill in:
 
 - **Name:** something short, such as *Work*.
 - **Layout:** how the tab starts out divided.
-- **Shortcut:** optional; you can set it later. See [Keyboard shortcuts for switching workspaces](/guides/keyboard-shortcuts-for-browser-workspaces).
+- **Shortcut:** optional; you can set it later. See [Keyboard shortcuts for Flincth in {{ gb.name }}]({{ g }}/keyboard-shortcuts).
 
 Click **Create**. Flincth opens its tab with the new workspace in it.
 
@@ -50,12 +43,16 @@ You can also click a divider and use the arrow keys: 2% per press, or 10% with *
 
 An empty pane offers two ways:
 
-- Type an address into **Search or enter a website** and press **Add site**. Plain words search with your browser's default search engine.
+- Type an address into **Search or enter a website** and press **Add site**. Plain words search with {{ gb.name }}'s default search engine.
 - Click **Choose from open tabs** and pick one of the tabs you already have open.
-
+{% if gb.access == "all-sites" %}
+If you skipped website access when you installed Flincth, {{ gb.name }} asks for it now. Without it, the site stays saved in the pane but doesn't load.
+{% else %}
+The first time you add a site, the pane asks **Show example.com here?** Click **Allow example.com** and confirm in {{ gb.name }}'s prompt.
+{% endif %}
 The site loads inside the pane. Links you click stay in the pane, and the pane's toolbar has **Back**, **Forward** and **Reload**.
 
-If a site stays blank or asks you to sign in when you're already signed in, see [When a site won't show in a pane](/guides/sites-that-wont-load-in-a-pane).
+If a site stays blank or asks you to sign in when you're already signed in, see [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane).
 
 ## 5. Name, reorder and switch
 
@@ -71,5 +68,5 @@ In the toolbar popup, hover over the workspace and click the delete icon. Its la
 
 ## Next
 
-- [Keyboard shortcuts for switching workspaces](/guides/keyboard-shortcuts-for-browser-workspaces)
-- [When a site won't show in a pane](/guides/sites-that-wont-load-in-a-pane)
+- [Keyboard shortcuts for Flincth in {{ gb.name }}]({{ g }}/keyboard-shortcuts)
+- [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane)

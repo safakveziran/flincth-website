@@ -85,7 +85,6 @@ the Mac app and works without it.
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
 - [Guides](https://flincth.com/guides/): step-by-step guides for Flincth for Mac and the browser extension.
 {%- assign _mac_guides = site.guides | where_exp: "g", "g.product != 'extension'" | sort: "order" %}
-{%- assign _ext_guides = site.guides | where: "product", "extension" | sort: "order" %}
 {%- if _mac_guides.size > 0 %}
 
 ## Guides: Flincth for Mac
@@ -94,14 +93,17 @@ the Mac app and works without it.
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
+{%- for _gb in site.data.guide_browsers %}
+{%- assign _ext_guides = site.guides | where: "guide_browser", _gb.id | sort: "order" %}
 {%- if _ext_guides.size > 0 %}
 
-## Guides: Flincth browser extension
+## Guides: Flincth for {{ site.data.i18n.en.products[_gb.id] }}
 
 {% for p in _ext_guides -%}
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
+{%- endfor %}
 {%- if site.posts.size > 0 %}
 
 ## Blog

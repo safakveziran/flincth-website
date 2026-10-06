@@ -1,0 +1,43 @@
+# Per-browser facts for the browser extension guides (_guides/<id>/).
+# Order here is the order on /guides/. Each guide sets guide_browser: <id>;
+# the shared text in _includes/extension-guides/ reads these values.
+#
+#   access:         "all-sites" (Chrome and Edge 1.0.2: one optional grant for
+#                   every website, offered after install) or "per-site"
+#                   (Firefox: one prompt per site, from the pane)
+#   follows_moves:  true where the browser tells extensions that a window
+#                   moved (windows.onBoundsChanged), so attached windows
+#                   follow the browser and snap back when nudged
+- id: chrome
+  name: Chrome
+  store_name: Chrome Web Store
+  store_button: Add to Chrome
+  requirement: ""
+  pin: Click the puzzle-piece icon next to the address bar, then the pin beside Flincth.
+  extensions_page: "`chrome://extensions`"
+  revoke: "Open `chrome://extensions`, click **Details** under Flincth, and change **Site access**."
+  shortcuts_page: "`chrome://extensions/shortcuts`"
+  access: all-sites
+  follows_moves: true
+- id: firefox
+  name: Firefox
+  store_name: Firefox Add-ons
+  store_button: Add to Firefox
+  requirement: It needs Firefox 140 or later.
+  pin: Click the extensions button (the puzzle piece) in the toolbar, then the gear beside Flincth and **Pin to Toolbar**.
+  extensions_page: "**Add-ons and themes**"
+  revoke: "Open **Add-ons and themes**, choose Flincth, and turn sites off under **Permissions**."
+  shortcuts_page: "**Add-ons and themes** → the gear menu → **Manage Extension Shortcuts**"
+  access: per-site
+  follows_moves: false
+- id: edge
+  name: Edge
+  store_name: Microsoft Edge Add-ons
+  store_button: Get
+  requirement: ""
+  pin: Click the extensions icon (the puzzle piece) next to the address bar, then the eye beside Flincth to show it in the toolbar.
+  extensions_page: "`edge://extensions`"
+  revoke: "Open `edge://extensions`, click **Details** under Flincth, and change **Site access**."
+  shortcuts_page: "`edge://extensions/shortcuts`"
+  access: all-sites
+  follows_moves: true

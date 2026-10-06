@@ -1,0 +1,8 @@
+{%- comment -%}
+  Sets gb (this guide's browser from _data/guide_browsers.yml), store (its
+  entry in _data/browsers.yml) and g (the URL prefix of its guides). Every
+  file in this folder includes it first.
+{%- endcomment -%}
+{%- assign gb = site.data.guide_browsers | where: "id", page.guide_browser | first -%}
+{%- assign store = site.data.browsers | where: "id", page.guide_browser | first -%}
+{%- assign g = "/guides/" | append: page.guide_browser -%}
