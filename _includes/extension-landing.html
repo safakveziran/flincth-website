@@ -88,15 +88,15 @@
       </div>
     </section>
 
-    <section class="privacy-band"><div class="wrap privacy-inner"><h2>{{ x.privacy_title }}</h2><div><p>{{ x.privacy_copy | replace: "[browser]", b.name }}</p><span class="privacy-caption">{{ x.privacy_caption }}</span> <a class="privacy-link" href="{{ privacy_url }}#extension">{{ x.privacy_link }} <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="privacy-band"><div class="wrap privacy-inner"><h2>{{ x.privacy_title }}</h2><div><p>{{ b.privacy_copy | default: x.privacy_copy | replace: "[browser]", b.name }}</p><span class="privacy-caption">{{ x.privacy_caption }}</span> <a class="privacy-link" href="{{ privacy_url }}#extension">{{ x.privacy_link }} <span aria-hidden="true">→</span></a></div></div></section>
 
-    <section class="how wrap" id="how"><div class="section-heading"><div><h2>{{ x.how_title }}</h2></div><p>{{ x.how_copy }}</p></div><div class="steps"><article><span>01</span><h3>{{ x.step1_title }}</h3><p>{{ x.step1_copy }}</p></article><article><span>02</span><h3>{{ x.step2_title }}</h3><p>{{ x.step2_copy | replace: "[browser]", b.name }}</p></article><article><span>03</span><h3>{{ x.step3_title }}</h3><p>{{ x.step3_copy }}</p></article></div></section>
+    <section class="how wrap" id="how"><div class="section-heading"><div><h2>{{ x.how_title }}</h2></div><p>{{ x.how_copy }}</p></div><div class="steps"><article><span>01</span><h3>{{ x.step1_title }}</h3><p>{{ x.step1_copy }}</p></article><article><span>02</span><h3>{{ x.step2_title }}</h3><p>{{ b.step2_copy | default: x.step2_copy | replace: "[browser]", b.name }}</p></article><article><span>03</span><h3>{{ x.step3_title }}</h3><p>{{ x.step3_copy }}</p></article></div></section>
 
     <section class="faq wrap" id="questions"><div><h2>{{ x.faq_title }}</h2></div><div class="questions">
       <details><summary>{{ b.availability_q }}<span>+</span></summary><p>{{ b.availability_a }}</p></details>
       <details><summary>{{ x.faq_mac_q }}<span>+</span></summary><p>{{ x.faq_mac_a }}</p></details>
       <details><summary>{{ x.faq_window_q }}<span>+</span></summary><p>{{ x.faq_window_a }}</p></details>
-      <details><summary>{{ x.faq_permission_q }}<span>+</span></summary><p>{{ x.faq_permission_a }}</p></details>
+      <details><summary>{{ x.faq_permission_q }}<span>+</span></summary><p>{{ b.faq_permission_a | default: x.faq_permission_a | replace: "[browser]", b.name }}</p></details>
       <details><summary>{{ x.faq_data_q }}<span>+</span></summary><p>{{ x.faq_data_a | replace: "[browser]", b.name }}</p></details>
       <details><summary>{{ x.faq_keys_q }}<span>+</span></summary><p>{{ b.keys_a }}</p></details>
     </div></section>

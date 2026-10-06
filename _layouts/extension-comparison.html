@@ -92,7 +92,7 @@ layout: default
         </article>
         <article class="fit fit-flincth">
           <h3>Nothing leaves your browser</h3>
-          <p>No account, no analytics and no network requests of its own. Workspaces are stored in your browser, and site access is asked for one site at a time.</p>
+          <p>No account, no analytics and no network requests of its own. Workspaces are stored in your browser, and site access is asked for only when you choose to allow it.</p>
         </article>
       </div>
       <p class="fit-both">{{ page.fit_both }}</p>
@@ -103,7 +103,7 @@ layout: default
       <details><summary>{{ item.q }}<span>+</span></summary><p>{{ item.a }}</p></details>
 {%- endfor %}
       <details><summary>Why does a site sometimes open as a window instead of a pane?<span>+</span></summary><p>Some sites refuse to be shown inside another page, and a site in a pane does not see your signed-in session. For those, Flincth opens a real browser window and keeps it lined up with the pane, so the site works exactly as it does in a normal tab.</p></details>
-      <details><summary>What does Flincth ask permission for?<span>+</span></summary><p>Nothing when you install it. When you put a site in a pane, your browser asks for access to that one site, and only then. Every site you have allowed is listed in Flincth’s settings and can be removed there.</p></details>
+      <details><summary>What does Flincth ask permission for?<span>+</span></summary><p>Nothing when you install it. In Chrome and Edge, Flincth then offers to enable all websites, so panes can show any site; you can choose Not now and still organize workspaces. In Firefox, the browser asks about one site at a time, when you put that site in a pane. Access is used only inside Flincth’s own tab and can be revoked in your browser’s extension settings.</p></details>
       <details><summary>Does Flincth collect any data?<span>+</span></summary><p>No. Your workspaces are stored in your browser on your own device. Flincth has no account, no analytics and makes no network requests of its own.</p></details>
     </div></section>
 

@@ -130,7 +130,7 @@ extension:
   feature_alive_title: Leave mid-thought. Come back to it.
   feature_alive_copy: Recent workspaces stay loaded while you are away, so a half-typed reply or a paused video is still there when you switch back.
   privacy_title: Asks for nothing <span>it doesn’t need.</span>
-  privacy_copy: No access to any site when you install it. [browser] asks for one site at a time, only when you put that site in a pane, and you can revoke it from the settings page. No analytics, no account, no server.
+  privacy_copy: No access to any site when you install it. [browser] asks for website access only when you choose to allow it, and you can revoke it in [browser]’s extension settings. No analytics, no account, no server.
   privacy_caption: YOUR WORKSPACES STAY IN YOUR BROWSER.
   privacy_link: Read the privacy policy
   how_title: Arrange it once. Switch all day.
@@ -138,7 +138,7 @@ extension:
   step1_title: Make a workspace.
   step1_copy: Open Flincth from the toolbar, name a workspace and pick a layout.
   step2_title: Add your sites.
-  step2_copy: Type an address or pick one of your open tabs. [browser] asks permission for that one site.
+  step2_copy: Type an address or pick one of your open tabs. If Flincth doesn’t have website access yet, [browser] asks for it.
   step3_title: Switch in a keystroke.
   step3_copy: Click a workspace, or press its shortcut. Everything you left open is where you left it.
   faq_title: Good questions.
@@ -147,7 +147,7 @@ extension:
   faq_window_q: Why does a site open in a separate window?
   faq_window_a: Some sites refuse to be shown inside another page, and some keep you signed in with storage an embedded view cannot reach. For those, a pane can become a real browser window lined up with the pane, so the site behaves exactly as it does in a normal tab. Because it is a real window, it also appears in your window switcher and in screenshots.
   faq_permission_q: How does website access work?
-  faq_permission_a: Chrome 1.0.2 offers optional all-sites access after installation. You may skip it to organize workspaces; every activation asks again if access is missing, and sites remain inactive without consent. Firefox retains individual site approval. Framing headers change only inside Flincth’s tab. Access can be revoked in your browser’s extension settings. Some sites require a normal window.
+  faq_permission_a: Installing Flincth gives it access to no website. [browser] asks for access only when you allow it, and you can revoke it in [browser]’s extension settings. Some sites still need a normal window.
   faq_data_q: Does Flincth see what I do on those sites?
   faq_data_a: It never reads cookies, page content or form data. Bundled code tracks each pane’s address and provides Back and Forward. Workspaces and their latest addresses are stored in [browser] on your own device; nothing is sent to Flincth.
   faq_keys_q: Where do I set keyboard shortcuts?
@@ -165,7 +165,10 @@ extension_chrome:
   status: Available on the Chrome Web Store
   store_cta: Add to Chrome
   availability_q: Where do I get it for Chrome?
-  availability_a: From the Chrome Web Store, using Add to Chrome. Chrome 1.0.2 offers optional all-sites access after installation. You can skip it to edit workspaces, but activating sites requires permission. Access is revocable in your browser’s extension settings.
+  availability_a: From the Chrome Web Store, using the Add to Chrome button on this page. Installing it asks for no access to any site; right after installation Flincth offers to enable all websites, and you can skip that until you need it.
+  privacy_copy: No access to any site when you install it. Flincth then offers to enable all websites; choose Not now and you can still organize workspaces, and Chrome asks again when you activate a site. Access is used only inside Flincth’s own tab and can be revoked in Chrome’s extension settings. No analytics, no account, no server.
+  step2_copy: Type an address or pick one of your open tabs. If you skipped website access at install, Chrome asks for it now.
+  faq_permission_a: Installing Flincth gives it access to no website. Right after installation it offers to enable all websites, so panes can show any site and follow redirects. You can choose Not now and still organize workspaces; activating a site asks again, and without access sites stay inactive. The access is used only inside Flincth’s own tab, where framing headers are removed so sites can display in panes. Revoke it any time in Chrome’s extension settings (chrome://extensions → Flincth → Details → Site access). Some sites still need a normal window for sign-in.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Chrome, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at chrome://extensions/shortcuts.
 
 extension_firefox:
@@ -177,6 +180,9 @@ extension_firefox:
   store_cta: Add to Firefox
   availability_q: Where do I get it for Firefox?
   availability_a: From Firefox Add-ons, using the Add to Firefox button on this page. It needs Firefox 140 or later. Installing it asks for no access to any site; Firefox asks about one site at a time, when you put that site in a pane.
+  privacy_copy: No access to any site when you install it. Firefox asks for one site at a time, only when you put that site in a pane, and you can revoke each one in Firefox’s add-on settings. No analytics, no account, no server.
+  step2_copy: Type an address or pick one of your open tabs. Firefox asks permission for that one site.
+  faq_permission_a: Installing Flincth gives it access to no website. The first time you put a site in a pane, Firefox asks about that one site. Firefox doesn’t let extensions change framing headers, so a site that refuses to be embedded stays blank in a pane; open it as a window instead. Revoke access any time in Add-ons and themes → Flincth → Permissions.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Firefox, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys under Manage Extension Shortcuts in about:addons.
 
 extension_edge:
@@ -187,5 +193,8 @@ extension_edge:
   status: Available on Microsoft Edge Add-ons
   store_cta: Add to Edge
   availability_q: Where do I get it for Edge?
-  availability_a: From Microsoft Edge Add-ons, using the Add to Edge button on this page. Installing it asks for no access to any site; Edge asks about one site at a time, when you put that site in a pane.
+  availability_a: From Microsoft Edge Add-ons, using the Add to Edge button on this page. Installing it asks for no access to any site; right after installation Flincth offers to enable all websites, and you can skip that until you need it.
+  privacy_copy: No access to any site when you install it. Flincth then offers to enable all websites; choose Not now and you can still organize workspaces, and Edge asks again when you activate a site. Access is used only inside Flincth’s own tab and can be revoked in Edge’s extension settings. No analytics, no account, no server.
+  step2_copy: Type an address or pick one of your open tabs. If you skipped website access at install, Edge asks for it now.
+  faq_permission_a: Installing Flincth gives it access to no website. Right after installation it offers to enable all websites, so panes can show any site and follow redirects. You can choose Not now and still organize workspaces; activating a site asks again, and without access sites stay inactive. The access is used only inside Flincth’s own tab, where framing headers are removed so sites can display in panes. Revoke it any time in Edge’s extension settings (edge://extensions → Flincth → Details → Site access). Some sites still need a normal window for sign-in.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Edge, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at edge://extensions/shortcuts.

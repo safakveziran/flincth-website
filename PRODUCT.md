@@ -47,14 +47,16 @@ ships.
   through the user's own "Flincth Apply" Shortcut.
 - **Extension:** one tab holds several sites, and a site that refuses to be
   embedded or needs a signed-in session runs as a real window lined up with its
-  pane. No site access at install; permission is asked one site at a time.
+  pane. No site access at install. Chrome and Edge (1.0.2+) then offer optional
+  access to all websites, which can be skipped; Firefox asks one site at a time.
 
 ## Operating Context
 
 - Mac: menu bar, keyboard shortcuts, Apple Shortcuts, multiple displays,
   Mission Control desktops (which Flincth never crosses).
 - Browser: the toolbar popup, the split-view tab, `chrome://extensions/shortcuts`
-  and equivalents, per-site permission prompts.
+  and equivalents, the all-sites access offer (Chrome, Edge) and per-site
+  permission prompts (Firefox).
 
 ## Capabilities and Constraints
 

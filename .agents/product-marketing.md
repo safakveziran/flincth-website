@@ -1,7 +1,7 @@
 # Product Marketing Context
 
-**Document version:** v8
-**Last updated:** 2026-10-03
+**Document version:** v9
+**Last updated:** 2026-10-06
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
 > inferences waiting for the owner's review; everything else is taken from the
@@ -62,7 +62,8 @@ Paste, Maccy (clipboard managers). Each solves one half.
 - No Accessibility permission, no account; setups and clipboard never leave the Mac (only network use: opt-in feature announcements); sandboxed, Mac App Store only.
 - Applies a layout once when you switch, then leaves your windows alone.
 - Extension: sites that refuse embedding run as real windows aligned to the pane;
-  no site permissions at install.
+  no site permissions at install (Chrome and Edge then offer optional all-sites
+  access; Firefox asks per site).
 **Why that's better:** one action changes the whole desk, and nothing watches
 your screen or leaves your Mac.
 
@@ -73,7 +74,7 @@ your screen or leaves your Mac.
 | "Is it a tiling window manager?" | No. It applies your layout when you switch and then leaves windows alone. |
 | "Can it move windows between desktops or into full screen?" | No. No app can do that through supported APIs; Flincth says so up front. |
 | "Does my clipboard leave my Mac?" | No. Setups and clipboard are never sent anywhere; the app only goes online for optional feature announcements. |
-| Extension: "Why does it ask for site permission?" | Only to show that one site inside a pane, only in Flincth's own tab. |
+| Extension: "Why does it ask for website access?" | Only to show sites inside Flincth's own tab. Chrome and Edge ask once for all websites, which can be skipped; Firefox asks one site at a time. |
 
 **Anti-persona:** people who want windows auto-tiled continuously, or cross-desktop automation.
 
@@ -119,6 +120,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v9 (2026-10-06) — Extension 1.0.2 website access recorded: Chrome and Edge offer optional all-sites access after install; Firefox still asks per site.
 - v8 (2026-10-03) — Extension live on Firefox Add-ons (https://addons.mozilla.org/addon/flincth/); now in all three stores.
 - v7 (2026-09-30) — Price set (US$9.99 one-time); "no network access" replaced, since the app has opt-in OneSignal feature announcements.
 - v6 (2026-09-28) — Extension live on the Chrome Web Store (https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp).

@@ -66,8 +66,10 @@ the Mac app and works without it.
   window aligned to the pane (for sites that refuse embedding or need the
   user's signed-in session), or as a launcher card that opens a normal tab.
 - **Privacy.** Collects no data and makes no network requests of its own. No
-  site access is requested at install; access is requested one site at a time
-  when that site is assigned to a pane, and can be revoked.
+  site access is requested at install. In Chrome and Edge (1.0.2 and later) the
+  extension then offers optional access to all websites, which can be skipped;
+  in Firefox access is requested one site at a time when that site is assigned
+  to a pane. Access can be revoked in the browser's extension settings.
 - **Availability.** Chrome: on the Chrome Web Store,
   https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp
   Microsoft Edge: on Microsoft Edge Add-ons,
