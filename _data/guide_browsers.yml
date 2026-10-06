@@ -1,7 +1,8 @@
 # Per-browser facts for the browser extension guides (_guides/<id>/).
-# Order here is the order on /guides/. Each guide sets guide_browser: <id>;
+# Order here is the order on /guides/. Each guide sets platform: <id>;
 # the shared text in _includes/extension-guides/ reads these values.
 #
+#   a_tab:          "a Chrome tab": the name with its article, for sentences
 #   access:         "all-sites" (Chrome and Edge 1.0.2: one optional grant for
 #                   every website, offered after install) or "per-site"
 #                   (Firefox: one prompt per site, from the pane)
@@ -9,6 +10,7 @@
 #                   moved (windows.onBoundsChanged), so attached windows
 #                   follow the browser and snap back when nudged
 - id: chrome
+  a_tab: a Chrome tab
   name: Chrome
   store_name: Chrome Web Store
   store_button: Add to Chrome
@@ -20,6 +22,7 @@
   access: all-sites
   follows_moves: true
 - id: firefox
+  a_tab: a Firefox tab
   name: Firefox
   store_name: Firefox Add-ons
   store_button: Add to Firefox
@@ -31,6 +34,7 @@
   access: per-site
   follows_moves: false
 - id: edge
+  a_tab: an Edge tab
   name: Edge
   store_name: Microsoft Edge Add-ons
   store_button: Get

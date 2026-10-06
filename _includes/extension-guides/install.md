@@ -54,4 +54,4 @@ Revoking unloads the sites in your panes and minimises any attached windows. You
 
 ## Next
 
-[Split a {{ gb.name }} tab into your first workspace]({{ g }}/split-a-tab-into-a-workspace).
+[Split {{ gb.a_tab }} into your first workspace]({{ g }}/split-a-tab-into-a-workspace).

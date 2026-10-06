@@ -1,0 +1,22 @@
+---
+layout: default
+---
+{%- comment -%}
+  One platform's guides (guides/<id>/index.html). The page sets platform:
+  <id> from _data/guide_platforms.yml and lists every guide with the same
+  platform, in their order.
+{%- endcomment -%}
+{%- assign platform = site.data.guide_platforms | where: "id", page.platform | first -%}
+{%- assign guides = site.guides | where: "platform", page.platform | sort: "order" -%}
+  <main id="main" class="wrap doc blog-index guide-list">
+    <a class="post-back" href="/guides/">← All guides</a>
+    <p class="guide-kicker"><img src="{{ platform.icon }}" alt="" width="28" height="28">{{ platform.kicker }}</p>
+    <h1>{{ page.heading }}</h1>
+    <p class="lead">{{ page.lead }}</p>
+    <ol class="post-list">
+{%- for g in guides %}
+      <li><a href="{{ g.url }}"><span class="post-list-num">Guide {{ forloop.index }}</span><span class="post-list-title">{{ g.title }}</span><span class="post-list-desc">{{ g.description }}</span></a></li>
+{%- endfor %}
+    </ol>
+    <p class="blog-feed">Something not working? See <a href="/support">Support</a>, or <a href="/guides/">guides for the other platforms</a>.</p>
+  </main>

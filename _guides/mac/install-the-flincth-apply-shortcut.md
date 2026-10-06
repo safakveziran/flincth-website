@@ -3,6 +3,8 @@ title: "How to Install the Flincth Apply Shortcut"
 description: "Flincth moves windows through one Apple Shortcut you add once. Here is how to install it, approve its first run and fix the usual snags."
 order: 1
 updated: 2026-10-06
+platform: mac
+redirect_from: /guides/install-the-flincth-apply-shortcut
 ---
 
 Flincth never asks for Accessibility access to move your windows. Instead, it works out where every window should go and hands that plan to one shortcut in Apple's Shortcuts app, which does the moving.
@@ -56,4 +58,4 @@ If you put Chrome, Firefox or Safari in more regions than it has windows open, F
 
 ## Next
 
-With the shortcut in place, [create your first setup](/guides/create-your-first-setup).
+With the shortcut in place, [create your first setup](/guides/mac/create-your-first-setup).

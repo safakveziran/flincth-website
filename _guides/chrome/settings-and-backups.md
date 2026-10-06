@@ -4,7 +4,7 @@ description: "Decide how many Flincth workspaces stay loaded in Chrome, open Fli
 order: 5
 updated: 2026-10-06
 product: extension
-guide_browser: chrome
+platform: chrome
 store_browser: chrome
 redirect_from: /guides/extension-settings-and-backups
 ---

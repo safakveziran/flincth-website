@@ -4,7 +4,7 @@ description: "Some sites refuse to load inside another page or lose your sign-in
 order: 3
 updated: 2026-10-06
 product: extension
-guide_browser: firefox
+platform: firefox
 store_browser: firefox
 ---
 {% include extension-guides/sites.md %}

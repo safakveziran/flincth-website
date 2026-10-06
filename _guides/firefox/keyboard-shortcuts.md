@@ -4,7 +4,7 @@ description: "Flincth in Firefox has four shortcuts that work anywhere and your 
 order: 4
 updated: 2026-10-06
 product: extension
-guide_browser: firefox
+platform: firefox
 store_browser: firefox
 ---
 {% include extension-guides/shortcuts.md %}

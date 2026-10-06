@@ -4,7 +4,7 @@ description: "Install the Flincth extension from the Chrome Web Store, pin it, a
 order: 1
 updated: 2026-10-06
 product: extension
-guide_browser: chrome
+platform: chrome
 store_browser: chrome
 redirect_from: /guides/install-the-flincth-browser-extension
 ---

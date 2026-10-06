@@ -4,7 +4,7 @@ description: "Flincth in Chrome has four shortcuts that work anywhere and your o
 order: 4
 updated: 2026-10-06
 product: extension
-guide_browser: chrome
+platform: chrome
 store_browser: chrome
 redirect_from: /guides/keyboard-shortcuts-for-browser-workspaces
 ---

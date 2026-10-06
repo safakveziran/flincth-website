@@ -4,7 +4,7 @@ description: "Decide how many Flincth workspaces stay loaded in Edge, open Flinc
 order: 5
 updated: 2026-10-06
 product: extension
-guide_browser: edge
+platform: edge
 store_browser: edge
 ---
 {% include extension-guides/settings.md %}

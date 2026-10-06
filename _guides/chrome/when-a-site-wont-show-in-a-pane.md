@@ -4,7 +4,7 @@ description: "Some sites refuse to load inside another page or lose your sign-in
 order: 3
 updated: 2026-10-06
 product: extension
-guide_browser: chrome
+platform: chrome
 store_browser: chrome
 redirect_from: /guides/sites-that-wont-load-in-a-pane
 ---

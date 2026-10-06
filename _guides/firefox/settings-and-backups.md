@@ -4,7 +4,7 @@ description: "Decide how many Flincth workspaces stay loaded in Firefox, open Fl
 order: 5
 updated: 2026-10-06
 product: extension
-guide_browser: firefox
+platform: firefox
 store_browser: firefox
 ---
 {% include extension-guides/settings.md %}

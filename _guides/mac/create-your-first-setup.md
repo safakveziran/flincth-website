@@ -3,13 +3,15 @@ title: "How to Create Your First Setup in Flincth"
 description: "Build a setup in Workspace Manager: choose a layout, put an app in each region, decide what happens to everything else, then switch to it."
 order: 2
 updated: 2026-10-06
+platform: mac
+redirect_from: /guides/create-your-first-setup
 ---
 
 A **setup** is one kind of work: coding, writing, a meeting. It says which apps belong to that work, where their windows go on your screens, and what happens to every other app. Each setup also keeps its own clipboard history.
 
 This guide builds one from scratch. It takes a few minutes.
 
-You need the Flincth Apply shortcut first. If you haven't added it yet, start with [How to Install the Flincth Apply Shortcut](/guides/install-the-flincth-apply-shortcut).
+You need the Flincth Apply shortcut first. If you haven't added it yet, start with [How to Install the Flincth Apply Shortcut](/guides/mac/install-the-flincth-apply-shortcut).
 
 ## 1. Open Workspace Manager
 
@@ -85,9 +87,9 @@ If another setup or another app already uses that combination, Flincth tells you
 
 - It arranges windows on the **desktop you're on**. No app can move a window to a different Mission Control desktop.
 - It doesn't move windows that are in **full screen**. Leave full screen with <kbd>⌃⌘F</kbd> first.
-- It is made for the screens that were connected when you built it. See [Window Layouts for Two Displays or an Ultrawide](/guides/layouts-for-two-displays-and-ultrawide-monitors).
+- It is made for the screens that were connected when you built it. See [Window Layouts for Two Displays or an Ultrawide](/guides/mac/layouts-for-two-displays-and-ultrawide-monitors).
 
 ## Next
 
-- [Example setups for coding, writing and meetings](/guides/example-setups-for-coding-writing-and-meetings)
-- [Use a separate clipboard history for each setup](/guides/per-setup-clipboard-history)
+- [Example setups for coding, writing and meetings](/guides/mac/example-setups-for-coding-writing-and-meetings)
+- [Use a separate clipboard history for each setup](/guides/mac/per-setup-clipboard-history)

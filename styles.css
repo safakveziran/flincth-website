@@ -282,13 +282,17 @@ h1>span{display:block}
 .blog-feed{font-size:14px;margin-top:28px}
 /* Guides (guides/index.html, _layouts/guide.html) reuse the blog styles above. */
 .post-list-num{font-size:13px}
-.guide-group{font-size:28px;letter-spacing:-.8px;margin:56px 0 0}
-.guide-group span{display:block;font-size:15px;font-weight:450;letter-spacing:0;margin-top:6px}
-.guide-group+.post-list{margin-top:20px}
-.guide-browser{font-size:20px;letter-spacing:-.4px;margin:40px 0 0}
-.guide-browser+.post-list{margin-top:12px}
-.guide-browser-nav{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:15px;margin:14px 0 0}
-.guide-browser-nav a{text-decoration:underline;text-underline-offset:3px}
+.doc .guide-platforms{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.doc .guide-platforms li{margin:0}
+.guide-platform{display:grid;gap:6px;height:100%;padding:26px;border:1px solid;border-radius:20px;text-decoration:none!important;transition:transform .2s,border-color .2s}
+.guide-platform:hover{transform:translateY(-3px)}
+.guide-platform img{width:48px;height:48px;margin-bottom:10px}
+.guide-platform-kicker{font-size:12px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase}
+.guide-platform-name{font-size:24px;font-weight:600;letter-spacing:-.6px;line-height:1.2}
+.guide-platform-note{font-size:15px;line-height:1.6}
+.guide-platform-count{font-size:14px;font-weight:600;margin-top:8px}
+.guide-kicker{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:650;letter-spacing:1.2px;text-transform:uppercase;margin:24px 0 0}
+@media(max-width:700px){.doc .guide-platforms{grid-template-columns:1fr}}
 .guide-more{border-top:1px solid;margin-top:56px;padding-top:24px}
 .guide-more-title{font-weight:650;font-size:16px;margin:0 0 8px}
 .guide-more ul{list-style:none;padding:0;margin:0;display:grid;gap:10px}

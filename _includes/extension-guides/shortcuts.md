@@ -23,7 +23,7 @@ Slots 3 and 4 have no key until you give them one. If another extension already 
 **Which workspace each slot opens.** A new workspace takes the first free slot on its own. To change it, open **Settings** (the gear in the toolbar popup) and use **Shortcuts that work anywhere**: pick a workspace for each slot, or **Nothing**.
 
 **Changing the keys.** Only {{ gb.name }} can change these keys. In the same section, click **Change the keys in your browser**, or go to {{ gb.shortcuts_page }}.
-{%- if page.guide_browser == "firefox" %} If {{ gb.name }} can't open that screen for you, Flincth says so and shows the same path.{% endif %}
+{%- if page.platform == "firefox" %} If {{ gb.name }} can't open that screen for you, Flincth says so and shows the same path.{% endif %}
 
 ## Shortcuts inside Flincth
 
@@ -54,4 +54,4 @@ Click **Set a shortcut** and press the keys. Press **Esc** to stop recording.
 ## Next
 
 - [Flincth settings and backups in {{ gb.name }}]({{ g }}/settings-and-backups)
-- [Split a {{ gb.name }} tab into your first workspace]({{ g }}/split-a-tab-into-a-workspace)
+- [Split {{ gb.a_tab }} into your first workspace]({{ g }}/split-a-tab-into-a-workspace)

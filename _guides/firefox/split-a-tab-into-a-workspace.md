@@ -4,7 +4,7 @@ description: "Create a Flincth workspace in Firefox: pick a layout, split and re
 order: 2
 updated: 2026-10-06
 product: extension
-guide_browser: firefox
+platform: firefox
 store_browser: firefox
 ---
 {% include extension-guides/workspace.md %}

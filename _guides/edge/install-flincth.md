@@ -4,7 +4,7 @@ description: "Install the Flincth extension from Microsoft Edge Add-ons, pin it,
 order: 1
 updated: 2026-10-06
 product: extension
-guide_browser: edge
+platform: edge
 store_browser: edge
 ---
 {% include extension-guides/install.md %}

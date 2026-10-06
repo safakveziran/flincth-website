@@ -4,7 +4,7 @@ description: "Install the Flincth extension from Firefox Add-ons, pin it, and al
 order: 1
 updated: 2026-10-06
 product: extension
-guide_browser: firefox
+platform: firefox
 store_browser: firefox
 ---
 {% include extension-guides/install.md %}

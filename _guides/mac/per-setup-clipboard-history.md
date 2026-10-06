@@ -3,6 +3,8 @@ title: "How to Use a Separate Clipboard History for Each Setup"
 description: "Flincth keeps a text clipboard history for each setup. Open it, search it, paste from it, see everything at once, and decide how long it is kept."
 order: 4
 updated: 2026-10-06
+platform: mac
+redirect_from: /guides/per-setup-clipboard-history
 ---
 
 Flincth remembers the text you copy, and keeps it with the setup you were working in. Snippets copied while coding stay with *Code*; quotes and links gathered for an article stay with *Writing*.
@@ -12,7 +14,7 @@ It's on from the start. This guide shows how to use it and how to tune it.
 ## Where copies go
 
 - **A setup is active:** what you copy goes into that setup's list.
-- **No setup is active** (including after [Not Flincth](/guides/restore-your-desk-with-not-flincth)): it goes into a list called **General**.
+- **No setup is active** (including after [Not Flincth](/guides/mac/restore-your-desk-with-not-flincth)): it goes into a list called **General**.
 
 Every item lives in exactly one list. Switching setups doesn't move, merge or clear anything: each list waits for you to come back.
 
@@ -76,5 +78,5 @@ The history is stored on your Mac, inside Flincth's sandbox, in a file only your
 
 ## Next
 
-- [Example setups for coding, writing and meetings](/guides/example-setups-for-coding-writing-and-meetings)
+- [Example setups for coding, writing and meetings](/guides/mac/example-setups-for-coding-writing-and-meetings)
 - [Why Flincth keeps a separate list for each kind of work](/blog/a-separate-clipboard-history-for-each-kind-of-work)

@@ -83,8 +83,8 @@ the Mac app and works without it.
 - [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome (available now).
 - [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox (available now).
 - [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
-- [Guides](https://flincth.com/guides/): step-by-step guides for Flincth for Mac and the browser extension.
-{%- assign _mac_guides = site.guides | where_exp: "g", "g.product != 'extension'" | sort: "order" %}
+- [Guides](https://flincth.com/guides/): step-by-step guides, one list per platform: [Mac](https://flincth.com/guides/mac/), [Chrome](https://flincth.com/guides/chrome/), [Firefox](https://flincth.com/guides/firefox/), [Edge](https://flincth.com/guides/edge/).
+{%- assign _mac_guides = site.guides | where: "platform", "mac" | sort: "order" %}
 {%- if _mac_guides.size > 0 %}
 
 ## Guides: Flincth for Mac
@@ -93,8 +93,8 @@ the Mac app and works without it.
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
-{%- for _gb in site.data.guide_browsers %}
-{%- assign _ext_guides = site.guides | where: "guide_browser", _gb.id | sort: "order" %}
+{%- for _gb in site.data.platforms %}
+{%- assign _ext_guides = site.guides | where: "platform", _gb.id | sort: "order" %}
 {%- if _ext_guides.size > 0 %}
 
 ## Guides: Flincth for {{ site.data.i18n.en.products[_gb.id] }}

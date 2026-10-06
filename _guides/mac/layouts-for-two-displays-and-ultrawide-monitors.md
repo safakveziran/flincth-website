@@ -3,11 +3,13 @@ title: "Window Layouts for Two Displays or an Ultrawide Monitor"
 description: "Lay out a Flincth setup across two or more displays or one ultrawide: regions per screen, size limits for narrow apps, and several browser windows."
 order: 3
 updated: 2026-10-06
+platform: mac
+redirect_from: /guides/layouts-for-two-displays-and-ultrawide-monitors
 ---
 
 Flincth is at its best on a big desk: two or three displays, or one wide monitor. This guide covers what changes when you lay out a setup for more than one laptop screen.
 
-If you haven't built a setup yet, start with [How to Create Your First Setup](/guides/create-your-first-setup).
+If you haven't built a setup yet, start with [How to Create Your First Setup](/guides/mac/create-your-first-setup).
 
 ## Every screen has its own regions
 
@@ -77,5 +79,5 @@ If an app's window keeps opening on the wrong desktop, pin it: right-click its D
 
 ## Next
 
-- [Example setups for coding, writing and meetings](/guides/example-setups-for-coding-writing-and-meetings)
-- [Put your desk back with Not Flincth](/guides/restore-your-desk-with-not-flincth)
+- [Example setups for coding, writing and meetings](/guides/mac/example-setups-for-coding-writing-and-meetings)
+- [Put your desk back with Not Flincth](/guides/mac/restore-your-desk-with-not-flincth)

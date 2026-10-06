@@ -204,10 +204,13 @@ footer > a:hover { color: #8db6ff; }
 .post-list a:hover .post-list-title { color: #89b2ff; }
 .post-list-desc { color: var(--muted); }
 .post-list-num { color: #8fa0bb; }
-.guide-group { color: var(--ink); }
-.guide-group span { color: var(--muted); }
-.guide-browser { color: var(--ink); }
-.guide-browser-nav a { color: #89b2ff; }
+.guide-platform { background: linear-gradient(145deg, #142036, #0f1829); border-color: #2b405f; }
+.guide-platform-main { background: linear-gradient(145deg, #192b49, #142036); border-color: #3a5480; }
+.guide-platform:hover { border-color: #5b84c4; }
+.guide-platform-kicker, .guide-kicker { color: #8fa0bb; }
+.guide-platform-name { color: var(--ink); }
+.guide-platform-note { color: var(--muted); }
+.guide-platform-count { color: #89b2ff; }
 .guide-more { border-color: var(--line); }
 .guide-more-title { color: var(--ink); }
 .guide-more a { color: #89b2ff; }

@@ -4,7 +4,7 @@ description: "Flincth in Edge has four shortcuts that work anywhere and your own
 order: 4
 updated: 2026-10-06
 product: extension
-guide_browser: edge
+platform: edge
 store_browser: edge
 ---
 {% include extension-guides/shortcuts.md %}

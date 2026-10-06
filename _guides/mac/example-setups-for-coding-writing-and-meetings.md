@@ -3,11 +3,13 @@ title: "Example Setups for Coding, Writing, Meetings and Research"
 description: "Four ready-made Flincth setups to copy: which layout to pick, which app goes where, what to keep open and what to hide. Adjust them to your own apps."
 order: 6
 updated: 2026-10-06
+platform: mac
+redirect_from: /guides/example-setups-for-coding-writing-and-meetings
 ---
 
 A blank Workspace Manager can be hard to start from. Here are four setups to copy, then bend to your own apps.
 
-Each recipe names a layout from the palette in Workspace Manager, says which app goes in each region, and what happens to everything else. The apps are examples: swap in the ones you actually use. If you haven't built a setup before, [How to Create Your First Setup](/guides/create-your-first-setup) shows where each button is.
+Each recipe names a layout from the palette in Workspace Manager, says which app goes in each region, and what happens to everything else. The apps are examples: swap in the ones you actually use. If you haven't built a setup before, [How to Create Your First Setup](/guides/mac/create-your-first-setup) shows where each button is.
 
 ## Code
 
@@ -39,7 +41,7 @@ For drafting with your research beside you.
 - Left: your writing app (Pages, Word, Ulysses, iA Writer…).
 - Right: a browser with your sources.
 
-On an ultrawide, try three regions instead: notes on the left, the draft in a wide centre, sources on the right. [Window Layouts for Two Displays or an Ultrawide](/guides/layouts-for-two-displays-and-ultrawide-monitors) shows how.
+On an ultrawide, try three regions instead: notes on the left, the draft in a wide centre, sources on the right. [Window Layouts for Two Displays or an Ultrawide](/guides/mac/layouts-for-two-displays-and-ultrawide-monitors) shows how.
 
 **Everything else:** hide, including chat. That's half the point.
 
@@ -86,5 +88,5 @@ When you choose a setup, Flincth opens any of its apps that aren't running, move
 
 ## Next
 
-- [Use a separate clipboard history for each setup](/guides/per-setup-clipboard-history)
-- [Put your desk back with Not Flincth](/guides/restore-your-desk-with-not-flincth)
+- [Use a separate clipboard history for each setup](/guides/mac/per-setup-clipboard-history)
+- [Put your desk back with Not Flincth](/guides/mac/restore-your-desk-with-not-flincth)

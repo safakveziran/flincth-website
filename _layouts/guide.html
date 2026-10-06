@@ -6,7 +6,7 @@ layout: default
   text), order (its place within its product on /guides/), updated
   (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's steps
   change). A browser extension guide also sets product: extension,
-  guide_browser: <id> (its browser in _data/guide_browsers.yml) and
+  platform: <id> (its browser in _data/platforms.yml) and
   store_browser: <id> (so the header installs that browser's extension);
   anything else is a Flincth for Mac guide. Menu and button names in a
   guide are the product's own, so check them when its interface changes;
@@ -14,14 +14,11 @@ layout: default
 {%- endcomment -%}
 {%- assign words = content | strip_html | number_of_words -%}
 {%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
-{%- if page.product == "extension" -%}
-  {%- assign others = site.guides | where: "guide_browser", page.guide_browser -%}
-{%- else -%}
-  {%- assign others = site.guides | where_exp: "g", "g.product != 'extension'" -%}
-{%- endif -%}
-{%- assign others = others | sort: "order" | where_exp: "g", "g.url != page.url" -%}
+{%- assign platform = site.data.guide_platforms | where: "id", page.platform | first -%}
+{%- assign others = site.guides | where: "platform", page.platform | sort: "order" | where_exp: "g", "g.url != page.url" -%}
+{%- capture back_label %}← All {% if page.platform == "mac" %}Mac{% else %}{{ platform.name }}{% endif %} guides{% endcapture -%}
   <main id="main" class="wrap doc post guide">
-    <a class="post-back" href="/guides/">← All guides</a>
+    <a class="post-back" href="/guides/{{ page.platform }}/">{{ back_label }}</a>
     <article>
       <h1>{{ page.title }}</h1>
       <p class="post-meta">Updated <time datetime="{{ page.updated | date: '%Y-%m-%d' }}">{{ page.updated | date: "%-d %B %Y" }}</time> <span>·</span> {{ minutes }} min read</p>
@@ -39,9 +36,9 @@ layout: default
       </ul>
     </nav>
 {%- if page.product == "extension" %}
-{%- assign _store = site.data.browsers | where: "id", page.guide_browser | first %}
-{%- assign _strings = "extension_" | append: page.guide_browser %}
-{%- assign _name = site.data.i18n[page.lang].products[page.guide_browser] %}
+{%- assign _store = site.data.browsers | where: "id", page.platform | first %}
+{%- assign _strings = "extension_" | append: page.platform %}
+{%- assign _name = site.data.i18n[page.lang].products[page.platform] %}
     <aside class="post-cta">
       <img src="/assets/extension-icon.png" alt="" width="56" height="56" loading="lazy">
       <div><p class="post-cta-title">Flincth for {{ _name }}</p><p>Split one tab into saved workspaces. Free, collects no data.</p></div>
@@ -54,7 +51,7 @@ layout: default
       <a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a>
     </aside>
 {%- endif %}
-    <a class="back" href="/guides/">← All guides</a>
+    <a class="back" href="/guides/{{ page.platform }}/">{{ back_label }}</a>
   </main>
 <script type="application/ld+json">
 {
@@ -65,7 +62,7 @@ layout: default
   "dateModified": "{{ page.updated | date_to_xmlschema }}",
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
 {%- if page.product == "extension" %}
-  "about": { "@type": "SoftwareApplication", "name": "Flincth for {{ site.data.i18n[page.lang].products[page.guide_browser] }}", "applicationCategory": "BrowserApplication" },
+  "about": { "@type": "SoftwareApplication", "name": "Flincth for {{ site.data.i18n[page.lang].products[page.platform] }}", "applicationCategory": "BrowserApplication" },
 {%- else %}
   "about": { "@type": "SoftwareApplication", "name": "Flincth", "operatingSystem": "macOS", "applicationCategory": "UtilitiesApplication" },
 {%- endif %}

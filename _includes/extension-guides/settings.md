@@ -5,7 +5,7 @@ Open **Settings** from the gear icon in the toolbar popup, or in the Flincth tab
 
 ## Switching
 
-**Keep inactive workspaces loaded** (on by default). Workspaces you switch away from stay loaded, so switching back is instant and pages keep their scroll position, playing video and half-typed text. The cost is memory: each pane uses about as much as a {{ gb.name }} tab.
+**Keep inactive workspaces loaded** (on by default). Workspaces you switch away from stay loaded, so switching back is instant and pages keep their scroll position, playing video and half-typed text. The cost is memory: each pane uses about as much as {{ gb.a_tab }}.
 
 **Workspaces kept loaded at once** (1 to 5, default 3). Past that number, the workspace you used longest ago is unloaded, and reloads the next time you switch to it.
 

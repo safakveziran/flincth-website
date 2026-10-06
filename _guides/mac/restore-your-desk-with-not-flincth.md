@@ -3,6 +3,8 @@ title: "How to Put Your Desk Back with Not Flincth"
 description: "Not Flincth returns your windows to how they were before you first switched setups. What it restores, what it can't, and how it differs from Hide All Apps."
 order: 5
 updated: 2026-10-06
+platform: mac
+redirect_from: /guides/restore-your-desk-with-not-flincth
 ---
 
 Trying a new tool that moves your windows around is a little nerve-racking. What if you want your old desk back?
@@ -53,5 +55,5 @@ Use Hide All Apps for a clean screen before a screen share, and Not Flincth when
 
 ## Next
 
-- [Create your first setup](/guides/create-your-first-setup)
-- [Example setups for coding, writing and meetings](/guides/example-setups-for-coding-writing-and-meetings)
+- [Create your first setup](/guides/mac/create-your-first-setup)
+- [Example setups for coding, writing and meetings](/guides/mac/example-setups-for-coding-writing-and-meetings)
