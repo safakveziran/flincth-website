@@ -95,7 +95,7 @@ the Mac app and works without it.
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
-{%- for _gb in site.data.platforms %}
+{%- for _gb in site.data.guide_browsers %}
 {%- assign _ext_guides = site.guides | where: "platform", _gb.id | sort: "order" %}
 {%- if _ext_guides.size > 0 %}
 

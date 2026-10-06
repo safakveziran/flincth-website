@@ -1,5 +1,5 @@
 # Per-browser facts for the browser extension guides (_guides/<id>/).
-# Order here is the order on /guides/. Each guide sets platform: <id>;
+# Each extension guide sets platform: <id> to one of these;
 # the shared text in _includes/extension-guides/ reads these values.
 #
 #   a_tab:          "a Chrome tab": the name with its article, for sentences

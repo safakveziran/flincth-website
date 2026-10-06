@@ -5,11 +5,13 @@ layout: default
   A step-by-step guide. Front matter: title, description (also the share
   text), order (its place within its product on /guides/), updated
   (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's steps
-  change). A browser extension guide also sets product: extension,
-  platform: <id> (its browser in _data/platforms.yml) and
-  store_browser: <id> (so the header installs that browser's extension);
-  anything else is a Flincth for Mac guide. Menu and button names in a
-  guide are the product's own, so check them when its interface changes;
+  change) and platform: <id> (mac, chrome, firefox or edge; see
+  _data/guide_platforms.yml), which decides its list, its back link and its
+  "More guides". A browser extension guide also sets product: extension and
+  store_browser: <id> (so the header installs that browser's extension); its
+  per-browser facts come from _data/guide_browsers.yml. Menu and button
+  names in a guide are the product's own, so check them when its
+  interface changes;
   see README.md, "Guides".
 {%- endcomment -%}
 {%- assign words = content | strip_html | number_of_words -%}
