@@ -38,4 +38,13 @@ layout: null
     <priority>0.5</priority>
   </url>
 {%- endfor %}
+{%- comment -%} Guides: lastmod is the guide's `updated` value. {%- endcomment -%}
+{%- for p in site.guides %}
+  <url>
+    <loc>{{ site.url }}{{ p.url }}</loc>
+    <lastmod>{{ p.updated | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+{%- endfor %}
 </urlset>

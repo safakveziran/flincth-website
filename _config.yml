@@ -25,6 +25,15 @@ defaults:
   # /blog/<slug>, without ".html" like every other page.
   - scope: { path: "", type: posts }
     values: { layout: post, permalink: /blog/:title }
+  # Guides live in _guides/ as slug.md and are served at /guides/<slug>.
+  - scope: { path: "", type: guides }
+    values: { layout: guide }
+
+# Step-by-step guides for Flincth for Mac (see README.md, "Guides").
+collections:
+  guides:
+    output: true
+    permalink: /guides/:name
 
 # Development files that are not published.
 exclude:

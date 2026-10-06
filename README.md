@@ -36,6 +36,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `privacy.html`: Privacy policy (app, browser extension and website covered separately)
 - `chrome.html`, `firefox.html`, `edge.html`: Browser extension landing pages (see Browser extension pages)
 - `support.html`: Support and common problems
+- `guides/index.html`, `_guides/`, `_layouts/guide.html`: Step-by-step guides (see Guides)
 - `404.html`: GitHub Pages error page
 - `assets/og-image.png`: 1200×630 share image (`og:image`, `twitter:image`)
 - `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand. Each page's `sitemap.lastmod` is written by hand: update it in the same commit whenever the page's own content changes, or search engines learn to ignore it
@@ -80,6 +81,12 @@ Posts live in `_posts/` as `YYYY-MM-DD-slug.md` with `title` and `description` i
 3. Add the Medium address to the post as `medium_url:`. The post then shows an "Also on Medium" link.
 
 A story that appeared on Medium before the site (the first one did) should get the same canonical link by hand: on Medium open the story's **More settings → Advanced settings → Customize canonical link** and enter the flincth.com address.
+
+### Guides
+
+Step-by-step guides for Flincth for Mac live in `_guides/` (a Jekyll collection) as `slug.md`, with `title`, `description`, `order` (their place on `/guides/`) and `updated: YYYY-MM-DD` in their front matter. They use `_layouts/guide.html`, are served at `/guides/<slug>`, and are listed on `/guides/` (`guides/index.html`), in `sitemap.xml` (lastmod is `updated`), in `llms.txt` and in the footer's Help column. Update `updated` whenever a guide's steps change, so IndexNow resends it.
+
+Guides name the app's own menus and buttons (Workspace Manager…, Add Area, Choose App, FlincthApply v2, Settings → Clipboard…). They were checked against the Mac app's source and `spec.md`; when the app's interface changes, check the guides in the same release.
 
 ### Comparison pages
 

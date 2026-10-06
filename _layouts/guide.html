@@ -1,0 +1,53 @@
+---
+layout: default
+---
+{%- comment -%}
+  A step-by-step guide for Flincth for Mac. Front matter: title,
+  description (also the share text), order (its place on /guides/) and
+  updated (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's
+  steps change). Menu and button names in a guide are the app's own, so
+  check them against the app when its interface changes; see README.md,
+  "Guides".
+{%- endcomment -%}
+{%- assign words = content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
+{%- assign others = site.guides | sort: "order" | where_exp: "g", "g.url != page.url" -%}
+  <main id="main" class="wrap doc post guide">
+    <a class="post-back" href="/guides/">← All guides</a>
+    <article>
+      <h1>{{ page.title }}</h1>
+      <p class="post-meta">Updated <time datetime="{{ page.updated | date: '%Y-%m-%d' }}">{{ page.updated | date: "%-d %B %Y" }}</time> <span>·</span> {{ minutes }} min read</p>
+      <p class="lead">{{ page.description }}</p>
+      <div class="post-body">
+{{ content }}
+      </div>
+    </article>
+    <nav class="guide-more" aria-labelledby="guide-more-title">
+      <p class="guide-more-title" id="guide-more-title">More guides</p>
+      <ul>
+{%- for g in others %}
+        <li><a href="{{ g.url }}">{{ g.title }}</a></li>
+{%- endfor %}
+      </ul>
+    </nav>
+    <aside class="post-cta">
+      <img src="/assets/app-icon-128.png" alt="" width="56" height="56" loading="lazy">
+      <div><p class="post-cta-title">Flincth for Mac</p><p>Switch your whole desk and clipboard for each kind of work. One-time purchase, no account.</p></div>
+      <a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a>
+    </aside>
+    <a class="back" href="/guides/">← All guides</a>
+  </main>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": {{ page.title | jsonify }},
+  "description": {{ page.description | jsonify }},
+  "dateModified": "{{ page.updated | date_to_xmlschema }}",
+  "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
+  "about": { "@type": "SoftwareApplication", "name": "Flincth", "operatingSystem": "macOS", "applicationCategory": "UtilitiesApplication" },
+  "author": { "@type": "Organization", "name": "Flincth", "url": "{{ site.url }}/" },
+  "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/app-icon-192.png" } },
+  "image": "{{ site.url }}/assets/og-image.png"
+}
+</script>

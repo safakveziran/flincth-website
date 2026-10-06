@@ -70,8 +70,6 @@ A clipboard manager sees everything you copy. That makes what it *doesn't* recor
 
 **Throwaway copies.** Some apps mark their clipboard writes as transient or auto-generated. Flincth skips those too.
 
-**Apps you exclude.** You can name apps whose copies are never recorded.
-
 **Anything, if you turn it off.** Clipboard history can be switched off entirely. Switching it off deletes what was recorded rather than just hiding it.
 
 ---

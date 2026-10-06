@@ -1,0 +1,21 @@
+---
+layout: default
+title: Guides | Flincth
+description: "Step-by-step guides for Flincth for Mac: install the Flincth Apply shortcut, build setups, lay out your displays and use per-setup clipboard history."
+ref: guides
+sitemap:
+  lastmod: 2026-10-06
+  changefreq: monthly
+  priority: 0.7
+---
+  <main id="main" class="wrap doc blog-index">
+    <h1>Guides for Flincth for Mac.</h1>
+    <p class="lead">Short, step-by-step guides, from the one-time shortcut install to a desk that switches with your work.</p>
+    <ol class="post-list">
+{%- assign guides = site.guides | sort: "order" %}
+{%- for g in guides %}
+      <li><a href="{{ g.url }}"><span class="post-list-num">Guide {{ forloop.index }}</span><span class="post-list-title">{{ g.title }}</span><span class="post-list-desc">{{ g.description }}</span></a></li>
+{%- endfor %}
+    </ol>
+    <p class="blog-feed">Something not working? See <a href="/support">Support</a>. For the story behind Flincth, read the <a href="/blog/">blog</a>.</p>
+  </main>

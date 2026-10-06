@@ -203,3 +203,8 @@ footer > a:hover { color: #8db6ff; }
 .post-list li, .post-list li:last-child { border-color: var(--line); }
 .post-list a:hover .post-list-title { color: #89b2ff; }
 .post-list-desc { color: var(--muted); }
+.post-list-num { color: #8fa0bb; }
+.guide-more { border-color: var(--line); }
+.guide-more-title { color: var(--ink); }
+.guide-more a { color: #89b2ff; }
+.post-body kbd { background: var(--raised); border-color: #465a79; color: var(--ink); }
