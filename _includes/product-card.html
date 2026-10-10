@@ -1,0 +1,45 @@
+{%- comment -%}
+  One product's card (include.id, a key in _data/products.yml), used on the
+  home page and the platform pages. include.heading is the heading level
+  (h2 or h3; h3 by default). The card names the product, says what it is in
+  searchable words (category), shows a small illustration and offers the
+  product's one action: its store button, its browsers, or "Notify me at
+  launch" for a product that is not out yet. Copy comes from
+  t.catalog[id], t.platforms and t.card; the page's language is looked up
+  directly because page content renders before the layout sets t.
+{%- endcomment -%}
+{%- assign _t = site.data.i18n[page.lang] -%}
+{%- assign _p = site.data.products | where: "id", include.id | first -%}
+{%- assign _c = _t.catalog[_p.id] -%}
+{%- assign _h = include.heading | default: "h3" -%}
+{%- capture _url %}{% include page-url.html ref=_p.id %}{% endcapture -%}
+<article class="product-card" id="product-{{ _p.id }}">
+  <div class="product-card-head"><img src="{{ _p.icon }}-128.png" width="60" height="60" alt="" loading="lazy"><div><span class="product-card-platform">{{ _t.platforms[_p.platform].name }}</span><{{ _h }}><a href="{{ _url }}">{{ _c.name }}</a></{{ _h }}></div></div>
+  <p class="product-card-category">{{ _c.category }}</p>
+  <p class="product-card-desc">{{ _c.description }}</p>
+{%- case _p.id %}
+{%- when "workspace-manager" %}
+  <div class="motif motif-windows" aria-hidden="true"><i></i><i></i><i></i></div>
+{%- when "speed-reader" %}
+  <div class="motif motif-rsvp" aria-hidden="true"><b>und<em>e</em>rstand</b></div>
+{%- when "split-view" %}
+  <div class="motif motif-panes" aria-hidden="true"><span></span><div><i></i><i></i><i></i></div></div>
+{%- endcase %}
+  <p class="product-card-meta">{{ _c.meta | replace: " · ", " <span>·</span> " }}</p>
+  <div class="product-card-actions">
+{%- if _p.status == "coming" %}
+    {% include notify-button.html topic=_p.notify %}<span class="coming-soon" data-notify-fallback><span class="status-dot"></span> {{ _t.products.coming }}</span>
+{%- elsif _p.browsers %}
+    <ul class="chip-row" aria-label="{{ _t.card.browsers }}">
+  {%- for _b in site.data.browsers %}
+    {%- assign _bref = _p.id | append: "-" | append: _b.id %}
+    {%- capture _burl %}{% include page-url.html ref=_bref %}{% endcapture %}
+      <li><a href="{{ _burl }}">{{ _t.products[_b.id] }}</a></li>
+  {%- endfor %}
+    </ul>
+{%- elsif _p.store_data %}
+    <a class="button primary" href="{{ site.data[_p.store_data].store_url }}" target="_blank" rel="noopener">{{ _c.cta }}</a>
+{%- endif %}
+    <a class="text-link" href="{{ _url }}">{{ _t.card.more }}<span class="visually-hidden"> {{ _c.name }}</span> <span aria-hidden="true">→</span></a>
+  </div>
+</article>

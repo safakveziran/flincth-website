@@ -1,7 +1,7 @@
 {% include extension-guides/vars.html %}
 The Flincth extension splits one {{ gb.name }} tab into panes, with a different site in each. Before a pane can show a site, {{ gb.name }} has to let Flincth display it. This guide covers installing the extension and that one decision.
 
-The extension is a companion to [Flincth for Mac](/), and each works without the other.
+The extension is Flincth Split View. It works on its own; it does not need [Flincth Workspace Manager](/mac/workspace-manager), the Flincth app for Mac.
 
 ## Install it
 

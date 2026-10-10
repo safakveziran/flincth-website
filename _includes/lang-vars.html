@@ -1,15 +1,45 @@
 {%- comment -%}
   Sets up the variables for the include.lang language: lang, language,
-  t (copy), home_url and the base for menu links (base, home_link).
+  t (copy), home_url, home_link (the brand mark's link) and the page's
+  product context:
+
+    ctx_product  The page's product from _data/products.yml (page.product),
+                 or nil on pages that belong to no single product
+    ctx_copy     That product's copy (t.catalog[id])
+    ctx_url      The product page the header's section links point to: the
+                 page's own browser page for Split View pages
+                 (page.browser, page.store_browser), otherwise the product's
+                 page (its ref is its id)
+    ctx_base     "" when the page is that product page (in-page anchors),
+                 otherwise ctx_url
 {%- endcomment -%}
 {%- assign lang = include.lang -%}
 {%- assign language = site.data.languages | where: "code", lang | first -%}
 {%- assign t = site.data.i18n[lang] -%}
 {%- capture home_url %}{% include page-url.html ref="home" %}{% endcapture -%}
 {%- if page.ref == "home" -%}
-  {%- assign base = "" -%}
   {%- assign home_link = "#" -%}
 {%- else -%}
-  {%- assign base = home_url -%}
   {%- assign home_link = home_url -%}
+{%- endif -%}
+{%- assign ctx_product = nil -%}
+{%- assign ctx_copy = nil -%}
+{%- assign ctx_url = "" -%}
+{%- assign ctx_base = "" -%}
+{%- if page.product -%}
+  {%- assign ctx_product = site.data.products | where: "id", page.product | first -%}
+{%- endif -%}
+{%- if ctx_product -%}
+  {%- assign ctx_copy = t.catalog[ctx_product.id] -%}
+  {%- assign _ctx_ref = ctx_product.id -%}
+  {%- assign _ctx_browser = page.browser | default: page.store_browser -%}
+  {%- if ctx_product.browsers and _ctx_browser -%}
+    {%- assign _ctx_ref = ctx_product.id | append: "-" | append: _ctx_browser -%}
+  {%- endif -%}
+  {%- capture ctx_url %}{% include page-url.html ref=_ctx_ref %}{% endcapture -%}
+  {%- if page.ref == _ctx_ref -%}
+    {%- assign ctx_base = "" -%}
+  {%- else -%}
+    {%- assign ctx_base = ctx_url -%}
+  {%- endif -%}
 {%- endif -%}

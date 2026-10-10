@@ -7,7 +7,8 @@
 // - the footer's "Notifications" link, which turns the whole subscription on
 //   and off;
 // - a product's "Notify me at launch" button, which also carries
-//   data-notify-topic (mac, chrome, firefox, edge). Pressing it subscribes and
+//   data-notify-topic (speed-reader, chrome, firefox, edge, or new-apps for
+//   news about any new Flincth app). Pressing it subscribes and
 //   tags the subscription launch_<topic>, so a launch message can go only to
 //   the people who asked about that product. Pressing it again removes the
 //   tag, and removing the last tag ends the subscription.

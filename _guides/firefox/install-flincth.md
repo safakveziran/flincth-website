@@ -2,8 +2,8 @@
 title: "How to Install Flincth in Firefox and Allow Website Access"
 description: "Install the Flincth extension from Firefox Add-ons, pin it, and allow each site the first time you put it in a pane."
 order: 1
-updated: 2026-10-06
-product: extension
+updated: 2026-10-10
+product: split-view
 platform: firefox
 store_browser: firefox
 ---

@@ -1,0 +1,6 @@
+# Platforms Flincth makes products for, in display order. Each has a page at
+# /<id>/ (its ref is <id>) listing the products in _data/products.yml whose
+# platform matches. Copy is in the platforms section of _data/i18n/<lang>.yml.
+- id: mac
+- id: ios
+- id: browser

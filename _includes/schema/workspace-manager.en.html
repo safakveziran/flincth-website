@@ -1,0 +1,84 @@
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://flincth.com/mac/workspace-manager#app",
+        "name": "Flincth Workspace Manager",
+        "alternateName": "Flincth",
+        "url": "https://flincth.com/mac/workspace-manager",
+        "image": "https://flincth.com/assets/app-icon.png",
+        "description": "Flincth Workspace Manager is a macOS menu bar utility that organizes a Mac into named setups. Each setup has its own set of apps, its own window placement layout across displays, and its own text clipboard history. Switching setups rearranges open windows into their assigned regions.",
+        "applicationCategory": "UtilitiesApplication",
+        "applicationSubCategory": "Window management",
+        "operatingSystem": "macOS 14 or later",
+        "downloadUrl": {{ site.data.mac.store_url | jsonify }},
+        "installUrl": {{ site.data.mac.store_url | jsonify }},
+        "sameAs": [{{ site.data.mac.store_url | jsonify }}],
+        "softwareRequirements": "Window placement requires the user-installed \u201cFlincth Apply\u201d shortcut in Apple Shortcuts.",
+        "featureList": [
+          "Named setups, each with its own apps and window placements",
+          "Separate text clipboard history per setup, stored locally",
+          "Window placement into regions across multiple displays",
+          "Switching from the menu bar or by keyboard shortcut",
+          "No account, and setups and clipboard history never leave the Mac"
+        ],
+        "publisher": { "@id": "https://flincth.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://flincth.com/#org",
+        "name": "Flincth",
+        "url": "https://flincth.com/",
+        "logo": "https://flincth.com/assets/flincth-mark-512.png"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://flincth.com/mac/workspace-manager#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What do I need to run Flincth Workspace Manager?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Mac with macOS 14 or later, and Flincth from the Mac App Store. Window placement requires the user-installed Flincth Apply shortcut. The app guides you through installing it in Apple Shortcuts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Flincth Workspace Manager a tiling window manager?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Not quite. A tiling window manager keeps rearranging windows as you open and close them. Flincth applies your saved window layout when you activate a setup, and then leaves your windows alone until you switch again."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it move windows between desktops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Window placement works with open, non-full-screen windows on the current desktop. Flincth does not move windows between Mission Control desktops or into or out of macOS full screen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does my clipboard leave my Mac?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Flincth keeps text clipboard history locally, with a separate history for each setup, and never sends it or your setups anywhere. The app only goes online if you turn on new-feature announcements, which are off until you do."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does changing one setup affect another?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Each setup keeps its own app membership, layout, and placements. Editing an app\u2019s placement in one setup leaves your other setups unchanged."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>

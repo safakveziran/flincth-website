@@ -1,0 +1,21 @@
+---
+layout: default
+---
+{%- comment -%}
+  A platform's page (/mac/, /ios/, /browser/): every product in
+  _data/products.yml whose platform is page.platform, as cards. The page
+  sets platform, title, description, heading and lead; ref is the
+  platform's id.
+{%- endcomment -%}
+{%- assign _t = site.data.i18n[page.lang] -%}
+{%- assign _in = site.data.products | where: "platform", page.platform -%}
+  <main id="main" class="wrap platform-page">
+    <h1>{{ page.heading }}</h1>
+    <p class="lead">{{ page.lead }}</p>
+    <div class="product-cards">
+{%- for _p in _in %}
+      {% include product-card.html id=_p.id heading="h2" %}
+{%- endfor %}
+    </div>
+    <p class="platform-more">{{ _t.platforms.more }} <a href="{% include page-url.html ref="home" %}#products">{{ _t.nav.all_products }} <span aria-hidden="true">→</span></a></p>
+  </main>

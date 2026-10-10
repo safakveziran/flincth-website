@@ -11,19 +11,78 @@ nav:
   how: How it works
   faq: FAQ
   cta: Download for Mac
+  # Links in the header on pages that belong to no single product (the home
+  # page, the platform pages, privacy, support, guides, blog).
+  guides: Guides
+  blog: Blog
+  support: Support
+  # Header button on those pages; it opens the product list on the home page.
+  all_products: All products
 
-# Products menu in the header and the product links in the footer.
-# Flincth for Mac is the main product; the browser extension is a companion.
+# Products menu in the header and the Products column in the footer. Product
+# names and notes are in catalog; platform names are in platforms.
 products:
   label: Products
-  mac: Flincth for Mac
-  mac_note: Window layouts and clipboard history
-  also: Also from Flincth
-  extension: Browser extension
-  extension_note: One tab, split into saved workspaces
+  coming: Coming soon
   chrome: Chrome
   firefox: Firefox
   edge: Edge
+
+# One entry per product in _data/products.yml, keyed by its id.
+#   name:        Full name, used in headings, the menu and JSON-LD
+#   short:       Name without "Flincth", for tight spaces
+#   note:        A few words for the Products menu
+#   category:    What it is, in the words people search for
+#   description: One or two sentences for product cards
+#   meta:        Small print under a product card; " · " separates items
+#   cta:         Store button label (live products)
+catalog:
+  workspace-manager:
+    name: Flincth Workspace Manager
+    short: Workspace Manager
+    note: Window layouts and clipboard history
+    category: Window manager and clipboard manager for Mac
+    description: Save a window layout and a clipboard history for each kind of work, then switch both from the menu bar in one step.
+    meta: macOS 14 or later · One-time purchase · No account
+    cta: Download on the Mac App Store
+  speed-reader:
+    name: Flincth Speed Reader
+    short: Speed Reader
+    note: Speed reading for your own documents
+    category: Speed reading app for iPhone and iPad
+    description: Read your own EPUB, PDF and DOCX files one word, phrase or short sentence at a time, at the pace you set.
+    meta: iOS 17 or later · Free, one-time Pro upgrade · No account
+  split-view:
+    name: Flincth Split View
+    short: Split View
+    note: One tab, split into saved workspaces
+    category: Split-screen tabs for Chrome, Firefox and Edge
+    description: Split one browser tab into panes with a site in each, save the arrangement as a workspace, and switch with a click or a shortcut.
+    meta: Free · Collects no data · No account
+    cta: Choose your browser
+
+# One entry per platform in _data/platforms.yml. The platform page itself
+# (/<id>/, <id>/index.html) carries its title, heading and lead.
+#   name:  Short name for the menu, the footer and product cards
+#   all:   Link to the platform page from the home page
+platforms:
+  mac:
+    name: Mac
+    all: Mac apps
+  ios:
+    name: iPhone & iPad
+    all: iPhone and iPad apps
+  browser:
+    name: Browser
+    all: Browser extensions
+  # Shown under a platform's products on its page.
+  more: More apps for this platform are on the way.
+
+# Product cards (_includes/product-card.html).
+card:
+  more: Learn more
+  # Accessible name for the browser links on a browser extension's card.
+  browsers: Choose a browser
 
 # "Notify me at launch" buttons (notifications.js switches between the three).
 notify:
@@ -33,6 +92,8 @@ notify:
   error: Couldn’t turn on notifications. Try again.
   # Header link shown instead of the button where the browser has no web push.
   fallback: Launch status
+  # Topic-less version of the button, for news about every product.
+  news: Tell me about new apps
   # Shown under the closing section on iPhone and iPad, where every browser
   # (Safari, Chrome and the rest all use WebKit) offers web push only to sites
   # opened from the Home Screen. That also needs manifest.webmanifest.
@@ -40,14 +101,13 @@ notify:
 
 footer:
   help: Help
-  faq: FAQ
   legal: Legal
   privacy: Privacy
   support: Support
   guides: Guides
   blog: Blog
   cookies: Cookies
-  note: A little space. A better day.
+  note: Small apps. Clear purpose.
   languages: Language
 
 notifications:
@@ -59,7 +119,7 @@ consent:
   label: Cookie choice
   title: A quick choice about cookies.
   # [policy] is replaced with a link to the privacy policy.
-  text: This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and your choice here has no effect on the Flincth app. See the [policy].
+  text: This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and your choice here has no effect on the Flincth apps. See the [policy].
   policy: privacy policy
   decline: Decline
   accept: Accept
@@ -72,11 +132,13 @@ not_found:
   heading: This space is a little too empty.
   text: The page you were looking for doesn’t exist, or it moved somewhere tidier.
   back: Back to Flincth
-  faq: Read the FAQ
+  products: See all products
 
-og_image_alt: "Flincth: a place for every app. Space for every you."
+og_image_alt: "Flincth: small apps with a clear purpose, for Mac, iPhone, iPad and your browser."
+og_image_alt_workspace_manager: "Flincth Workspace Manager: a place for every app. Space for every you."
+og_image_alt_speed_reader: "Flincth Speed Reader for iPhone and iPad: read faster, still understand."
 
-# Browser extension landing pages (/chrome, /firefox, /edge). The shared copy
+# Flincth Split View landing pages (/browser/split-view/chrome, /firefox, /edge). The shared copy
 # is in extension; each browser's own copy is in extension_<browser>. In any
 # value, [browser] is replaced with that browser's name. Values that hold
 # <span> are rendered as HTML.
@@ -87,13 +149,12 @@ extension:
     faq: FAQ
     cta: Notify me at launch
   hero_title: One tab. <span>Every site you need.</span>
-  hero_copy: Flincth for [browser] splits a single tab into panes, puts a different site in each one, and saves the arrangement as a workspace. Switch workspaces with a click or a shortcut.
+  hero_copy: Flincth Split View for [browser] splits a single tab into panes, puts a different site in each one, and saves the arrangement as a workspace. Switch workspaces with a click or a shortcut.
   hero_more: See how it works
   micro: No data collected · No account · No server
   preview:
     label: ONE TAB, ARRANGED YOUR WAY
     live: INTERACTIVE PREVIEW
-    group: Preview a workspace
     status: "{name} workspace active"
     bottom: Three workspaces. One tab.
     hint: Choose a workspace above
@@ -142,8 +203,8 @@ extension:
   step3_title: Switch in a keystroke.
   step3_copy: Click a workspace, or press its shortcut. Everything you left open is where you left it.
   faq_title: Good questions.
-  faq_mac_q: Is this the Flincth Mac app?
-  faq_mac_a: No. The extension is a smaller companion that lives inside your browser. The Mac app, Flincth’s main product, arranges app windows across your displays; the extension arranges websites inside one tab. Each works without the other.
+  faq_mac_q: Is this Flincth Workspace Manager?
+  faq_mac_a: No. Split View lives inside your browser and arranges websites in one tab. Flincth Workspace Manager is a separate Mac app that arranges app windows across your displays. Each works without the other.
   faq_window_q: Why does a site open in a separate window?
   faq_window_a: Some sites refuse to be shown inside another page, and some keep you signed in with storage an embedded view cannot reach. For those, a pane can become a real browser window lined up with the pane, so the site behaves exactly as it does in a normal tab. Because it is a real window, it also appears in your window switcher and in screenshots.
   faq_permission_q: How does website access work?
@@ -151,17 +212,33 @@ extension:
   faq_data_q: Does Flincth see what I do on those sites?
   faq_data_a: It never reads cookies, page content or form data. Bundled code tracks each pane’s address and provides Back and Forward. Workspaces and their latest addresses are stored in [browser] on your own device; nothing is sent to Flincth.
   faq_keys_q: Where do I set keyboard shortcuts?
-  others_title: Flincth, wherever you browse.
+  others_title: Split View, wherever you browse.
   closing_title: Make room in a single tab.
   closing_copy: Your browser, a little more arranged.
   icon_alt: Flincth extension icon
-  og_image_alt: "Flincth for Chrome, Firefox and Edge: one tab, every site you need."
+  og_image_alt: "Flincth Split View for Chrome, Firefox and Edge: one tab, every site you need."
+
+# The Split View overview (/browser/split-view/), which covers every browser.
+extension_any:
+  title: "Flincth Split View: Split Screen Tabs for Chrome, Firefox, Edge"
+  description: "Flincth Split View splits one browser tab into panes with a site in each and switches saved workspaces. Free for Chrome, Firefox and Edge."
+  name: your browser
+  os: "Chrome, Firefox, Microsoft Edge"
+  label: Flincth Split View
+  hero_copy: Flincth Split View splits a single browser tab into panes, puts a different site in each one, and saves the arrangement as a workspace. Switch workspaces with a click or a shortcut. Free for Chrome, Firefox and Edge.
+  availability_q: Which browsers does it work in?
+  availability_a: Chrome, Microsoft Edge and Firefox 140 or later. Each has its own store listing, linked on this page, and its own page here with the details for that browser. Installing it asks for no access to any site.
+  privacy_copy: No access to any site when you install it. Chrome and Edge then offer access to all websites, which you can skip until you need it; Firefox asks one site at a time. Access can be revoked in your browser’s extension settings. No analytics, no account, no server.
+  step2_copy: Type an address or pick one of your open tabs. If Flincth doesn’t have website access yet, your browser asks for it.
+  faq_permission_a: Installing Flincth gives it access to no website. In Chrome and Edge it then offers access to all websites, which you can skip until you need it; in Firefox it asks about one site at a time, when you put that site in a pane. Each browser’s page here explains the details. Some sites still need a normal window for sign-in.
+  keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in the browser, even while you are typing in a pane. You set their keys on your browser’s extension shortcuts page; each browser’s page here names it.
+  others_title: Pick your browser.
 
 extension_chrome:
-  title: "Flincth for Chrome: Split one tab into workspaces"
-  description: "Flincth for Chrome splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
+  title: "Flincth Split View for Chrome: Split Screen in One Tab"
+  description: "Flincth Split View for Chrome splits one tab into panes with a site in each, saves it as a workspace and switches with a click or a shortcut."
   name: Chrome
-  label: Flincth for Chrome
+  label: Flincth Split View for Chrome
   status: Available on the Chrome Web Store
   store_cta: Add to Chrome
   availability_q: Where do I get it for Chrome?
@@ -172,10 +249,10 @@ extension_chrome:
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Chrome, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at chrome://extensions/shortcuts.
 
 extension_firefox:
-  title: "Flincth for Firefox: Split one tab into workspaces"
-  description: "Flincth for Firefox splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
+  title: "Flincth Split View for Firefox: Split Screen in One Tab"
+  description: "Flincth Split View for Firefox splits one tab into panes with a site in each, saves it as a workspace and switches with a click or a shortcut."
   name: Firefox
-  label: Flincth for Firefox
+  label: Flincth Split View for Firefox
   status: Available on Firefox Add-ons
   store_cta: Add to Firefox
   availability_q: Where do I get it for Firefox?
@@ -186,10 +263,10 @@ extension_firefox:
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Firefox, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys under Manage Extension Shortcuts in about:addons.
 
 extension_edge:
-  title: "Flincth for Microsoft Edge: Split one tab into workspaces"
-  description: "Flincth for Microsoft Edge splits one tab into panes with a site in each, saves the arrangement as a workspace and switches with a click or a shortcut."
+  title: "Flincth Split View for Microsoft Edge: Split Screen in One Tab"
+  description: "Flincth Split View for Microsoft Edge splits one tab into panes with a site in each, saves it as a workspace and switches with a click or a shortcut."
   name: Edge
-  label: Flincth for Microsoft Edge
+  label: Flincth Split View for Microsoft Edge
   status: Available on Microsoft Edge Add-ons
   store_cta: Add to Edge
   availability_q: Where do I get it for Edge?

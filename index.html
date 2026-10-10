@@ -1,80 +1,74 @@
 ---
 layout: default
-title: "Flincth: Window Layouts and Clipboard History for Mac"
-description: "Flincth is a Mac menu bar app that saves a window layout and a clipboard history for each kind of work, then switches both in one step."
+title: "Flincth: Mac, iPhone and Browser Apps Without Subscriptions"
+description: "Focused productivity apps for Mac, iPhone, iPad and your browser. No account, no subscription, and your work stays on your device."
 ref: home
 schema: schema/home.en.html
 sitemap:
-  lastmod: 2026-09-30
+  lastmod: 2026-10-10
   changefreq: monthly
   priority: 1.0
 ---
-  <main id="main">
-    <section class="hero wrap">
-            <h1>A place for every app. <span>Space for every you.</span></h1>
-      <p class="hero-copy">Flincth is a window management and clipboard app for macOS.<br class="desktop-break"> Save a window layout and a clipboard history for each kind of<br class="desktop-break"> work, then switch between them from your menu bar.</p>
-      <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a><a class="text-link" href="#how">See how it works <span aria-hidden="true">↓</span></a></div>
-      <p class="micro">Requires macOS 14 or later <span>·</span> No subscription</p>
-      <div class="product-stage" id="playground">
-        <div class="stage-top"><span>A DESK FOR EVERY KIND OF DAY</span><span class="live-label">INTERACTIVE PREVIEW</span></div>
-        <div class="desktop" data-setup="code">
-          <div class="mac-bar"><span>● &nbsp; <b id="active-app">Editor</b> &nbsp; File &nbsp; Edit &nbsp; View</span><span>▥ &nbsp; ◉ &nbsp; Mon 9:41</span></div>
-          <div class="desktop-title" aria-hidden="true">Less arranging.<br>More doing.</div>
-          <div class="window window-main"><div class="window-bar"><span class="traffic"><i></i><i></i><i></i></span><span id="main-title">A little room to build</span><span>⌘</span></div><div class="window-body" id="main-content"><div class="editor-sidebar">EXPLORER<br><br><strong>⌄ personal-space</strong><br> &nbsp; index.html<br> &nbsp; styles.css<br> &nbsp; ideas.md</div><div class="code-lines"><span class="muted">01 &nbsp; // Make something yours.</span><br>02 &nbsp; <em>const</em> day = {<br>03 &nbsp; &nbsp; focus: <b>'a fresh idea'</b>,<br>04 &nbsp; &nbsp; distractions: <b>0</b>,<br>05 &nbsp; &nbsp; possibilities: <b>Infinity</b><br>06 &nbsp; };<br><br>08 &nbsp; <em>create</em>(day);<span class="cursor"></span></div></div></div>
-          <div class="window window-side"><div class="window-bar"><span class="traffic"><i></i><i></i><i></i></span><span id="side-title">Notes</span><span>↗</span></div><div class="note-content"><span class="note-kicker" id="note-kicker">THE NEXT GOOD IDEA</span><p class="pv-heading" id="note-heading">Start small.<br>Make it matter.</p><p id="note-copy">A clear desk. An open mind.<br>Something worth making.</p><div class="note-rule"></div><span class="note-bottom">A little space goes a long way.</span></div></div>
-          <div class="setup-popover"><div class="popover-head"><img src="/assets/app-icon-64.png" width="25" height="25" alt="">Your setups <span>⌘</span></div><div class="setup-options" role="group" aria-label="Preview a setup"><button class="setup-option active" data-mode="code" aria-pressed="true"><span class="setup-icon">⌘</span><span>Code<small>Build something good</small></span><kbd>⌥ 1</kbd></button><button class="setup-option" data-mode="write" aria-pressed="false"><span class="setup-icon">✎</span><span>Write<small>Give your ideas room</small></span><kbd>⌥ 2</kbd></button><button class="setup-option" data-mode="research" aria-pressed="false"><span class="setup-icon">⊞</span><span>Research<small>Connect the dots</small></span><kbd>⌥ 3</kbd></button></div><div class="popover-foot"><span class="status-dot"></span><span id="setup-status" role="status">Code setup active</span></div></div>
-        </div>
-        <div class="stage-bottom"><span>One Mac. Many ways to work.</span><span>Choose a setup above <span aria-hidden="true">↑</span></span></div>
-      </div>
-      <p class="preview-note">Illustrative preview, not an app screenshot. Window placement uses the Flincth Apply shortcut.</p>
+{%- comment -%}
+  The brand's home page. Products come from _data/products.yml, grouped by
+  platform (_data/platforms.yml); each card is _includes/product-card.html.
+  A new product needs nothing here.
+{%- endcomment -%}
+{%- assign _t = site.data.i18n[page.lang] -%}
+  <main id="main" class="brand-home">
+    <section class="hero wrap brand-hero">
+      <h1>Small apps. <span>Clear purpose.</span></h1>
+      <p class="hero-copy">Flincth makes focused tools for Mac, iPhone, iPad and your browser. No account, no subscription, and your work stays on your device.</p>
+      <div class="hero-actions"><a class="button primary" href="#products">Explore the apps</a><a class="text-link" href="#principles">How we build them <span aria-hidden="true">↓</span></a></div>
+      <ul class="brand-shelf">
+{%- for _p in site.data.products %}
+        <li><a href="#product-{{ _p.id }}"><img src="{{ _p.icon }}-128.png" width="88" height="88" alt="">{{ _t.catalog[_p.id].short }}<small>{{ _t.platforms[_p.platform].name }}{% if _p.status == "coming" %} · {{ _t.products.coming }}{% endif %}</small></a></li>
+{%- endfor %}
+      </ul>
     </section>
-    <section class="features wrap" id="features">
-      <div class="section-heading"><div><h2>Keep the context. Lose the clutter.</h2></div><p>Window management, a clipboard manager and multiple display layouts, kept together in one menu bar app.</p></div>
-      <div class="feature-grid">
-        <article class="feature feature-large"><h3>Same Mac. Different headspace.</h3><p>Give each kind of work its own apps and window placements. Change the window layout of one setup without changing the others.</p><div class="layout-diagram" aria-label="Three different window layouts"><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div></div></article>
-        <article class="feature clipboard"><h3>Your snippets. In the right place.</h3><p>A clipboard manager with a separate text clipboard history for each setup. Keep your next thought close at hand.</p><div class="snippet"><span>↳</span><code>A thought worth keeping.</code><span>⌘ C</span></div><div class="snippet faint"><span>↳</span><code>Make room for what matters.</code><span>⌘ C</span></div></article>
-        <article class="feature short-feature"><h3>A wider view. A familiar layout.</h3><p>Divide multiple displays into regions and assign a place for each app’s windows.</p><div class="display-diagram" aria-hidden="true"><span><i></i><i></i></span><span><i></i><i></i></span></div></article>
-        <article class="feature short-feature keyboard-feature"><h3>A shortcut to your next setup.</h3><p>Switch from the menu bar or use your assigned keyboard shortcuts.</p><div class="keys" aria-hidden="true"><kbd>⌥</kbd><kbd>1</kbd><span>and you’re there.</span></div></article>
+
+    <section class="catalog wrap" id="products">
+      <div class="section-heading"><h2>Every Flincth app, by platform.</h2><p>Each one does one job well, and says plainly what it will not do.</p></div>
+      <ul class="chip-row platform-links" aria-label="Browse by platform">
+{%- for _platform in site.data.platforms %}
+        <li><a href="{% include page-url.html ref=_platform.id %}">{{ _t.platforms[_platform.id].all }} <span aria-hidden="true">→</span></a></li>
+{%- endfor %}
+      </ul>
+      <div class="product-cards">
+{%- for _platform in site.data.platforms %}
+  {%- assign _in = site.data.products | where: "platform", _platform.id %}
+  {%- for _p in _in %}
+        {% include product-card.html id=_p.id %}
+  {%- endfor %}
+{%- endfor %}
       </div>
     </section>
-    <section class="privacy-band"><div class="wrap privacy-inner"><h2>Your work stays <span>your business.</span></h2><div><p>No account. No analytics. No server of our own.<br>Your setups and clipboard history never leave your Mac.</p><span class="privacy-caption">LOCAL BY DESIGN. NOT AS AN AFTERTHOUGHT.</span></div></div></section>
-    <section class="how wrap" id="how"><div class="section-heading"><div><h2>Set it up. Settle into it.</h2></div><p>A small setup for a smoother day.</p></div><div class="steps"><article><span>01</span><h3>Make it yours.</h3><p>Create a setup, choose your apps, and assign their placement regions.</p></article><article><span>02</span><h3>Add the shortcut.</h3><p>Install “Flincth Apply” in Apple Shortcuts using the instructions inside the app.</p></article><article><span>03</span><h3>Find your flow.</h3><p>Open your app windows and activate your setup. Switch again whenever your work changes.</p></article></div></section>
-    <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions"><details><summary>What do I need to run Flincth?<span>+</span></summary><p>A Mac with macOS 14 or later, and Flincth from the Mac App Store. Window placement requires the user-installed Flincth Apply shortcut. The app guides you through installing it in Apple Shortcuts.</p></details><details><summary>Is Flincth a tiling window manager?<span>+</span></summary><p>Not quite. A tiling window manager keeps rearranging windows as you open and close them. Flincth applies your saved window layout when you activate a setup, and then leaves your windows alone until you switch again.</p></details><details><summary>Can it move windows between desktops?<span>+</span></summary><p>No. Window placement works with open, non-full-screen windows on the current desktop. Flincth does not move windows between Mission Control desktops or into or out of macOS full screen.</p></details><details><summary>Does my clipboard leave my Mac?<span>+</span></summary><p>No. Flincth keeps text clipboard history locally, with a separate history for each setup, and never sends it or your setups anywhere. The app only goes online if you turn on new-feature announcements, which are off until you do.</p></details><details><summary>Does changing one setup affect another?<span>+</span></summary><p>No. Each setup keeps its own app membership, layout, and placements. Editing an app’s placement in one setup leaves your other setups unchanged.</p></details></div></section>
-    <section class="closing wrap" id="availability"><img src="/assets/app-icon-192.png" alt="Flincth app icon" width="88" height="88" loading="lazy"><h2>Make space for your next thing.</h2><p>Your Mac, a little more you.</p><div class="closing-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a></div><span class="micro">Requires macOS 14 or later <span>·</span> No subscription</span></section>
-    <script type="application/json" id="setup-data">
-    {
-      "status": "{name} setup active",
-      "setups": {
-        "code": {
-          "name": "Code",
-          "app": "Editor",
-          "title": "A little room to build",
-          "side": "Notes",
-          "kicker": "THE NEXT GOOD IDEA",
-          "heading": "Start small.<br>Make it matter.",
-          "copy": "A clear desk. An open mind.<br>Something worth making."
-        },
-        "write": {
-          "name": "Write",
-          "app": "Writing",
-          "title": "A fresh page",
-          "side": "References",
-          "kicker": "ROOM TO THINK",
-          "heading": "Find the words.<br>Follow the thought.",
-          "copy": "One sentence at a time.<br>Let the rest wait.",
-          "content": "<div class=\"writing-preview\"><small>PERSONAL NOTES / FIRST DRAFT</small><p class=\"pv-heading\">The art of making space.</p><p>Some ideas need a little quiet. A blank page, a familiar place, and the freedom to follow a thought wherever it goes.</p></div>"
-        },
-        "research": {
-          "name": "Research",
-          "app": "Research",
-          "title": "Follow your curiosity",
-          "side": "Reading list",
-          "kicker": "CONNECT THE DOTS",
-          "heading": "A new angle.<br>A clearer picture.",
-          "copy": "Keep the useful things close.<br>Leave room for discovery.",
-          "content": "<div class=\"research-preview\"><small>IDEAS IN PROGRESS</small><p class=\"pv-heading\">Look a little closer.</p><div class=\"research-cards\"><div>01 / Collect<p>Gather the thoughts that spark something.</p></div><div>02 / Connect<p>Find the patterns between your ideas.</p></div></div></div>"
-        }
-      }
-    }
-    </script>
+
+    <section class="privacy-band principles-band" id="principles"><div class="wrap privacy-inner">
+      <h2>Built the same way, <span>whatever the platform.</span></h2>
+      <div class="principles">
+        <article><h3>No account. Ever.</h3><p>There is nothing to sign up for in any Flincth app. Open it and start.</p></article>
+        <article><h3>Pay once, or not at all.</h3><p>Workspace Manager is a one-time purchase, Split View is free, and Speed Reader is free with a one-time Pro upgrade. No subscriptions.</p></article>
+        <article><h3>Your work stays with you.</h3><p>Setups, workspaces and documents stay on your device, or in your own iCloud if you turn on sync. Each app’s privacy section names anything it sends.</p></article>
+        <article><h3>Honest about limits.</h3><p>Every page says what the app does and what it will not do, side by side, so there are no surprises after you install it.</p></article>
+      </div>
+    </div></section>
+
+    <section class="learn wrap" id="learn">
+      <div class="section-heading"><h2>Learn the details.</h2><p>Step-by-step guides for every app, and notes on how and why they are built.</p></div>
+      <div class="learn-grid">
+        <div class="learn-card"><h3><a href="/guides/">Guides</a></h3><p>Short, practical walkthroughs, one list per platform.</p><ul>
+{%- for _gp in site.data.guide_platforms %}
+          <li><a href="/guides/{{ _gp.id }}/">{{ _gp.name }}<span aria-hidden="true">→</span></a></li>
+{%- endfor %}
+        </ul></div>
+        <div class="learn-card"><h3><a href="/blog/">Blog</a></h3><p>The thinking behind each app, written by the people who make it.</p><ul>
+{%- for _post in site.posts limit: 3 %}
+          <li><a href="{{ _post.url }}">{{ _post.title }}<span aria-hidden="true">→</span></a></li>
+{%- endfor %}
+        </ul></div>
+      </div>
+    </section>
+
+    <section class="closing wrap" id="availability"><img src="/assets/flincth-mark-192.png" alt="Flincth" width="88" height="88" loading="lazy"><h2>More apps are on the way.</h2><p>Get one notification when a new Flincth app launches. No email, no account.</p><div class="closing-actions">{% include notify-button.html topic="new-apps" label="news" %}<a class="button primary" href="/blog/feed.xml" data-notify-fallback>Follow the blog feed</a></div>{% include notify-hint.html %}</section>
   </main>

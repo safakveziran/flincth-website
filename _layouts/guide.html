@@ -7,7 +7,7 @@ layout: default
   (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's steps
   change) and platform: <id> (mac, chrome, firefox or edge; see
   _data/guide_platforms.yml), which decides its list, its back link and its
-  "More guides". A browser extension guide also sets product: extension and
+  "More guides". A browser extension guide also sets product: split-view and
   store_browser: <id> (so the header installs that browser's extension); its
   per-browser facts come from _data/guide_browsers.yml. Menu and button
   names in a guide are the product's own, so check them when its
@@ -37,19 +37,19 @@ layout: default
 {%- endfor %}
       </ul>
     </nav>
-{%- if page.product == "extension" %}
+{%- if page.product == "split-view" %}
 {%- assign _store = site.data.browsers | where: "id", page.platform | first %}
 {%- assign _strings = "extension_" | append: page.platform %}
 {%- assign _name = site.data.i18n[page.lang].products[page.platform] %}
     <aside class="post-cta">
-      <img src="/assets/extension-icon.png" alt="" width="56" height="56" loading="lazy">
-      <div><p class="post-cta-title">Flincth for {{ _name }}</p><p>Split one tab into saved workspaces. Free, collects no data.</p></div>
+      <img src="/assets/extension-icon-128.png" alt="" width="56" height="56" loading="lazy">
+      <div><p class="post-cta-title">Flincth Split View for {{ _name }}</p><p>Split one tab into saved workspaces. Free, collects no data.</p></div>
       <a class="button primary" href="{{ _store.store_url }}" target="_blank" rel="noopener">{{ site.data.i18n[page.lang][_strings].store_cta }}</a>
     </aside>
 {%- else %}
     <aside class="post-cta">
       <img src="/assets/app-icon-128.png" alt="" width="56" height="56" loading="lazy">
-      <div><p class="post-cta-title">Flincth for Mac</p><p>Switch your whole desk and clipboard for each kind of work. One-time purchase, no account.</p></div>
+      <div><p class="post-cta-title">Flincth Workspace Manager</p><p>Switch your whole desk and clipboard for each kind of work. One-time purchase, no account.</p></div>
       <a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a>
     </aside>
 {%- endif %}
@@ -63,13 +63,13 @@ layout: default
   "description": {{ page.description | jsonify }},
   "dateModified": "{{ page.updated | date_to_xmlschema }}",
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
-{%- if page.product == "extension" %}
-  "about": { "@type": "SoftwareApplication", "name": "Flincth for {{ site.data.i18n[page.lang].products[page.platform] }}", "applicationCategory": "BrowserApplication" },
+{%- if page.product == "split-view" %}
+  "about": { "@type": "SoftwareApplication", "name": "Flincth Split View for {{ site.data.i18n[page.lang].products[page.platform] }}", "applicationCategory": "BrowserApplication" },
 {%- else %}
-  "about": { "@type": "SoftwareApplication", "name": "Flincth", "operatingSystem": "macOS", "applicationCategory": "UtilitiesApplication" },
+  "about": { "@type": "SoftwareApplication", "name": "Flincth Workspace Manager", "operatingSystem": "macOS", "applicationCategory": "UtilitiesApplication" },
 {%- endif %}
   "author": { "@type": "Organization", "name": "Flincth", "url": "{{ site.url }}/" },
-  "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/app-icon-192.png" } },
+  "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/flincth-mark-512.png" } },
   "image": "{{ site.url }}/assets/og-image.png"
 }
 </script>

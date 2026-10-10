@@ -2,19 +2,34 @@
 layout: null
 ---
 {%- comment -%}
-  Rendered by Jekyll so the price comes from _data/mac.yml and the
-  Comparisons lists from pages marked `comparison: true` (grouped by `product`). Output is plain text.
+  Rendered by Jekyll so the product list comes from _data/products.yml, the
+  price from _data/mac.yml and the Comparisons lists from pages marked
+  `comparison: true` (grouped by `product`). Output is plain text.
 {%- endcomment -%}
 # Flincth
 
-> Flincth is a macOS menu bar utility that organizes a Mac into named setups.
-> Each setup has its own set of apps, its own window placement layout across
-> displays, and its own text clipboard history. Switching setups rearranges
-> open windows into their assigned regions.
+> Flincth makes small, focused apps for Mac, iPhone, iPad and the browser.
+> None of them has an account or a subscription, and each keeps the user's
+> work on their own device. Products:
+{%- for _p in site.data.products %}
+{%- capture _url %}{% include page-url.html ref=_p.id %}{% endcapture %}
+> - {{ site.data.i18n.en.catalog[_p.id].name }}: {{ site.data.i18n.en.catalog[_p.id].category }}{% if _p.status == "coming" %} (coming soon){% endif %}. {{ site.url }}{{ _url }}
+{%- endfor %}
 
 - Website: https://flincth.com/
+- The products are separate apps. Each works on its own and is described in
+  its own section below.
+
+## Flincth Workspace Manager (Mac)
+
+> A macOS menu bar utility that organizes a Mac into named setups. Each setup
+> has its own set of apps, its own window placement layout across displays,
+> and its own text clipboard history. Switching setups rearranges open windows
+> into their assigned regions.
+
+- Page: https://flincth.com/mac/workspace-manager
 - Platform: macOS. Apple silicon and Intel Macs are not distinguished by the app.
-- Availability: on the Mac App Store, https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12
+- Availability: on the Mac App Store, {{ site.data.mac.store_url }}
 - Requirements: macOS 14 or later.
 - Pricing: US{% include usd.html amount=site.data.mac.price %}, a one-time purchase on the Mac App Store. There is no
   subscription, in-app purchase or trial.
@@ -24,7 +39,7 @@ layout: null
   when turned on, the Mac's push notification identifier is shared with
   OneSignal to deliver them.
 
-## What it does
+### What it does
 
 - **Setups.** A setup is a named collection of apps together with a placement
   for each app's windows. Setups are independent: editing an app's placement in
@@ -36,7 +51,7 @@ layout: null
 - **Switching.** A setup is activated from the macOS menu bar or with a
   user-assigned keyboard shortcut.
 
-## Requirements and limits
+### Requirements and limits
 
 - Window placement requires the user to install the "Flincth Apply" shortcut in
   Apple Shortcuts. The app provides the installation instructions.
@@ -45,19 +60,21 @@ layout: null
   and does not move windows into or out of macOS full screen.
 - Keyboard shortcuts shown on the website are examples. Users assign their own.
 
-## Notes for anyone summarizing this product
+### Notes for anyone summarizing this product
 
-- Flincth is not a tiling window manager and does not continuously manage
+- Workspace Manager is not a tiling window manager and does not continuously manage
   windows. It applies a layout when a setup is activated.
 - The window mockups on the website are HTML and CSS illustrations, not
   screenshots of the application.
 - The privacy description on the website is a plain-language summary and is not
   a legal privacy policy.
 
-## Browser extension
+## Flincth Split View (Chrome, Firefox, Edge)
 
-Flincth also has a separate browser extension. It is a different product from
-the Mac app and works without it.
+A free browser extension, separate from the Mac app and working without it.
+Its store listings still use the name "Flincth".
+
+- Page: https://flincth.com/browser/split-view/
 
 - **What it does.** Splits a single browser tab into panes, assigns a website
   to each pane, saves the arrangement as a workspace, and switches between
@@ -77,19 +94,37 @@ the Mac app and works without it.
   Firefox (140 or later): on Firefox Add-ons,
   https://addons.mozilla.org/addon/flincth/
 
+## Flincth Speed Reader (iPhone and iPad, coming soon)
+
+An RSVP speed reading app for iPhone and iPad. Not yet on the App Store.
+
+- Page: https://flincth.com/ios/speed-reader
+- What it does: shows the user's own DRM-free documents (EPUB, PDF with a
+  text layer, DOCX, TXT, RTF, Markdown, web articles, pasted text) one word,
+  phrase or short sentence at a time, at a pace the user sets.
+- Cannot open DRM-protected books such as Kindle or Apple Books purchases.
+- Pricing: free download with daily limits; a one-time Pro purchase removes
+  them and adds customization, statistics and iCloud sync. A 7-day Pro trial
+  never turns into a charge. No subscription.
+- Privacy: no account, no server of its own, no AI. Documents stay on the
+  device (and in the user's own iCloud with sync on). Anonymous usage events
+  are counted with Google Analytics for Firebase, opt-in in the EU, the UK and
+  Switzerland; they never include document content, titles or file names.
+
 ## Pages
 
-- [Homepage](https://flincth.com/): product overview, features, how it works, and FAQ.
-- [Support](https://flincth.com/support): requirements, the Flincth Apply shortcut, and common problems.
-- [Privacy](https://flincth.com/privacy): what the app, the browser extension and the website do and do not collect.
-- [Flincth for Chrome](https://flincth.com/chrome): the browser extension for Chrome (available now).
-- [Flincth for Firefox](https://flincth.com/firefox): the browser extension for Firefox (available now).
-- [Flincth for Microsoft Edge](https://flincth.com/edge): the browser extension for Microsoft Edge (available now).
-- [Guides](https://flincth.com/guides/): step-by-step guides, one list per platform: [Mac](https://flincth.com/guides/mac/), [Chrome](https://flincth.com/guides/chrome/), [Firefox](https://flincth.com/guides/firefox/), [Edge](https://flincth.com/guides/edge/).
+- [Home](https://flincth.com/): every Flincth app, by platform.
+- [Mac apps](https://flincth.com/mac/), [iPhone and iPad apps](https://flincth.com/ios/), [Browser extensions](https://flincth.com/browser/): each platform's apps.
+- [Flincth Workspace Manager](https://flincth.com/mac/workspace-manager): the Mac app's features, how it works, and FAQ.
+- [Flincth Speed Reader](https://flincth.com/ios/speed-reader): the iPhone and iPad app (coming soon).
+- [Support](https://flincth.com/support): help for each app, including the Flincth Apply shortcut and common problems.
+- [Privacy](https://flincth.com/privacy): what each app and the website do and do not collect.
+- [Flincth Split View](https://flincth.com/browser/split-view/): the browser extension, with a page per browser: [Chrome](https://flincth.com/browser/split-view/chrome), [Firefox](https://flincth.com/browser/split-view/firefox), [Microsoft Edge](https://flincth.com/browser/split-view/edge) (all available now).
+- [Guides](https://flincth.com/guides/): step-by-step guides, one list per platform: [Workspace Manager on Mac](https://flincth.com/guides/mac/), [Chrome](https://flincth.com/guides/chrome/), [Firefox](https://flincth.com/guides/firefox/), [Edge](https://flincth.com/guides/edge/).
 {%- assign _mac_guides = site.guides | where: "platform", "mac" | sort: "order" %}
 {%- if _mac_guides.size > 0 %}
 
-## Guides: Flincth for Mac
+## Guides: Flincth Workspace Manager
 
 {% for p in _mac_guides -%}
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
@@ -99,7 +134,7 @@ the Mac app and works without it.
 {%- assign _ext_guides = site.guides | where: "platform", _gb.id | sort: "order" %}
 {%- if _ext_guides.size > 0 %}
 
-## Guides: Flincth for {{ site.data.i18n.en.products[_gb.id] }}
+## Guides: Flincth Split View for {{ site.data.i18n.en.products[_gb.id] }}
 
 {% for p in _ext_guides -%}
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
@@ -115,17 +150,17 @@ the Mac app and works without it.
 {% endfor -%}
 {%- endif %}
 {%- assign _comparisons = site.pages | where: "comparison", true | sort: "title" %}
-{%- assign _mac = _comparisons | where_exp: "p", "p.product != 'extension'" %}
-{%- assign _ext = _comparisons | where: "product", "extension" %}
+{%- assign _mac = _comparisons | where: "product", "workspace-manager" %}
+{%- assign _ext = _comparisons | where: "product", "split-view" %}
 {%- if _mac.size > 0 %}
-## Comparisons: Flincth for Mac
+## Comparisons: Flincth Workspace Manager
 
 {% for p in _mac -%}
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
 {%- if _ext.size > 0 %}
-## Comparisons: Flincth browser extension
+## Comparisons: Flincth Split View
 
 {% for p in _ext -%}
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}

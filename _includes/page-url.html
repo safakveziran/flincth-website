@@ -1,10 +1,13 @@
 {%- comment -%}
   URL of the page whose ref is include.ref, in the current language. If that
   page is not translated yet, the default language's URL is returned instead,
-  so the link never breaks.
+  so the link never breaks. Page content renders before the layout sets lang,
+  so the page's own language is the fallback.
 {%- endcomment -%}
-{%- assign _target = site.pages | where: "ref", include.ref | where: "lang", lang | first -%}
+{%- assign _pu_lang = lang | default: page.lang -%}
+{%- assign _pu_default = site.data.languages[0].code -%}
+{%- assign _target = site.pages | where: "ref", include.ref | where: "lang", _pu_lang | first -%}
 {%- unless _target -%}
-  {%- assign _target = site.pages | where: "ref", include.ref | where: "lang", default_lang | first -%}
+  {%- assign _target = site.pages | where: "ref", include.ref | where: "lang", _pu_default | first -%}
 {%- endunless -%}
 {{- _target.url | replace: ".html", "" -}}

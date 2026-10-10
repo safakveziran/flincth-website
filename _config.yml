@@ -10,7 +10,7 @@ verification:
 
 # Used by jekyll-feed for the blog feed (/blog/feed.xml).
 title: Flincth
-description: "Notes on building Flincth, a Mac app that switches your whole desk and clipboard for each kind of work."
+description: "Notes on building Flincth's apps for Mac, iPhone, iPad and the browser: small tools with a clear purpose."
 author: Flincth
 
 # Each page's language. Pages at the root are in the default language; add a
@@ -22,12 +22,17 @@ defaults:
   - scope: { path: "" }
     values: { lang: en }
   # Blog posts live in _posts/ as YYYY-MM-DD-slug.md and are served at
-  # /blog/<slug>, without ".html" like every other page.
+  # /blog/<slug>, without ".html" like every other page. A post belongs to
+  # Workspace Manager unless it sets another product: <id>
+  # (_data/products.yml); the header and the closing card follow it.
   - scope: { path: "", type: posts }
-    values: { layout: post, permalink: /blog/:title }
-  # Guides live in _guides/ (see the collection below).
+    values: { layout: post, permalink: /blog/:title, product: workspace-manager }
+  # Guides live in _guides/ (see the collection below). The Mac guides belong
+  # to Workspace Manager; the browser guides set product: split-view.
   - scope: { path: "", type: guides }
     values: { layout: guide }
+  - scope: { path: "_guides/mac", type: guides }
+    values: { product: workspace-manager }
 
 # Step-by-step guides (see README.md, "Guides"): _guides/<platform>/<slug>.md
 # is served at /guides/<platform>/<slug>.

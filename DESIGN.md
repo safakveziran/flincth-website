@@ -1,6 +1,6 @@
 ---
 name: Flincth website
-description: Dark, calm product site for a Mac utility and its browser extension
+description: Dark, calm site for the Flincth brand and its apps for Mac, iPhone, iPad and the browser
 colors:
   paper: "#090e18"
   surface: "#111b2b"
@@ -64,8 +64,8 @@ components:
 
 ## Overview
 
-A quiet, dark navy site for a tidy Mac utility. The product is about order, so
-the page is ordered: one accent, generous space, headings that carry each
+A quiet, dark navy site for a family of small, tidy apps. The products are
+about order, so the page is ordered: one accent, generous space, headings that carry each
 section on their own. Structure lives in `styles.css`; every colour of the
 dark edition is in `dark.css`, which overrides it.
 
@@ -80,7 +80,8 @@ dark edition is in `dark.css`, which overrides it.
 every hairline. `ink` for headings and primary text, `muted` for body copy.
 
 ### Named Rules
-- **One accent.** Blue is the only hue. `status` green appears only in the
+- **One accent.** Blue is the only hue, including Speed Reader's focus letter
+  in its preview (the app lets users pick their own colour; the site does not). `status` green appears only in the
   "Coming to…" line, where it means *not released yet*.
 - **Focus is amber** (#ffb52f), the one colour that never appears elsewhere.
 
@@ -96,7 +97,12 @@ is the Mac's voice (Segoe UI and Roboto elsewhere). No web font is loaded.
 
 ## Layout
 
-Centred hero, then full-width sections inside a 1200 px wrap. Section header =
+Centred hero, then full-width sections inside a 1200 px wrap. The home page:
+hero with a shelf of product icons, the product grid (cards in auto-fill
+columns of at least 320 px, ordered by platform, with links to each platform
+page above it), the principles band, guides and blog, and a closing "new apps"
+notification. Platform pages (`/mac/`, `/ios/`, `/browser/`) are a heading,
+a lead and the same cards. Section header =
 heading with its paragraph stacked below. Feature grid 1.12fr/1fr, collapsing
 to one column under 700 px. Footer: brand plus three link groups.
 
@@ -122,12 +128,28 @@ padding for touch.
 chip with the green dot. It stands in for the notify button where web push is
 unsupported.
 
+### Brand mark and product icons
+The brand mark (`assets/flincth-mark.svg`, PNGs at 64, 192 and 512 px) sits
+next to the lower-case `flincth` wordmark in the header and footer, and is the
+favicon and the home page's closing image. Product icons appear only with
+their product: cards, the Products menu, product badges, closings.
+
+### Product cards
+Icon, platform, product name (links to its page), a category line in the words
+people search for, a two-line description, a small CSS motif (windows, RSVP
+word, panes), small print, and the product's one action plus "Learn more".
+Copy comes from `catalog` in the translation file.
+
 ### Illustrated previews
-The home desktop and the extension browser are HTML/CSS illustrations,
-always captioned as such. Replace them with real screenshots when they exist.
+The Workspace Manager desktop, the Split View browser and the Speed Reader
+reading screen are HTML/CSS illustrations, always captioned as such. The
+reader preview plays only when the visitor has not asked for reduced motion. Replace them with real screenshots when they exist.
 
 ### Navigation
-Header: wordmark, Products menu (`<details>`), in-page links, one CTA.
+Header: brand mark and wordmark, Products menu (`<details>`, products grouped
+under platform names that link to the platform pages), then either the
+product page's section links or Guides, Blog and Support, and one CTA that
+follows the page's product.
 
 ## Do's and Don'ts
 
