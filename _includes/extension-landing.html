@@ -47,7 +47,7 @@
     <section class="features wrap" id="features">
       <div class="section-heading"><div><h2>{{ x.features_title }}</h2></div><p>{{ x.features_copy }}</p></div>
       <div class="feature-grid">
-        <article class="feature feature-large"><h3>{{ x.feature_split_title }}</h3><p>{{ x.feature_split_copy }}</p><div class="layout-diagram" aria-hidden="true"><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div></div></article>
+        <article class="feature feature-large"><h3>{{ x.feature_split_title }}</h3><p>{{ x.feature_split_copy | replace: "[browser]", b.name }}</p><div class="layout-diagram" aria-hidden="true"><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div><span>↔</span><div><i></i><i></i><i></i></div></div></article>
         <article class="feature clipboard"><h3>{{ x.feature_modes_title }}</h3><p>{{ x.feature_modes_copy }}</p><ul class="modes"><li class="snippet"><span class="mode">{{ p.embed }}</span><code>{{ x.mode_embed }}</code></li><li class="snippet"><span class="mode mode-window">{{ p.window }}</span><code>{{ x.mode_window }}</code></li><li class="snippet"><span class="mode mode-launcher">{{ p.launcher }}</span><code>{{ x.mode_launcher }}</code></li></ul></article>
         <article class="feature short-feature keyboard-feature"><h3>{{ x.feature_keys_title }}</h3><p>{{ x.feature_keys_copy }}</p><div class="keys" aria-hidden="true"><kbd class="wide">Ctrl</kbd><kbd>⇧</kbd><kbd>1</kbd><span>{{ x.feature_keys_hint }}</span></div></article>
         <article class="feature short-feature"><h3>{{ x.feature_alive_title }}</h3><p>{{ x.feature_alive_copy }}</p></article>

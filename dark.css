@@ -272,3 +272,7 @@ footer > a:hover { color: #8db6ff; }
 .hub-browser p { color: var(--muted); }
 .hub-browser .text-link, .hub-links a { color: #89b2ff; }
 .hub-links { color: var(--muted); }
+.post-body th, .post-body td { border-color: var(--line); }
+.post-body thead th { color: var(--ink); background: #101927; }
+.post-body td { color: var(--muted); }
+.post-body td:first-child { color: var(--ink); }

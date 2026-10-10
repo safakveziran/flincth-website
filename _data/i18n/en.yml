@@ -178,8 +178,8 @@ extension:
     comments: Comments
   features_title: Every site in view. Every time.
   features_copy: Stop rebuilding the same four tabs side by side. Arrange them once, then switch.
-  feature_split_title: Split the tab. Keep the proportions.
-  feature_split_copy: Start from a layout or split any pane in two. Drag the dividers until each site has the room it needs; the proportions are saved when you let go.
+  feature_split_title: Up to eight sites in one tab.
+  feature_split_copy: "[browser]’s built-in split view puts two tabs side by side. Flincth divides one tab into as many as eight panes: start from a layout or split any pane in two, then drag the dividers until each site has room. The proportions are saved when you let go."
   feature_modes_title: Some sites say no. Flincth has a plan B.
   feature_modes_copy: Each pane shows its site in whichever way that site allows.
   mode_embed: Inside the tab, for most sites
@@ -235,7 +235,7 @@ extension_any:
   details: "[browser] details"
   what_title: What it does.
   what_1_title: Several sites, one tab.
-  what_1_copy: Divide a tab into two, three or four panes and give each its own address. Drag the dividers until every site has room.
+  what_1_copy: Divide a tab into as many as eight panes and give each its own address. Drag the dividers until every site has room.
   what_2_title: A plan B for stubborn sites.
   what_2_copy: A site that refuses to sit inside another page can open as a real window lined up with its pane, or as a card that opens a normal tab.
   what_3_title: Workspaces you switch.
@@ -246,7 +246,7 @@ extension_any:
 
 extension_chrome:
   title: "Flincth Split View for Chrome: Split Screen in One Tab"
-  description: "Flincth Split View for Chrome splits one tab into panes with a site in each, saves it as a workspace and switches with a click or a shortcut."
+  description: "A split screen extension for Chrome: Flincth Split View puts up to eight sites in one tab, saves each layout as a workspace and switches in a click."
   name: Chrome
   label: Flincth Split View for Chrome
   status: Available on the Chrome Web Store
@@ -260,7 +260,7 @@ extension_chrome:
 
 extension_firefox:
   title: "Flincth Split View for Firefox: Split Screen in One Tab"
-  description: "Flincth Split View for Firefox splits one tab into panes with a site in each, saves it as a workspace and switches with a click or a shortcut."
+  description: "A split screen extension for Firefox: Flincth Split View puts up to eight sites in one tab, saves each layout as a workspace and switches in a click."
   name: Firefox
   label: Flincth Split View for Firefox
   status: Available on Firefox Add-ons
@@ -274,7 +274,7 @@ extension_firefox:
 
 extension_edge:
   title: "Flincth Split View for Edge: Split Screen in One Tab"
-  description: "Flincth Split View for Microsoft Edge splits one tab into panes with a site in each, saves it as a workspace and switches with a click or a shortcut."
+  description: "A split screen extension for Edge: Flincth Split View puts up to eight sites in one tab, saves each layout as a workspace and switches in a click."
   name: Edge
   label: Flincth Split View for Microsoft Edge
   status: Available on Microsoft Edge Add-ons

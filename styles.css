@@ -418,3 +418,10 @@ h1>span{display:block}
 @media(max-width:700px){.platform-about{margin-top:56px}.platform-faq{padding-top:48px}}
 .split-hub #browsers{padding-top:96px}
 @media(max-width:700px){.split-hub #browsers{padding-top:60px}}
+.post-cta-actions{display:flex;flex-wrap:wrap;gap:10px}
+.post-body table{width:100%;border-collapse:collapse;margin:28px 0;font-size:15px;line-height:1.5}
+.post-body th,.post-body td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid}
+.post-body thead th{font-size:14px;font-weight:650;white-space:nowrap}
+.post-body td:first-child{font-weight:550}
+.post-body td kbd{white-space:nowrap}
+@media(max-width:700px){.post-body table{display:block;overflow-x:auto}}
