@@ -9,8 +9,9 @@ layout: null
 # Flincth
 
 > Flincth makes small, focused apps for Mac, iPhone, iPad and the browser.
-> None of them has an account or a subscription, and each keeps the user's
-> work on their own device. Products:
+> Each product has its own pricing and privacy model, described in its own
+> section below; nothing about price or data applies to the brand as a whole.
+> Products:
 {%- for _p in site.data.products %}
 {%- capture _url %}{% include page-url.html ref=_p.id %}{% endcapture %}
 > - {{ site.data.i18n.en.catalog[_p.id].name }}: {{ site.data.i18n.en.catalog[_p.id].category }}{% if _p.status == "coming" %} (coming soon){% endif %}. {{ site.url }}{{ _url }}

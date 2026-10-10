@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v10
+**Document version:** v11
 **Last updated:** 2026-10-10
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
@@ -8,7 +8,7 @@
 > product specs or the site.
 
 ## Product Overview
-**One-liner (brand):** Small apps. Clear purpose. Focused tools for Mac, iPhone, iPad and the browser, with no account, no subscription, and your work kept on your device.
+**One-liner (brand):** Small apps. Clear purpose. Focused tools for Mac, iPhone, iPad and the browser, each clear about its price and its data. Pricing and privacy claims belong to each product, never to the brand.
 **What it does:**
 - *Flincth Workspace Manager* (Mac, /mac/workspace-manager) is a menu bar app. Each setup chooses which apps are part of
   a kind of work; switching setups places their windows into regions across
@@ -24,13 +24,13 @@ The home page lists every product as an equal, grouped by platform (/mac/, /ios/
 **Product category:** Mac window manager / clipboard manager; browser split-screen
 and tab workspace extension; iPhone and iPad speed reading (RSVP) app.
 **Search terms the pages target (Google autocomplete, 2026-10-10; no volume data):**
-brand: "productivity apps without subscription", "apps that don't collect data",
-"privacy focused apps"; Mac: "window manager mac", "clipboard manager mac",
+brand: "productivity apps for mac", "mac and iphone apps", "focused apps"
+(not "without subscription": future products may have other models); Mac: "window manager mac", "clipboard manager mac",
 "best menu bar apps mac"; iOS: "speed reading app iphone/ipad", "rsvp reader app",
 "epub speed reading app ios", "speed reading app one word at a time"; browser:
 "chrome extension split screen", "split view", "split tabs".
 **Product type:** Paid-or-free consumer utility software, sold through app stores. **(to confirm)**
-**Business model:** no subscriptions anywhere. Workspace Manager: Mac App Store, US$9.99 one-time,
+**Business model:** set per product; the brand promises no model. Today: Workspace Manager: Mac App Store, US$9.99 one-time,
 no in-app purchase or trial. Split View: free. Speed Reader: free download with daily limits, one-time
 Pro purchase, 7-day $0 trial.
 
@@ -133,6 +133,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v11 (2026-10-10) — Brand pages stop promising "no subscription" / "no account": future products may use other models, so those claims live on product pages only.
 - v10 (2026-10-10) — Flincth becomes a multi-product brand: brand home page, /mac/workspace-manager, /browser/split-view/ (the extension is named Split View), /ios/speed-reader (coming soon); products are equals.
 - v9 (2026-10-06) — Extension 1.0.2 website access recorded: Chrome and Edge offer optional all-sites access after install; Firefox still asks per site.
 - v8 (2026-10-03) — Extension live on Firefox Add-ons (https://addons.mozilla.org/addon/flincth/); now in all three stores.

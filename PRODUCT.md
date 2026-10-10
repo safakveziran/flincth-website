@@ -52,9 +52,11 @@ coming one ships.
 
 ## Positioning
 
-- **Brand:** small apps with a clear purpose. No account and no subscription
-  in any product; each keeps the user's work on their own device and says
-  plainly what it sends, if anything.
+- **Brand:** small apps with a clear purpose, each clear about its price and
+  its data. Pricing, accounts and data handling belong to each product, not
+  to the brand: future products may use other models (a subscription, an
+  account, a server). Never state "no subscription", "no account" or "stays
+  on your device" as a brand-wide promise; say it on the product's own page.
 - **Workspace Manager:** one action changes the whole desk: which apps are open, where
   their windows sit across displays, and which clipboard history is active. No
   Accessibility permission, no account; setups and clipboard never leave the Mac
