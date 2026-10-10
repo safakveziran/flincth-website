@@ -1,0 +1,89 @@
+---
+layout: default
+title: "Flincth Speed Reader: Speed Reading App for iPhone, iPad"
+description: "A speed reading app for iPhone and iPad: read your own EPUB, PDF and DOCX files one word, phrase or sentence at a time. No account, no subscription."
+ref: speed-reader
+product: speed-reader
+preview: reader
+schema: schema/speed-reader.en.html
+og_image: /assets/og-reader.png
+og_image_alt: og_image_alt_speed_reader
+sitemap:
+  lastmod: 2026-10-10
+  changefreq: monthly
+  priority: 0.8
+---
+{%- comment -%}
+  Flincth Speed Reader, before launch. Facts come from the app's spec.md
+  (flincth-reader): formats (§6), plans and trial (§14–17), privacy (§28) and
+  analytics consent (§23). Free plan limits are set remotely, so this page
+  never prints them. When the app is out, set store_url and status: live in
+  _data/products.yml and replace the notify buttons with the store link.
+{%- endcomment -%}
+  <main id="main" class="reader-page">
+    <section class="hero wrap">
+      <p class="product-badge"><img src="/assets/reader-icon-64.png" width="22" height="22" alt="">Flincth Speed Reader for iPhone and iPad</p>
+      <h1>Read faster. <span>Still understand.</span></h1>
+      <p class="hero-copy">Flincth Speed Reader is a speed reading app for iPhone and iPad.<br class="desktop-break"> It shows your own books and documents one word, phrase or short sentence<br class="desktop-break"> at a time, in one fixed spot, at the pace you set.</p>
+      <div class="hero-actions">{% include notify-button.html topic="speed-reader" %}<div class="coming-soon" data-notify-fallback><span class="status-dot"></span> Coming soon to the App Store</div><a class="text-link" href="#how">See how it works <span aria-hidden="true">↓</span></a></div>
+      <p class="micro">iPhone and iPad <span>·</span> iOS 17 or later <span>·</span> No account <span>·</span> No subscription</p>
+
+      <div class="product-stage reader-stage" id="preview" data-mode="word">
+        <div class="stage-top"><span>ONE SPOT. YOUR PACE.</span><span class="live-label">INTERACTIVE PREVIEW</span></div>
+        <div class="reader-screen">
+          <div class="reader-modes" role="group" aria-label="Preview a reading mode"><button type="button" class="reader-mode" data-mode="word" aria-pressed="true">Word</button><button type="button" class="reader-mode" data-mode="phrase" aria-pressed="false">Phrase</button><button type="button" class="reader-mode" data-mode="sentence" aria-pressed="false">Sentence</button></div>
+          <span class="reader-guide reader-guide-top" aria-hidden="true"></span>
+          <p class="reader-chunk" id="reader-chunk" aria-live="off">Al<em>i</em>ce</p>
+          <span class="reader-guide reader-guide-bottom" aria-hidden="true"></span>
+          <div class="reader-bar"><button type="button" class="reader-play" id="reader-play" aria-pressed="false" hidden>Pause</button><span class="reader-progress" aria-hidden="true"><i id="reader-progress"></i></span><span id="reader-speed">300 wpm</span></div>
+        </div>
+        <div class="stage-bottom"><span>Word, phrase or short sentence.</span><span>Choose a mode above <span aria-hidden="true">↑</span></span></div>
+      </div>
+      <p class="preview-note">Illustrative preview, not an app screenshot. Sample text: Lewis Carroll, Alice’s Adventures in Wonderland (public domain).</p>
+    </section>
+
+    <section class="features wrap" id="features">
+      <div class="section-heading"><div><h2>Speed, without losing the thread.</h2></div><p>RSVP reading keeps your eyes still and moves the text instead. Flincth splits it so that it still makes sense at speed.</p></div>
+      <div class="feature-grid">
+        <article class="feature feature-large"><h3>One word at a time, or a whole phrase.</h3><p>Read one word at a time, or let Flincth group words into meaningful phrases and short sentences, so you go fast without losing the sense of the text.</p><ul class="format-list" aria-label="Reading modes"><li>Word</li><li>Phrase</li><li>Sentence</li></ul></article>
+        <article class="feature clipboard"><h3>Your own books and documents.</h3><p>Open DRM-free files from Files or another app, share a web article from Safari, or paste text.</p><ul class="format-list" aria-label="Supported formats"><li>EPUB</li><li>PDF</li><li>DOCX</li><li>TXT</li><li>RTF</li><li>Markdown</li><li>Web articles</li></ul></article>
+        <article class="feature short-feature"><h3>Pause for context.</h3><p>Pause at any moment to see the whole paragraph you are in, and tap any sentence to carry on from there.</p><p class="context-snippet" aria-hidden="true">Alice was beginning to get very <mark>tired of sitting</mark> by her sister on the bank, and of having nothing to do.</p></article>
+        <article class="feature short-feature keyboard-feature"><h3>iPhone and iPad, in step.</h3><p>With Pro, iCloud sync lets you stop on one device and pick up on the other, exactly where you left off.</p><div class="devices-diagram" aria-hidden="true"><span class="device-phone"><i></i></span><span class="device-tablet"><i></i></span></div></article>
+      </div>
+    </section>
+
+    <section class="privacy-band"><div class="wrap privacy-inner"><h2>What you read <span>stays yours.</span></h2><div><p>Documents are processed on your iPhone or iPad and never sent to Flincth. With Pro sync on, they travel only to your own iCloud. No account, no ads, no AI.</p><span class="privacy-caption">NEVER YOUR DOCUMENTS, TITLES OR FILE NAMES.</span> <a class="privacy-link" href="{% include page-url.html ref="privacy" %}#speed-reader">Read the privacy policy <span aria-hidden="true">→</span></a></div></div></section>
+
+    <section class="how wrap" id="how"><div class="section-heading"><div><h2>Open it. Set the pace. Read.</h2></div><p>Three steps from a file to your fastest page yet.</p></div><div class="steps"><article><span>01</span><h3>Add a document.</h3><p>Open an EPUB, PDF or DOCX from Files, share a web page from Safari, or paste some text.</p></article><article><span>02</span><h3>Choose how it moves.</h3><p>Pick word, phrase or sentence mode and set your speed in words per minute.</p></article><article><span>03</span><h3>Read, pause, continue.</h3><p>Tap to pause and see the context. Your place is saved for the next time you open it.</p></article></div></section>
+
+    <section class="pricing wrap" id="pricing"><div class="section-heading"><div><h2>Free to start. Pro, once.</h2></div><p>No subscription, now or later.</p></div><div class="plans">
+      <article class="plan"><h3>Free</h3><p class="plan-price">Free download</p><ul><li>Every reading mode and every format</li><li>Daily reading time, a few saved documents and a speed cap, enough to try it properly</li><li>Light and dark themes, and a dyslexia-friendly font</li><li>Accessibility settings, always free</li></ul></article>
+      <article class="plan plan-pro"><h3>Pro</h3><p class="plan-price">One-time purchase</p><ul><li>No daily limits, higher speeds and as many documents as you like</li><li>Themes, fonts, focus letter and pause tuning</li><li>Reading statistics and goals</li><li>iCloud sync between your iPhone and iPad</li><li>A 7-day free trial that asks for no payment and never turns into a charge</li><li>Family Sharing included</li></ul></article>
+    </div></section>
+
+    <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
+      <details><summary>When can I get it?<span>+</span></summary><p>Flincth Speed Reader is coming soon to the App Store for iPhone and iPad. Press Notify me at launch on this page and you will get one notification when it is out.</p></details>
+      <details><summary>Can it open Kindle or Apple Books purchases?<span>+</span></summary><p>No. Those books are protected with DRM, which the app cannot open. It reads DRM-free files: EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus web articles and pasted text. Scanned PDFs without a text layer are not supported.</p></details>
+      <details><summary>Can I speed read PDFs and EPUB books?<span>+</span></summary><p>Yes, if they are DRM-free. EPUB 2 and 3, PDFs with a text layer, DOCX, TXT, RTF and Markdown all open, and a book’s table of contents becomes its sections. Scanned PDFs without a text layer and DRM-protected books cannot be read; see <a href="/blog/can-you-speed-read-kindle-books">can you speed read Kindle books?</a></p></details>
+      <details><summary>What is RSVP reading?<span>+</span></summary><p>Rapid Serial Visual Presentation: the text appears one short piece at a time in a fixed spot, so your eyes stop jumping along the line. Flincth adds natural pauses at punctuation and gives long words a little more time.</p></details>
+      <details><summary>Is there a subscription?<span>+</span></summary><p>No. The app is free to download, with daily limits. Pro is a one-time purchase that removes them. The 7-day Pro trial asks for no payment details and never turns into a charge.</p></details>
+      <details><summary>Do speed reading apps actually work?<span>+</span></summary><p>For many kinds of text, yes, within limits: research finds that comprehension drops as speed rises, especially with dense material. Phrase and sentence modes, natural pauses and a context view when you pause are there to soften that. We wrote up <a href="/blog/do-speed-reading-apps-work">what the research says</a>.</p></details>
+      <details><summary>Does it use AI?<span>+</span></summary><p>No. There are no AI features of any kind, in the cloud or on the device. Text is split by punctuation and simple rules that work in any language.</p></details>
+      <details><summary>Does it collect data?<span>+</span></summary><p>Your documents, their titles, file names and the text you paste never leave your device, except to your own iCloud when sync is on. The app counts anonymous usage events, such as a finished reading session, to improve it: in the EU, the UK and Switzerland only if you agree, and elsewhere with an off switch in Settings.</p></details>
+    </div></section>
+
+    <section class="closing wrap" id="availability"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Coming soon to iPhone and iPad.</p><div class="closing-actions"><div class="coming-soon"><span class="status-dot"></span> Coming soon to the App Store</div>{% include notify-button.html topic="speed-reader" %}</div>{% include notify-hint.html %}<span class="micro">iOS 17 or later <span>·</span> No account <span>·</span> No subscription</span></section>
+
+    <script type="application/json" id="reader-data">
+    {
+      "wpm": 300,
+      "pause": "Pause",
+      "play": "Play",
+      "modes": {
+        "word": ["Alice", "was", "beginning", "to", "get", "very", "tired", "of", "sitting", "by", "her", "sister", "on", "the", "bank,", "and", "of", "having", "nothing", "to", "do."],
+        "phrase": ["Alice was beginning", "to get very tired", "of sitting by her sister", "on the bank,", "and of having", "nothing to do."],
+        "sentence": ["Alice was beginning to get very tired of sitting by her sister on the bank,", "and of having nothing to do."]
+      }
+    }
+    </script>
+  </main>

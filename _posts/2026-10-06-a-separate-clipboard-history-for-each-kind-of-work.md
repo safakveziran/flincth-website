@@ -1,5 +1,6 @@
 ---
 title: "Why My Mac Clipboard History Keeps a Separate List for Each Kind of Work"
+seo_title: "A Separate Mac Clipboard History for Each Kind of Work"
 description: "A clipboard history that mixes every project is noise at best and a leak at worst. Here is why Flincth keeps one list per setup, and what it never records."
 medium_url: https://medium.com/@support_9084/why-my-mac-clipboard-history-keeps-a-separate-list-for-each-kind-of-work-flincth-323350f9ade9
 ---

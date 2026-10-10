@@ -1,25 +1,27 @@
 {%- comment -%}
-  Footer in three groups: products (Flincth for Mac first, the browser
-  extension under it as a companion), help and legal. The Notifications link
-  stays hidden until notifications.js confirms push support; language links
-  appear only once a page exists in more than one language.
+  Footer in three groups: products (every product in _data/products.yml,
+  under its platform), help and legal. The Notifications link stays hidden
+  until notifications.js confirms push support; language links appear only
+  once a page exists in more than one language.
 {%- endcomment -%}
-{%- assign browsers = "chrome,firefox,edge" | split: "," -%}
 {%- capture privacy_url %}{% include page-url.html ref="privacy" %}{% endcapture -%}
 {%- capture support_url %}{% include page-url.html ref="support" %}{% endcapture -%}
   <footer class="wrap site-footer">
-    <div class="footer-brand"><a class="brand" href="{{ home_link }}"><img src="/assets/app-icon-64.png" width="28" height="28" alt=""><span class="wordmark" translate="no">flincth</span></a><p class="footer-note">{{ t.footer.note }}</p><p class="footer-copy">© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</p></div>
+    <div class="footer-brand"><a class="brand" href="{{ home_link }}"><img src="/assets/flincth-mark.svg" width="28" height="28" alt=""><span class="wordmark" translate="no">flincth</span></a><p class="footer-note">{{ t.footer.note }}</p><p class="footer-copy">© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</p></div>
     <nav class="footer-col" aria-label="{{ t.products.label }}"><p class="footer-title">{{ t.products.label }}</p><ul>
-      {%- capture _mac_url %}{% include page-url.html ref="home" %}{% endcapture %}
-      <li><a class="footer-main-product" href="{{ _mac_url }}"{% if page.ref == "home" %} aria-current="page"{% endif %}>{{ t.products.mac }}</a></li>
-      <li class="footer-subtitle">{{ t.products.extension }}</li>
-      {%- for _ref in browsers -%}
-        {%- capture _url %}{% include page-url.html ref=_ref %}{% endcapture -%}
-      <li class="footer-sub"><a href="{{ _url }}"{% if page.ref == _ref %} aria-current="page"{% endif %}>{{ t.products[_ref] }}</a></li>
-      {%- endfor -%}
+{%- for _platform in site.data.platforms %}
+  {%- assign _in = site.data.products | where: "platform", _platform.id %}
+  {%- if _in.size > 0 %}
+    {%- capture _platform_url %}{% include page-url.html ref=_platform.id %}{% endcapture %}
+      <li class="footer-subtitle"><a href="{{ _platform_url }}"{% if page.ref == _platform.id %} aria-current="page"{% endif %}>{{ t.platforms[_platform.id].name }}</a></li>
+    {%- for _p in _in %}
+      {%- capture _url %}{% include page-url.html ref=_p.id %}{% endcapture %}
+      <li class="footer-sub"><a href="{{ _url }}"{% if page.ref == _p.id %} aria-current="page"{% endif %}>{{ t.catalog[_p.id].short }}</a></li>
+    {%- endfor %}
+  {%- endif %}
+{%- endfor %}
     </ul></nav>
     <nav class="footer-col" aria-label="{{ t.footer.help }}"><p class="footer-title">{{ t.footer.help }}</p><ul>
-      <li><a href="{% if page.ref == "home" %}#questions{% else %}{{ home_url }}#questions{% endif %}">{{ t.footer.faq }}</a></li>
       <li><a href="{{ support_url }}"{% if page.ref == "support" %} aria-current="page"{% endif %}>{{ t.footer.support }}</a></li>
       <li><a href="/guides/"{% if page.ref == "guides" or page.layout == "guide" or page.layout == "guide-list" %} aria-current="page"{% endif %}>{{ t.footer.guides }}</a></li>
       <li><a href="/blog/"{% if page.ref == "blog" or page.layout == "post" %} aria-current="page"{% endif %}>{{ t.footer.blog }}</a></li>

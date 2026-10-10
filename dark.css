@@ -215,3 +215,64 @@ footer > a:hover { color: #8db6ff; }
 .guide-more-title { color: var(--ink); }
 .guide-more a { color: #89b2ff; }
 .post-body kbd { background: var(--raised); border-color: #465a79; color: var(--ink); }
+
+/* Brand catalog: products menu, product cards, home, platform pages, Speed Reader */
+.product-group + .product-group { border-color: #2a3a54; }
+.product-group-title { color: #a5b3ca; }
+.product-group-title:hover, .product-group-title[aria-current] { color: #8db6ff; }
+.product-item:hover, .product-item[aria-current] { background: #1c2a42; }
+.product-card { background: linear-gradient(145deg, #142036, #0f1829); border-color: #2b405f; }
+.product-card-platform, .product-card-meta { color: #8fa0bb; }
+.product-card-head :is(h2, h3, h4) { color: var(--ink); }
+.product-card-category { color: #c9d7ee; }
+.product-card-desc { color: var(--muted); }
+.product-card-actions .text-link { color: #89b2ff; }
+.coming-soon { background: #1c2b44; border-color: #34496b; color: var(--ink); }
+.chip-row a { border-color: #3a4f72; color: #dbe6f4; }
+.chip-row a:hover { border-color: #8db6ff; color: #8db6ff; }
+.motif { background: linear-gradient(135deg, #111e37, #172e61 65%, #121d3b); border-color: #2b405f; }
+.motif-windows i, .motif-panes i { background: #1b2a44; border-color: #3a5173; }
+.motif-windows i:first-child, .motif-panes i:first-child { background: #22365a; border-color: #5c80bd; }
+.motif-rsvp { background: #0d1522; }
+.motif-rsvp b { color: var(--ink); }
+.motif-rsvp b em, .reader-chunk em { color: #89b2ff; }
+.motif-rsvp:before, .motif-rsvp:after, .reader-guide { background: #4a5f80; }
+.motif-panes > span { background: #152136; border-color: #2f4466; }
+.brand-shelf a { color: var(--ink); }
+.brand-shelf small { color: #8fa0bb; }
+.platform-more a, .learn-card li a span { color: #89b2ff; }
+.principles h3 { color: #fff; }
+.principles p { color: #c2ccdb; }
+.learn-card { background: #101927; border-color: var(--line); }
+.learn-card li a { border-color: var(--line); color: var(--ink); }
+.learn-card li a:hover { color: #89b2ff; }
+.platform-more { color: var(--muted); }
+.plan { background: #101927; border-color: var(--line); }
+.plan-pro { background: linear-gradient(145deg, #192b49, #142036); border-color: #2b405f; }
+.plan-price { color: #89b2ff; }
+.plan li { color: var(--muted); }
+.reader-screen { background: #0b111c; color: #f3f6fb; }
+.reader-chunk { color: #f3f6fb; }
+.context-snippet { background: #0d1522; border-color: #2b405f; color: #b8c6dc; }
+.context-snippet mark { background: #235cec; color: #fff; }
+.devices-diagram span { border-color: #5c80bd; }
+.devices-diagram i { background: #22365a; }
+.reader-modes { background: #152136; border-color: #2f4466; }
+.reader-mode { color: #b8c6dc; }
+.reader-mode[aria-pressed=true] { background: var(--action); color: #fff; }
+.reader-bar { color: #9aaac3; }
+.reader-progress { background: #22304a; }
+.reader-progress i { background: #80aaff; }
+.reader-play { border-color: #3a4f72; color: #dbe6f4; }
+.reader-play:hover { border-color: #8db6ff; color: #8db6ff; }
+.format-list li { border-color: #3a5173; color: #c9d7ee; background: #152136; }
+.format-list li.format-no { color: #7d8aa1; background: transparent; }
+.hub-browser { background: linear-gradient(145deg, #142036, #0f1829); border-color: #2b405f; }
+.hub-browser h3 { color: var(--ink); }
+.hub-browser p { color: var(--muted); }
+.hub-browser .text-link, .hub-links a { color: #89b2ff; }
+.hub-links { color: var(--muted); }
+.post-body th, .post-body td { border-color: var(--line); }
+.post-body thead th { color: var(--ink); background: #101927; }
+.post-body td { color: var(--muted); }
+.post-body td:first-child { color: var(--ink); }

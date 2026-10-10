@@ -1,0 +1,33 @@
+# Every Flincth product, in display order within its platform. The home page,
+# the platform pages (/mac/, /ios/, /browser/), the Products menu in the header,
+# the footer, llms.txt and the home page's JSON-LD all read this list, so a new
+# product is one entry here plus its page. Translatable copy (name, note,
+# category) is in the catalog section of _data/i18n/<lang>.yml, keyed by id.
+#
+#   id:         Slug; also the product page's ref and the value pages set as
+#               product: <id> to say which product they belong to
+#   platform:   Key in _data/platforms.yml
+#   icon:       64, 128 and 192 px versions exist as <icon>-<size>.png
+#   status:     live or coming. A coming product shows "Notify me at launch"
+#               (OneSignal tag launch_<notify>) instead of a store button.
+#   store_data: Data file that holds the store link and price (mac.yml), for
+#               products whose store facts already live in their own file
+#   store_url:  Store link for products without a store_data file
+#   browsers:   Browser extensions only: the per-browser pages, from
+#               _data/browsers.yml; their refs are <id>-<browser>
+- id: workspace-manager
+  platform: mac
+  icon: /assets/app-icon
+  status: live
+  store_data: mac
+- id: speed-reader
+  platform: ios
+  icon: /assets/reader-icon
+  status: coming
+  notify: speed-reader
+  store_url: ""
+- id: split-view
+  platform: browser
+  icon: /assets/extension-icon
+  status: live
+  browsers: true

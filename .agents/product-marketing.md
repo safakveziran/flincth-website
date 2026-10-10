@@ -1,27 +1,38 @@
 # Product Marketing Context
 
-**Document version:** v9
-**Last updated:** 2026-10-06
+**Document version:** v11
+**Last updated:** 2026-10-10
 
 > Auto-drafted from the Flincth repositories. Items marked **(to confirm)** are
 > inferences waiting for the owner's review; everything else is taken from the
 > product specs or the site.
 
 ## Product Overview
-**One-liner:** Flincth saves how you work, and puts it back with one action.
+**One-liner (brand):** Small apps. Clear purpose. Focused tools for Mac, iPhone, iPad and the browser, each clear about its price and its data. Pricing and privacy claims belong to each product, never to the brand.
 **What it does:**
-- *Flincth for Mac* is a menu bar app. Each setup chooses which apps are part of
+- *Flincth Workspace Manager* (Mac, /mac/workspace-manager) is a menu bar app. Each setup chooses which apps are part of
   a kind of work; switching setups places their windows into regions across
   your displays and switches to that setup's own text clipboard history.
-- *Flincth for Chrome, Firefox and Edge* splits one browser tab into
+- *Flincth Split View* (Chrome, Firefox and Edge, /browser/split-view/) splits one browser tab into
   panes, puts a site in each, saves that as a workspace and switches workspaces
-  with a click or shortcut.
-**Product hierarchy:** Flincth for Mac is the main product. The browser extension is a companion, presented under "Also from Flincth".
+  with a click or shortcut. Its store listings still say "Flincth".
+- *Flincth Speed Reader* (iPhone and iPad, /ios/speed-reader, coming soon) shows the user's own
+  DRM-free documents one word, phrase or short sentence at a time (RSVP).
+**Product hierarchy:** Flincth is a brand with several products, more to come on every platform.
+The home page lists every product as an equal, grouped by platform (/mac/, /ios/, /browser/);
+`_data/products.yml` is the catalogue.
 **Product category:** Mac window manager / clipboard manager; browser split-screen
-and tab workspace extension.
+and tab workspace extension; iPhone and iPad speed reading (RSVP) app.
+**Search terms the pages target (Google autocomplete, 2026-10-10; no volume data):**
+brand: "productivity apps for mac", "mac and iphone apps", "focused apps"
+(not "without subscription": future products may have other models); Mac: "window manager mac", "clipboard manager mac",
+"best menu bar apps mac"; iOS: "speed reading app iphone/ipad", "rsvp reader app",
+"epub speed reading app ios", "speed reading app one word at a time"; browser:
+"chrome extension split screen", "split view", "split tabs".
 **Product type:** Paid-or-free consumer utility software, sold through app stores. **(to confirm)**
-**Business model:** Mac App Store only; US$9.99 one-time; no subscription, in-app purchase or trial.
-Extension pricing not stated. **(to confirm)**
+**Business model:** set per product; the brand promises no model. Today: Workspace Manager: Mac App Store, US$9.99 one-time,
+no in-app purchase or trial. Split View: free. Speed Reader: free download with daily limits, one-time
+Pro purchase, 7-day $0 trial.
 
 ## Target Audience
 **Target users:** individual professionals on a Mac, often with two or more
@@ -113,13 +124,17 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 | Honest limits | Site and support page state every platform limit |
 
 ## Goals
-**Business goal:** Mac App Store installs of Flincth for Mac (live at https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12); a launch audience for the browser extension stores.
+**Business goal:** Mac App Store installs of Flincth Workspace Manager (live at https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12); a launch audience for the browser extension stores.
 **Conversion action (Mac):** download from the Mac App Store.
 **Conversion action (extension):** install from the browser's store (Chrome, Edge, Firefox).
+**Conversion action (Speed Reader, before launch):** "Notify me at launch" (OneSignal tag launch_speed-reader).
+**Conversion action (home):** open a product page; "Tell me about new apps" (tag launch_new-apps).
 **Current metrics:** unknown; GA4 is consent-gated. **(to confirm)**
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v11 (2026-10-10) — Brand pages stop promising "no subscription" / "no account": future products may use other models, so those claims live on product pages only.
+- v10 (2026-10-10) — Flincth becomes a multi-product brand: brand home page, /mac/workspace-manager, /browser/split-view/ (the extension is named Split View), /ios/speed-reader (coming soon); products are equals.
 - v9 (2026-10-06) — Extension 1.0.2 website access recorded: Chrome and Edge offer optional all-sites access after install; Firefox still asks per site.
 - v8 (2026-10-03) — Extension live on Firefox Add-ons (https://addons.mozilla.org/addon/flincth/); now in all three stores.
 - v7 (2026-09-30) — Price set (US$9.99 one-time); "no network access" replaced, since the app has opt-in OneSignal feature announcements.

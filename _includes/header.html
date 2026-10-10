@@ -1,24 +1,36 @@
 {%- comment -%}
-  On the browser extension pages (page.browser) the menu points to that
-  page's own sections instead of the Mac app's home page.
+  On a page that belongs to a product (page.product, see lang-vars.html) the
+  menu points to that product page's sections; on a browser extension's
+  overview (page.hub) it lists the extension's browser pages; on every other
+  page it links to Guides, Blog and Support.
 {%- endcomment -%}
-{%- if page.browser -%}
-  {%- assign _nav = t.extension.nav -%}
-  {%- assign _nav_base = "" -%}
-{%- else -%}
-  {%- assign _nav = t.nav -%}
-  {%- assign _nav_base = base -%}
-{%- endif -%}
+{%- capture _support_url %}{% include page-url.html ref="support" %}{% endcapture -%}
   <header class="nav wrap">
-    <a class="brand" href="{{ home_link }}" aria-label="{{ t.home_label }}"><img src="/assets/app-icon-128.png" alt="" width="36" height="36"><span class="wordmark" translate="no">flincth</span></a>
-    <nav aria-label="{{ t.nav.label }}">{% include products-menu.html %}<a href="{{ _nav_base }}#features">{{ _nav.features }}</a><a href="{{ _nav_base }}#how">{{ _nav.how }}</a><a href="{{ _nav_base }}#questions">{{ _nav.faq }}</a></nav>
+    <a class="brand" href="{{ home_link }}" aria-label="{{ t.home_label }}"><img src="/assets/flincth-mark.svg" alt="" width="34" height="34"><span class="wordmark" translate="no">flincth</span></a>
+    <nav aria-label="{{ t.nav.label }}">{% include products-menu.html %}
+{%- if page.hub and ctx_product.browsers -%}
+  {%- for _b in site.data.browsers -%}
+    {%- assign _bref = ctx_product.id | append: "-" | append: _b.id -%}
+<a href="{% include page-url.html ref=_bref %}">{{ t.products[_b.id] }}</a>
+  {%- endfor -%}
+{%- elsif ctx_product -%}
+<a href="{{ ctx_base }}#features">{{ t.nav.features }}</a><a href="{{ ctx_base }}#how">{{ t.nav.how }}</a><a href="{{ ctx_base }}#questions">{{ t.nav.faq }}</a>
+{%- else -%}
+<a href="/guides/">{{ t.nav.guides }}</a><a href="/blog/">{{ t.nav.blog }}</a><a href="{{ _support_url }}">{{ t.nav.support }}</a>
+{%- endif -%}
+</nav>
 {%- comment -%}
-  On a browser extension page the header CTA installs that browser's
-  extension once its store link is set, and until then is the same "Notify
-  me at launch" button as the hero's (a "Launch status" link where push is
-  unsupported). A page that is about the extension without being its landing
-  page (the extension comparison pages) sets store_browser: <id> to get that
-  browser's install button. Everywhere else it downloads Flincth for Mac.
+  The header button follows the page's product:
+  - a Split View browser page installs that browser's extension once its
+    store link is set (_data/browsers.yml), and until then is the same
+    "Notify me at launch" button as the hero's; a page that is about Split
+    View in one browser without being its landing page (the extension
+    comparison pages and guides) sets store_browser: <id> for the same button;
+  - Split View's own overview page and its other pages point to the browser
+    choice on the overview;
+  - a product that is not out yet offers "Notify me at launch";
+  - Workspace Manager's pages download it from the Mac App Store;
+  - pages that belong to no product open the product list on the home page.
 {%- endcomment -%}
 {%- assign _browser = nil -%}
 {%- if page.browser %}{% assign _browser = site.data.browsers | where: "id", page.browser | first %}{% endif -%}
@@ -30,7 +42,13 @@
     <a class="nav-cta" href="{{ _store.store_url }}" target="_blank" rel="noopener">{{ t[_store_strings].store_cta }}</a>
 {%- elsif page.browser %}
     {% include notify-button.html topic=page.browser class="nav-cta" %}<a class="nav-cta" href="#availability" data-notify-fallback>{{ t.notify.fallback }}</a>
+{%- elsif ctx_product.browsers %}
+    <a class="nav-cta" href="{{ ctx_base }}#browsers">{{ ctx_copy.cta }}</a>
+{%- elsif ctx_product.status == "coming" %}
+    {% include notify-button.html topic=ctx_product.notify class="nav-cta" %}<a class="nav-cta" href="{{ ctx_base }}#availability" data-notify-fallback>{{ t.notify.fallback }}</a>
+{%- elsif ctx_product.store_data %}
+    <a class="nav-cta" href="{{ site.data[ctx_product.store_data].store_url }}" target="_blank" rel="noopener">{{ t.nav.cta }}</a>
 {%- else %}
-    <a class="nav-cta" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{{ t.nav.cta }}</a>
+    <a class="nav-cta" href="{% if page.ref == "home" %}{% else %}{{ home_url }}{% endif %}#products">{{ t.nav.all_products }}</a>
 {%- endif %}
   </header>

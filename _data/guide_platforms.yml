@@ -1,24 +1,24 @@
 # The four boxes on /guides/, in display order. Each one opens its own list
 # at /guides/<id>/ (guides/<id>/index.html), which shows the guides whose
-# front matter sets platform: <id>. Flincth for Mac comes first: it is the
-# main product, and the browser extension is its companion.
+# front matter sets platform: <id>. The addresses stay /guides/<id>/ even
+# though Flincth now has several products, so links already shared keep working.
 - id: mac
-  name: Flincth for Mac
+  name: Workspace Manager
   kicker: Mac app
   icon: /assets/app-icon-128.png
   note: Setups, window layouts across your displays, and a clipboard history for each kind of work.
 - id: chrome
   name: Chrome
-  kicker: Browser extension
+  kicker: Split View extension
   icon: /assets/extension-icon.png
   note: Split one Chrome tab into panes with a site in each, and switch between saved workspaces.
 - id: firefox
   name: Firefox
-  kicker: Browser extension
+  kicker: Split View extension
   icon: /assets/extension-icon.png
   note: Split one Firefox tab into panes with a site in each, and switch between saved workspaces.
 - id: edge
   name: Edge
-  kicker: Browser extension
+  kicker: Split View extension
   icon: /assets/extension-icon.png
   note: Split one Edge tab into panes with a site in each, and switch between saved workspaces.

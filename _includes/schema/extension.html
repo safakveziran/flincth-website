@@ -1,6 +1,7 @@
 {%- comment -%}
-  JSON-LD for a browser extension landing page. Copy comes from the page's
-  extension_<browser> section, so each language and browser gets its own.
+  JSON-LD for a Flincth Split View page. Copy comes from the page's
+  extension_<browser> section (extension_any on the overview, which lists
+  every store), so each language and browser gets its own.
 {%- endcomment -%}
 {%- assign _b = t[page.strings] -%}
 {%- assign _page_url = site.url | append: page.url | replace: ".html", "" -%}
@@ -11,17 +12,21 @@
       {
         "@type": "SoftwareApplication",
         "@id": {{ _page_url | append: "#extension" | jsonify }},
-        "name": {{ "Flincth for " | append: _b.name | jsonify }},
+        "name": {{ _b.label | jsonify }},
         "url": {{ _page_url | jsonify }},
         "image": "https://flincth.com/assets/extension-icon.png",
         "description": {{ _b.description | jsonify }},
         "applicationCategory": "BrowserApplication",
-        "operatingSystem": {{ _b.name | jsonify }},
+        "operatingSystem": {{ _b.os | default: _b.name | jsonify }},
+{%- if page.browser %}
 {%- assign _store = site.data.browsers | where: "id", page.browser | first -%}
 {%- if _store.store_url != "" %}
         "downloadUrl": {{ _store.store_url | jsonify }},
         "installUrl": {{ _store.store_url | jsonify }},
         "sameAs": [{{ _store.store_url | jsonify }}],
+{%- endif %}
+{%- else %}
+        "sameAs": [{% for _s in site.data.browsers %}{{ _s.store_url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}],
 {%- endif %}
         "inLanguage": {{ lang | jsonify }},
         "publisher": { "@id": "https://flincth.com/#org" }
@@ -31,7 +36,7 @@
         "@id": "https://flincth.com/#org",
         "name": "Flincth",
         "url": "https://flincth.com/",
-        "logo": "https://flincth.com/assets/app-icon.png"
+        "logo": "https://flincth.com/assets/flincth-mark-512.png"
       }
     ]
   }

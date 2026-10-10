@@ -1,0 +1,48 @@
+{%- comment -%}
+  JSON-LD for the Flincth Speed Reader page. The app is not out yet, so there
+  is no store link or offer; add downloadUrl, installUrl and sameAs when it
+  launches.
+{%- endcomment -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://flincth.com/ios/speed-reader#app",
+        "name": "Flincth Speed Reader",
+        "url": "https://flincth.com/ios/speed-reader",
+        "image": "https://flincth.com/assets/reader-icon-192.png",
+        "description": "Flincth Speed Reader is an RSVP speed reading app for iPhone and iPad. It shows the user's own DRM-free EPUB, PDF, DOCX and text documents one word, phrase or short sentence at a time, at a pace the user sets.",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "iOS 17 or later",
+        "featureList": [
+          "Word, phrase and short sentence reading modes",
+          "Imports DRM-free EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus web articles and pasted text",
+          "Context view when paused",
+          "iCloud sync between iPhone and iPad with Pro",
+          "No account, no subscription and no AI"
+        ],
+        "publisher": { "@id": "https://flincth.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://flincth.com/#org",
+        "name": "Flincth",
+        "url": "https://flincth.com/",
+        "logo": "https://flincth.com/assets/flincth-mark-512.png"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://flincth.com/ios/speed-reader#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "Can it open Kindle or Apple Books purchases?", "acceptedAnswer": { "@type": "Answer", "text": "No. Those books are protected with DRM, which the app cannot open. It reads DRM-free files: EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus web articles and pasted text. Scanned PDFs without a text layer are not supported." } },
+          { "@type": "Question", "name": "Can I speed read PDFs and EPUB books?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, if they are DRM-free. EPUB 2 and 3, PDFs with a text layer, DOCX, TXT, RTF and Markdown all open, and a book's table of contents becomes its sections. Scanned PDFs without a text layer and DRM-protected books cannot be read." } },
+          { "@type": "Question", "name": "What is RSVP reading?", "acceptedAnswer": { "@type": "Answer", "text": "Rapid Serial Visual Presentation: the text appears one short piece at a time in a fixed spot, so your eyes stop jumping along the line. Flincth adds natural pauses at punctuation and gives long words a little more time." } },
+          { "@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": { "@type": "Answer", "text": "No. The app is free to download, with daily limits. Pro is a one-time purchase that removes them. The 7-day Pro trial asks for no payment details and never turns into a charge." } },
+          { "@type": "Question", "name": "Does it use AI?", "acceptedAnswer": { "@type": "Answer", "text": "No. There are no AI features of any kind, in the cloud or on the device. Text is split by punctuation and simple rules that work in any language." } }
+        ]
+      }
+    ]
+  }
+  </script>

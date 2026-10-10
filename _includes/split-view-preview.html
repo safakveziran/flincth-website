@@ -1,0 +1,44 @@
+{%- comment -%}
+  Split View's illustrated workspace preview, shared by the browser pages
+  (extension-landing.html) and the overview (split-view-hub.html). Works
+  without JavaScript (the first workspace shows); extension.js makes the
+  workspace tabs switch it. Copy comes from t.extension.preview.
+{%- endcomment -%}
+{%- assign p = t.extension.preview -%}
+{%- assign status_text = p.status | replace: "{name}", p.work -%}
+      <div class="product-stage" id="preview">
+        <div class="stage-top"><span>{{ p.label }}</span><span class="live-label">{{ p.live }}</span></div>
+        <div class="browser" data-workspace="work">
+          <div class="browser-chrome">
+            <span class="traffic"><i></i><i></i><i></i></span>
+            <span class="browser-tab"><img src="/assets/extension-icon.png" width="14" height="14" alt="">{{ p.tab_title }}</span>
+            <span class="browser-address" aria-hidden="true"></span>
+          </div>
+          <div class="split-header">
+            <span class="split-mark"><img src="/assets/extension-icon.png" width="16" height="16" alt="">Flincth</span>
+            <div class="workspace-tabs" role="group" aria-label="{{ p.group }}">
+              <button type="button" class="workspace-tab active" data-workspace="work" data-name="{{ p.work }}" aria-pressed="true"><i class="ws-dot"></i>{{ p.work }}<kbd>⌘⇧1</kbd></button>
+              <button type="button" class="workspace-tab" data-workspace="research" data-name="{{ p.research }}" aria-pressed="false"><i class="ws-dot"></i>{{ p.research }}<kbd>⌘⇧2</kbd></button>
+              <button type="button" class="workspace-tab" data-workspace="watch" data-name="{{ p.watch }}" aria-pressed="false"><i class="ws-dot"></i>{{ p.watch }}</button>
+            </div>
+            <span class="split-plus" aria-hidden="true">+</span>
+          </div>
+          <div class="panes panes-work" data-panes="work">
+            <div class="pane"><div class="pane-bar"><b>{{ p.dashboard }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sk-lines"><i></i><i></i></div></div></div>
+            <div class="pane"><div class="pane-bar"><b>{{ p.docs }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-title"></div><div class="sk-lines"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+            <div class="pane"><div class="pane-bar"><b>{{ p.chat }}</b><span class="mode mode-window">{{ p.window }}</span></div><div class="pane-body"><div class="sk-bubbles"><i></i><i></i><i></i></div></div></div>
+            <div class="pane"><div class="pane-bar"><b>{{ p.calendar }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-calendar">{% for i in (1..14) %}<i></i>{% endfor %}</div></div></div>
+          </div>
+          <div class="panes panes-research" data-panes="research" hidden>
+            <div class="pane"><div class="pane-bar"><b>{{ p.article }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-title"></div><div class="sk-lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
+            <div class="pane"><div class="pane-bar"><b>{{ p.notes }}</b><span class="mode mode-window">{{ p.window }}</span></div><div class="pane-body"><div class="sk-lines"><i></i><i></i><i></i></div></div></div>
+            <div class="pane"><div class="pane-bar"><b>{{ p.search }}</b><span class="mode mode-launcher">{{ p.launcher }}</span></div><div class="pane-body pane-launcher"><span class="launcher-icon" aria-hidden="true">↗</span><span class="launcher-open">{{ p.open }}</span></div></div>
+          </div>
+          <div class="panes panes-watch" data-panes="watch" hidden>
+            <div class="pane"><div class="pane-bar"><b>{{ p.video }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-video"><span aria-hidden="true">▶</span></div></div></div>
+            <div class="pane"><div class="pane-bar"><b>{{ p.comments }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-bubbles"><i></i><i></i><i></i><i></i></div></div></div>
+          </div>
+        </div>
+        <div class="stage-bottom"><span>{{ p.bottom }}</span><span><span id="workspace-status" role="status" data-template="{{ p.status }}">{{ status_text }}</span></span></div>
+      </div>
+      <p class="preview-note">{{ p.note }}</p>

@@ -9,6 +9,9 @@
 #   follows_moves:  true where the browser tells extensions that a window
 #                   moved (windows.onBoundsChanged), so attached windows
 #                   follow the browser and snap back when nudged
+#   native_name:    the browser's own two-tab split feature
+#   native_how:     how to start it, in a sentence or two (menu wording
+#                   changes between versions; check it when a browser updates)
 - id: chrome
   a_tab: a Chrome tab
   name: Chrome
@@ -21,6 +24,8 @@
   shortcuts_page: "`chrome://extensions/shortcuts`"
   access: all-sites
   follows_moves: true
+  native_name: Split View
+  native_how: "Right-click a tab and choose the split view option (it reads **Add Tab to New Split View** or **Split View with Current Tab**, depending on your version), then pick the second tab. If you don't see it, update Chrome from **Settings → About Chrome**."
 - id: firefox
   a_tab: a Firefox tab
   name: Firefox
@@ -33,6 +38,8 @@
   shortcuts_page: "**Add-ons and themes** → the gear menu → **Manage Extension Shortcuts**"
   access: per-site
   follows_moves: false
+  native_name: Split View
+  native_how: "In Firefox 149 or later, right-click a tab and choose **Add Split View**, then pick the second tab. You can also select two tabs and choose **Open in Split View**, or hold **Alt** (**Option** on a Mac) and click another tab."
 - id: edge
   a_tab: an Edge tab
   name: Edge
@@ -45,3 +52,5 @@
   shortcuts_page: "`edge://extensions/shortcuts`"
   access: all-sites
   follows_moves: true
+  native_name: split screen
+  native_how: "Click the split screen button next to the address bar and choose the second tab. If the button is missing, turn on **Split screen** in **Settings → Appearance → Toolbar**."

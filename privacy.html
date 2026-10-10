@@ -1,38 +1,46 @@
 ---
 layout: default
 title: Privacy | Flincth
-description: "What the Flincth website, Mac app and browser extension collect, and what they don't. The app and the extension have no account and no server of their own."
+description: "What the Flincth website and the Flincth apps for Mac, iPhone, iPad and browsers collect, and what they don't. No app has an account or a server of its own."
 ref: privacy
 sitemap:
-  lastmod: 2026-10-06
+  lastmod: 2026-10-10
   changefreq: yearly
   priority: 0.3
 ---
   <main id="main" class="wrap doc">
     <h1>What we collect, and what we don’t.</h1>
-    <p class="updated">Last updated 30 September 2026</p>
-    <p class="lead">Flincth is made by one small team, and this page is written to be read rather than skimmed past. It covers three separate things: the Flincth app that runs on your Mac, the Flincth browser extension, and this website.</p>
+    <p class="updated">Last updated 10 October 2026</p>
+    <p class="lead">Flincth is made by one small team, and this page is written to be read rather than skimmed past. It covers each Flincth app separately, then this website: <a href="#workspace-manager">Flincth Workspace Manager</a> for Mac, <a href="#extension">Flincth Split View</a> for Chrome, Firefox and Edge, <a href="#speed-reader">Flincth Speed Reader</a> for iPhone and iPad, and <a href="#website">this website</a>.</p>
 
-    <h2>The app</h2>
-    <p>The Flincth app has no account system, no analytics and no server of its own. It never sends your setups, your window layouts, your clipboard history or any usage data anywhere.</p>
+    <h2 id="workspace-manager">Flincth Workspace Manager (Mac)</h2>
+    <p>Flincth Workspace Manager has no account system, no analytics and no server of its own. It never sends your setups, your window layouts, your clipboard history or any usage data anywhere.</p>
     <p>Your setups and your clipboard history are stored locally on your Mac. Deleting the app removes them along with it. Nobody at Flincth can see them, recover them, or hand them to anyone else, because they never leave your machine.</p>
     <p><b>New-feature announcements, only if you turn them on.</b> This is the app’s only use of the network, and it is off until you switch it on in Settings. When it is on, your Mac’s push notification identifier and whether announcements are on are sent to OneSignal, the service that delivers them, over an encrypted connection. OneSignal also sees your IP address when the app connects. Nothing else is sent: no setups, no clipboard content, no name or email address, no location and no usage data. Turning announcements off tells OneSignal to stop; if you are offline at that moment, the app finishes unsubscribing the next time it can connect. See <a href="https://onesignal.com/privacy_policy" rel="noopener">OneSignal’s privacy policy</a>.</p>
     <div class="callout"><p>The one exception worth naming: Flincth uses the Apple Shortcuts app to place windows. What Shortcuts does is governed by Apple, not by us.</p></div>
 
-    <h2 id="extension">The browser extension</h2>
-    <p>The Flincth browser extension does not collect, transmit, sell or share any data. It contains no servers, no analytics, no telemetry and no crash reporting, and it makes no network requests of its own.</p>
+    <h2 id="extension">Flincth Split View (browser extension)</h2>
+    <p>Flincth Split View, the Flincth browser extension, does not collect, transmit, sell or share any data. It contains no servers, no analytics, no telemetry and no crash reporting, and it makes no network requests of its own.</p>
     <p>Your workspaces are stored in your browser’s local extension storage on your own device, together with your extension settings. That covers their names, how each one divides the tab, and the web addresses you assign to its panes. Removing the extension removes them.</p>
     <p>Installing the extension gives it access to no website. In Chrome and Microsoft Edge (version 1.0.2 and later), it then offers optional access to all HTTP(S) websites. You can skip this and continue organizing workspaces; activating a site asks for access again if it is missing, and without consent sites stay inactive. In Chrome and Edge that access is used only inside the extension’s own tab, to remove framing response headers and set the navigation destination header to document so websites can display in panes. In Firefox, the extension asks for access one site at a time, when you put that site in a pane; Firefox does not let extensions change framing headers, so a site that refuses to be embedded opens in its own window instead. In every browser, the extension never reads cookies, page content or form data. Bundled navigation code runs only in permitted Flincth panels to track their current addresses and support Back and Forward. The latest address is saved locally so reopening a workspace restores that destination. Site access can be revoked through your browser’s extension settings.</p>
     <p>Address fields accept URLs or search text. Search text goes through the browser search API and its current default provider, using an inactive temporary tab to resolve the URL before loading it in the pane. The temporary tab is closed on success, failure or timeout. Queries are sent to the chosen search provider by the browser; Flincth does not collect them or select a provider.</p>
     <div class="callout"><p>Pages you open inside a pane are ordinary web pages loaded by your browser. They are governed by their own privacy policies, exactly as they would be in a normal tab.</p></div>
 
-    <h2>This website</h2>
+    <h2 id="speed-reader">Flincth Speed Reader (iPhone and iPad)</h2>
+    <p>Flincth Speed Reader is not out yet. This section describes the app as it will ship, and will be updated before launch if anything changes.</p>
+    <p>The app has no account system and no server of its own. The documents you import, their text, titles and file names, and anything you paste stay on your iPhone or iPad. If you turn on iCloud sync (a Pro feature), your library, reading positions, settings and statistics are also stored in your own private iCloud account, which Apple runs and which Flincth cannot read.</p>
+    <p><b>Anonymous usage statistics.</b> To learn which parts of the app work, it counts events such as a finished reading session or a failed import, using Google Analytics for Firebase. An event carries only categories and numbers (for example the file format, a speed range or a session length range), never document content, titles, file names, web addresses or pasted text. There is no advertising identifier and no tracking across apps. In the EU, the UK and Switzerland this stays off unless you agree on a first-run screen; elsewhere the app tells you on first run and you can turn it off in Settings → Privacy.</p>
+    <p><b>Remote settings.</b> The app fetches a small set of settings, such as the free plan’s limits, from Firebase Remote Config. Like the statistics, the request carries an anonymous app-instance identifier and your IP address, and nothing about what you read.</p>
+    <p><b>News and offers, only if you turn them on.</b> Off by default. When on, your device’s push subscription is registered with OneSignal, with no name, email address or phone number. Reading reminders are created on the device and need no network.</p>
+    <p><b>Purchases</b> go through Apple’s App Store. Flincth never sees your payment details. A web page you ask the app to open as a Quick Read is fetched directly from that site.</p>
+
+    <h2 id="website">This website</h2>
     <p>The website is a set of static files. There are no accounts, no sign-up forms, no newsletter, and no comment fields, so there is nothing here for you to hand over in the first place.</p>
     <p>A few things still happen when you visit, and you should know about each of them.</p>
     <ul>
       <li><b>Hosting.</b> The site is served by GitHub Pages. Like any web server, GitHub receives your IP address and browser user agent in order to send you the page. This is handled under <a href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" rel="noopener">GitHub’s privacy statement</a>, and we neither see nor keep those logs.</li>
       <li><b>Analytics, only if you say yes.</b> We would like to know roughly how many people visit, so the site can use Google Analytics. It loads only after you press Accept on the cookie banner. If you decline, or if you simply ignore the banner, no Google script is loaded and no request is made to Google at all.</li>
-      <li><b>Notifications, only if you ask for them.</b> The “Notify me at launch” buttons and the Notifications link in the footer are the only way in. Nothing happens until you press one: only then is the OneSignal web push SDK loaded and your browser asked for permission. A button on a product’s page also stores a tag naming that product (for example <code>launch_chrome</code>) with your subscription, so a launch notification reaches only the people who asked about that product. Once you are subscribed, OneSignal holds a browser push token and an anonymous subscription id for you, so that a notification can reach this browser. There is no name, no email address, and no way for us to tell who you are. Pressing the same button or link again unsubscribes, and your browser’s own site settings can revoke the permission outright. See <a href="https://onesignal.com/privacy_policy" rel="noopener">OneSignal’s privacy policy</a>.</li>
+      <li><b>Notifications, only if you ask for them.</b> The “Notify me at launch” buttons and the Notifications link in the footer are the only way in. Nothing happens until you press one: only then is the OneSignal web push SDK loaded and your browser asked for permission. A button on a product’s page also stores a tag naming that product (for example <code>launch_speed-reader</code>) with your subscription, so a launch notification reaches only the people who asked about that product. Once you are subscribed, OneSignal holds a browser push token and an anonymous subscription id for you, so that a notification can reach this browser. There is no name, no email address, and no way for us to tell who you are. Pressing the same button or link again unsubscribes, and your browser’s own site settings can revoke the permission outright. See <a href="https://onesignal.com/privacy_policy" rel="noopener">OneSignal’s privacy policy</a>.</li>
       <li><b>Your cookie choice.</b> Whichever you pick is remembered in your browser’s local storage under the key <code>flincth-analytics-consent</code>. It stays on your device and is never sent anywhere.</li>
     </ul>
     <p>If you accepted and want to change your mind, use the <a href="#consent" data-consent-open>Cookies</a> link at the bottom of any page. Clearing your browser’s site data for flincth.com also erases the choice, and you will be asked again on your next visit.</p>
@@ -42,7 +50,7 @@ sitemap:
 
     <h2>Your rights</h2>
     <p>If you are in the EU, the UK, or Türkiye, you have the right to ask what personal data is held about you, to ask for it to be corrected or deleted, and to withdraw consent at any time. Withdrawing consent for analytics takes one click on the Cookies link.</p>
-    <p>Because the app and the extension hold nothing about you beyond what is described above, and neither does the website, most requests are answered quickly and with very little to report. Write to us and we will tell you exactly what exists.</p>
+    <p>Because the Flincth apps hold nothing about you beyond what is described above, and neither does the website, most requests are answered quickly and with very little to report. Write to us and we will tell you exactly what exists.</p>
 
     <h2>Changes</h2>
     <p>If this policy changes in a way that affects you, the date at the top changes with it. We will not quietly start collecting something new under an old date.</p>

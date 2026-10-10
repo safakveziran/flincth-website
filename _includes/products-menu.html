@@ -1,22 +1,33 @@
 {%- comment -%}
-  Products menu in the header. Flincth for Mac is the main product and leads
-  the panel; the browser extension follows as a companion under "Also from
-  Flincth", with one link per browser. A <details> element, so it opens
-  without JavaScript; nav.js closes it on an outside click or Escape. Copy
-  comes from t.products.
+  Products menu in the header: every product in _data/products.yml, grouped
+  by platform (_data/platforms.yml) in their order. A platform's name links
+  to its page; a browser extension also lists its browser pages. A
+  <details> element, so it opens without JavaScript; nav.js closes it on an
+  outside click or Escape. Copy comes from t.products, t.platforms and
+  t.catalog.
 {%- endcomment -%}
-{%- assign browsers = "chrome,firefox,edge" | split: "," -%}
-{%- capture _mac_url %}{% include page-url.html ref="home" %}{% endcapture -%}
 <details class="products-menu"><summary>{{ t.products.label }}<svg class="chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true" focusable="false"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></summary><div class="products-panel">
-  <a class="product-main" href="{{ _mac_url }}"{% if page.ref == "home" %} aria-current="page"{% endif %}><img src="/assets/app-icon-128.png" width="44" height="44" alt=""><span><b>{{ t.products.mac }}</b><small>{{ t.products.mac_note }}</small></span></a>
-  <div class="product-side">
-    <p class="product-side-title">{{ t.products.also }}</p>
-    <p class="product-side-name"><img src="/assets/extension-icon.png" width="22" height="22" alt=""><span><b>{{ t.products.extension }}</b><small>{{ t.products.extension_note }}</small></span></p>
+{%- for _platform in site.data.platforms %}
+  {%- assign _in = site.data.products | where: "platform", _platform.id %}
+  {%- if _in.size > 0 %}
+  {%- capture _platform_url %}{% include page-url.html ref=_platform.id %}{% endcapture %}
+  <div class="product-group">
+    <a class="product-group-title" href="{{ _platform_url }}"{% if page.ref == _platform.id %} aria-current="page"{% endif %}>{{ t.platforms[_platform.id].name }}</a>
+    {%- for _p in _in %}
+      {%- assign _c = t.catalog[_p.id] %}
+      {%- capture _url %}{% include page-url.html ref=_p.id %}{% endcapture %}
+    <a class="product-item" href="{{ _url }}"{% if page.ref == _p.id %} aria-current="page"{% endif %}><img src="{{ _p.icon }}-64.png" width="36" height="36" alt=""><span><b>{{ _c.short }}</b><small>{% if _p.status == "coming" %}{{ t.products.coming }}{% else %}{{ _c.note }}{% endif %}</small></span></a>
+      {%- if _p.browsers %}
     <ul class="product-browsers">
-      {%- for _ref in browsers -%}
-        {%- capture _url %}{% include page-url.html ref=_ref %}{% endcapture -%}
-      <li><a href="{{ _url }}"{% if page.ref == _ref %} aria-current="page"{% endif %}>{{ t.products[_ref] }}</a></li>
-      {%- endfor -%}
+        {%- for _browser in site.data.browsers %}
+          {%- assign _ref = _p.id | append: "-" | append: _browser.id %}
+          {%- capture _burl %}{% include page-url.html ref=_ref %}{% endcapture %}
+      <li><a href="{{ _burl }}"{% if page.ref == _ref %} aria-current="page"{% endif %}>{{ t.products[_browser.id] }}</a></li>
+        {%- endfor %}
     </ul>
+      {%- endif %}
+    {%- endfor %}
   </div>
+  {%- endif %}
+{%- endfor %}
 </div></details>
