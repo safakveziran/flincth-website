@@ -276,3 +276,4 @@ footer > a:hover { color: #8db6ff; }
 .post-body thead th { color: var(--ink); background: #101927; }
 .post-body td { color: var(--muted); }
 .post-body td:first-child { color: var(--ink); }
+.closing p a { color: #89b2ff; text-decoration: underline; text-underline-offset: 3px; }
