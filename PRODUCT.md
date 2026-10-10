@@ -97,8 +97,8 @@ coming one ships.
 ## Brand Commitments
 
 - Name written `Flincth`; wordmark `flincth` in lower case next to the brand
-  mark (`assets/flincth-mark.svg`: a white "f" and a dot on a blue rounded
-  square). Products are named "Flincth <Product>".
+  mark (`assets/flincth-mark.svg`: two blue rounded cards joined at one
+  corner, the front one swung open like a hinge, with a dot at the pivot). Products are named "Flincth <Product>".
 - Each product keeps its own icon: `assets/app-icon*` (Workspace Manager),
   `assets/extension-icon*` (Split View), `assets/reader-icon*` (Speed Reader).
   The brand mark never stands in for a product icon, nor the reverse.

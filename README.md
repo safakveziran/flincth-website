@@ -43,7 +43,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `guides/index.html`, `_guides/`, `_layouts/guide.html`, `_includes/extension-guides/`, `_data/guide_browsers.yml`: Step-by-step guides (see Guides)
 - `404.html`: GitHub Pages error page
 - `assets/og-brand.png`: 1200×630 share image for every page that sets no `og_image` (`og:image`, `twitter:image`); `assets/og-image.png` is Workspace Manager's and `assets/og-reader.png` Speed Reader's
-- `assets/flincth-mark.svg`: the brand mark (an "f" and a dot on a blue rounded square), with `flincth-mark-64.png`, `-192` and `-512`; header, footer, favicon, web app manifest and JSON-LD logo
+- `assets/flincth-mark.svg`: the brand mark (two blue rounded cards joined at a corner like a hinge, with a dot at the pivot), with `flincth-mark-64.png` (transparent) and `-192`, `-512` (on the site's navy, for the Home Screen icon, the web app manifest and the JSON-LD logo); header, footer and favicon use the SVG
 - `sitemap.xml`: Sitemap; generated automatically from pages that have a `sitemap` value, not edited by hand. Each page's `sitemap.lastmod` is written by hand: update it in the same commit whenever the page's own content changes, or search engines learn to ignore it
 - `robots.txt`, `llms.txt`: Search engine and assistant discovery (`llms.txt` is rendered by Jekyll for the price and the Comparisons list)
 - `assets/app-icon.png`: Workspace Manager's app icon from the Flincth project (512 px source; `app-icon-64.png`, `-128`, `-192` are the sizes the pages load)

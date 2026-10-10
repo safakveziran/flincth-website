@@ -129,9 +129,14 @@ chip with the green dot. It stands in for the notify button where web push is
 unsupported.
 
 ### Brand mark and product icons
-The brand mark (`assets/flincth-mark.svg`, PNGs at 64, 192 and 512 px) sits
-next to the lower-case `flincth` wordmark in the header and footer, and is the
-favicon and the home page's closing image. Product icons appear only with
+The brand mark (`assets/flincth-mark.svg`) is two rounded cards joined at one
+corner: the back one deep blue (#0b4fc4), the front one bright blue (#0a84ff)
+swung open like a hinge, with a lighter dot (#5fb0ff) at the pivot. It has no
+background of its own, so it reads on dark and light grounds. It sits next to
+the lower-case `flincth` wordmark in the header and footer, and is the favicon
+and the home page's closing image. `flincth-mark-64.png` is transparent;
+`-192` and `-512` sit on the site's navy for the Home Screen, the web app
+manifest and the JSON-LD logo. Product icons appear only with
 their product: cards, the Products menu, product badges, closings.
 
 ### Product cards

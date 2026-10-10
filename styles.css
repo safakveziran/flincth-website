@@ -302,7 +302,6 @@ h1>span{display:block}
 
 /* Brand catalog: products menu groups, product cards, the home page, the
    platform pages and Flincth Speed Reader. Colours live in dark.css. */
-.brand img{border-radius:8px}
 .products-panel{width:340px;max-height:calc(100vh - 120px);overflow-y:auto}
 .product-group{padding:6px 4px 8px}
 .product-group+.product-group{border-top:1px solid var(--line);padding-top:10px}
