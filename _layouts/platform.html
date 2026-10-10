@@ -3,9 +3,12 @@ layout: default
 ---
 {%- comment -%}
   A platform's page (/mac/, /ios/, /browser/): every product in
-  _data/products.yml whose platform is page.platform, as cards. The page
-  sets platform, title, description, heading and lead; ref is the
-  platform's id.
+  _data/products.yml whose platform is page.platform, as cards, then what
+  the platform's apps have in common (about_title, about: a list of
+  paragraphs) and a few questions (faq: a list of {q, a}). The page sets
+  platform, title, description, heading and lead; ref is the platform's id.
+  Say only what is true of the products listed today; pricing and data
+  handling belong to each product's own page.
 {%- endcomment -%}
 {%- assign _t = site.data.i18n[page.lang] -%}
 {%- assign _in = site.data.products | where: "platform", page.platform -%}
@@ -18,4 +21,18 @@ layout: default
 {%- endfor %}
     </div>
     <p class="platform-more">{{ _t.platforms.more }} <a href="{% include page-url.html ref="home" %}#products">{{ _t.nav.all_products }} <span aria-hidden="true">→</span></a></p>
+{%- if page.about %}
+    <section class="platform-about"><h2>{{ page.about_title }}</h2>
+{%- for _para in page.about %}
+      <p>{{ _para }}</p>
+{%- endfor %}
+    </section>
+{%- endif %}
+{%- if page.faq %}
+    <section class="faq platform-faq" id="questions"><div><h2>{{ page.faq_title | default: "Good questions." }}</h2></div><div class="questions">
+{%- for _f in page.faq %}
+      <details><summary>{{ _f.q }}<span>+</span></summary><p>{{ _f.a }}</p></details>
+{%- endfor %}
+    </div></section>
+{%- endif %}
   </main>

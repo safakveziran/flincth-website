@@ -3,7 +3,8 @@ url: "https://flincth.com"
 
 # Search engine ownership checks. Paste the code each webmaster tool gives for
 # its "meta tag" method; an empty value adds nothing. (Google Search Console is
-# verified through DNS and needs nothing here.)
+# verified through DNS and needs nothing here. Bing can skip its code by
+# importing the site from Google Search Console; see README.md.)
 verification:
   yandex: "3031ebd9388d7437"
   bing: ""

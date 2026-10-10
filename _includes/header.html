@@ -1,13 +1,19 @@
 {%- comment -%}
   On a page that belongs to a product (page.product, see lang-vars.html) the
-  menu points to that product page's sections; on every other page it
-  links to Guides, Blog and Support.
+  menu points to that product page's sections; on a browser extension's
+  overview (page.hub) it lists the extension's browser pages; on every other
+  page it links to Guides, Blog and Support.
 {%- endcomment -%}
 {%- capture _support_url %}{% include page-url.html ref="support" %}{% endcapture -%}
   <header class="nav wrap">
     <a class="brand" href="{{ home_link }}" aria-label="{{ t.home_label }}"><img src="/assets/flincth-mark.svg" alt="" width="34" height="34"><span class="wordmark" translate="no">flincth</span></a>
     <nav aria-label="{{ t.nav.label }}">{% include products-menu.html %}
-{%- if ctx_product -%}
+{%- if page.hub and ctx_product.browsers -%}
+  {%- for _b in site.data.browsers -%}
+    {%- assign _bref = ctx_product.id | append: "-" | append: _b.id -%}
+<a href="{% include page-url.html ref=_bref %}">{{ t.products[_b.id] }}</a>
+  {%- endfor -%}
+{%- elsif ctx_product -%}
 <a href="{{ ctx_base }}#features">{{ t.nav.features }}</a><a href="{{ ctx_base }}#how">{{ t.nav.how }}</a><a href="{{ ctx_base }}#questions">{{ t.nav.faq }}</a>
 {%- else -%}
 <a href="/guides/">{{ t.nav.guides }}</a><a href="/blog/">{{ t.nav.blog }}</a><a href="{{ _support_url }}">{{ t.nav.support }}</a>

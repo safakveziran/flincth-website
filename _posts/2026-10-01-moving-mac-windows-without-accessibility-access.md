@@ -1,5 +1,6 @@
 ---
 title: "How My Mac Window Manager Moves Windows Without Accessibility Access"
+seo_title: "How a Mac Window Manager Works Without Accessibility"
 description: "Building a sandboxed window manager for the Mac App Store meant giving up the one API every window manager relies on. Here is what replaced it."
 medium_url: https://medium.com/@support_9084/how-my-mac-window-manager-moves-windows-without-accessibility-access-4aafe8284f96
 ---

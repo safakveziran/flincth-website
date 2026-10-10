@@ -400,3 +400,21 @@ h1>span{display:block}
 @media(max-width:900px){.principles{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.devices-diagram{position:static;margin-top:22px}.products-panel{max-height:calc(100vh - 100px)}.brand-shelf{gap:16px}.brand-shelf img{width:64px;height:64px;border-radius:15px}.brand-shelf a{font-size:12px}.catalog{padding-top:64px}.product-cards{grid-template-columns:1fr}.product-card{padding:24px}.principles{grid-template-columns:1fr;gap:22px}.learn{padding-block:64px 24px}.learn-grid,.plans{grid-template-columns:1fr}.learn-card,.plan{padding:24px}.platform-page{padding-top:40px}.reader-stage .reader-screen{height:300px}.reader-guide-top{top:76px}.reader-guide-bottom{bottom:76px}.reader-modes .reader-mode{padding:7px 10px}}
 @media(prefers-reduced-motion:reduce){.reader-progress i,.brand-shelf img{transition:none}}
+.hub-browsers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.hub-browser{border:1px solid;border-radius:var(--radius);padding:26px;display:grid;gap:8px;align-content:start}
+.hub-browser h3{font-size:24px;letter-spacing:-.5px;margin:0;font-weight:600}
+.hub-browser p{margin:0;font-size:15px}
+.hub-browser-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:14px}
+.hub-browser-actions .button{font-size:14px;padding:12px 16px;gap:10px}
+.hub-what{padding-block:40px 30px}
+.hub-what .steps{margin-top:32px}
+.hub-links{font-size:15px;margin-top:40px}
+.hub-links a{margin-left:14px;font-weight:600;white-space:nowrap}
+@media(max-width:700px){.hub-browsers{grid-template-columns:1fr}.hub-browser{padding:22px}.hub-links a{display:inline-block;margin:8px 14px 0 0}}
+.platform-about{max-width:760px;margin-top:80px;display:grid;gap:14px}
+.platform-about h2{margin:0 0 6px}
+.platform-about p{margin:0}
+.platform-faq{padding-top:72px}
+@media(max-width:700px){.platform-about{margin-top:56px}.platform-faq{padding-top:48px}}
+.split-hub #browsers{padding-top:96px}
+@media(max-width:700px){.split-hub #browsers{padding-top:60px}}

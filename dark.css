@@ -267,3 +267,8 @@ footer > a:hover { color: #8db6ff; }
 .reader-play:hover { border-color: #8db6ff; color: #8db6ff; }
 .format-list li { border-color: #3a5173; color: #c9d7ee; background: #152136; }
 .format-list li.format-no { color: #7d8aa1; background: transparent; }
+.hub-browser { background: linear-gradient(145deg, #142036, #0f1829); border-color: #2b405f; }
+.hub-browser h3 { color: var(--ink); }
+.hub-browser p { color: var(--muted); }
+.hub-browser .text-link, .hub-links a { color: #89b2ff; }
+.hub-links { color: var(--muted); }

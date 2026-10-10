@@ -1,5 +1,6 @@
 ---
 title: "I Got Tired of Rearranging My Mac Windows, So I Built Flincth"
+seo_title: "Tired of Rearranging Mac Windows, I Built Flincth"
 description: "Why I stopped thinking about individual windows and started thinking about entire workspaces instead."
 medium_url: https://medium.com/@support_9084/i-got-tired-of-rearranging-my-mac-windows-so-i-built-flincth-7046bff12538
 ---

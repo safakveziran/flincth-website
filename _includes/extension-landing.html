@@ -1,19 +1,16 @@
 {%- comment -%}
-  Flincth Split View landing page. A browser page sets browser: <id> and
-  strings: extension_<id>; the overview (/browser/split-view/) sets no
-  browser and strings: extension_any, and offers every store instead of one.
-  Shared copy comes from t.extension and the page's own copy from
-  t[page.strings], which may override hero_copy, privacy_copy, step2_copy,
-  faq_permission_a and others_title. [browser] in any shared value is
-  replaced with the browser's name. The workspace preview works without
-  JavaScript (the first workspace shows); extension.js makes the workspace
-  tabs switch it.
+  Flincth Split View page for one browser. The page sets browser: <id> and
+  strings: extension_<id>; shared copy comes from t.extension and the
+  browser's own copy from t.extension_<id>, which may override
+  privacy_copy, step2_copy and faq_permission_a. [browser] in any shared
+  value is replaced with the browser's name. The preview is
+  split-view-preview.html. The overview of every browser is a separate,
+  shorter page (split-view-hub.html), so the two do not repeat each other.
 {%- endcomment -%}
 {%- assign x = t.extension -%}
 {%- assign p = x.preview -%}
 {%- assign b = t[page.strings] -%}
 {%- assign browser_data = site.data.browsers | where: "id", page.browser | first -%}
-{%- assign status_text = p.status | replace: "{name}", p.work -%}
 {%- capture privacy_url %}{% include page-url.html ref="privacy" %}{% endcapture -%}
 {%- comment -%}
   Once the browser's store_url is set (_data/browsers.yml) both the hero and
@@ -22,79 +19,29 @@
   the closing shows the status line next to the button.
 {%- endcomment -%}
 {%- capture notify_button %}{% include notify-button.html topic=page.browser %}{% endcapture -%}
-{%- capture all_stores -%}
-  {%- for _s in site.data.browsers -%}
-    {%- assign _sk = "extension_" | append: _s.id -%}
-    {%- if forloop.first -%}<a class="button primary" href="{{ _s.store_url }}" target="_blank" rel="noopener">{{ t[_sk].store_cta }}</a>
-    {%- else -%}<a class="text-link" href="{{ _s.store_url }}" target="_blank" rel="noopener">{{ t[_sk].store_cta }} <span aria-hidden="true">↗</span></a>{%- endif -%}
-  {%- endfor -%}
-{%- endcapture -%}
 {%- capture hero_action -%}
-  {%- unless page.browser -%}
-    {{ all_stores }}
-  {%- else -%}
   {%- if browser_data.store_url != "" -%}
     <a class="button primary" href="{{ browser_data.store_url }}" target="_blank" rel="noopener">{{ b.store_cta }}</a>
   {%- else -%}
     {{ notify_button }}<div class="coming-soon" data-notify-fallback><span class="status-dot"></span> {{ b.status }}</div>
   {%- endif -%}
-  {%- endunless -%}
 {%- endcapture -%}
 {%- capture closing_action -%}
-  {%- unless page.browser -%}
-    <div class="closing-actions">{{ all_stores }}</div>
-  {%- else -%}
   {%- if browser_data.store_url != "" -%}
     <div class="closing-actions"><a class="button primary" href="{{ browser_data.store_url }}" target="_blank" rel="noopener">{{ b.store_cta }}</a></div>
   {%- else -%}
     <div class="closing-actions"><div class="coming-soon"><span class="status-dot"></span> {{ b.status }}</div>{{ notify_button }}</div>{% include notify-hint.html %}
   {%- endif -%}
-  {%- endunless -%}
 {%- endcapture -%}
   <main id="main" class="extension-page" data-browser="{{ page.browser }}">
     <section class="hero wrap">
       <p class="product-badge"><img src="/assets/extension-icon-64.png" width="22" height="22" alt="">{{ b.label }}</p>
       <h1>{{ x.hero_title }}</h1>
-      <p class="hero-copy">{{ b.hero_copy | default: x.hero_copy | replace: "[browser]", b.name }}</p>
-      <div class="hero-actions">{{ hero_action }}{% if page.browser %}<a class="text-link" href="#how">{{ x.hero_more }} <span aria-hidden="true">↓</span></a>{% endif %}</div>
+      <p class="hero-copy">{{ x.hero_copy | replace: "[browser]", b.name }}</p>
+      <div class="hero-actions">{{ hero_action }}<a class="text-link" href="#how">{{ x.hero_more }} <span aria-hidden="true">↓</span></a></div>
       <p class="micro">{{ x.micro | replace: " · ", " <span>·</span> " }}</p>
 
-      <div class="product-stage" id="preview">
-        <div class="stage-top"><span>{{ p.label }}</span><span class="live-label">{{ p.live }}</span></div>
-        <div class="browser" data-workspace="work">
-          <div class="browser-chrome">
-            <span class="traffic"><i></i><i></i><i></i></span>
-            <span class="browser-tab"><img src="/assets/extension-icon.png" width="14" height="14" alt="">{{ p.tab_title }}</span>
-            <span class="browser-address" aria-hidden="true"></span>
-          </div>
-          <div class="split-header">
-            <span class="split-mark"><img src="/assets/extension-icon.png" width="16" height="16" alt="">Flincth</span>
-            <div class="workspace-tabs" role="group" aria-label="{{ p.group }}">
-              <button type="button" class="workspace-tab active" data-workspace="work" data-name="{{ p.work }}" aria-pressed="true"><i class="ws-dot"></i>{{ p.work }}<kbd>⌘⇧1</kbd></button>
-              <button type="button" class="workspace-tab" data-workspace="research" data-name="{{ p.research }}" aria-pressed="false"><i class="ws-dot"></i>{{ p.research }}<kbd>⌘⇧2</kbd></button>
-              <button type="button" class="workspace-tab" data-workspace="watch" data-name="{{ p.watch }}" aria-pressed="false"><i class="ws-dot"></i>{{ p.watch }}</button>
-            </div>
-            <span class="split-plus" aria-hidden="true">+</span>
-          </div>
-          <div class="panes panes-work" data-panes="work">
-            <div class="pane"><div class="pane-bar"><b>{{ p.dashboard }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="sk-lines"><i></i><i></i></div></div></div>
-            <div class="pane"><div class="pane-bar"><b>{{ p.docs }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-title"></div><div class="sk-lines"><i></i><i></i><i></i><i></i><i></i></div></div></div>
-            <div class="pane"><div class="pane-bar"><b>{{ p.chat }}</b><span class="mode mode-window">{{ p.window }}</span></div><div class="pane-body"><div class="sk-bubbles"><i></i><i></i><i></i></div></div></div>
-            <div class="pane"><div class="pane-bar"><b>{{ p.calendar }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-calendar">{% for i in (1..14) %}<i></i>{% endfor %}</div></div></div>
-          </div>
-          <div class="panes panes-research" data-panes="research" hidden>
-            <div class="pane"><div class="pane-bar"><b>{{ p.article }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-title"></div><div class="sk-lines"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
-            <div class="pane"><div class="pane-bar"><b>{{ p.notes }}</b><span class="mode mode-window">{{ p.window }}</span></div><div class="pane-body"><div class="sk-lines"><i></i><i></i><i></i></div></div></div>
-            <div class="pane"><div class="pane-bar"><b>{{ p.search }}</b><span class="mode mode-launcher">{{ p.launcher }}</span></div><div class="pane-body pane-launcher"><span class="launcher-icon" aria-hidden="true">↗</span><span class="launcher-open">{{ p.open }}</span></div></div>
-          </div>
-          <div class="panes panes-watch" data-panes="watch" hidden>
-            <div class="pane"><div class="pane-bar"><b>{{ p.video }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-video"><span aria-hidden="true">▶</span></div></div></div>
-            <div class="pane"><div class="pane-bar"><b>{{ p.comments }}</b><span class="mode">{{ p.embed }}</span></div><div class="pane-body"><div class="sk-bubbles"><i></i><i></i><i></i><i></i></div></div></div>
-          </div>
-        </div>
-        <div class="stage-bottom"><span>{{ p.bottom }}</span><span><span id="workspace-status" role="status" data-template="{{ p.status }}">{{ status_text }}</span></span></div>
-      </div>
-      <p class="preview-note">{{ p.note }}</p>
+{% include split-view-preview.html %}
     </section>
 
     <section class="features wrap" id="features">
@@ -120,7 +67,7 @@
       <details><summary>{{ x.faq_keys_q }}<span>+</span></summary><p>{{ b.keys_a }}</p></details>
     </div></section>
 
-    <section class="other-browsers wrap" id="browsers"><h2>{{ b.others_title | default: x.others_title }}</h2><div class="browser-cards{% unless page.browser %} browser-cards-all{% endunless %}">
+    <section class="other-browsers wrap" id="browsers"><h2>{{ x.others_title }}</h2><div class="browser-cards">
       {%- for _browser in site.data.browsers -%}
         {%- if _browser.id != page.browser -%}
           {%- assign _key = "extension_" | append: _browser.id -%}
