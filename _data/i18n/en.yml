@@ -266,10 +266,10 @@ extension_firefox:
   status: Available on Firefox Add-ons
   store_cta: Add to Firefox
   availability_q: Where do I get it for Firefox?
-  availability_a: From Firefox Add-ons, using the Add to Firefox button on this page. It needs Firefox 140 or later. Installing it asks for no access to any site; Firefox asks about one site at a time, when you put that site in a pane.
-  privacy_copy: No access to any site when you install it. Firefox asks for one site at a time, only when you put that site in a pane, and you can revoke each one in Firefox’s add-on settings. No analytics, no account, no server.
-  step2_copy: Type an address or pick one of your open tabs. Firefox asks permission for that one site.
-  faq_permission_a: Installing Flincth gives it access to no website. The first time you put a site in a pane, Firefox asks about that one site. Firefox doesn’t let extensions change framing headers, so a site that refuses to be embedded stays blank in a pane; open it as a window instead. Revoke access any time in Add-ons and themes → Flincth → Permissions.
+  availability_a: From Firefox Add-ons, using the Add to Firefox button on this page. It needs Firefox 140 or later. Installing it asks for no access to any site. The current store release asks per site. Version 1.0.3 offers optional all-websites access after installation; declining keeps editing available and sites inactive until access is granted.
+  privacy_copy: No access to any site when you install it. The current store release asks per site. Version 1.0.3 offers optional all-websites access after installation; you can skip it and organize workspaces. Website activation requires access, which you can revoke in Firefox’s add-on settings. No analytics, no account, no server.
+  step2_copy: Type an address or pick one of your open tabs. Approve website access when Firefox asks. Version 1.0.3 offers optional all-websites access after installation; you can skip it and organize workspaces, and activating a site asks again.
+  faq_permission_a: Installing Flincth gives it access to no website. The first time you put a site in a pane, Firefox asks about that one site. The current store release can leave sites that refuse embedding blank in a pane; open those as a window. Version 1.0.3 adds workspace-scoped compatibility rules that allow many of these sites to load, though some sites and sign-in flows still need a normal window. Revoke access any time in Add-ons and themes → Flincth → Permissions.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Firefox, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys under Manage Extension Shortcuts in about:addons.
 
 extension_edge:

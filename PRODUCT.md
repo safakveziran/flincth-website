@@ -40,8 +40,7 @@ grouped by platform; each product has its own page at `/<platform>/<slug>`
   text clipboard history.
 - **Flincth Split View** (`/browser/split-view/`, a page per browser): an
   extension that splits one tab into panes, puts a site in each, saves that as
-  a workspace and switches workspaces with a click or shortcut. Its store
-  listings still use the name "Flincth".
+  a workspace and switches workspaces with a click or shortcut. The 1.0.3 extension build uses this name; live store listings still use "Flincth" until the update is submitted and approved.
 - **Flincth Speed Reader** (`/ios/speed-reader`, coming soon): an iPhone and
   iPad app that shows the user's own DRM-free documents one word, phrase or
   short sentence at a time (RSVP).
@@ -65,7 +64,7 @@ coming one ships.
 - **Split View:** one tab holds several sites, and a site that refuses to be
   embedded or needs a signed-in session runs as a real window lined up with its
   pane. No site access at install. Chrome and Edge (1.0.2+) then offer optional
-  access to all websites, which can be skipped; Firefox asks one site at a time.
+  access to all websites, which can be skipped. The live Firefox release asks per site; the upcoming 1.0.3 build uses optional all-websites onboarding and workspace-scoped framing compatibility rules too.
 - **Speed Reader:** "Read faster, still understand": phrase and short-sentence
   modes besides one word at a time. No AI, no DRM-protected books.
 

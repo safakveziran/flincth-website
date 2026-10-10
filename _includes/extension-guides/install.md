@@ -31,7 +31,7 @@ Right after installation, Flincth opens a page titled **Enable websites in Flinc
 
 Access is for all websites because the sites you put in panes, and the places they redirect to, can be anywhere. Flincth only uses it inside its own tab.
 {% else %}
-{{ gb.name }} asks one site at a time. The first time you put a site in a pane, the pane asks **Show example.com here?**
+The current store release of {{ gb.name }} asks one site at a time. Version 1.0.3 offers optional all-websites access after installation, with the same **Enable all websites** and **Not now** choices described above. Until that update is published, follow these steps: The first time you put a site in a pane, the pane asks **Show example.com here?**
 
 1. Click **Allow example.com**.
 2. Confirm in {{ gb.name }}'s own prompt.
