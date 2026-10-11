@@ -2,7 +2,7 @@
 title: "Do Speed Reading Apps Work? What the Research Says"
 description: "Speed reading apps flash words in one spot so you can read faster. What reading research says about comprehension, and where these apps are actually useful."
 product: speed-reader
-medium_url: https://medium.com/@support_9084/do-speed-reading-apps-work-what-the-research-says-flincth-8c935eebf27b
+medium_url: https://medium.com/@flincth/do-speed-reading-apps-work-what-the-research-says-flincth-8c935eebf27b
 ---
 
 Speed reading apps promise a lot: read a book in an afternoon, double or triple your words per minute. We are building one, [Flincth Speed Reader](/ios/speed-reader), so we owe you a straight answer to the question people search for most: do they work?
