@@ -2,7 +2,7 @@
 title: "Can You Speed Read Kindle Books? What Works and What Doesn't"
 description: "Why speed reading apps can't open Kindle or Apple Books purchases, what you can speed read instead, and where to find DRM-free ebooks."
 product: speed-reader
-medium_url: https://medium.com/@support_9084/can-you-speed-read-kindle-books-what-works-and-what-doesnt-9efe41c631a6
+medium_url: https://medium.com/@flincth/can-you-speed-read-kindle-books-what-works-and-what-doesnt-9efe41c631a6
 ---
 
 It is one of the first things people ask about a speed reading app: can I use it on the books I already bought on Kindle? Usually the answer is no, and it is worth knowing why before you go looking for a workaround.
