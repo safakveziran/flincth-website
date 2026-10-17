@@ -5,7 +5,8 @@ layout: default
   A blog post. Front matter: title, description (also the share text),
   date (from the file name), optional updated (YYYY-MM-DD), optional
   seo_title (a shorter <title>), optional product (default
-  workspace-manager, from _config.yml; it picks the closing card) and
+  workspace-manager, from _config.yml; it picks the closing card), optional
+  og_image and og_image_alt (as on other pages; also the JSON-LD image) and
   optional medium_url, the post's copy on Medium. Posts are written here first and
   imported into Medium, which then points its canonical link back here;
   see README.md, "Blog".
@@ -28,6 +29,12 @@ layout: default
       <div><p class="post-cta-title">Flincth Speed Reader</p><p>Read your own books one word, phrase or short sentence at a time. Coming soon to iPhone and iPad.</p></div>
       <div class="post-cta-actions">{% include notify-button.html topic="speed-reader" %}<a class="button primary" href="/ios/speed-reader" data-notify-fallback>See Speed Reader</a></div>
     </aside>
+{%- elsif page.product == "split-view" %}
+    <aside class="post-cta">
+      <img src="/assets/extension-icon-128.png" alt="" width="56" height="56" loading="lazy">
+      <div><p class="post-cta-title">Flincth Split View</p><p>Split one tab into saved workspaces. Free for Chrome, Firefox and Edge, collects no data.</p></div>
+      <a class="button primary" href="/browser/split-view/">Choose your browser</a>
+    </aside>
 {%- else %}
     <aside class="post-cta">
       <img src="/assets/app-icon-128.png" alt="" width="56" height="56" loading="lazy">
@@ -48,7 +55,7 @@ layout: default
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
   "author": { "@type": "Organization", "name": "Flincth", "url": "{{ site.url }}/" },
   "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/flincth-mark-512.png" } },
-  "image": "{{ site.url }}/assets/og-image.png"{% if page.medium_url %},
+  "image": "{{ site.url }}{{ page.og_image | default: '/assets/og-image.png' }}"{% if page.medium_url %},
   "sameAs": "{{ page.medium_url }}"{% endif %}
 }
 </script>
