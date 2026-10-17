@@ -5,6 +5,7 @@ description: "Split screen extensions show sites inside frames, and some sites r
 product: split-view
 og_image: /assets/og-extension.png
 og_image_alt: og_image_alt
+medium_url: https://medium.com/@flincth/why-websites-go-blank-in-a-split-screen-extension-flincth-648468a6f7c6
 ---
 
 If you have tried a split screen extension for Chrome, Firefox or Edge, you have probably seen it happen.
