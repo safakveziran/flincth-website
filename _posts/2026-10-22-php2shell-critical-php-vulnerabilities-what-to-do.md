@@ -3,6 +3,7 @@ title: "PHP2Shell: What the Critical PHP Vulnerabilities Mean and What to Do Now
 seo_title: "PHP2Shell (CVE-2026-109618/109619): What to Do Now"
 description: "Two critical flaws in PHP itself let an attacker run code on a web server without logging in. Who is affected, which versions fix it, and what to do today."
 product: none
+medium_url: https://medium.com/@flincth/php2shell-cve-2026-109618-109619-what-to-do-now-flincth-9d477a4ea8c3
 ---
 
 This week's biggest security story isn't about a plugin or a framework. It's about PHP itself.
