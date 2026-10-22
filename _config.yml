@@ -26,6 +26,7 @@ defaults:
   # /blog/<slug>, without ".html" like every other page. A post belongs to
   # Workspace Manager unless it sets another product: <id>
   # (_data/products.yml); the header and the closing card follow it.
+  # product: none is a post about no product: brand header, no card.
   - scope: { path: "", type: posts }
     values: { layout: post, permalink: /blog/:title, product: workspace-manager }
   # Guides live in _guides/ (see the collection below). The Mac guides belong
