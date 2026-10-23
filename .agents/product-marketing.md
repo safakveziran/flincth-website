@@ -129,7 +129,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 **Conversion action (extension):** install from the browser's store (Chrome, Edge, Firefox).
 **Conversion action (Speed Reader, before launch):** "Notify me at launch" (OneSignal tag launch_speed-reader).
 **Conversion action (home):** open a product page; "Tell me about new apps" (tag launch_new-apps).
-**Current metrics:** unknown; GA4 is consent-gated. **(to confirm)**
+**Current metrics:** unknown; GA4 runs in consent mode (cookie opt-in in the EEA, UK, CH and TR; cookieless pings until then). **(to confirm)**
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*

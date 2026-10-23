@@ -33,7 +33,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `script.js`: Code / Write / Research illustrative layout switcher on the Workspace Manager page
 - `nav.js`: Closes the header's Products menu on an outside click or Escape
 - `extension.js`: Workspace switcher in the Split View pages' illustrative preview
-- `consent.js`: Cookie consent banner and consent-gated Google Analytics loading
+- `consent.js`: Cookie banner and Google Analytics in Consent Mode v2 (cookie opt-in in the EEA, UK, CH and TR, opt-out elsewhere; cookieless pings while denied)
 - `notifications.js`: OneSignal web push subscription (the Notifications link in the footer)
 - `OneSignalSDKWorker.js`: OneSignal service worker (must stay at the site root)
 - `manifest.webmanifest`: Web app manifest; iOS needs it to allow web push from the Home Screen
