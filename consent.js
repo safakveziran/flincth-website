@@ -4,14 +4,20 @@
 //   Until then Google receives only cookieless pings (no identifier), which
 //   GA4 uses to model the traffic it cannot measure directly.
 // - Everywhere else: measured with a cookie unless the visitor declines.
-// Google resolves the region from the request; an explicit choice always wins.
+// The region comes from the device's time zone (Google's own region matching
+// applied opt-in rules everywhere). Every Europe/* zone counts, which also
+// covers the UK, Switzerland and Türkiye; an unknown zone is treated as opt-in.
+// An explicit choice always wins.
 (function () {
   var KEY = 'flincth-analytics-consent';
   var GA_ID = 'G-4JBS4T9RZ0';
-  var OPT_IN_REGIONS = [
-    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
-    'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK',
-    'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH', 'TR'
+  // EEA zones outside Europe/*: Atlantic islands, Cyprus, Svalbard and the
+  // EU's outermost regions.
+  var OPT_IN_ZONES = [
+    'Atlantic/Azores', 'Atlantic/Canary', 'Atlantic/Faroe', 'Atlantic/Madeira',
+    'Atlantic/Reykjavik', 'Africa/Ceuta', 'Asia/Nicosia', 'Asia/Famagusta',
+    'Arctic/Longyearbyen', 'America/Cayenne', 'America/Guadeloupe',
+    'America/Martinique', 'America/Marigot', 'Indian/Reunion', 'Indian/Mayotte'
   ];
   var banner, accept, decline, opener;
 
@@ -25,16 +31,20 @@
 
   function gtag() { window.dataLayer.push(arguments); }
 
+  function optInRegion() {
+    var zone;
+    try { zone = Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) { /* old browser */ }
+    if (!zone) return true;
+    return zone.indexOf('Europe/') === 0 || OPT_IN_ZONES.indexOf(zone) !== -1;
+  }
+
   function loadAnalytics(choice) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = gtag;
     // There is no advertising, so the ad signals stay denied everywhere.
     var never = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
-    gtag('consent', 'default', Object.assign({ analytics_storage: 'denied', region: OPT_IN_REGIONS }, never));
-    gtag('consent', 'default', Object.assign({ analytics_storage: 'granted' }, never));
-    if (choice === 'granted' || choice === 'denied') {
-      gtag('consent', 'update', { analytics_storage: choice });
-    }
+    if (choice !== 'granted' && choice !== 'denied') choice = optInRegion() ? 'denied' : 'granted';
+    gtag('consent', 'default', Object.assign({ analytics_storage: choice }, never));
     var tag = document.createElement('script');
     tag.async = true;
     tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
@@ -51,10 +61,23 @@
     if (opener) banner.focus();
   }
 
+  // Denying stops new cookies but leaves the ones already set; remove them.
+  function clearCookies() {
+    var host = location.hostname.replace(/^www\./, '');
+    document.cookie.split(';').forEach(function (pair) {
+      var name = pair.split('=')[0].trim();
+      if (name !== '_ga' && name.indexOf('_ga_') !== 0) return;
+      ['', '; domain=' + host, '; domain=.' + host].forEach(function (domain) {
+        document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + domain;
+      });
+    });
+  }
+
   function close(choice) {
     remember(choice);
     banner.hidden = true;
     gtag('consent', 'update', { analytics_storage: choice });
+    if (choice === 'denied') clearCookies();
     if (opener) { opener.focus(); opener = null; }
   }
 
