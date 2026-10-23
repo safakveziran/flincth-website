@@ -1,9 +1,19 @@
-// Analytics runs only after the visitor accepts. Nothing is loaded before a
-// choice is made, and no request goes out if the choice is "decline".
+// Google Analytics with Consent Mode v2. The tag loads on every page, but what
+// it may do depends on where the visitor is and what they chose:
+// - EEA, UK, Switzerland and Türkiye: no cookie until the visitor accepts.
+//   Until then Google receives only cookieless pings (no identifier), which
+//   GA4 uses to model the traffic it cannot measure directly.
+// - Everywhere else: measured with a cookie unless the visitor declines.
+// Google resolves the region from the request; an explicit choice always wins.
 (function () {
   var KEY = 'flincth-analytics-consent';
   var GA_ID = 'G-4JBS4T9RZ0';
-  var banner, accept, decline, opener, loaded = false;
+  var OPT_IN_REGIONS = [
+    'AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR',
+    'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK',
+    'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH', 'TR'
+  ];
+  var banner, accept, decline, opener;
 
   function stored() {
     try { return localStorage.getItem(KEY); } catch (e) { return null; }
@@ -13,17 +23,24 @@
     try { localStorage.setItem(KEY, value); } catch (e) { /* private mode */ }
   }
 
-  function loadAnalytics() {
-    if (loaded) return;
-    loaded = true;
+  function gtag() { window.dataLayer.push(arguments); }
+
+  function loadAnalytics(choice) {
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag = gtag;
+    // There is no advertising, so the ad signals stay denied everywhere.
+    var never = { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' };
+    gtag('consent', 'default', Object.assign({ analytics_storage: 'denied', region: OPT_IN_REGIONS }, never));
+    gtag('consent', 'default', Object.assign({ analytics_storage: 'granted' }, never));
+    if (choice === 'granted' || choice === 'denied') {
+      gtag('consent', 'update', { analytics_storage: choice });
+    }
     var tag = document.createElement('script');
     tag.async = true;
     tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
     document.head.appendChild(tag);
-    window.gtag('js', new Date());
-    window.gtag('config', GA_ID);
+    gtag('js', new Date());
+    gtag('config', GA_ID, { allow_google_signals: false, allow_ad_personalization_signals: false });
   }
 
   function open(trigger) {
@@ -37,11 +54,14 @@
   function close(choice) {
     remember(choice);
     banner.hidden = true;
-    if (choice === 'granted') loadAnalytics();
+    gtag('consent', 'update', { analytics_storage: choice });
     if (opener) { opener.focus(); opener = null; }
   }
 
   function init() {
+    var choice = stored();
+    loadAnalytics(choice);
+
     banner = document.getElementById('consent');
     if (!banner) return;
     accept = document.getElementById('consent-accept');
@@ -50,9 +70,7 @@
     accept.addEventListener('click', function () { close('granted'); });
     decline.addEventListener('click', function () { close('denied'); });
 
-    var choice = stored();
-    if (choice === 'granted') loadAnalytics();
-    else if (choice !== 'denied') open(null);
+    if (choice !== 'granted' && choice !== 'denied') open(null);
 
     // A page may offer more than one way back to this choice.
     var links = document.querySelectorAll('[data-consent-open]');

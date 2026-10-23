@@ -119,7 +119,7 @@ consent:
   label: Cookie choice
   title: A quick choice about cookies.
   # [policy] is replaced with a link to the privacy policy.
-  text: This website can use Google Analytics to count visits. It stores a cookie on your device and shares data with Google. Nothing loads unless you say yes, and your choice here has no effect on the Flincth apps. See the [policy].
+  text: This website uses Google Analytics to count visits. In the EU, the UK, Switzerland and Türkiye it stores no cookie unless you accept; elsewhere it does unless you decline. Your choice here has no effect on the Flincth apps. See the [policy].
   policy: privacy policy
   decline: Decline
   accept: Accept

@@ -92,7 +92,8 @@ coming one ships.
   Firefox Add-ons (Firefox 140+). It collects no data and makes no network requests of its own.
 - Vocabulary: Workspace Manager says *setup* (code says workspace); Split View
   says *workspace*. Keep them apart on the site.
-- The website itself uses consent-gated Google Analytics and opt-in OneSignal
+- The website itself uses Google Analytics in consent mode (cookie opt-in in
+  the EEA, UK, Switzerland and Türkiye; opt-out elsewhere) and opt-in OneSignal
   web push. Neither product does.
 
 ## Brand Commitments
