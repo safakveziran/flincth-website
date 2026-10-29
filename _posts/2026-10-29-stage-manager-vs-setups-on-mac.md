@@ -2,6 +2,7 @@
 title: "Stage Manager vs. Setups: Grouping Windows Isn't the Same as Arranging Them"
 seo_title: "Stage Manager vs. Setups on Mac: Which One Fits?"
 description: "Stage Manager tidies the windows you already have open. A setup rebuilds your whole desk for one kind of work. Here is where each one fits, and where it stops."
+medium_url: https://medium.com/@flincth/stage-manager-vs-setups-on-mac-which-one-fits-flincth-e9377fe35e97
 ---
 
 When people hear what Flincth does, one question comes up more than any other: *doesn't the Mac already do this with Stage Manager?*
