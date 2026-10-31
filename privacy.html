@@ -4,13 +4,13 @@ title: Privacy | Flincth
 description: "What the Flincth website and the Flincth apps for Mac, iPhone, iPad and browsers collect, and what they don't. No app has an account or a server of its own."
 ref: privacy
 sitemap:
-  lastmod: 2026-10-27
+  lastmod: 2026-10-31
   changefreq: yearly
   priority: 0.3
 ---
   <main id="main" class="wrap doc">
     <h1>What we collect, and what we don’t.</h1>
-    <p class="updated">Last updated 27 October 2026</p>
+    <p class="updated">Last updated 31 October 2026</p>
     <p class="lead">Flincth is made by one small team, and this page is written to be read rather than skimmed past. It covers each Flincth app separately, then this website: <a href="#workspace-manager">Flincth Workspace Manager</a> for Mac, <a href="#extension">Flincth Split View</a> for Chrome, Firefox and Edge, <a href="#speed-reader">Flincth Speed Reader</a> for iPhone and iPad, and <a href="#website">this website</a>.</p>
 
     <h2 id="workspace-manager">Flincth Workspace Manager (Mac)</h2>
@@ -29,9 +29,9 @@ sitemap:
     <h2 id="speed-reader">Flincth Speed Reader (iPhone and iPad)</h2>
     <p>Flincth Speed Reader is not out yet. This section describes the app as it will ship, and will be updated before launch if anything changes.</p>
     <p>The app has no account system and no server of its own. The documents you import, their text, titles and file names, and anything you paste stay on your iPhone or iPad. If you turn on iCloud sync (a Pro feature), your library, reading positions, settings and statistics are also stored in your own private iCloud account, which Apple runs and which Flincth cannot read.</p>
-    <p><b>Anonymous usage statistics.</b> To learn which parts of the app work, it counts events such as a finished reading session or a failed import, using Google Analytics for Firebase. An event carries only categories and numbers (for example the file format, a speed range or a session length range), never document content, titles, file names, web addresses or pasted text. There is no advertising identifier and no tracking across apps. In the EU, the UK and Switzerland this stays off unless you agree on a first-run screen; elsewhere the app tells you on first run and you can turn it off in Settings → Privacy.</p>
-    <p><b>Remote settings.</b> The app fetches a small set of settings, such as the free plan’s limits, from Firebase Remote Config. Like the statistics, the request carries an anonymous app-instance identifier and your IP address, and nothing about what you read.</p>
-    <p><b>News and offers, only if you turn them on.</b> Off by default. When on, your device’s push subscription is registered with OneSignal, with no name, email address or phone number. Reading reminders are created on the device and need no network.</p>
+    <p><b>Usage statistics.</b> To learn which parts of the app work, it counts events such as a finished reading session or a failed import, using Google Analytics for Firebase. Events include reading and app interactions, trial and purchase activity, and categories of import failures. Their parameters contain only categories and numbers (for example the file format, a speed range or a session length range), never document content, titles, file names, web addresses or pasted text. Events are associated with an app-installation identifier, so repeated activity can be connected to the same installation. Google Analytics can derive approximate location from the IP address used to connect; this is not GPS location. We do not send a name, email address, phone number or account ID to Analytics. There is no advertising identifier and no tracking across apps. In the EU, the UK and Switzerland this stays off unless you agree on a first-run screen; elsewhere the app tells you on first run and you can turn it off in Settings → Privacy.</p>
+    <p><b>Remote settings.</b> The app fetches a small set of settings, such as the free plan’s limits, from Firebase Remote Config. Requests use a Firebase installation identifier and include technical information such as country, language, time zone, OS version and app version, as well as the IP address used to connect. This lets Firebase return configuration values and maintain the service; it includes nothing about what you read. Remote Config operates separately from the usage-statistics switch.</p>
+    <p><b>News and offers, only if you turn them on.</b> Off by default. When on, your device’s APNs push token and subscription status are registered with OneSignal to deliver feature announcements and promotions. OneSignal assigns a subscription identifier and sees your IP address when the app connects. These identifiers relate to your installation; no name, email address, phone number or document content is sent. You can turn News and offers off in the app’s notification settings. Reading reminders are created on the device and need no network.</p>
     <p><b>Purchases</b> go through Apple’s App Store. Flincth never sees your payment details.</p>
 
     <h2 id="website">This website</h2>
