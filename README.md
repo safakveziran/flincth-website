@@ -195,3 +195,19 @@ button state were verified on the live site. No audience broadcast was sent.
 Run `node --test tests/notifications.test.cjs` for permission denial, duplicate
 clicks, resubscription, topic isolation and SDK download retry checks. These
 mocked lifecycle tests do not establish operating-system notification delivery.
+
+
+## Email sender DNS setup (2 November 2026)
+
+Owner approved OneSignal's Acceptable Use Policy and the eight DNS additions.
+Flincth <support@flincth.com> is the default sender and reply-to for the existing
+Flincth Web Site OneSignal app. Sending domain: mail.flincth.com. All eight
+records are verified in OneSignal; domain status is Processing, with provider
+confirmation pending (the dashboard states less than 24 hours). Sending has
+not yet been tested; no campaign was sent. The email opt-in form is not live.
+
+The before/after Hostinger comparison preserved all 12 original records,
+including values, priorities and TTLs; eight additions only. Root GitHub Pages
+A records and www CNAME, Zoho MX/SPF/DKIM and verification TXT were unchanged.
+Both authoritative nameservers were checked and the website returned HTTP 200.
+This DNS check does not establish mailbox send/receive delivery.
