@@ -53,6 +53,7 @@ exclude:
   - README.md
   - PRODUCT.md
   - DESIGN.md
+  - tests
 
 # Old light-theme version; kept in the repository but not published.
   - Flincth-Website
