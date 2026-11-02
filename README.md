@@ -181,3 +181,17 @@ Every page has a `ref` key in its front matter (`home`, `privacy`, `support`, `w
 7. The 404 page needs nothing extra; its copy is in the `not_found` section of the file from step 3.
 
 GitHub Pages serves only the root `404.html` for the whole site. That is why the 404 page carries every language in its own block and the browser decides which one to show: the language folder in the URL first (`/tr/missing-page` → Turkish), then the browser language, then the default language. Without JavaScript the default language shows. The languages that were not picked are removed from the page, so parts like the cookie banner appear only once.
+
+
+## Web push verification (2 November 2026)
+
+The existing Flincth Web Site OneSignal app now has Web Push configured for
+`https://flincth.com`, using Custom code and the existing root service worker.
+Automatic resubscription, the SDK bell and welcome messages are disabled;
+visitors subscribe through the site's controls. Legacy Safari web ID is included
+in the client configuration. Chrome permission acceptance and the subscribed
+button state were verified on the live site. No audience broadcast was sent.
+
+Run `node --test tests/notifications.test.cjs` for permission denial, duplicate
+clicks, resubscription, topic isolation and SDK download retry checks. These
+mocked lifecycle tests do not establish operating-system notification delivery.

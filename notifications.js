@@ -20,7 +20,7 @@
   var APP_ID = 'b1a1845c-01c6-4927-be28-07d290bed717';
   var SDK = 'https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js';
   var TAG_PREFIX = 'launch_';
-  var controls, sdkLoading = false, ready = null;
+  var controls, ready = null, changing = false;
 
   function supported() {
     return 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
@@ -63,52 +63,73 @@
     each(controls, function (control) {
       var key = tagKey(control);
       var on = optedIn && (!key || !!tags[key]);
-      setState(control, on ? 'subscribed' : 'default');
+      setState(control, on ? 'subscribed' :
+        (Notification.permission === 'denied' ? 'blocked' : 'default'));
     });
   }
 
   function loadSdk() {
-    if (sdkLoading) return;
-    sdkLoading = true;
-    queue(function (OneSignal) {
-      // Kept as a promise so a click queued behind it waits for init to
-      // finish instead of talking to an SDK that is not ready yet.
-      ready = OneSignal.init({
-        appId: APP_ID,
-        serviceWorkerPath: '/OneSignalSDKWorker.js',
-        serviceWorkerParam: { scope: '/' },
-        // The page's own controls are the only invitation to subscribe. An
-        // automatic slide-down on top of them would ask twice.
-        promptOptions: { slidedown: { prompts: [] } }
-      }).then(function () {
-        OneSignal.User.PushSubscription.addEventListener('change', function () {
+    if (ready) return ready;
+    ready = new Promise(function (resolve, reject) {
+      var initialize = function (OneSignal) {
+        return OneSignal.init({
+          appId: APP_ID,
+          safari_web_id: 'web.onesignal.auto.4d177f4c-af32-40a6-bcd9-e75371e6c146',
+          notifyButton: { enable: false },
+          welcomeNotification: { disable: true },
+          autoResubscribe: false,
+          serviceWorkerPath: '/OneSignalSDKWorker.js',
+          serviceWorkerParam: { scope: '/' },
+          // Permission is requested only through the site's own controls.
+          promptOptions: { slidedown: { prompts: [] } }
+        }).then(function () {
+          OneSignal.User.PushSubscription.addEventListener('change', function () {
+            reflect(OneSignal);
+          });
           reflect(OneSignal);
+          resolve(OneSignal);
+        }).catch(reject);
+      };
+      queue(initialize);
+      var tag = document.createElement('script');
+      tag.async = true;
+      tag.src = SDK;
+      tag.onerror = function () {
+        // Remove only this failed attempt, so a retry cannot initialize twice.
+        window.OneSignalDeferred = window.OneSignalDeferred.filter(function (fn) {
+          return fn !== initialize;
         });
-        reflect(OneSignal);
-      });
-      return ready;
+        tag.remove();
+        ready = null;
+        reject(new Error('The notification service could not be loaded.'));
+      };
+      document.head.appendChild(tag);
     });
-    var tag = document.createElement('script');
-    tag.async = true;
-    tag.src = SDK;
-    document.head.appendChild(tag);
+    return ready;
   }
 
   function hasLaunchTags(tags) {
     return Object.keys(tags).some(function (key) { return key.indexOf(TAG_PREFIX) === 0; });
   }
 
-  function toggle(control) {
-    loadSdk();
-    queue(function (OneSignal) {
-      return ready.then(function () {
-        return change(OneSignal, control);
-      }).catch(function (error) {
-        // Never fail silently: the control says so and the console says why.
-        setState(control, 'error');
-        if (window.console) console.error('Flincth notifications:', error);
-      });
+  function setBusy(busy) {
+    changing = busy;
+    each(controls, function (control) {
+      control.setAttribute('aria-busy', String(busy));
+      control.setAttribute('aria-disabled', String(busy));
+      if (control.tagName === 'BUTTON') control.disabled = busy;
     });
+  }
+
+  function toggle(control) {
+    if (changing) return;
+    setBusy(true);
+    loadSdk().then(function (OneSignal) {
+      return change(OneSignal, control);
+    }).catch(function (error) {
+      setState(control, 'error');
+      if (window.console) console.error('Flincth notifications:', error);
+    }).then(function () { setBusy(false); });
   }
 
   function change(OneSignal, control) {
@@ -122,7 +143,9 @@
       } else if (tags[key]) {
         OneSignal.User.removeTag(key);
         delete tags[key];
-        if (!hasLaunchTags(tags)) subscription.optOut();
+        if (!hasLaunchTags(tags)) {
+          return Promise.resolve(subscription.optOut()).then(function () { reflect(OneSignal); });
+        }
       } else {
         OneSignal.User.addTag(key, '1');
       }
@@ -139,10 +162,9 @@
     if (key) OneSignal.User.addTag(key, '1');
     if (Notification.permission === 'granted') {
       // Permission survives an unsubscribe, so coming back needs no prompt.
-      return subscription.optIn();
+      return Promise.resolve(subscription.optIn()).then(function () { reflect(OneSignal); });
     }
     return OneSignal.Notifications.requestPermission().then(function () {
-      if (Notification.permission === 'denied') setState(control, 'blocked');
       reflect(OneSignal);
     });
   }
@@ -172,7 +194,11 @@
     });
     // Already subscribed from an earlier visit? Then the SDK is worth loading
     // now, so the controls can say so.
-    if (Notification.permission === 'granted') loadSdk();
+    if (Notification.permission === 'granted') {
+      loadSdk().catch(function () {
+        each(controls, function (control) { setState(control, 'error'); });
+      });
+    }
   }
 
   if (document.readyState === 'loading') {
