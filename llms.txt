@@ -101,16 +101,22 @@ An RSVP speed reading app for iPhone and iPad. Not yet on the App Store.
 
 - Page: https://flincth.com/ios/speed-reader
 - What it does: shows the user's own DRM-free documents (EPUB, PDF with a
-  text layer, DOCX, TXT, RTF, Markdown, web articles, pasted text) one word,
+  text layer, DOCX, TXT, RTF, Markdown, pasted text) one word,
   phrase or short sentence at a time, at a pace the user sets.
-- Cannot open DRM-protected books such as Kindle or Apple Books purchases.
+- Cannot open DRM-protected books such as Kindle or Apple Books purchases,
+  scanned PDFs without a text layer, or import web page links directly.
 - Pricing: free download with daily limits; a one-time Pro purchase removes
   them and adds customization, statistics and iCloud sync. A 7-day Pro trial
   never turns into a charge. No subscription.
 - Privacy: no account, no server of its own, no AI. Documents stay on the
-  device (and in the user's own iCloud with sync on). Anonymous usage events
-  are counted with Google Analytics for Firebase, opt-in in the EU, the UK and
-  Switzerland; they never include document content, titles or file names.
+  device (and in the user's own iCloud with sync on). Usage, purchase and trial events
+  and categories of import failures are linked to an app-installation identifier
+  in Google Analytics for Firebase. Analytics can derive approximate location
+  from IP addresses. Usage statistics are opt-in in the EU, the UK and
+  Switzerland, with an off switch elsewhere. Remote Config fetches settings
+  separately using a Firebase installation identifier. News and offers use
+  OneSignal only when enabled. Document content, titles, file names and pasted
+  text are never sent to these services.
 
 ## Pages
 

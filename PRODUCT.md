@@ -86,8 +86,11 @@ coming one ships.
   never cross Mission Control desktops and never enter or leave full screen.
 - Speed Reader: iOS 17+, free with a one-time Pro purchase and a 7-day $0
   trial; documents stay on the device (and the user's iCloud with Pro sync);
-  anonymous Firebase analytics, opt-in in the EU, UK and Switzerland. Never
-  claim it collects no data. It cannot open DRM-protected books.
+  installation-linked Firebase analytics, opt-in in the EU, UK and Switzerland,
+  with an off switch elsewhere. Remote Config operates separately; OneSignal
+  news and offers are opt-in. Never claim analytics is anonymous or that it
+  collects no data. Supported files and pasted text only: no direct web-page
+  link import, scanned PDFs without a text layer or DRM-protected books.
 - Split View is live on the Chrome Web Store, Microsoft Edge Add-ons and
   Firefox Add-ons (Firefox 140+). It collects no data and makes no network requests of its own.
 - Vocabulary: Workspace Manager says *setup* (code says workspace); Split View
