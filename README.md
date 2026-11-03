@@ -202,9 +202,17 @@ mocked lifecycle tests do not establish operating-system notification delivery.
 Owner approved OneSignal's Acceptable Use Policy and the eight DNS additions.
 Flincth <support@flincth.com> is the default sender and reply-to for the existing
 Flincth Web Site OneSignal app. Sending domain: mail.flincth.com. All eight
-records are verified in OneSignal; domain status is Processing, with provider
-confirmation pending (the dashboard states less than 24 hours). Sending has
-not yet been tested; no campaign was sent. The email opt-in form is not live.
+records are verified in OneSignal; domain status is Authenticated as of
+3 November 2026. This confirms the sending domain, not account sending approval.
+The separate Verify Account check returned Verification not approved on
+3 November. OneSignal's notice lists technical and trust requirements without
+identifying a single specific cause; re-verification is available after three
+days (6 November). Its checklist includes a login email on the organizational
+domain and an enforced DMARC policy with aggregate reporting. The existing
+root DMARC policy is monitoring-only; enforcement must be checked against
+Zoho alignment before any change. No DNS or account credentials were changed
+during this check. Sending has not yet been tested; no campaign was sent.
+The email opt-in form is not live.
 
 The before/after Hostinger comparison preserved all 12 original records,
 including values, priorities and TTLs; eight additions only. Root GitHub Pages
