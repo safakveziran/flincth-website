@@ -3,6 +3,7 @@ title: "What Speed Should You Use in a Speed Reading App?"
 seo_title: "What WPM Should You Use in a Speed Reading App?"
 description: "How fast people really read, where to set the words per minute when you start, how to tell when you've gone too fast, and why the right speed changes with the text."
 product: speed-reader
+medium_url: https://medium.com/@flincth/what-wpm-should-you-use-in-a-speed-reading-app-flincth-e64006211789
 ---
 
 The first thing a speed reading app asks you is a number: words per minute. Most people pick one at random, or push the slider as far as it goes to see what happens.
