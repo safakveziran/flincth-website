@@ -70,5 +70,23 @@ sitemap:
       </div>
     </section>
 
-    <section class="closing wrap" id="availability"><img src="/assets/flincth-mark.svg" alt="Flincth" width="88" height="88" loading="lazy"><h2>More apps are on the way.</h2><p>Get one notification when a new Flincth app launches.</p><div class="closing-actions">{% include notify-button.html topic="new-apps" label="news" %}<a class="button primary" href="#products" data-notify-fallback>Explore the apps</a></div>{% include notify-hint.html %}</section>
+    <section class="closing wrap" id="availability">
+      <img src="/assets/flincth-mark.svg" alt="Flincth" width="88" height="88" loading="lazy">
+      <h2>More apps are on the way.</h2>
+      <p>Get an update when a new Flincth app launches.</p>
+      {% if site.launch_email_endpoint and site.launch_email_endpoint != "" %}
+        <form class="launch-email" id="launch-email" action="{{ site.launch_email_endpoint | escape }}" method="post" hidden>
+          <label for="launch-email-address">Email address</label>
+          <div class="launch-email-fields">
+            <input id="launch-email-address" name="email" type="email" autocomplete="email" maxlength="254" placeholder="you@example.com" aria-describedby="launch-email-consent" required>
+            <button class="button primary" type="submit">Notify me by email</button>
+          </div>
+          <small id="launch-email-consent">By signing up, you agree to receive Flincth launch emails. Unsubscribe anytime. <a href="/privacy">Privacy policy</a></small>
+          <span class="launch-email-status" role="status"></span>
+        </form>
+        <script src="/launch-email.js?v={{ site.time | date: '%s' }}" defer></script>
+      {% endif %}
+      <div class="closing-actions">{% include notify-button.html topic="new-apps" label="news" %}<a class="button primary" href="#products" data-notify-fallback>Explore the apps</a></div>
+      {% include notify-hint.html %}
+    </section>
   </main>

@@ -1,0 +1,10 @@
+name = "flincth-launch-email"
+main = "index.mjs"
+compatibility_date = "2026-11-06"
+workers_dev = true
+preview_urls = false
+
+[[ratelimits]]
+name = "SIGNUP_LIMIT"
+namespace_id = "702114"
+simple = { limit = 5, period = 60 }

@@ -197,25 +197,26 @@ clicks, resubscription, topic isolation and SDK download retry checks. These
 mocked lifecycle tests do not establish operating-system notification delivery.
 
 
-## Email sender DNS setup (2 November 2026)
+## Launch email signup
 
-Owner approved OneSignal's Acceptable Use Policy and the eight DNS additions.
-Flincth <support@flincth.com> is the default sender and reply-to for the existing
-Flincth Web Site OneSignal app. Sending domain: mail.flincth.com. All eight
-records are verified in OneSignal; domain status is Authenticated as of
-3 November 2026. This confirms the sending domain, not account sending approval.
-The separate Verify Account check returned Verification not approved on
-3 November. OneSignal's notice lists technical and trust requirements without
-identifying a single specific cause; re-verification is available after three
-days (6 November). Its checklist includes a login email on the organizational
-domain and an enforced DMARC policy with aggregate reporting. The existing
-root DMARC policy is monitoring-only; enforcement must be checked against
-Zoho alignment before any change. No DNS or account credentials were changed
-during this check. Sending has not yet been tested; no campaign was sent.
-The email opt-in form is not live.
+OneSignal approved email sending for Flincth Web Site on 6 November 2026.
+A test from support@flincth.com reached Gmail with SPF, DKIM and DMARC passing.
 
-The before/after Hostinger comparison preserved all 12 original records,
-including values, priorities and TTLs; eight additions only. Root GitHub Pages
-A records and www CNAME, Zoho MX/SPF/DKIM and verification TXT were unchanged.
-Both authoritative nameservers were checked and the website returned HTTP 200.
-This DNS check does not establish mailbox send/receive delivery.
+The home page form sends opt-in requests to a Cloudflare Worker, so signup
+works without browser push or a service worker. The Worker records the email
+subscription in OneSignal with the `web_launch_email=1` tag. Target that tag
+when sending launch emails and include OneSignal's unsubscribe link.
+
+To enable the form, deploy from `launch-email-worker/` using Wrangler 4.36 or
+newer. Set `ONESIGNAL_APP_KEY` as a Worker secret for the Flincth Web Site app.
+Keep the key out of the repository and website configuration.
+
+```sh
+npx wrangler@4 deploy
+npx wrangler@4 secret put ONESIGNAL_APP_KEY
+```
+
+Set `launch_email_endpoint` in `_config.yml` to the deployed Worker's HTTPS
+URL plus `/subscribe`. The form is hidden until that endpoint is configured.
+After publishing, submit a test address and confirm that the resulting
+subscription is enabled and tagged in OneSignal.

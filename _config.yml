@@ -1,5 +1,6 @@
 # Jekyll settings. GitHub Pages builds the site with these on every publish.
 url: "https://flincth.com"
+launch_email_endpoint: ""
 
 # Search engine ownership checks. Paste the code each webmaster tool gives for
 # its "meta tag" method; an empty value adds nothing. (Google Search Console is
@@ -54,6 +55,7 @@ exclude:
   - PRODUCT.md
   - DESIGN.md
   - tests
+  - launch-email-worker
 
 # Old light-theme version; kept in the repository but not published.
   - Flincth-Website
