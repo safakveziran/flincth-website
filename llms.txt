@@ -161,6 +161,7 @@ An RSVP speed reading app for iPhone and iPad.
 {%- assign _comparisons = site.pages | where: "comparison", true | sort: "title" %}
 {%- assign _mac = _comparisons | where: "product", "workspace-manager" %}
 {%- assign _ext = _comparisons | where: "product", "split-view" %}
+{%- assign _reader = _comparisons | where: "product", "speed-reader" %}
 {%- if _mac.size > 0 %}
 ## Comparisons: Flincth Workspace Manager
 
@@ -172,6 +173,13 @@ An RSVP speed reading app for iPhone and iPad.
 ## Comparisons: Flincth Split View
 
 {% for p in _ext -%}
+- [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
+{%- if _reader.size > 0 %}
+## Comparisons: Flincth Speed Reader
+
+{% for p in _reader -%}
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}

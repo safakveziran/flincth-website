@@ -1,0 +1,122 @@
+---
+layout: default
+---
+{%- comment -%}
+  Shared layout for "<competitor> alternative" pages about Flincth Speed
+  Reader. Same structure and styles as _layouts/comparison.html (the Mac
+  app's), but the actions download the iPhone and iPad app, the price strip
+  compares Pro's one-time price, and the cards and shared questions are about
+  speed reading. Facts come from the app's spec.md (flincth-reader). Free plan
+  limits are set remotely, so these pages never print them.
+  See README.md, "Comparison pages".
+
+  Front matter:
+    competitor        key in _data/competitors.yml (its `name` is used below)
+    heading           [first sentence, second sentence in blue]
+    lead              hero paragraph
+    mode              {title, text, style?, word?}: the competitor's card;
+                      style "word" (default) draws one word in a fixed spot
+                      (`word` sets it), "page" draws lines of text with a
+                      highlighter moving down them
+    table             {title, intro}
+    rows              list of {label, flincth: [yes|no, text], them: [yes|no, text]}
+                      (YAML reads a bare yes/no as true/false; both work)
+    value             optional {label}: the competitor's price (its `price`
+                      in competitors.yml) next to Pro's one-time price; leave
+                      it out when the competitor is not dearer
+    note              small print under the table; [checked] is replaced with
+                      the date the competitor facts were checked
+    reasons           {title, intro}; the four cards are shared, below
+    fit_both          closing line of the reasons section
+    faq               list of {q, a}, shown before the shared questions
+{%- endcomment -%}
+{%- assign reader = site.data.reader -%}
+{%- assign c = site.data.competitors -%}
+{%- assign them = c[page.competitor] -%}
+{%- capture yes_icon -%}<svg class="mark yes" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"/></svg><span class="visually-hidden">Yes. </span>{%- endcapture -%}
+{%- capture no_icon -%}<svg class="mark no" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.5 4.5l7 7m0-7l-7 7"/></svg><span class="visually-hidden">No. </span>{%- endcapture -%}
+  <main id="main" class="compare">
+    <section class="compare-hero wrap">
+      <h1>{{ page.heading[0] }} <span>{{ page.heading[1] }}</span></h1>
+      <p class="compare-lead">{{ page.lead }}</p>
+      <div class="hero-actions"><a class="button primary" href="{{ reader.store_url }}" target="_blank" rel="noopener">Download Flincth Speed Reader on the App Store</a><a class="text-link" href="#glance">Compare side by side <span aria-hidden="true">↓</span></a></div>
+    </section>
+
+    <section class="wrap compare-modes" aria-label="How each app shows text">
+      <article class="mode">
+        <div class="mode-desk" aria-hidden="true">
+{%- if page.mode.style == "page" %}
+          <div class="mini-page"><i></i><i></i><i class="mini-moving-line"></i><i></i><i></i><i></i></div>
+{%- else %}
+          <div class="mini-rsvp mini-rsvp-guides"><b>{{ page.mode.word | default: "beginning" }}</b></div>
+{%- endif %}
+        </div>
+        <h2>{{ page.mode.title }}</h2>
+        <p>{{ page.mode.text }}</p>
+      </article>
+      <article class="mode mode-flincth">
+        <div class="mode-desk" aria-hidden="true">
+          <div class="mini-rsvp"><b>of sitting by her sister</b></div>
+          <div class="mini-chip"><kbd>Phrase</kbd> 300 wpm</div>
+        </div>
+        <h2>Flincth: a word, a phrase or a sentence.</h2>
+        <p>Read one word at a time, or let Flincth group words into phrases and short sentences at punctuation, so the text still makes sense at speed. Pause, and the whole paragraph is there.</p>
+      </article>
+    </section>
+    <p class="wrap preview-note compare-note">Illustrative diagrams, not app screenshots.</p>
+
+    <section class="wrap compare-table-section" id="glance">
+      <div class="section-heading"><h2>{{ page.table.title }}</h2><p>{{ page.table.intro }}</p></div>
+      <div class="table-scroll" role="region" aria-label="Flincth Speed Reader and {{ them.name }} compared" tabindex="0">
+        <table class="compare-table">
+          <thead><tr><th scope="col"><span class="visually-hidden">Feature</span></th><th scope="col" class="col-flincth">Flincth</th><th scope="col">{{ them.name }}</th></tr></thead>
+          <tbody>
+{%- for row in page.rows %}
+            <tr><th scope="row">{{ row.label }}</th><td class="col-flincth"><span class="cell-mark">{% if row.flincth[0] == true or row.flincth[0] == "yes" %}{{ yes_icon }}{% else %}{{ no_icon }}{% endif %}{{ row.flincth[1] }}</span></td><td><span class="cell-mark">{% if row.them[0] == true or row.them[0] == "yes" %}{{ yes_icon }}{% else %}{{ no_icon }}{% endif %}{{ row.them[1] }}</span></td></tr>
+{%- endfor %}
+          </tbody>
+        </table>
+      </div>
+{%- if page.value %}
+      <div class="value-strip">
+        <div><span class="value-label">{{ page.value.label }}</span><span class="value-price">{% include usd.html amount=them.price %}</span></div>
+        <div class="value-flincth"><span class="value-label">Flincth Pro, once, for good</span><span class="value-price">{% include usd.html amount=reader.pro_price %}</span></div>
+      </div>
+{%- endif %}
+      <p class="table-note">{{ page.note | replace: "[checked]", c.checked_reader }}</p>
+    </section>
+
+    <section class="wrap compare-fit">
+      <div class="section-heading"><h2>{{ page.reasons.title }}</h2><p>{{ page.reasons.intro }}</p></div>
+      <div class="fit-grid">
+        <article class="fit fit-flincth">
+          <h3>Phrases that keep their meaning</h3>
+          <p>Word, phrase and sentence modes split text at punctuation, add natural pauses and give long words a little more time, so you go faster without losing the thread.</p>
+        </article>
+        <article class="fit fit-flincth">
+          <h3>Pay once, or not at all</h3>
+          <p>The free download has every reading mode and format. Pro is a single purchase with Family Sharing, and its 7-day trial asks for no payment and never turns into a charge.</p>
+        </article>
+        <article class="fit fit-flincth">
+          <h3>What you read stays yours</h3>
+          <p>No account and no AI. Documents are processed on your iPhone or iPad and never sent to Flincth; with Pro sync on, they travel only to your own iCloud.</p>
+        </article>
+        <article class="fit fit-flincth">
+          <h3>Never lose your place</h3>
+          <p>Pause to see the whole paragraph and tap any sentence to carry on from there. Each document opens where you stopped, a few words back.</p>
+        </article>
+      </div>
+      <p class="fit-both">{{ page.fit_both }}</p>
+    </section>
+
+    <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
+{%- for item in page.faq %}
+      <details><summary>{{ item.q }}<span>+</span></summary><p>{{ item.a }}</p></details>
+{%- endfor %}
+      <details><summary>Can Flincth Speed Reader open Kindle or Apple Books purchases?<span>+</span></summary><p>No. Those books are protected with DRM, which the app cannot open. It reads DRM-free EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus pasted text. Scanned PDFs without a text layer are not supported.</p></details>
+      <details><summary>What do I get without paying?<span>+</span></summary><p>Every reading mode and every format, light and dark themes, a dyslexia-friendly font and all accessibility settings. The free plan has a daily reading time, a few saved documents and a speed cap; Pro removes them with one purchase.</p></details>
+      <details><summary>Does the trial turn into a subscription?<span>+</span></summary><p>No. There is no subscription at all. The 7-day Pro trial is started by you, asks for no payment details and simply ends; Pro is a separate one-time purchase.</p></details>
+    </div></section>
+
+    <section class="closing wrap"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Your own documents, a word, a phrase or a sentence at a time.</p><div class="closing-actions"><a class="button primary" href="{{ reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a></div><span class="micro">iPhone and iPad <span>·</span> iOS {{ reader.minimum_os | split: "." | first }} or later <span>·</span> No subscription</span></section>
+  </main>

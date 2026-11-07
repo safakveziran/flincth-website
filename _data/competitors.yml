@@ -64,3 +64,25 @@ workona:
 chrome_split_view:
   name: Chrome split view
   # support.google.com/chrome/answer/16971124: two tabs side by side in one window.
+
+# Speed Reader competitors (pages use layout: reader-comparison). Prices are
+# US App Store prices from each app's listing. `price` is the cheapest yearly
+# plan (or the one-time price for a paid app), compared with Pro's one-time price.
+checked_reader: "7 November 2026"
+outread:
+  name: Outread
+  # apps.apple.com/us/app/outread-speed-reading/id778846279 (Arkadiusz Holko)
+  # v2.10. Free; Outread+ weekly $2.99–3.99, monthly $4.99–7.99, annual
+  # $29.99–49.99, family plans, lifetime $119.99 (family $149.99). iOS 18 or later.
+  price: "29.99"
+focalread:
+  name: FocalRead
+  # apps.apple.com/us/app/focalread-speed-reading/id6757935291 (Megacubos LLC)
+  # v1.2.6. Free; weekly $6.99, monthly $9.99–12.99, annual $19.99–39.99.
+  # One word at a time. Privacy label: identifiers used to track you.
+  price: "19.99"
+quickreader:
+  name: QuickReader
+  # apps.apple.com/us/app/quickreader-speed-reading/id333441801 (Inkstone Software)
+  # Paid, no in-app purchases. Last update 4.8, 16 August 2019. No PDF support.
+  price: "4.99"

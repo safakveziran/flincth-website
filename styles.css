@@ -262,9 +262,19 @@ h1>span{display:block}
 .mini-tabs span{display:flex;align-items:center;gap:9px;border:1px solid;border-radius:8px;padding:9px 12px;font-size:12px}
 .mini-tabs i{width:8px;height:8px;border-radius:50%}
 .mini-tabs b{margin-left:auto;font-weight:500;font-size:11px}
+.mini-rsvp{position:absolute;inset:16px 6% 52px;display:grid;place-items:center;border:1px solid;border-radius:10px;padding:0 14px;text-align:center}
+.mini-rsvp-guides{inset:16px 6%}
+.mini-rsvp b{font-family:ui-serif,Georgia,serif;font-size:clamp(20px,2.4vw,28px);font-weight:500;line-height:1.2}
+.mini-rsvp-guides:before,.mini-rsvp-guides:after{content:"";position:absolute;left:calc(50% - 1px);width:2px;height:16px;border-radius:2px}
+.mini-rsvp-guides:before{top:26px}.mini-rsvp-guides:after{bottom:26px}
+.mini-page{position:absolute;inset:22px 12%;display:flex;flex-direction:column;justify-content:center;gap:11px}
+.mini-page i{position:relative;display:block;height:8px;border-radius:4px}
+.mini-page i:nth-child(2n){width:86%}.mini-page i:last-child{width:58%}
 .compare .faq{padding-top:96px}
 @media(max-width:700px){.compare-hero{padding-top:44px}.compare-lead{font-size:16px}.compare-modes,.fit-grid,.value-strip{grid-template-columns:1fr}.value-price{font-size:24px}.mark{width:16px;height:16px}.mode,.fit{padding:22px}.compare-table{font-size:13px}.compare-table th,.compare-table td{padding:12px 10px}.compare-table tbody th{width:28%}.compare-table td{width:36%}.compare-table-section,.compare-fit,.compare .faq{padding-top:64px}}
 @media(prefers-reduced-motion:no-preference){.mini-moving{animation:snap 2.4s ease-in-out infinite alternate}}
+@media(prefers-reduced-motion:no-preference){.mini-moving-line{animation:sweep 2.6s ease-in-out infinite alternate}}
+@keyframes sweep{from{transform:translateY(-38px)}to{transform:translateY(38px)}}
 @keyframes snap{0%,25%{left:38%;top:18%;width:44%;height:56%}75%,100%{left:4%;top:8%;width:45%;height:84%}}
 
 /* Blog (blog/index.html, _layouts/post.html). Colours live in dark.css. */

@@ -3,3 +3,7 @@
 store_url: "https://apps.apple.com/app/flincth-speed-reader/id6827723552"
 app_store_id: "6827723552"
 minimum_os: "17.0"
+# US App Store price of the one-time Pro purchase (com.flincth.reader.pro).
+# Keep it a quoted string with two decimals; the Speed Reader comparison pages
+# print it with _includes/usd.html.
+pro_price: "9.99"
