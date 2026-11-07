@@ -4,8 +4,8 @@ launch_email_endpoint: ""
 
 # Search engine ownership checks. Paste the code each webmaster tool gives for
 # its "meta tag" method; an empty value adds nothing. (Google Search Console is
-# verified through DNS and needs nothing here. Bing can skip its code by
-# importing the site from Google Search Console; see README.md.)
+# verified through DNS and needs nothing here. Bing was verified by importing
+# the site from Google Search Console, so it needs no code; see README.md.)
 verification:
   yandex: "3031ebd9388d7437"
   bing: ""
