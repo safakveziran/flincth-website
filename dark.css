@@ -192,6 +192,12 @@ footer > a:hover { color: #8db6ff; }
 .mini-tabs span { background: #1b2a44; border-color: #3a5173; color: #b8c6dc; }
 .mini-tabs i { background: #57729b; }
 .mini-tabs b { color: #8fa0bb; }
+.mini-rsvp { background: #0d1522; border-color: #3a5173; box-shadow: 0 12px 24px -8px #0009; }
+.mode-flincth .mini-rsvp { border-color: #5c80bd; }
+.mini-rsvp b { color: var(--ink); }
+.mini-rsvp-guides:before, .mini-rsvp-guides:after { background: #4a5f80; }
+.mini-page i { background: #2a3d5c; }
+.mini-page .mini-moving-line { background: #4f6fa8; box-shadow: 0 0 0 4px #4f6fa833; }
 
 /* Blog */
 .post-meta, .post-list time, .blog-feed { color: #8fa0bb; }

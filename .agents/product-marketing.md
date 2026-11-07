@@ -66,6 +66,11 @@ Paste, Maccy (clipboard managers). Each solves one half.
 **Secondary:** Raycast window management and clipboard history; Stage Manager.
 **Indirect:** arranging windows by hand; Mission Control desktops per task.
 **Direct (browser):** split-screen and tab-layout extensions; Edge and Arc split view.
+**Direct (iOS, App Store listings checked 2026-11-07):** Outread (Outread+ subscription, lifetime $119.99,
+AI features, iOS 18+), FocalRead (one word at a time, weekly/monthly/yearly plans), QuickReader ($4.99,
+last updated 2019, no PDF), Readrrr (one word, iOS 18+, lifetime $99.99), UpRead (up to five words,
+lifetime $54.99, last updated 2025-02), RSVP Reader by Amenti Labs (PDF import is Pro, lifetime $119). Each has an alternative page; Speed Reader's edge is phrase and sentence modes,
+a one-time Pro with Family Sharing, a $0 trial and no AI.
 
 ## Differentiation
 **Key differentiators:**

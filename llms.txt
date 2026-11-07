@@ -107,7 +107,8 @@ An RSVP speed reading app for iPhone and iPad.
   phrase or short sentence at a time, at a pace the user sets.
 - Cannot open DRM-protected books such as Kindle or Apple Books purchases,
   scanned PDFs without a text layer, or import web page links directly.
-- Pricing: free download with daily limits; a one-time Pro purchase removes
+- Pricing: free download with daily limits; a one-time Pro purchase
+  (US{% include usd.html amount=site.data.reader.pro_price %}, Family Sharing included) removes
   them and adds customization, statistics and iCloud sync. A 7-day Pro trial
   never turns into a charge. No subscription.
 - Privacy: no account, no server of its own, no AI. Documents stay on the
@@ -161,6 +162,7 @@ An RSVP speed reading app for iPhone and iPad.
 {%- assign _comparisons = site.pages | where: "comparison", true | sort: "title" %}
 {%- assign _mac = _comparisons | where: "product", "workspace-manager" %}
 {%- assign _ext = _comparisons | where: "product", "split-view" %}
+{%- assign _reader = _comparisons | where: "product", "speed-reader" %}
 {%- if _mac.size > 0 %}
 ## Comparisons: Flincth Workspace Manager
 
@@ -172,6 +174,13 @@ An RSVP speed reading app for iPhone and iPad.
 ## Comparisons: Flincth Split View
 
 {% for p in _ext -%}
+- [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
+{%- if _reader.size > 0 %}
+## Comparisons: Flincth Speed Reader
+
+{% for p in _reader -%}
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
