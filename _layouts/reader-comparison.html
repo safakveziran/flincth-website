@@ -28,7 +28,9 @@ layout: default
                       the date the competitor facts were checked
     reasons           {title, intro}; the four cards are shared, below
     fit_both          closing line of the reasons section
-    faq               list of {q, a}, shown before the shared questions
+    faq               list of {q, a}, shown before the shared questions in
+                      _data/comparison_faq.yml (reader); both go into the
+                      page's FAQPage JSON-LD (_includes/schema/comparison.html)
 {%- endcomment -%}
 {%- assign reader = site.data.reader -%}
 {%- assign c = site.data.competitors -%}
@@ -110,13 +112,12 @@ layout: default
     </section>
 
     <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
-{%- for item in page.faq %}
+{%- assign _faq = page.faq | concat: site.data.comparison_faq.reader -%}
+{%- for item in _faq %}
       <details><summary>{{ item.q }}<span>+</span></summary><p>{{ item.a }}</p></details>
 {%- endfor %}
-      <details><summary>Can Flincth Speed Reader open Kindle or Apple Books purchases?<span>+</span></summary><p>No. Those books are protected with DRM, which the app cannot open. It reads DRM-free EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus pasted text. Scanned PDFs without a text layer are not supported.</p></details>
-      <details><summary>What do I get without paying?<span>+</span></summary><p>Every reading mode and every format, light and dark themes, a dyslexia-friendly font and all accessibility settings. The free plan has a daily reading time, a few saved documents and a speed cap; Pro removes them with one purchase.</p></details>
-      <details><summary>Does the trial turn into a subscription?<span>+</span></summary><p>No. There is no subscription at all. The 7-day Pro trial is started by you, asks for no payment details and simply ends; Pro is a separate one-time purchase.</p></details>
     </div></section>
 
     <section class="closing wrap"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Your own documents, a word, a phrase or a sentence at a time.</p><div class="closing-actions"><a class="button primary" href="{{ reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a></div><span class="micro">iPhone and iPad <span>·</span> iOS {{ reader.minimum_os | split: "." | first }} or later <span>·</span> No subscription</span></section>
+{% include schema/comparison.html faq=_faq about="https://flincth.com/ios/speed-reader#app" %}
   </main>

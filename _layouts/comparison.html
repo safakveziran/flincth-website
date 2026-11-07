@@ -23,7 +23,9 @@ layout: default
     note              small print under the value strip
     reasons           {title, intro}; the four cards are shared, below
     fit_both          closing line of the reasons section
-    faq               list of {q, a}, shown before the shared questions
+    faq               list of {q, a}, shown before the shared questions in
+                      _data/comparison_faq.yml (mac); both go into the
+                      page's FAQPage JSON-LD (_includes/schema/comparison.html)
 {%- endcomment -%}
 {%- assign mac = site.data.mac -%}
 {%- assign c = site.data.competitors -%}
@@ -109,13 +111,12 @@ layout: default
     </section>
 
     <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
-{%- for item in page.faq %}
+{%- assign _faq = page.faq | concat: site.data.comparison_faq.mac -%}
+{%- for item in _faq %}
       <details><summary>{{ item.q }}<span>+</span></summary><p>{{ item.a }}</p></details>
 {%- endfor %}
-      <details><summary>Why does Flincth need a shortcut instead of Accessibility access?<span>+</span></summary><p>Flincth is sandboxed and never asks for Accessibility access. It moves windows through the “Flincth Apply” shortcut, which you install once in Apple Shortcuts. The app walks you through it.</p></details>
-      <details><summary>Can Flincth move windows between desktops?<span>+</span></summary><p>No. It places ordinary windows on the current desktop and does not move them between Mission Control desktops or into or out of full screen.</p></details>
-      <details><summary>Does Flincth snap windows when I drag them?<span>+</span></summary><p>No. Flincth applies your layout when you switch setups. It does not watch for drags or rearrange windows afterwards.</p></details>
     </div></section>
 
     <section class="closing wrap"><img src="/assets/app-icon-192.png" alt="Flincth app icon" width="88" height="88" loading="lazy"><h2>Stop rebuilding the same desk.</h2><p>One switch for the windows. One clipboard for the work.</p><div class="closing-actions"><a class="button primary" href="{{ mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a></div><span class="micro">Requires macOS {{ mac.minimum_os | split: "." | first }} or later <span>·</span> No subscription</span></section>
+{% include schema/comparison.html faq=_faq about="https://flincth.com/mac/workspace-manager#app" %}
   </main>
