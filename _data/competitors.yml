@@ -86,3 +86,23 @@ quickreader:
   # apps.apple.com/us/app/quickreader-speed-reading/id333441801 (Inkstone Software)
   # Paid, no in-app purchases. Last update 4.8, 16 August 2019. No PDF support.
   price: "4.99"
+readrrr:
+  name: Readrrr
+  # apps.apple.com/us/app/-/id6757683148 (Ocule AS), "Readrrr - Focus Reader"
+  # v4.0.0. Free; weekly $2.99–4.99, monthly $2.99–9.99, yearly $19.99–39.99,
+  # lifetime $99.99. iOS 18 or later. One word at a time. Privacy label:
+  # identifiers and usage data used to track you.
+  price: "19.99"
+upread:
+  name: UpRead
+  # apps.apple.com/us/app/speed-reading-upread/id1454094961 (Alain caltieri)
+  # v1.5.9, 19 February 2025. Free; weekly $0.99, monthly $3.99, yearly
+  # $19.99–39.99, lifetime $54.99. Up to five words at a time. PDF, text
+  # documents and web articles.
+  price: "19.99"
+rsvp_reader:
+  name: RSVP Reader
+  # apps.apple.com/app/id6757968737 (Amenti Labs LLC), "Speed Reader: RSVP Reader"
+  # v1.28.0. Free; weekly $4.99–7.99, monthly $4.99, yearly $19.99–39.99,
+  # lifetime $119.00. PDF and document import is Pro. Privacy: Data Not Collected.
+  price: "19.99"
