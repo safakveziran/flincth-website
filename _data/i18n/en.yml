@@ -11,6 +11,8 @@ nav:
   how: How it works
   faq: FAQ
   cta: Download for Mac
+  # Header button on Speed Reader's pages.
+  speed-reader: Download for iPhone
   # Links in the header on pages that belong to no single product (the home
   # page, the platform pages, privacy, support, guides, blog).
   guides: Guides
@@ -52,6 +54,7 @@ catalog:
     category: Speed reading app for iPhone and iPad
     description: Read your own EPUB, PDF and DOCX files one word, phrase or short sentence at a time, at the pace you set.
     meta: iOS 17 or later · Free, one-time Pro upgrade · No account
+    cta: Download on the App Store
   split-view:
     name: Flincth Split View
     short: Split View

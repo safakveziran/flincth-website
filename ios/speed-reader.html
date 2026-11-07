@@ -9,23 +9,22 @@ schema: schema/speed-reader.en.html
 og_image: /assets/og-reader.png
 og_image_alt: og_image_alt_speed_reader
 sitemap:
-  lastmod: 2026-11-02
+  lastmod: 2026-11-07
   changefreq: monthly
   priority: 0.8
 ---
 {%- comment -%}
-  Flincth Speed Reader, before launch. Facts come from the app's spec.md
+  Flincth Speed Reader. Facts come from the app's spec.md
   (flincth-reader): formats (§6), plans and trial (§14–17), privacy (§28) and
   analytics consent (§23). Free plan limits are set remotely, so this page
-  never prints them. When the app is out, set store_url and status: live in
-  _data/products.yml and replace the notify buttons with the store link.
+  never prints them. The App Store link lives in _data/reader.yml.
 {%- endcomment -%}
   <main id="main" class="reader-page">
     <section class="hero wrap">
       <p class="product-badge"><img src="/assets/reader-icon-64.png" width="22" height="22" alt="">Flincth Speed Reader for iPhone and iPad</p>
       <h1>Read faster. <span>Still understand.</span></h1>
       <p class="hero-copy">Flincth Speed Reader is a speed reading app for iPhone and iPad.<br class="desktop-break"> It shows your own books and documents one word, phrase or short sentence<br class="desktop-break"> at a time, in one fixed spot, at the pace you set.</p>
-      <div class="hero-actions">{% include notify-button.html topic="speed-reader" %}<div class="coming-soon" data-notify-fallback><span class="status-dot"></span> Coming soon to the App Store</div><a class="text-link" href="#how">See how it works <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-actions"><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a><a class="text-link" href="#how">See how it works <span aria-hidden="true">↓</span></a></div>
       <p class="micro">iPhone and iPad <span>·</span> iOS 17 or later <span>·</span> No account <span>·</span> No subscription</p>
 
       <div class="product-stage reader-stage" id="preview" data-mode="word">
@@ -62,7 +61,7 @@ sitemap:
     </div></section>
 
     <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
-      <details><summary>When can I get it?<span>+</span></summary><p>Flincth Speed Reader is coming soon to the App Store for iPhone and iPad. Press Notify me at launch on this page and you will get one notification when it is out.</p></details>
+      <details><summary>Where can I get it?<span>+</span></summary><p>Flincth Speed Reader is on the <a href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">App Store</a> for iPhone and iPad with iOS 17 or later. It is a free download; Pro is a one-time in-app purchase.</p></details>
       <details><summary>Can it open Kindle or Apple Books purchases?<span>+</span></summary><p>No. Those books are protected with DRM, which the app cannot open. It reads DRM-free files: EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus pasted text. Web page links cannot be imported directly. Scanned PDFs without a text layer are not supported.</p></details>
       <details><summary>Can I speed read PDFs and EPUB books?<span>+</span></summary><p>Yes, if they are DRM-free. EPUB 2 and 3, PDFs with a text layer, DOCX, TXT, RTF and Markdown all open, and a book’s table of contents becomes its sections. Scanned PDFs without a text layer and DRM-protected books cannot be read; see <a href="/blog/can-you-speed-read-kindle-books">can you speed read Kindle books?</a></p></details>
       <details><summary>What is RSVP reading?<span>+</span></summary><p>Rapid Serial Visual Presentation: the text appears one short piece at a time in a fixed spot, so your eyes stop jumping along the line. Flincth adds natural pauses at punctuation and gives long words a little more time.</p></details>
@@ -72,7 +71,7 @@ sitemap:
       <details><summary>Does it collect data?<span>+</span></summary><p>Your documents, their titles, file names and the text you paste never leave your device, except to your own iCloud when sync is on. Google Analytics for Firebase records usage, purchase and trial events and categories of import failures, linked to an app-installation identifier. It can derive approximate location from your IP address. In the EU, the UK and Switzerland, usage statistics stay off unless you agree; elsewhere you can turn them off in Settings → Privacy. Remote settings are fetched separately using a Firebase installation identifier. News and offers use OneSignal only if you turn them on. See the <a href="{% include page-url.html ref="privacy" %}#speed-reader">privacy policy</a> for details.</p></details>
     </div></section>
 
-    <section class="closing wrap" id="availability"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Coming soon to iPhone and iPad.</p><div class="closing-actions"><div class="coming-soon"><span class="status-dot"></span> Coming soon to the App Store</div>{% include notify-button.html topic="speed-reader" %}</div>{% include notify-hint.html %}<span class="micro">iOS 17 or later <span>·</span> No account <span>·</span> No subscription</span></section>
+    <section class="closing wrap" id="availability"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Now on iPhone and iPad.</p><div class="closing-actions"><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a></div><span class="micro">iOS 17 or later <span>·</span> No account <span>·</span> No subscription</span></section>
 
     <script type="application/json" id="reader-data">
     {

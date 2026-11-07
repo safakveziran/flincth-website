@@ -16,7 +16,7 @@
 - *Flincth Split View* (Chrome, Firefox and Edge, /browser/split-view/) splits one browser tab into
   panes, puts a site in each, saves that as a workspace and switches workspaces
   with a click or shortcut. Its store listings still say "Flincth".
-- *Flincth Speed Reader* (iPhone and iPad, /ios/speed-reader, coming soon) shows the user's own
+- *Flincth Speed Reader* (iPhone and iPad, /ios/speed-reader, on the App Store since 2026-11) shows the user's own
   DRM-free documents one word, phrase or short sentence at a time (RSVP).
 **Product hierarchy:** Flincth is a brand with several products, more to come on every platform.
 The home page lists every product as an equal, grouped by platform (/mac/, /ios/, /browser/);
@@ -127,7 +127,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 **Business goal:** Mac App Store installs of Flincth Workspace Manager (live at https://apps.apple.com/app/flincth-workspace-manager/id6809227474?mt=12); a launch audience for the browser extension stores.
 **Conversion action (Mac):** download from the Mac App Store.
 **Conversion action (extension):** install from the browser's store (Chrome, Edge, Firefox).
-**Conversion action (Speed Reader, before launch):** "Notify me at launch" (OneSignal tag launch_speed-reader).
+**Conversion action (Speed Reader):** download from the App Store.
 **Conversion action (home):** open a product page; "Tell me about new apps" (tag launch_new-apps).
 **Current metrics:** unknown; GA4 runs in consent mode (cookie opt-in in the EEA, UK, CH and TR; cookieless pings until then). **(to confirm)**
 

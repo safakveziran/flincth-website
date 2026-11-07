@@ -26,7 +26,7 @@ Plenty of what people read is DRM-free:
 
 ## How to speed read them on iPhone or iPad
 
-[Flincth Speed Reader](/ios/speed-reader), coming soon to iPhone and iPad, opens DRM-free EPUB, PDF (with a text layer), DOCX, TXT, RTF and Markdown files, web articles and pasted text. It shows them one word, phrase or short sentence at a time at the pace you set, keeps your place, and lets you pause to see the surrounding text.
+[Flincth Speed Reader](/ios/speed-reader), [on the App Store]({{ site.data.reader.store_url }}) for iPhone and iPad, opens DRM-free EPUB, PDF (with a text layer), DOCX, TXT, RTF and Markdown files, web articles and pasted text. It shows them one word, phrase or short sentence at a time at the pace you set, keeps your place, and lets you pause to see the surrounding text.
 
 A scanned PDF, which is a picture of a page rather than text, can't be read; the app tells you so rather than showing an empty screen.
 

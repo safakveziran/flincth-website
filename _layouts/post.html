@@ -27,8 +27,8 @@ layout: default
 {%- if page.product == "speed-reader" %}
     <aside class="post-cta">
       <img src="/assets/reader-icon-128.png" alt="" width="56" height="56" loading="lazy">
-      <div><p class="post-cta-title">Flincth Speed Reader</p><p>Read your own books one word, phrase or short sentence at a time. Coming soon to iPhone and iPad.</p></div>
-      <div class="post-cta-actions">{% include notify-button.html topic="speed-reader" %}<a class="button primary" href="/ios/speed-reader" data-notify-fallback>See Speed Reader</a></div>
+      <div><p class="post-cta-title">Flincth Speed Reader</p><p>Read your own books one word, phrase or short sentence at a time. Free on iPhone and iPad.</p></div>
+      <a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a>
     </aside>
 {%- elsif page.product == "none" %}
 {%- comment %} A post about no product (product: none) has no closing card. {% endcomment %}
