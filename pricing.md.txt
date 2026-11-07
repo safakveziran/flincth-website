@@ -1,0 +1,72 @@
+---
+layout: null
+permalink: /pricing.md
+---
+{%- comment -%}
+  Plain Markdown pricing for AI assistants and agents, served at /pricing.md
+  (the .txt source name keeps Jekyll from converting it to HTML). Prices come
+  from _data/mac.yml and _data/reader.yml. The Speed Reader free plan's limits
+  are set remotely, so they are described, never printed. Linked from llms.txt.
+{%- endcomment -%}
+# Pricing: Flincth
+
+Flincth makes separate apps; each has its own price. None of them has a
+subscription or an account. Prices are US App Store prices in US dollars;
+Apple sets the local price in other storefronts.
+
+## Flincth Workspace Manager (Mac)
+
+- Price: {% include usd.html amount=site.data.mac.price %}, one-time purchase on the Mac App Store
+- Includes: every feature and every update
+- In-app purchases: none
+- Trial: none
+- Subscription: none
+- Requirements: macOS {{ site.data.mac.minimum_os | split: "." | first }} or later
+- Store: {{ site.data.mac.store_url }}
+- Page: {{ site.url }}/mac/workspace-manager
+
+## Flincth Speed Reader (iPhone and iPad)
+
+### Free
+
+- Price: $0.00 (free download)
+- Includes: every reading mode (word, phrase, short sentence) and every
+  supported format (EPUB, PDF with a text layer, DOCX, TXT, RTF, Markdown,
+  pasted text); light and dark themes; a dyslexia-friendly font; every
+  accessibility setting
+- Limits: a daily reading time, a small number of saved documents, a maximum
+  speed and a daily number of Quick Reads. The exact values are set remotely
+  and shown in the app under Settings → Plan.
+
+### Pro
+
+- Price: {% include usd.html amount=site.data.reader.pro_price %}, one-time in-app purchase
+- Includes: no daily limits, higher speeds and unlimited documents; themes,
+  fonts, focus letter, pause and chunk tuning; reading statistics and goals;
+  iCloud sync between iPhone and iPad
+- Family Sharing: included
+- Subscription: none
+
+### 7-day Pro trial
+
+- Price: $0.00
+- Started by the user in the app; asks for no payment details and never turns
+  into a charge. When it ends, the app returns to the free plan and keeps the
+  user's documents and settings.
+
+- Requirements: iOS {{ site.data.reader.minimum_os | split: "." | first }} or later
+- Store: {{ site.data.reader.store_url }}
+- Page: {{ site.url }}/ios/speed-reader
+
+## Flincth Split View (Chrome, Firefox, Edge)
+
+- Price: $0.00, free browser extension
+- In-app purchases, trial, subscription: none
+- Stores:
+{%- for _b in site.data.browsers %}
+  - {{ site.data.i18n.en.products[_b.id] }}: {{ _b.store_url }}
+{%- endfor %}
+- Page: {{ site.url }}/browser/split-view/
+
+Prices checked against the stores' listings; this file is generated from the
+same data as the website, {{ site.url }}/.

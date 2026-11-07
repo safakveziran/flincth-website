@@ -127,6 +127,7 @@ An RSVP speed reading app for iPhone and iPad.
 - [Mac apps](https://flincth.com/mac/), [iPhone and iPad apps](https://flincth.com/ios/), [Browser extensions](https://flincth.com/browser/): each platform's apps.
 - [Flincth Workspace Manager](https://flincth.com/mac/workspace-manager): the Mac app's features, how it works, and FAQ.
 - [Flincth Speed Reader](https://flincth.com/ios/speed-reader): the iPhone and iPad app, on the App Store.
+- [Pricing](https://flincth.com/pricing.md): every app's price, trial and limits, in plain Markdown.
 - [Support](https://flincth.com/support): help for each app, including the Flincth Apply shortcut and common problems.
 - [Privacy](https://flincth.com/privacy): what each app and the website do and do not collect.
 - [Flincth Split View](https://flincth.com/browser/split-view/): the browser extension, with a page per browser: [Chrome](https://flincth.com/browser/split-view/chrome), [Firefox](https://flincth.com/browser/split-view/firefox), [Microsoft Edge](https://flincth.com/browser/split-view/edge) (all available now).

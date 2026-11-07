@@ -1,0 +1,26 @@
+{%- comment -%}
+  FAQPage JSON-LD for a comparison page: the page's own `faq` followed by the
+  product's shared questions from _data/comparison_faq.yml, the same list the
+  page shows. Pass faq=<list of {q, a}> and, when the product page has a
+  JSON-LD @id, about=<that @id>.
+{%- endcomment -%}
+{%- capture _url %}{{ site.url }}{{ page.url | replace: ".html", "" }}{% endcapture -%}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": {{ _url | append: "#questions" | jsonify }},
+    "url": {{ _url | jsonify }},
+    "name": {{ page.title | split: " | " | first | jsonify }},
+    "inLanguage": {{ page.lang | default: "en" | jsonify }},
+{%- if include.about %}
+    "about": { "@id": {{ include.about | jsonify }} },
+{%- endif %}
+    "dateModified": {{ page.sitemap.lastmod | date: "%Y-%m-%d" | jsonify }},
+    "mainEntity": [
+{%- for item in include.faq %}
+      { "@type": "Question", "name": {{ item.q | strip_html | jsonify }}, "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | strip_html | jsonify }} } }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+    ]
+  }
+  </script>
