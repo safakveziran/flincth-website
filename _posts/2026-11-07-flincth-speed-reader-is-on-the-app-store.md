@@ -5,6 +5,7 @@ description: "Flincth Speed Reader is out for iPhone and iPad. Read your own EPU
 product: speed-reader
 og_image: /assets/og-reader.png
 og_image_alt: og_image_alt_speed_reader
+medium_url: https://medium.com/@flincth/flincth-speed-reader-for-iphone-and-ipad-is-out-flincth-62fd986a0b19
 ---
 
 [Flincth Speed Reader](/ios/speed-reader) is out. You can [download it from the App Store]({{ site.data.reader.store_url }}) for iPhone and iPad with iOS 17 or later.
