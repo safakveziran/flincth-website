@@ -5,7 +5,7 @@ product: speed-reader
 medium_url: https://medium.com/@flincth/do-speed-reading-apps-work-what-the-research-says-flincth-8c935eebf27b
 ---
 
-Speed reading apps promise a lot: read a book in an afternoon, double or triple your words per minute. We are building one, [Flincth Speed Reader](/ios/speed-reader), so we owe you a straight answer to the question people search for most: do they work?
+Speed reading apps promise a lot: read a book in an afternoon, double or triple your words per minute. We make one, [Flincth Speed Reader](/ios/speed-reader) ([App Store]({{ site.data.reader.store_url }})), so we owe you a straight answer to the question people search for most: do they work?
 
 The short version: they make you faster, and the faster you go, the more you lose. How much you lose depends on what you read and how the app shows it.
 

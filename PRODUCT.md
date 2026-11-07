@@ -24,7 +24,7 @@ web
   DOCX files faster.
 - **Site visitors today:** people deciding whether to install. Workspace
   Manager is on the Mac App Store; Split View is on the Chrome Web Store,
-  Microsoft Edge Add-ons and Firefox Add-ons; Speed Reader is coming soon.
+  Microsoft Edge Add-ons and Firefox Add-ons; Speed Reader is on the App Store.
 
 ## Product Purpose
 
@@ -41,7 +41,7 @@ grouped by platform; each product has its own page at `/<platform>/<slug>`
 - **Flincth Split View** (`/browser/split-view/`, a page per browser): an
   extension that splits one tab into panes, puts a site in each, saves that as
   a workspace and switches workspaces with a click or shortcut. The 1.0.3 extension build uses this name; live store listings still use "Flincth" until the update is submitted and approved.
-- **Flincth Speed Reader** (`/ios/speed-reader`, coming soon): an iPhone and
+- **Flincth Speed Reader** (`/ios/speed-reader`, on the App Store): an iPhone and
   iPad app that shows the user's own DRM-free documents one word, phrase or
   short sentence at a time (RSVP).
 
@@ -125,7 +125,7 @@ coming one ships.
 1. Say what it does and what it will not do, in the same breath.
 2. Local by design: privacy is a property of the product, not a policy.
 3. One clear action per page: "Download on the Mac App Store" for Workspace
-   Manager, "Add to <browser>" for Split View, "Notify me at launch" for a
+   Manager, "Download on the App Store" for Speed Reader, "Add to <browser>" for Split View, "Notify me at launch" for a
    product that is not out yet; on brand pages, the way to the product list.
 4. Show the real product as soon as it can be shown; label every illustration.
 

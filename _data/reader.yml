@@ -1,0 +1,5 @@
+# Flincth Speed Reader on the App Store. Without a country code in the path,
+# Apple sends each visitor to their own storefront.
+store_url: "https://apps.apple.com/app/flincth-speed-reader/id6827723552"
+app_store_id: "6827723552"
+minimum_os: "17.0"

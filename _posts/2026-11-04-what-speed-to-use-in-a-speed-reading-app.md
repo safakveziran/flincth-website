@@ -73,7 +73,7 @@ If one word at a time feels tiring, try phrases at the same speed before you slo
 
 ## How Flincth Speed Reader handles it
 
-[Flincth Speed Reader](/ios/speed-reader), coming soon to iPhone and iPad, is built around choosing a pace that still lets you understand:
+[Flincth Speed Reader](/ios/speed-reader), [on the App Store]({{ site.data.reader.store_url }}) for iPhone and iPad, is built around choosing a pace that still lets you understand:
 
 - **You set the words per minute,** and swipe up or down to change it while you read. Nothing pushes you to go faster.
 - **Word, phrase and sentence modes** let you change how much you see at once.

@@ -10,8 +10,9 @@
 #   icon:       64, 128 and 192 px versions exist as <icon>-<size>.png
 #   status:     live or coming. A coming product shows "Notify me at launch"
 #               (OneSignal tag launch_<notify>) instead of a store button.
-#   store_data: Data file that holds the store link and price (mac.yml), for
+#   store_data: Data file that holds the store link (and price), for
 #               products whose store facts already live in their own file
+#               (mac.yml, reader.yml)
 #   store_url:  Store link for products without a store_data file
 #   browsers:   Browser extensions only: the per-browser pages, from
 #               _data/browsers.yml; their refs are <id>-<browser>
@@ -23,9 +24,8 @@
 - id: speed-reader
   platform: ios
   icon: /assets/reader-icon
-  status: coming
-  notify: speed-reader
-  store_url: ""
+  status: live
+  store_data: reader
 - id: split-view
   platform: browser
   icon: /assets/extension-icon

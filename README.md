@@ -25,7 +25,7 @@ The header, footer and cookie banner each live in one place; changing a link mea
 - `_config.yml`, `Gemfile`: Jekyll settings and the same versions GitHub Pages uses
 - `index.html`: English home page: the brand and every product, by platform
 - `mac/workspace-manager.html`: Flincth Workspace Manager, the Mac app's page (it was the home page until the site became a brand site)
-- `ios/speed-reader.html`: Flincth Speed Reader (coming soon); `reader.js` plays its reading preview
+- `ios/speed-reader.html`: Flincth Speed Reader; `reader.js` plays its reading preview
 - `mac/index.html`, `ios/index.html`, `browser/index.html`: platform pages (`_layouts/platform.html`): product cards, then `about` paragraphs and `faq` from the page's front matter
 - `_data/products.yml`, `_data/platforms.yml`, `_includes/product-card.html`: the product catalogue (see Products)
 - `styles.css`: Responsive design, reduced motion and keyboard focus styles
@@ -78,6 +78,8 @@ All code, comments and documentation in this repository are written in English. 
 ## Release notes
 
 Flincth Workspace Manager is live on the Mac App Store. Its link lives in one place, `_data/mac.yml` (`store_url`, without a country code so Apple routes each visitor to their own storefront); its page's buttons, its product card, the header CTA on its pages and the JSON-LD read it from there, and so does `llms.txt`.
+
+Flincth Speed Reader is live on the App Store. Its link lives in `_data/reader.yml` (`store_url`, also without a country code); its page's buttons, its product card, the header CTA on its pages, the blog posts' closing card, support, privacy, the JSON-LD and `llms.txt` read it from there.
 
 The US price is set once, as `price` in `_data/mac.yml` (a quoted string with two decimals). `llms.txt` and the comparison pages read it from there and print it with `_includes/usd.html`, which always shows two decimals and also formats sums. Changing the price means editing that one line.
 
@@ -144,7 +146,7 @@ The `support@flincth.com` address on `privacy.html` and `support.html` is a plac
 
 ## Web notifications (OneSignal)
 
-Web push is handled by `notifications.js`. It drives two kinds of control: the Notifications link in the footer (the whole subscription) and each product's **Notify me at launch** button (in the hero, the closing section, its product card and the header) (`_includes/notify-button.html`, `topic` = `speed-reader` today, `chrome`, `firefox` or `edge` while an extension store is not live, and `new-apps` for the home page's "Tell me about new apps"). Live products link to their store instead. A button tags the subscription `launch_<topic>`, so a launch message can be sent in the OneSignal dashboard to a segment filtered on that tag. Where push is unsupported the buttons stay hidden and the "Coming to…" line marked `data-notify-fallback` shows instead. The button text, including the error state shown when OneSignal fails, is in the `notify` section of the translation file; the error itself is logged to the console. When a product launches, replace its button with the store link (for the extensions, set `store_url` in `_data/browsers.yml`). The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
+Web push is handled by `notifications.js`. It drives two kinds of control: the Notifications link in the footer (the whole subscription) and each product's **Notify me at launch** button (in the hero, the closing section, its product card and the header) (`_includes/notify-button.html`, `topic` = `chrome`, `firefox` or `edge` while an extension store is not live, and `new-apps` for the home page's "Tell me about new apps"). Live products link to their store instead. A button tags the subscription `launch_<topic>`, so a launch message can be sent in the OneSignal dashboard to a segment filtered on that tag. Where push is unsupported the buttons stay hidden and the "Coming to…" line marked `data-notify-fallback` shows instead. The button text, including the error state shown when OneSignal fails, is in the `notify` section of the translation file; the error itself is logged to the console. When a product launches, replace its button with the store link (for the extensions, set `store_url` in `_data/browsers.yml`). The App ID (`b1a1845c-01c6-4927-be28-07d290bed717`) is defined at the top of the file; the App ID is not a secret and is sent to the browser.
 
 Things to check in the OneSignal dashboard:
 
