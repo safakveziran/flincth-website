@@ -19,7 +19,7 @@ layout: default
 {%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
 {%- assign platform = site.data.guide_platforms | where: "id", page.platform | first -%}
 {%- assign others = site.guides | where: "platform", page.platform | sort: "order" | where_exp: "g", "g.url != page.url" -%}
-{%- capture back_label %}← All {% if page.platform == "mac" %}Mac{% else %}{{ platform.name }}{% endif %} guides{% endcapture -%}
+{%- capture back_label %}← All {{ platform.label | default: platform.name }} guides{% endcapture -%}
   <main id="main" class="wrap doc post guide">
     <a class="post-back" href="/guides/{{ page.platform }}/">{{ back_label }}</a>
     <article>

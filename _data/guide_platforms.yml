@@ -1,4 +1,7 @@
-# The boxes on /guides/, in display order. Each one opens its own list
+# The boxes on /guides/, in display order. Each box shows `kicker` (the
+# platform) above `name` (the product). `label` names the list wherever the
+# product name alone would be ambiguous (the home page's guide list and a
+# guide's "All … guides" link); it defaults to `name`. Each one opens its own list
 # at /guides/<id>/ (guides/<id>/index.html), which shows the guides whose
 # front matter sets platform: <id>. The addresses stay /guides/<id>/ even
 # though Flincth now has several products, so links already shared keep working.
@@ -13,17 +16,20 @@
   icon: /assets/reader-icon-128.png
   note: Add your own books and documents, choose a reading mode, sync between iPhone and iPad, and get the most from Pro.
 - id: chrome
-  name: Chrome
-  kicker: Split View extension
+  name: Split View
+  kicker: Chrome extension
+  label: Split View for Chrome
   icon: /assets/extension-icon.png
   note: Split one Chrome tab into panes with a site in each, and switch between saved workspaces.
 - id: firefox
-  name: Firefox
-  kicker: Split View extension
+  name: Split View
+  kicker: Firefox extension
+  label: Split View for Firefox
   icon: /assets/extension-icon.png
   note: Split one Firefox tab into panes with a site in each, and switch between saved workspaces.
 - id: edge
-  name: Edge
-  kicker: Split View extension
+  name: Split View
+  kicker: Edge extension
+  label: Split View for Edge
   icon: /assets/extension-icon.png
   note: Split one Edge tab into panes with a site in each, and switch between saved workspaces.

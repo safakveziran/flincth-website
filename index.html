@@ -59,7 +59,7 @@ sitemap:
       <div class="learn-grid">
         <div class="learn-card"><h3><a href="/guides/">Guides</a></h3><p>Short, practical walkthroughs, one list per platform.</p><ul>
 {%- for _gp in site.data.guide_platforms %}
-          <li><a href="/guides/{{ _gp.id }}/">{{ _gp.name }}<span aria-hidden="true">→</span></a></li>
+          <li><a href="/guides/{{ _gp.id }}/">{{ _gp.label | default: _gp.name }}<span aria-hidden="true">→</span></a></li>
 {%- endfor %}
         </ul></div>
         <div class="learn-card"><h3><a href="/blog/">Blog</a></h3><p>The thinking behind each app, written by the people who make it.</p><ul>
