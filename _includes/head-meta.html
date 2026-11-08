@@ -1,10 +1,16 @@
 {%- assign indexed = true -%}
 {%- comment -%} A page may set og_image (a site path) and og_image_alt (a key
-  under its strings section, under extension, or at the top of the copy);
-  otherwise the brand's share image is used. {%- endcomment -%}
-{%- assign og_image = page.og_image | default: "/assets/og-brand.png" -%}
+  under its strings section, under extension, or at the top of the copy).
+  Otherwise a page that belongs to a product (product: <id>) uses that
+  product's og_image and og_image_alt from _data/products.yml, and every
+  other page the brand's share image. {%- endcomment -%}
+{%- assign _og_product = nil -%}
+{%- if page.product %}{% assign _og_product = site.data.products | where: "id", page.product | first %}{% endif -%}
+{%- assign og_image = page.og_image | default: _og_product.og_image | default: "/assets/og-brand.png" -%}
+{%- assign _og_alt_key = page.og_image_alt -%}
+{%- unless page.og_image %}{% assign _og_alt_key = page.og_image_alt | default: _og_product.og_image_alt %}{% endunless -%}
 {%- assign og_image_alt = t.og_image_alt -%}
-{%- if page.og_image_alt %}{% assign og_image_alt = t[page.strings][page.og_image_alt] | default: t.extension[page.og_image_alt] | default: t[page.og_image_alt] %}{% endif -%}
+{%- if _og_alt_key %}{% assign og_image_alt = t[page.strings][_og_alt_key] | default: t.extension[_og_alt_key] | default: t[_og_alt_key] %}{% endif -%}
 {%- if page.robots contains "noindex" %}{% assign indexed = false %}{% endif -%}
 {%- if indexed %}
   <link rel="canonical" href="{{ page_url }}">

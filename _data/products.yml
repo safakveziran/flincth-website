@@ -16,18 +16,28 @@
 #   store_url:  Store link for products without a store_data file
 #   browsers:   Browser extensions only: the per-browser pages, from
 #               _data/browsers.yml; their refs are <id>-<browser>
+#   og_image:   1200×630 share image for every page with product: <id>
+#               that sets no og_image of its own (_includes/head-meta.html)
+#   og_image_alt: its alt text, a key in the translation file (looked up
+#               like a page's og_image_alt)
 - id: workspace-manager
   platform: mac
   icon: /assets/app-icon
   status: live
   store_data: mac
+  og_image: /assets/og-image.png
+  og_image_alt: og_image_alt_workspace_manager
 - id: speed-reader
   platform: ios
   icon: /assets/reader-icon
   status: live
   store_data: reader
+  og_image: /assets/og-reader.png
+  og_image_alt: og_image_alt_speed_reader
 - id: split-view
   platform: browser
   icon: /assets/extension-icon
   status: live
   browsers: true
+  og_image: /assets/og-extension.png
+  og_image_alt: og_image_alt

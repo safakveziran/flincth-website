@@ -1,7 +1,7 @@
 ---
 title: "Why Some Websites Go Blank in a Split Screen Browser Extension"
 seo_title: "Why Websites Go Blank in a Split Screen Extension"
-description: "Split screen extensions show sites inside frames, and some sites refuse frames or appear logged out in them. Here is why, and how Flincth Split View works around it."
+description: "Split screen extensions show sites in frames, and some refuse them or appear logged out. Here is why, and how Flincth Split View works around it."
 product: split-view
 og_image: /assets/og-extension.png
 og_image_alt: og_image_alt
