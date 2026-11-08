@@ -1,7 +1,10 @@
 {%- comment -%}
-  Tells iPhone and iPad visitors how to get the "Notify me at launch" button:
+  Tells iPhone and iPad visitors how to get the page's notify button. Pass
+  label=<key in the notify copy> as for notify-button.html ("news" on the
+  home page); it defaults to the "Notify me at launch" label (cta):
   iOS browsers offer web push only to sites opened from the Home Screen.
   notifications.js shows it only there, and only when push is unavailable.
 {%- endcomment -%}
 {%- assign _n = site.data.i18n[page.lang].notify -%}
-<p class="notify-hint" data-notify-ios-hint hidden>{{ _n.ios_hint }}</p>
+{%- assign _label = _n[include.label] | default: _n.cta -%}
+<p class="notify-hint" data-notify-ios-hint hidden>{{ _n.ios_hint | replace: "[button]", _label }}</p>

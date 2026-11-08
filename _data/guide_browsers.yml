@@ -3,12 +3,14 @@
 # the shared text in _includes/extension-guides/ reads these values.
 #
 #   a_tab:          "a Chrome tab": the name with its article, for sentences
-#   access:         "all-sites" (Chrome and Edge 1.0.2: one optional grant for
-#                   every website, offered after install) or "per-site"
-#                   (Firefox: one prompt per site, from the pane)
 #   follows_moves:  true where the browser tells extensions that a window
 #                   moved (windows.onBoundsChanged), so attached windows
 #                   follow the browser and snap back when nudged
+#
+# Website access is the same in every browser since 1.0.3 (all three stores
+# list 1.0.3 as "Flincth Split View"): one optional grant for all websites,
+# offered after install, which can be skipped. Names in pin and revoke are
+# the extension's name as the browser shows it.
 #   native_name:    the browser's own two-tab split feature
 #   native_how:     how to start it, in a sentence or two (menu wording
 #                   changes between versions; check it when a browser updates)
@@ -18,11 +20,10 @@
   store_name: Chrome Web Store
   store_button: Add to Chrome
   requirement: ""
-  pin: Click the puzzle-piece icon next to the address bar, then the pin beside Flincth.
+  pin: Click the puzzle-piece icon next to the address bar, then the pin beside Flincth Split View.
   extensions_page: "`chrome://extensions`"
-  revoke: "Open `chrome://extensions`, click **Details** under Flincth, and change **Site access**."
+  revoke: "Open `chrome://extensions`, click **Details** under Flincth Split View, and change **Site access**."
   shortcuts_page: "`chrome://extensions/shortcuts`"
-  access: all-sites
   follows_moves: true
   native_name: Split View
   native_how: "Right-click a tab and choose the split view option (it reads **Add Tab to New Split View** or **Split View with Current Tab**, depending on your version), then pick the second tab. If you don't see it, update Chrome from **Settings → About Chrome**."
@@ -32,11 +33,10 @@
   store_name: Firefox Add-ons
   store_button: Add to Firefox
   requirement: It needs Firefox 140 or later.
-  pin: Click the extensions button (the puzzle piece) in the toolbar, then the gear beside Flincth and **Pin to Toolbar**.
+  pin: Click the extensions button (the puzzle piece) in the toolbar, then the gear beside Flincth Split View and **Pin to Toolbar**.
   extensions_page: "**Add-ons and themes**"
-  revoke: "Open **Add-ons and themes**, choose Flincth, and turn sites off under **Permissions**."
+  revoke: "Open **Add-ons and themes**, choose Flincth Split View, and turn off website access under **Permissions**."
   shortcuts_page: "**Add-ons and themes** → the gear menu → **Manage Extension Shortcuts**"
-  access: per-site
   follows_moves: false
   native_name: Split View
   native_how: "In Firefox 149 or later, right-click a tab and choose **Add Split View**, then pick the second tab. You can also select two tabs and choose **Open in Split View**, or hold **Alt** (**Option** on a Mac) and click another tab."
@@ -46,11 +46,10 @@
   store_name: Microsoft Edge Add-ons
   store_button: Get
   requirement: ""
-  pin: Click the extensions icon (the puzzle piece) next to the address bar, then the eye beside Flincth to show it in the toolbar.
+  pin: Click the extensions icon (the puzzle piece) next to the address bar, then the eye beside Flincth Split View to show it in the toolbar.
   extensions_page: "`edge://extensions`"
-  revoke: "Open `edge://extensions`, click **Details** under Flincth, and change **Site access**."
+  revoke: "Open `edge://extensions`, click **Details** under Flincth Split View, and change **Site access**."
   shortcuts_page: "`edge://extensions/shortcuts`"
-  access: all-sites
   follows_moves: true
   native_name: split screen
   native_how: "Click the split screen button next to the address bar and choose the second tab. If the button is missing, turn on **Split screen** in **Settings → Appearance → Toolbar**."

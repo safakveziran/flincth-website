@@ -87,6 +87,6 @@ sitemap:
         <script src="/launch-email.js?v={{ site.time | date: '%s' }}" defer></script>
       {% endif %}
       <div class="closing-actions">{% include notify-button.html topic="new-apps" label="news" %}<a class="button primary" href="#products" data-notify-fallback>Explore the apps</a></div>
-      {% include notify-hint.html %}
+      {% include notify-hint.html label="news" %}
     </section>
   </main>
