@@ -18,7 +18,7 @@ There are two ways in:
 - **Text size** for the reading text, separate from the size of the rest of the app, which follows iOS text size.
 - The **System** font and **OpenDyslexic**, a dyslexia-friendly font.
 - **Focus guides** and **Hide controls while reading**.
-- Everything iOS offers for accessibility: larger text, increased contrast, Reduce Motion and VoiceOver. Accessibility is never part of Pro.
+- The accessibility settings it supports: larger text, increased contrast and Reduce Motion. Accessibility is never part of Pro.
 
 ## With Pro
 
