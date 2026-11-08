@@ -3,6 +3,7 @@ title: "Is There a Clipboard History on Mac? How to See What You Copied"
 seo_title: "Is There a Clipboard History on Mac? How to See It"
 description: "Where macOS keeps what you copy: Spotlight's clipboard history in macOS Tahoe, the last item in older versions, and when a clipboard manager helps."
 order: 8
+platform: mac
 updated: 2026-10-10
 ---
 
