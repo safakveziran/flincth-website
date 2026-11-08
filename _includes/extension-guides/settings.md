@@ -11,13 +11,15 @@ Open **Settings** from the gear icon in the toolbar popup, or in the Flincth tab
 
 Turn **Keep inactive workspaces loaded** off if memory is tight. Only the workspace on screen is loaded then, and pages reload each time you switch.
 
-**Open Flincth when the browser starts** (off by default). Opens the Flincth tab with your last workspace whenever {{ gb.name }} starts.
+**Open Flincth Split View when the browser starts** (off by default). Opens the Flincth tab with your last workspace whenever {{ gb.name }} starts.
 
 ## Panes
 
 **Suggest alternatives when a site takes longer to load** (on by default). Shows the *Trouble with this site?* prompt after a slow load, without stopping the page. See [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane).
 
 **Ask before deleting a workspace** (on by default). Asks for confirmation before a workspace is deleted.
+
+**Browsing history suggestions** (off by default). Suggests pages you've visited as you type a pane's address. Turning it on asks {{ gb.name }} for history access; turning it off gives it back. See [Address suggestions from your history]({{ g }}/address-suggestions-from-history).
 
 ## Language
 
