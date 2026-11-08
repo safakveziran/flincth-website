@@ -1,7 +1,7 @@
 ---
 title: "Flincth Speed Reader Is Now on the App Store"
 seo_title: "Flincth Speed Reader for iPhone and iPad Is Out"
-description: "Flincth Speed Reader is out for iPhone and iPad. Read your own EPUB, PDF and DOCX files one word, phrase or short sentence at a time. Free to download, with a one-time Pro purchase and no subscription."
+description: "Flincth Speed Reader is out for iPhone and iPad: read your own EPUB, PDF and DOCX files a word, phrase or sentence at a time. Free, with Pro bought once."
 product: speed-reader
 og_image: /assets/og-reader.png
 og_image_alt: og_image_alt_speed_reader
