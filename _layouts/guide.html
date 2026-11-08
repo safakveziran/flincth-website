@@ -5,9 +5,10 @@ layout: default
   A step-by-step guide. Front matter: title, description (also the share
   text), order (its place within its product on /guides/), updated
   (YYYY-MM-DD, the sitemap lastmod; change it whenever the guide's steps
-  change) and platform: <id> (mac, chrome, firefox or edge; see
+  change) and platform: <id> (mac, ios, chrome, firefox or edge; see
   _data/guide_platforms.yml), which decides its list, its back link and its
-  "More guides". A browser extension guide also sets product: split-view and
+  "More guides". The iOS guides get product: speed-reader from _config.yml
+  (the header and closing card then point to the App Store). A browser extension guide also sets product: split-view and
   store_browser: <id> (so the header installs that browser's extension); its
   per-browser facts come from _data/guide_browsers.yml. Menu and button
   names in a guide are the product's own, so check them when its
@@ -46,6 +47,12 @@ layout: default
       <div><p class="post-cta-title">Flincth Split View for {{ _name }}</p><p>Split one tab into saved workspaces. Free, collects no data.</p></div>
       <a class="button primary" href="{{ _store.store_url }}" target="_blank" rel="noopener">{{ site.data.i18n[page.lang][_strings].store_cta }}</a>
     </aside>
+{%- elsif page.product == "speed-reader" %}
+    <aside class="post-cta">
+      <img src="/assets/reader-icon-128.png" alt="" width="56" height="56" loading="lazy">
+      <div><p class="post-cta-title">Flincth Speed Reader</p><p>Read your own books and documents faster on iPhone and iPad. Free download, Pro once, no account.</p></div>
+      <a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a>
+    </aside>
 {%- else %}
     <aside class="post-cta">
       <img src="/assets/app-icon-128.png" alt="" width="56" height="56" loading="lazy">
@@ -65,11 +72,13 @@ layout: default
   "mainEntityOfPage": "{{ site.url }}{{ page.url }}",
 {%- if page.product == "split-view" %}
   "about": { "@type": "SoftwareApplication", "name": "Flincth Split View for {{ site.data.i18n[page.lang].products[page.platform] }}", "applicationCategory": "BrowserApplication" },
+{%- elsif page.product == "speed-reader" %}
+  "about": { "@id": "{{ site.url }}/ios/speed-reader#app", "@type": "SoftwareApplication", "name": "Flincth Speed Reader", "operatingSystem": "iOS", "applicationCategory": "EducationalApplication" },
 {%- else %}
   "about": { "@type": "SoftwareApplication", "name": "Flincth Workspace Manager", "operatingSystem": "macOS", "applicationCategory": "UtilitiesApplication" },
 {%- endif %}
   "author": { "@type": "Organization", "name": "Flincth", "url": "{{ site.url }}/" },
   "publisher": { "@type": "Organization", "name": "Flincth", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/flincth-mark-512.png" } },
-  "image": "{{ site.url }}/assets/og-image.png"
+  "image": "{{ site.url }}{% if page.product == "speed-reader" %}/assets/og-reader.png{% elsif page.product == "split-view" %}/assets/og-extension.png{% else %}/assets/og-image.png{% endif %}"
 }
 </script>

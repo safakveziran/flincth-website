@@ -107,14 +107,16 @@ A story that appeared on Medium before the site (the first one did) should get t
 
 ### Guides
 
-Step-by-step guides live in `_guides/<platform>/` (a Jekyll collection, served at `/guides/<platform>/<slug>`), with `title`, `description`, `order` (their place in their list), `updated: YYYY-MM-DD` and `platform` (`mac`, `chrome`, `firefox` or `edge`) in their front matter. They use `_layouts/guide.html`. Update `updated` whenever a guide's steps change, so IndexNow resends it.
+Step-by-step guides live in `_guides/<platform>/` (a Jekyll collection, served at `/guides/<platform>/<slug>`), with `title`, `description`, `order` (their place in their list), `updated: YYYY-MM-DD` and `platform` (`mac`, `ios`, `chrome`, `firefox` or `edge`) in their front matter. They use `_layouts/guide.html`. Update `updated` whenever a guide's steps change, so IndexNow resends it.
 
-- `/guides/` (`guides/index.html`) shows one box per platform from `_data/guide_platforms.yml`, Mac first. Each box opens that platform's own list, `guides/<platform>/index.html` (`_layouts/guide-list.html`). A guide's back link and its "More guides" stay within its platform.
+- `/guides/` (`guides/index.html`) shows one box per platform from `_data/guide_platforms.yml`, Mac first, then Speed Reader (`ios`). Each box opens that platform's own list, `guides/<platform>/index.html` (`_layouts/guide-list.html`). A guide's back link and its "More guides" stay within its platform.
 - Guides are also listed in `sitemap.xml` (lastmod is `updated`), in `llms.txt` and, through `/guides/`, in the footer's Help column.
 - **Browser extension** guides are written once per browser, with `product: split-view` and `store_browser: <id>` (the header then installs that browser's extension). Each file holds only front matter and one include from `_includes/extension-guides/`, which carries the shared text; what differs per browser (store, toolbar pinning, the website-access model, extension settings paths, whether attached windows follow the browser) comes from `_data/guide_browsers.yml`. A new browser is one entry there and in `_data/guide_platforms.yml`, a list page and six files. Each browser's own two-tab split feature (`native_name`, `native_how`) feeds the "three or more panes" guide; check that wording when a browser updates.
 - Earlier guide URLs (`/guides/<slug>` for the Mac guides and the first generic extension guides) redirect to their current addresses through `redirect_from` (`jekyll-redirect-from`).
 
-Guides name each product's own menus and buttons (Workspace Manager…, Add Area, FlincthApply v2 in the Mac app; New workspace, Open as a window, Shortcuts that work anywhere in the extension). They were checked against each product's source and `spec.md`; when an interface changes, check its guides in the same release. The extension guides describe Chrome and Edge 1.0.2's all-sites access and Firefox's per-site access (`access` in `_data/guide_browsers.yml`); update that when the model changes.
+**Speed Reader** guides live in `_guides/ios/` and get `product: speed-reader` and its share image from `_config.yml`. Like the product page, they never print the free plan's limits, which are set remotely; the Pro price comes from `_data/reader.yml`.
+
+Guides name each product's own menus and buttons (Workspace Manager…, Add Area, FlincthApply v2 in the Mac app; Add File…, Quick Read…, Reading & Appearance, iCloud Sync, Restore Purchases in Speed Reader; New workspace, Open as a window, Shortcuts that work anywhere in the extension). They were checked against each product's source and `spec.md`; when an interface changes, check its guides in the same release. The extension guides describe Chrome and Edge 1.0.2's all-sites access and Firefox's per-site access (`access` in `_data/guide_browsers.yml`); update that when the model changes.
 
 ### Comparison pages
 

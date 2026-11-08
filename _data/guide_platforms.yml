@@ -1,4 +1,4 @@
-# The four boxes on /guides/, in display order. Each one opens its own list
+# The boxes on /guides/, in display order. Each one opens its own list
 # at /guides/<id>/ (guides/<id>/index.html), which shows the guides whose
 # front matter sets platform: <id>. The addresses stay /guides/<id>/ even
 # though Flincth now has several products, so links already shared keep working.
@@ -7,6 +7,11 @@
   kicker: Mac app
   icon: /assets/app-icon-128.png
   note: Setups, window layouts across your displays, and a clipboard history for each kind of work.
+- id: ios
+  name: Speed Reader
+  kicker: iPhone and iPad app
+  icon: /assets/reader-icon-128.png
+  note: Add your own books and documents, choose a reading mode, sync between iPhone and iPad, and get the most from Pro.
 - id: chrome
   name: Chrome
   kicker: Split View extension

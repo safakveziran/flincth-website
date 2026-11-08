@@ -31,11 +31,14 @@ defaults:
   - scope: { path: "", type: posts }
     values: { layout: post, permalink: /blog/:title, product: workspace-manager }
   # Guides live in _guides/ (see the collection below). The Mac guides belong
-  # to Workspace Manager; the browser guides set product: split-view.
+  # to Workspace Manager, the iOS guides to Speed Reader; the browser guides
+  # set product: split-view.
   - scope: { path: "", type: guides }
     values: { layout: guide }
   - scope: { path: "_guides/mac", type: guides }
     values: { product: workspace-manager }
+  - scope: { path: "_guides/ios", type: guides }
+    values: { product: speed-reader, og_image: /assets/og-reader.png, og_image_alt: og_image_alt_speed_reader }
 
 # Step-by-step guides (see README.md, "Guides"): _guides/<platform>/<slug>.md
 # is served at /guides/<platform>/<slug>.
