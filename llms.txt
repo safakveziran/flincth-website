@@ -131,13 +131,22 @@ An RSVP speed reading app for iPhone and iPad.
 - [Support](https://flincth.com/support): help for each app, including the Flincth Apply shortcut and common problems.
 - [Privacy](https://flincth.com/privacy): what each app and the website do and do not collect.
 - [Flincth Split View](https://flincth.com/browser/split-view/): the browser extension, with a page per browser: [Chrome](https://flincth.com/browser/split-view/chrome), [Firefox](https://flincth.com/browser/split-view/firefox), [Microsoft Edge](https://flincth.com/browser/split-view/edge) (all available now).
-- [Guides](https://flincth.com/guides/): step-by-step guides, one list per platform: [Workspace Manager on Mac](https://flincth.com/guides/mac/), [Chrome](https://flincth.com/guides/chrome/), [Firefox](https://flincth.com/guides/firefox/), [Edge](https://flincth.com/guides/edge/).
+- [Guides](https://flincth.com/guides/): step-by-step guides, one list per platform: [Workspace Manager on Mac](https://flincth.com/guides/mac/), [Speed Reader on iPhone and iPad](https://flincth.com/guides/ios/), [Chrome](https://flincth.com/guides/chrome/), [Firefox](https://flincth.com/guides/firefox/), [Edge](https://flincth.com/guides/edge/).
 {%- assign _mac_guides = site.guides | where: "platform", "mac" | sort: "order" %}
 {%- if _mac_guides.size > 0 %}
 
 ## Guides: Flincth Workspace Manager
 
 {% for p in _mac_guides -%}
+- [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
+{%- assign _ios_guides = site.guides | where: "platform", "ios" | sort: "order" %}
+{%- if _ios_guides.size > 0 %}
+
+## Guides: Flincth Speed Reader
+
+{% for p in _ios_guides -%}
 - [{{ p.title }}]({{ site.url }}{{ p.url }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
