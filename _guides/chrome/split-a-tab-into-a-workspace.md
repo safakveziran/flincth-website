@@ -2,7 +2,7 @@
 title: "How to Split a Chrome Tab into Your First Flincth Workspace"
 description: "Create a Flincth workspace in Chrome: pick a layout, split and resize panes, put a site in each one, then rename, reorder and switch."
 order: 2
-updated: 2026-10-06
+updated: 2026-11-08
 product: split-view
 platform: chrome
 store_browser: chrome

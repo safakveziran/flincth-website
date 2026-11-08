@@ -2,7 +2,7 @@
 title: "When a Site Won't Show in a Flincth Pane in Chrome"
 description: "Some sites refuse to load inside another page or lose your sign-in there. In Chrome, open them as an attached window or a tab instead."
 order: 3
-updated: 2026-10-06
+updated: 2026-11-08
 product: split-view
 platform: chrome
 store_browser: chrome

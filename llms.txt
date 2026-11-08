@@ -70,31 +70,6 @@ layout: null
 - The privacy description on the website is a plain-language summary and is not
   a legal privacy policy.
 
-## Flincth Split View (Chrome, Firefox, Edge)
-
-A free browser extension, separate from the Mac app and working without it.
-Its store listings still use the name "Flincth".
-
-- Page: https://flincth.com/browser/split-view/
-
-- **What it does.** Splits a single browser tab into panes, assigns a website
-  to each pane, saves the arrangement as a workspace, and switches between
-  saved workspaces with a click or a user-assigned keyboard shortcut.
-- **Pane modes.** A pane shows its site embedded in the tab, as a real browser
-  window aligned to the pane (for sites that refuse embedding or need the
-  user's signed-in session), or as a launcher card that opens a normal tab.
-- **Privacy.** Collects no data and makes no network requests of its own. No
-  site access is requested at install. In Chrome and Edge (1.0.2 and later) the
-  extension then offers optional access to all websites, which can be skipped;
-  in Firefox access is requested one site at a time when that site is assigned
-  to a pane. Access can be revoked in the browser's extension settings.
-- **Availability.** Chrome: on the Chrome Web Store,
-  https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp
-  Microsoft Edge: on Microsoft Edge Add-ons,
-  https://microsoftedge.microsoft.com/addons/detail/jmokpipnbkgmbdnplegjklaaklcclaea
-  Firefox (140 or later): on Firefox Add-ons,
-  https://addons.mozilla.org/addon/flincth/
-
 ## Flincth Speed Reader (iPhone and iPad)
 
 An RSVP speed reading app for iPhone and iPad.
@@ -121,16 +96,42 @@ An RSVP speed reading app for iPhone and iPad.
   OneSignal only when enabled. Document content, titles, file names and pasted
   text are never sent to these services.
 
+## Flincth Split View (Chrome, Firefox, Edge)
+
+A free browser extension, separate from the Mac app and working without it.
+All three store listings use the name "Flincth Split View".
+
+- Page: https://flincth.com/browser/split-view/
+
+- **What it does.** Splits a single browser tab into panes, assigns a website
+  to each pane, saves the arrangement as a workspace, and switches between
+  saved workspaces with a click or a user-assigned keyboard shortcut.
+- **Pane modes.** A pane shows its site embedded in the tab, as a real browser
+  window aligned to the pane (for sites that refuse embedding or need the
+  user's signed-in session), or as a launcher card that opens a normal tab.
+- **Privacy.** Collects no data and makes no network requests of its own. No
+  site access is requested at install. In every browser (1.0.3) the extension
+  then offers optional access to all websites, which can be skipped; it is used
+  only inside the extension's own tab. Access can be revoked in the browser's
+  extension settings. Optional history access, requested only from an explicit
+  action, powers address suggestions.
+- **Availability.** Chrome: on the Chrome Web Store,
+  https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp
+  Microsoft Edge: on Microsoft Edge Add-ons,
+  https://microsoftedge.microsoft.com/addons/detail/jmokpipnbkgmbdnplegjklaaklcclaea
+  Firefox (140 or later): on Firefox Add-ons,
+  https://addons.mozilla.org/addon/flincth/
+
 ## Pages
 
 - [Home](https://flincth.com/): every Flincth app, by platform.
 - [Mac apps](https://flincth.com/mac/), [iPhone and iPad apps](https://flincth.com/ios/), [Browser extensions](https://flincth.com/browser/): each platform's apps.
 - [Flincth Workspace Manager](https://flincth.com/mac/workspace-manager): the Mac app's features, how it works, and FAQ.
 - [Flincth Speed Reader](https://flincth.com/ios/speed-reader): the iPhone and iPad app, on the App Store.
+- [Flincth Split View](https://flincth.com/browser/split-view/): the browser extension, with a page per browser: [Chrome](https://flincth.com/browser/split-view/chrome), [Firefox](https://flincth.com/browser/split-view/firefox), [Microsoft Edge](https://flincth.com/browser/split-view/edge) (all available now).
 - [Pricing](https://flincth.com/pricing.md): every app's price, trial and limits, in plain Markdown.
 - [Support](https://flincth.com/support): help for each app, including the Flincth Apply shortcut and common problems.
 - [Privacy](https://flincth.com/privacy): what each app and the website do and do not collect.
-- [Flincth Split View](https://flincth.com/browser/split-view/): the browser extension, with a page per browser: [Chrome](https://flincth.com/browser/split-view/chrome), [Firefox](https://flincth.com/browser/split-view/firefox), [Microsoft Edge](https://flincth.com/browser/split-view/edge) (all available now).
 - [Guides](https://flincth.com/guides/): step-by-step guides, one list per platform: [Workspace Manager on Mac](https://flincth.com/guides/mac/), [Speed Reader on iPhone and iPad](https://flincth.com/guides/ios/), [Chrome](https://flincth.com/guides/chrome/), [Firefox](https://flincth.com/guides/firefox/), [Edge](https://flincth.com/guides/edge/).
 {%- assign _mac_guides = site.guides | where: "platform", "mac" | sort: "order" %}
 {%- if _mac_guides.size > 0 %}
@@ -180,17 +181,17 @@ An RSVP speed reading app for iPhone and iPad.
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}
-{%- if _ext.size > 0 %}
-## Comparisons: Flincth Split View
-
-{% for p in _ext -%}
-- [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
-{% endfor -%}
-{%- endif %}
 {%- if _reader.size > 0 %}
 ## Comparisons: Flincth Speed Reader
 
 {% for p in _reader -%}
+- [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
+{% endfor -%}
+{%- endif %}
+{%- if _ext.size > 0 %}
+## Comparisons: Flincth Split View
+
+{% for p in _ext -%}
 - [{{ p.title | split: " | " | first }}]({{ site.url }}{{ p.url | replace: ".html", "" }}): {{ p.description }}
 {% endfor -%}
 {%- endif %}

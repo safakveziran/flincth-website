@@ -45,11 +45,9 @@ An empty pane offers two ways:
 
 - Type an address into **Search or enter a website** and press **Add site**. Plain words search with {{ gb.name }}'s default search engine.
 - Click **Choose from open tabs** and pick one of the tabs you already have open.
-{% if gb.access == "all-sites" %}
+
 If you skipped website access when you installed Flincth, {{ gb.name }} asks for it now. Without it, the site stays saved in the pane but doesn't load.
-{% else %}
-The first time you add a site, the pane asks **Show example.com here?** Click **Allow example.com** and confirm in {{ gb.name }}'s prompt.
-{% endif %}
+
 The site loads inside the pane. Links you click stay in the pane, and the pane's toolbar has **Back**, **Forward** and **Reload**.
 
 If a site stays blank or asks you to sign in when you're already signed in, see [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane).

@@ -23,21 +23,14 @@ Flincth is free and has nothing to buy inside it.
 ## Allow website access
 
 Installing Flincth gives it access to no website at all. Access is asked for later, and only from your own click.
-{% if gb.access == "all-sites" %}
-Right after installation, Flincth opens a page titled **Enable websites in Flincth**:
+
+Right after installation, Flincth opens a page titled **Enable websites in Flincth Split View**:
 
 - **Enable all websites** asks {{ gb.name }} for access to all websites. Confirm it in {{ gb.name }}'s own prompt. Panes can then show any site you put in them, including when a site sends you on to another address, as sign-in pages often do.
 - **Not now** skips the step. You can still create workspaces, pick layouts and add sites; they just stay inactive. Flincth asks again whenever you activate a site, until access is granted.
 
 Access is for all websites because the sites you put in panes, and the places they redirect to, can be anywhere. Flincth only uses it inside its own tab.
-{% else %}
-The current store release of {{ gb.name }} asks one site at a time. Version 1.0.3 offers optional all-websites access after installation, with the same **Enable all websites** and **Not now** choices described above. Until that update is published, follow these steps: The first time you put a site in a pane, the pane asks **Show example.com here?**
 
-1. Click **Allow example.com**.
-2. Confirm in {{ gb.name }}'s own prompt.
-
-The site loads in the pane. Each new site asks once. If you'd rather not allow a site, you can still open it in its own window or tab; see [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane).
-{% endif %}
 ## What access is used for, and what it isn't
 
 - Flincth uses it to show sites **inside its own tab**. Your ordinary tabs are untouched.

@@ -26,6 +26,7 @@
 {%- assign ctx_copy = nil -%}
 {%- assign ctx_url = "" -%}
 {%- assign ctx_base = "" -%}
+{%- assign _ctx_browser = nil -%}
 {%- if page.product -%}
   {%- assign ctx_product = site.data.products | where: "id", page.product | first -%}
 {%- endif -%}

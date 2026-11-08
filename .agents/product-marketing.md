@@ -15,7 +15,7 @@
   your displays and switches to that setup's own text clipboard history.
 - *Flincth Split View* (Chrome, Firefox and Edge, /browser/split-view/) splits one browser tab into
   panes, puts a site in each, saves that as a workspace and switches workspaces
-  with a click or shortcut. Its store listings still say "Flincth".
+  with a click or shortcut. All three store listings use this name since 1.0.3.
 - *Flincth Speed Reader* (iPhone and iPad, /ios/speed-reader, on the App Store since 2026-11) shows the user's own
   DRM-free documents one word, phrase or short sentence at a time (RSVP).
 **Product hierarchy:** Flincth is a brand with several products, more to come on every platform.
@@ -77,9 +77,9 @@ a one-time Pro with Family Sharing, a $0 trial and no AI.
 - Window layout and clipboard history switch together, per setup.
 - No Accessibility permission, no account; setups and clipboard never leave the Mac (only network use: opt-in feature announcements); sandboxed, Mac App Store only.
 - Applies a layout once when you switch, then leaves your windows alone.
-- Extension: sites that refuse embedding run as real windows aligned to the pane;
-  no site permissions at install (Chrome and Edge then offer optional all-sites
-  access; Firefox asks per site).
+- Extension: with access allowed, most sites that refuse embedding load in panes
+  anyway; the rest run as real windows aligned to the pane. No site permissions at
+  install; every browser then offers optional all-sites access (1.0.3).
 **Why that's better:** one action changes the whole desk, and nothing watches
 your screen or leaves your Mac.
 
@@ -90,7 +90,7 @@ your screen or leaves your Mac.
 | "Is it a tiling window manager?" | No. It applies your layout when you switch and then leaves windows alone. |
 | "Can it move windows between desktops or into full screen?" | No. No app can do that through supported APIs; Flincth says so up front. |
 | "Does my clipboard leave my Mac?" | No. Setups and clipboard are never sent anywhere; the app only goes online for optional feature announcements. |
-| Extension: "Why does it ask for website access?" | Only to show sites inside Flincth's own tab. Chrome and Edge ask once for all websites, which can be skipped; Firefox asks one site at a time. |
+| Extension: "Why does it ask for website access?" | Only to show sites inside Flincth's own tab. Every browser asks once for all websites, which can be skipped (1.0.3). |
 
 **Anti-persona:** people who want windows auto-tiled continuously, or cross-desktop automation.
 
@@ -140,6 +140,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 *Newest first. One line per revision: what changed and why.*
 - v11 (2026-10-10) — Brand pages stop promising "no subscription" / "no account": future products may use other models, so those claims live on product pages only.
 - v10 (2026-10-10) — Flincth becomes a multi-product brand: brand home page, /mac/workspace-manager, /browser/split-view/ (the extension is named Split View), /ios/speed-reader (coming soon); products are equals.
+- v11 (2026-11-08) — Extension 1.0.3 live in all three stores as "Flincth Split View"; Firefox now offers the same optional all-sites access as Chrome and Edge.
 - v9 (2026-10-06) — Extension 1.0.2 website access recorded: Chrome and Edge offer optional all-sites access after install; Firefox still asks per site.
 - v8 (2026-10-03) — Extension live on Firefox Add-ons (https://addons.mozilla.org/addon/flincth/); now in all three stores.
 - v7 (2026-09-30) — Price set (US$9.99 one-time); "no network access" replaced, since the app has opt-in OneSignal feature announcements.

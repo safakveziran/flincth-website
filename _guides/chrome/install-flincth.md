@@ -2,7 +2,7 @@
 title: "How to Install Flincth in Chrome and Allow Website Access"
 description: "Install the Flincth extension from the Chrome Web Store, pin it, and choose whether Chrome lets it show every website in its panes."
 order: 1
-updated: 2026-10-10
+updated: 2026-11-08
 product: split-view
 platform: chrome
 store_browser: chrome

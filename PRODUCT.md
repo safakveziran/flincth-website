@@ -40,7 +40,7 @@ grouped by platform; each product has its own page at `/<platform>/<slug>`
   text clipboard history.
 - **Flincth Split View** (`/browser/split-view/`, a page per browser): an
   extension that splits one tab into panes, puts a site in each, saves that as
-  a workspace and switches workspaces with a click or shortcut. The 1.0.3 extension build uses this name; live store listings still use "Flincth" until the update is submitted and approved.
+  a workspace and switches workspaces with a click or shortcut. All three store listings use this name since 1.0.3.
 - **Flincth Speed Reader** (`/ios/speed-reader`, on the App Store): an iPhone and
   iPad app that shows the user's own DRM-free documents one word, phrase or
   short sentence at a time (RSVP).
@@ -63,8 +63,8 @@ coming one ships.
   through the user's own "Flincth Apply" Shortcut.
 - **Split View:** one tab holds several sites, and a site that refuses to be
   embedded or needs a signed-in session runs as a real window lined up with its
-  pane. No site access at install. Chrome and Edge (1.0.2+) then offer optional
-  access to all websites, which can be skipped. The live Firefox release asks per site; the upcoming 1.0.3 build uses optional all-websites onboarding and workspace-scoped framing compatibility rules too.
+  pane. No site access at install. Every browser (1.0.3) then offers optional
+  access to all websites, which can be skipped, and uses it only inside its own tab to remove framing headers.
 - **Speed Reader:** "Read faster, still understand": phrase and short-sentence
   modes besides one word at a time. No AI, no DRM-protected books.
 
@@ -73,8 +73,7 @@ coming one ships.
 - Mac: menu bar, keyboard shortcuts, Apple Shortcuts, multiple displays,
   Mission Control desktops (which Flincth never crosses).
 - Browser: the toolbar popup, the split-view tab, `chrome://extensions/shortcuts`
-  and equivalents, the all-sites access offer (Chrome, Edge) and per-site
-  permission prompts (Firefox).
+  and equivalents, and the all-sites access offer.
 
 ## Capabilities and Constraints
 
