@@ -43,7 +43,3 @@ While text is playing, the buttons and everything around the text fade out, so o
 Prefer to keep them visible? Turn off **Hide controls while reading** in Reader settings or Settings → Reading & Appearance.
 
 The screen stays awake while text is playing and goes back to normal Auto-Lock as soon as you pause or leave the reader.
-
-## VoiceOver
-
-With VoiceOver on, the controls stay visible and every one is labelled. The reading area also offers VoiceOver actions to play or pause and to go back or forward one sentence.
