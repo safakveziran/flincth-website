@@ -15,6 +15,7 @@ Flincth Speed Reader reads your own books and documents one word, phrase or shor
 - **PDF** with a text layer: text you could select and copy in another app.
 - **DOCX** (Word). Heading styles become sections.
 - **TXT**, **RTF** and **Markdown**.
+- **HTML** files saved on your device, such as a web page you downloaded. (Links to web pages aren't loaded; see [Quick Read](/guides/ios/quick-read-pasted-text).)
 
 It cannot open DRM-protected books, such as Kindle or Apple Books purchases, scanned PDFs without a text layer, or old `.doc` Word files. [When a document won't open](/guides/ios/when-a-document-wont-open) explains each message and what to do.
 

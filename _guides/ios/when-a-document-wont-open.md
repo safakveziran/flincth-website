@@ -31,7 +31,7 @@ Remove the password in the app that created the file, then add it again.
 
 ## “Flincth can't open this file type.”
 
-Supported files are EPUB, PDF, DOCX, TXT, RTF and Markdown. MOBI, AZW and AZW3 aren't supported; if the book is DRM-free, convert it to EPUB first.
+Supported files are EPUB, PDF, DOCX, TXT, RTF, Markdown and HTML files saved on your device. MOBI, AZW and AZW3 aren't supported; if the book is DRM-free, convert it to EPUB first.
 
 ## “This file looks damaged and couldn't be opened.”
 

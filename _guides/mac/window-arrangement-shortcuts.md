@@ -3,6 +3,7 @@ title: "Mac Window Arrangement Shortcuts: Built-in Keys and Their Limits"
 seo_title: "Mac Window Arrangement Shortcuts and Their Limits"
 description: "The keyboard shortcuts macOS Sequoia added for tiling windows, how to move a window to another display, and what to use when one window isn't enough."
 order: 9
+platform: mac
 updated: 2026-10-10
 ---
 

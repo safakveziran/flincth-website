@@ -3,6 +3,7 @@ title: "How to Make a Mac Remember Window Positions on Multiple Monitors"
 seo_title: "Make a Mac Remember Window Positions on Multiple Monitors"
 description: "macOS forgets where your windows were when a monitor disconnects. Why it happens, what macOS offers, and how to put every window back with one shortcut."
 order: 7
+platform: mac
 updated: 2026-10-10
 ---
 
