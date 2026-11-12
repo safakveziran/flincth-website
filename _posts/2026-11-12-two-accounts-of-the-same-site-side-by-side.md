@@ -5,6 +5,7 @@ description: "Browsers sign you in to a site once, everywhere. Here are the usua
 product: split-view
 og_image: /assets/og-extension.png
 og_image_alt: og_image_alt
+medium_url: https://medium.com/@flincth/two-accounts-of-the-same-site-side-by-side-in-one-tab-362682dd3849
 ---
 
 You have a work account and a personal account on the same site. Or a client's account and your own. Or you want to see your own site as a signed-out visitor while you edit it as an admin.
