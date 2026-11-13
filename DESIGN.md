@@ -164,7 +164,8 @@ black line on its product card.
 **Red marks the deal, nothing else.** The one exception to "One accent", and
 only while a sale runs: red (#e5162a under white text, #ff453a as text on
 black) is used for the discount, the sale's name, the price tag and the line
-through each usual price. The discount is written "60% discount", never "−60%". Prices stay
+through each usual price, drawn as one diagonal stroke so it never reads as
+"0.00". The discount is written "60% discount", never "−60%". Prices stay
 neutral and every button stays blue. Nothing about the deal is invented: the
 price and the discount come from the data file. The end date is never shown,
 so the deal does not read as one to come back for; the countdown appears only

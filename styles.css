@@ -453,8 +453,11 @@ h1>span{display:block}
 .sale-bar p{margin:0;font-size:15px;line-height:1.45}
 .sale-bar b,.sale-promo-copy b,.product-card-sale b{font-weight:750;letter-spacing:.08em;text-transform:uppercase;font-size:.85em;margin-right:6px}
 .sale-bar strong,.product-card-sale strong,.sale-promo strong{font-weight:700}
-.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was{text-decoration-thickness:2px}
-.deal-price s{text-decoration-thickness:3px}
+/* The usual price is struck through with one diagonal line rather than a
+   horizontal one, which crossed only the middle of the digits and read as
+   "0.00". The line's colour is --strike in dark.css. */
+.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was,.bf-price s{position:relative;display:inline-block;text-decoration:none;line-height:1.1}
+.sale-bar s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.value-was::after,.bf-price s::after{content:"";position:absolute;left:-6%;right:-6%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-14deg);pointer-events:none}
 .sale-bar-short{display:none}
 .nowrap{white-space:nowrap}
 .sale-cta-short{display:none}
@@ -524,7 +527,7 @@ h1>span{display:block}
 .bf-hero .hero-copy{max-width:680px;margin-inline:auto}
 .bf-price{display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:10px 18px;margin:30px 0 0}
 .bf-price strong{font-size:72px;font-weight:700;letter-spacing:-.035em;line-height:1}
-.bf-price s{font-size:30px;font-weight:600;text-decoration-thickness:3px}
+.bf-price s{font-size:30px;font-weight:600}
 .bf-price .sale-pill{align-self:center;font-size:15px;padding:5px 14px}
 .bf-hero .hero-actions{margin-top:30px}
 .bf-grid{grid-template-columns:1fr 1fr}

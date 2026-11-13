@@ -292,7 +292,7 @@ footer > a:hover { color: #8db6ff; }
 .sale-pill { background: #e5162a; color: #fff; }
 .sale-bar b, .sale-promo-copy b, .product-card-sale b { color: #ff453a; }
 .sale-promo-off { color: #ff453a; }
-.sale-bar s, .product-card-sale s, .deal-price s, .sale-promo s, .value-was { color: #8695ad; text-decoration-color: #ff453a; }
+.sale-bar s, .product-card-sale s, .deal-price s, .sale-promo s, .value-was { color: #8695ad; --strike: #ff453a; }
 .sale-bar strong, .product-card-sale strong, .sale-promo strong { color: var(--ink); }
 .sale-countdown { color: var(--muted); }
 .sale-bar-cta { background: var(--action); color: #fff; }
@@ -310,4 +310,4 @@ a.sale-pill:hover { background: #c41224; }
 .product-card-sale { background: #000; border-color: #3a1a20; color: #c9d7ee; }
 .bf-hero [data-sale-ends] h1 > span { color: #ff453a; }
 .bf-price strong { color: var(--ink); }
-.bf-price s { color: #8695ad; text-decoration-color: #ff453a; }
+.bf-price s { color: #8695ad; --strike: #ff453a; }
