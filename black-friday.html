@@ -1,0 +1,87 @@
+---
+layout: default
+# Black Friday landing page for search traffic ("black friday mac apps",
+# "window manager black friday" and the like). The URL stays the same every
+# year so the links and ranking it earns carry over. While the sale in
+# _data/mac.yml runs, the page sells it and uses sale_title and
+# sale_description; when it ends (sale.js in the browser, or a build without
+# the sale), it says this year's deal has ended and keeps the usual price.
+# Copy never names the end date.
+title: "Black Friday Mac App Deals: Workspace Manager | Flincth"
+description: "Flincth's Black Friday deal on Workspace Manager, the Mac window manager and clipboard manager in one app. Check back each November for this year's price."
+sale_title: "Black Friday Mac App Deal: [off]% Discount | Flincth"
+sale_description: "Black Friday deal: Flincth Workspace Manager, a Mac window manager and clipboard manager in one app, is [price] instead of [regular]. One-time purchase, no subscription."
+ref: black-friday
+product: workspace-manager
+og_image_alt: og_image_alt_workspace_manager
+schema: schema/black-friday.en.html
+faq:
+  - q: How long does the Black Friday price last?
+    a: For a limited time. When the deal ends, Workspace Manager goes back to its usual price of [regular] on the Mac App Store.
+  - q: Is it a subscription?
+    a: No. Workspace Manager is a one-time purchase on the Mac App Store. There is no subscription, no in-app purchase and no account, and the purchase includes every feature and every update.
+  - q: Is there a free trial?
+    a: No. The App Store page and this site show exactly what the app does before you buy. If it is not right for you, Apple handles refund requests at reportaproblem.apple.com.
+  - q: What do I need to run it?
+    a: A Mac with macOS 14 or later. Window placement uses the Flincth Apply shortcut, which you install once in Apple Shortcuts; the app walks you through it. Flincth never asks for Accessibility or Screen Recording access.
+  - q: Can it move windows between desktops or into full screen?
+    a: No. It places open, non-full-screen windows on the current desktop. It does not move windows between Mission Control desktops or into or out of macOS full screen.
+  - q: Does my clipboard history leave my Mac?
+    a: No. Setups and clipboard history are stored on your Mac and never sent anywhere. The app only goes online if you turn on new-feature announcements, which are off until you do.
+sitemap:
+  lastmod: 2026-11-13
+  changefreq: weekly
+  priority: 0.9
+---
+{%- include sale-state.html -%}
+{%- assign _t = site.data.i18n[page.lang] -%}
+{%- capture _regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
+{%- capture _sale %}{% include usd.html amount=sale.price %}{% endcapture -%}
+{%- capture _sale_attrs %} data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}"{% endcapture -%}
+{%- capture _countdown %}<span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span>{% endcapture -%}
+  <main id="main" class="bf-page">
+    <section class="hero wrap bf-hero">
+{%- if sale_on %}
+      <div class="bf-state"{{ _sale_attrs }}>
+        <img class="bf-tag" src="/assets/black-friday-tag.svg" width="150" height="150" alt="{% include sale-text.html text=_t.sale.tag_alt %}">
+        <h1>Black Friday Mac deal. <span>{{ sale_off_percent }}% discount on Workspace Manager.</span></h1>
+        <p class="hero-copy">Flincth Workspace Manager is a window manager and clipboard manager for macOS in one app. For Black Friday it is {{ _sale }} instead of {{ _regular }} on the Mac App Store, a one-time purchase.</p>
+        <p class="bf-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{{ _sale }}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{{ _regular }}</s> <span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span></p>
+        <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Get it for {{ _sale }} on the Mac App Store</a></div>
+        <p class="micro">{{ _countdown }} <span>·</span> Requires macOS 14 or later <span>·</span> No subscription</p>
+      </div>
+{%- endif %}
+      <div class="bf-state"{% if sale_on %} data-sale-after hidden{% endif %}>
+        <p class="product-badge"><img src="/assets/app-icon-64.png" width="22" height="22" alt="">Flincth Workspace Manager for Mac</p>
+        <h1>Black Friday Mac deals. <span>This year’s deal has ended.</span></h1>
+        <p class="hero-copy">Flincth runs its Black Friday deal on Workspace Manager, the Mac window manager and clipboard manager in one app, each November. Until the next one, it is {{ _regular }} on the Mac App Store, a one-time purchase.</p>
+        <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a></div>
+        <p class="micro">Requires macOS 14 or later <span>·</span> No subscription</p>
+      </div>
+    </section>
+
+    <section class="features wrap" id="features">
+      <div class="section-heading"><div><h2>What you get{% if sale_on %}<span{{ _sale_attrs }}> for {{ _sale }}</span>{% endif %}.</h2></div><p>One menu bar app that keeps the windows and the clipboard of each kind of work together, and switches both in one step.</p></div>
+      <div class="feature-grid bf-grid">
+        <article class="feature"><h3>A desk for each kind of work.</h3><p>Save setups for coding, writing or meetings. Each names its apps and the region of the screen each one belongs to.</p></article>
+        <article class="feature"><h3>A clipboard history per setup.</h3><p>Each setup keeps its own text clipboard history, so client notes never turn up in your code.</p></article>
+        <article class="feature"><h3>One display or several.</h3><p>Divide each display, ultrawide or external monitor into regions, and put every app back where it belongs after you plug in again.</p></article>
+        <article class="feature"><h3>One shortcut to switch.</h3><p>Switch from the menu bar or with your own keyboard shortcut, and the windows and clipboard follow.</p></article>
+      </div>
+      <p class="preview-note bf-limits">Windows move through the Flincth Apply shortcut you install once in Apple Shortcuts. Flincth places open windows on the current desktop; it does not move them between Mission Control desktops or into full screen.</p>
+    </section>
+
+    <section class="faq wrap" id="questions"><div><h2>Before you buy.</h2></div><div class="questions">
+{%- for _f in page.faq %}
+      <details><summary>{{ _f.q }}<span>+</span></summary><p>{{ _f.a | replace: "[regular]", _regular }}</p></details>
+{%- endfor %}
+    </div></section>
+
+    <section class="closing wrap" id="availability"><img src="/assets/app-icon-192.png" alt="Flincth app icon" width="88" height="88" loading="lazy">
+{%- if sale_on %}
+      <div class="bf-state"{{ _sale_attrs }}><h2>Get your desk in order for less.</h2><p>{% include sale-text.html text=_t.sale.discount %} on Workspace Manager. {{ _countdown }}</p><div class="closing-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Get it for {{ _sale }} on the Mac App Store</a></div></div>
+{%- endif %}
+      <div class="bf-state"{% if sale_on %} data-sale-after hidden{% endif %}><h2>Make space for your next thing.</h2><p>Your Mac, a little more you.</p><div class="closing-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a></div></div>
+      <span class="micro">Requires macOS 14 or later <span>·</span> No subscription</span>
+    </section>
+  </main>
