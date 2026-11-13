@@ -297,3 +297,13 @@ footer > a:hover { color: #8db6ff; }
 .product-card-sale { background: #000; border-color: #2b405f; color: #c9d7ee; }
 .product-card-sale b { color: var(--ink); }
 .product-card-sale strong { color: #89b2ff; }
+.sale-pill { background: var(--action); color: #fff; }
+.sale-bar a { background: var(--action); color: #fff; }
+.sale-bar a:hover { background: #326af4; text-decoration: none; }
+.sale-promo { background: #000; border-color: #2b405f; color: var(--muted); box-shadow: 0 24px 48px -28px #000; }
+.sale-promo:hover { border-color: #57729b; }
+.sale-promo-off, .sale-promo-copy b { color: var(--ink); }
+.sale-promo strong { color: #89b2ff; }
+.sale-promo s { color: #8695ad; }
+.sale-promo small { color: #c9d7ee; }
+.sale-promo-cta { background: var(--action); color: #fff; border: 1px solid #527ff2; }

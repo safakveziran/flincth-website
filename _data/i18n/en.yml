@@ -146,6 +146,10 @@ sale:
   label: "[name] deal"
   bar: "<b>[name]</b> Flincth Workspace Manager for Mac is <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> through [last_day]."
   bar_cta: Get the deal
+  discount: "−[off]%"
+  hero_cta: "Download for [price] on the Mac App Store"
+  promo: "Flincth Workspace Manager for Mac is now <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s>."
+  promo_cta: See the deal
   card: "<b>[name]</b> <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> through [last_day]"
   heading: "[off]% off Workspace Manager, through [last_day]."
   text: "For [name], Flincth Workspace Manager is [price] instead of [regular] on the Mac App Store. One purchase includes every feature and every update, with no subscription."
