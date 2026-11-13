@@ -1,0 +1,52 @@
+{%- comment -%}
+  JSON-LD for the Black Friday page: the app with its current price (the sale
+  price while the sale in _data/mac.yml runs at build time) and the page's
+  FAQ, read from its front matter so the two never differ.
+{%- endcomment -%}
+{%- include sale-state.html -%}
+{%- capture _regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
+{%- if sale_on %}{% assign _price = sale.price %}{% else %}{% assign _price = site.data.mac.price %}{% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://flincth.com/mac/workspace-manager#app",
+        "name": "Flincth Workspace Manager",
+        "url": "https://flincth.com/mac/workspace-manager",
+        "image": "https://flincth.com/assets/app-icon.png",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "macOS 14 or later",
+        "offers": {
+          "@type": "Offer",
+          "price": {{ _price | jsonify }},
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": {{ site.data.mac.store_url | jsonify }}
+        },
+        "publisher": { "@id": "https://flincth.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://flincth.com/#org",
+        "name": "Flincth",
+        "url": "https://flincth.com/",
+        "logo": "https://flincth.com/assets/flincth-mark-512.png"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://flincth.com/black-friday#faq",
+        "mainEntity": [
+{%- for _f in page.faq %}
+          {
+            "@type": "Question",
+            "name": {{ _f.q | jsonify }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ _f.a | replace: "[regular]", _regular | jsonify }} }
+          }{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+        ]
+      }
+    ]
+  }
+  </script>

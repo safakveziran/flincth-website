@@ -37,6 +37,7 @@ layout: null
 {%- include sale-state.html %}
 {%- if sale_on %}
 - {{ sale.name }}: US{% include usd.html amount=sale.price %} ({{ sale_off_percent }}% discount) for a limited time; then US{% include usd.html amount=site.data.mac.price %} again.
+  Deal page: {{ site.url }}/black-friday
 {%- endif %}
 - Privacy: no account, no analytics and no server of its own. Setups and
   clipboard history are stored locally and never leave the user's Mac. The

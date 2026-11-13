@@ -24,6 +24,16 @@
   {%- assign page_title = page.title -%}
   {%- assign page_description = page.description -%}
 {%- endif -%}
+{%- comment -%} A page may set sale_title and sale_description for while the
+  sale in _data/mac.yml runs (sale-state.html); their [price], [regular] and
+  [off] are filled in by sale-text.html. {%- endcomment -%}
+{%- if page.sale_title -%}
+  {%- include sale-state.html -%}
+  {%- if sale_on -%}
+    {%- capture page_title %}{% include sale-text.html text=page.sale_title %}{% endcapture -%}
+    {%- capture page_description %}{% include sale-text.html text=page.sale_description %}{% endcapture -%}
+  {%- endif -%}
+{%- endif -%}
 {%- assign all_languages = false -%}
 {%- if page.all_languages and site.data.languages.size > 1 %}{% assign all_languages = true %}{% endif -%}
 {%- assign page_url = site.url | append: page.url | replace: ".html", "" -%}

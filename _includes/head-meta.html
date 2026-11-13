@@ -12,10 +12,10 @@
 {%- assign og_image_alt = t.og_image_alt -%}
 {%- if _og_alt_key %}{% assign og_image_alt = t[page.strings][_og_alt_key] | default: t.extension[_og_alt_key] | default: t[_og_alt_key] %}{% endif -%}
 {%- comment -%} While a sale runs (sale-state.html), Workspace Manager's page,
-  the Mac page and the home page share the sale image instead. {%- endcomment -%}
+  the Mac page, the home page and the Black Friday page share the sale image instead. {%- endcomment -%}
 {%- include sale-state.html -%}
 {%- if sale_on and sale.og_image -%}
-  {%- if page.ref == "workspace-manager" or page.ref == "mac" or page.ref == "home" -%}
+  {%- if page.ref == "workspace-manager" or page.ref == "mac" or page.ref == "home" or page.ref == "black-friday" -%}
     {%- assign og_image = sale.og_image -%}
     {%- capture og_image_alt %}{% include sale-text.html text=t.sale.og_image_alt %}{% endcapture -%}
   {%- endif -%}
