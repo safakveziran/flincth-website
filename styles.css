@@ -456,8 +456,8 @@ h1>span{display:block}
 /* The usual price is struck through with one diagonal line rather than a
    horizontal one, which crossed only the middle of the digits and read as
    "0.00". The line's colour is --strike in dark.css. */
-.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.sale-group-price s,.value-was,.bf-price s,.plan-sale s{position:relative;display:inline-block;text-decoration:none;line-height:1.1}
-.sale-bar s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.sale-group-price s::after,.value-was::after,.bf-price s::after,.plan-sale s::after{content:"";position:absolute;left:-3%;right:-3%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-26deg);pointer-events:none}
+.sale-bar s,.sale-callout s,.product-card-sale s,.deal-price s,.sale-promo s,.sale-group-price s,.value-was,.bf-price s,.plan-sale s{position:relative;display:inline-block;text-decoration:none;line-height:1.1}
+.sale-bar s::after,.sale-callout s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.sale-group-price s::after,.value-was::after,.bf-price s::after,.plan-sale s::after{content:"";position:absolute;left:-3%;right:-3%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-26deg);pointer-events:none}
 .sale-bar-short{display:none}
 .nowrap{white-space:nowrap}
 .sale-cta-short{display:none}
@@ -606,3 +606,11 @@ html:has(.sale-bar){scroll-padding-top:90px}
 .bf-limits a{text-decoration:underline;text-underline-offset:3px}
 .closing .bf-state>h2{margin-top:6px}
 @media(max-width:700px){.bf-deal{padding:22px}.bf-deal .bf-price strong{font-size:44px}.bf-deal .button{width:100%;justify-content:center;text-align:center}.bf-app{padding-top:60px}.bf-app+.bf-app{padding-top:48px}.discount-card-head .sale-pill{margin-left:0}}
+.sale-callout{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px 22px;margin:36px 0;padding:22px 24px;border:1px solid;border-radius:20px}
+.sale-callout img{border-radius:12px}
+.post-body .sale-callout p{margin:0;font-size:15px;line-height:1.5}
+.post-body .sale-callout .sale-callout-title{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.sale-callout-title b{font-size:12px;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+.sale-callout-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px}
+.post-body .sale-callout a{text-decoration:none}
+@media(max-width:700px){.sale-callout{grid-template-columns:auto minmax(0,1fr);padding:20px}.sale-callout-actions{grid-column:1/-1}.sale-callout-actions .button{flex:1 1 100%;justify-content:center}}
