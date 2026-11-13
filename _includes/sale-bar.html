@@ -4,11 +4,14 @@
   to a product on sale (page.product), or to a platform with one (page.platform),
   it shows that product's deal and opens its store. On any other page it shows
   the one running deal, or, when several run, all of them with a link to
-  /discounts/. Its discount pill links to the Black Friday page. It stays at
+  /discounts/. Its discount pill links to the Black Friday page. The
+  discount pages themselves (/discounts/ and every page with deals) have no
+  bar: they are the deal, so it would only repeat them. It stays at
   the top of the window while the page scrolls; sale.js removes it once the
   sale ends and writes the last days into [data-sale-countdown].
 {%- endcomment -%}
 {%- include sale-any.html -%}
+{%- if page.ref == "discounts" or page.deals %}{% assign sale_any_on = false %}{% endif -%}
 {%- if sale_any_on %}
   {%- assign _bar_key = nil %}
   {%- if page.product %}
