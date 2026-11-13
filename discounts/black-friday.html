@@ -1,95 +1,130 @@
 ---
 layout: default
 # Black Friday landing page for search traffic ("black friday mac apps",
-# "window manager black friday" and the like), at /discounts/black-friday
+# "black friday iphone app deals" and the like), at /discounts/black-friday
 # and listed on /discounts/. The URL stays the same every year so the links
 # and ranking it earns carry over. black-friday.html at the root sends its
-# first address, /black-friday, here. While the sale in
-# _data/mac.yml runs, the page sells it and uses sale_title and
-# sale_description; when it ends (sale.js in the browser, or a build without
-# the sale), it says this year's deal has ended and keeps the usual price.
-# Copy never names the end date.
-title: "Black Friday Mac App Deals: Workspace Manager | Flincth"
-description: "Flincth's Black Friday deal on Workspace Manager, the Mac window manager and clipboard manager in one app. Check back each November for this year's price."
-sale_title: "Black Friday Mac App Deal: [off]% Discount | Flincth"
-sale_description: "Black Friday deal: Flincth Workspace Manager, a Mac window manager and clipboard manager in one app, is [price] instead of [regular]. One-time purchase, no subscription."
+# first address, /black-friday, here. While a sale in a data file listed in
+# deals runs, the page sells it (a card per running deal) and uses
+# sale_title and sale_description; when every one has ended (sale.js in the
+# browser, or a build without the sale blocks), it says this year's deals
+# have ended and keeps the usual prices. Copy never names the end date.
+title: "Black Friday Mac & iPhone App Deals | Flincth"
+description: "Flincth's Black Friday deals on Workspace Manager for Mac and Speed Reader Pro for iPhone and iPad. Check back each November for this year's prices."
+sale_title: "Black Friday Mac & iPhone Deals: [off]% Discount | Flincth"
+sale_description: "Black Friday at Flincth: Workspace Manager for Mac and Speed Reader Pro for iPhone and iPad are [price] each instead of [regular]. One-time purchases, no subscription."
 ref: black-friday
-# Its card on /discounts/ (discounts/index.html). discount names the data
-# file whose sale block this page sells.
-discount: mac
+# The data files whose sale blocks this page sells, in display order. Its
+# cards on /discounts/ (discounts/index.html) follow the same list.
+deals: [mac, reader]
 card_title: Black Friday
-card_text: "[off]% discount on Flincth Workspace Manager for Mac: [price] instead of [regular], a one-time purchase on the Mac App Store."
-card_ended: "This year’s Black Friday deal on Workspace Manager has ended."
-product: workspace-manager
-og_image_alt: og_image_alt_workspace_manager
+card_ended: "This year’s Black Friday deals on Workspace Manager and Speed Reader Pro have ended."
 schema: schema/black-friday.en.html
+# [mac_regular] and [reader_regular] are the usual prices.
 faq:
-  - q: How long does the Black Friday price last?
-    a: For a limited time. When the deal ends, Workspace Manager goes back to its usual price of [regular] on the Mac App Store.
-  - q: Is it a subscription?
-    a: No. Workspace Manager is a one-time purchase on the Mac App Store. There is no subscription, no in-app purchase and no account, and the purchase includes every feature and every update.
+  - q: How long do the Black Friday prices last?
+    a: For a limited time. When the deals end, Workspace Manager goes back to [mac_regular] on the Mac App Store and Speed Reader Pro to [reader_regular].
+  - q: Is either one a subscription?
+    a: No. Workspace Manager is a one-time purchase on the Mac App Store. Speed Reader is a free download, and Pro is a one-time in-app purchase with Family Sharing. Neither needs an account, and both include every update.
+  - q: How do I get Speed Reader Pro at the Black Friday price?
+    a: Download Speed Reader from the App Store, then tap Buy Pro on the Pro screen. To open it, tap Explore Pro in the library, or Get Flincth Pro in Settings → Plan. The App Store shows the price you pay before you confirm.
   - q: Is there a free trial?
-    a: No. The App Store page and this site show exactly what the app does before you buy. If it is not right for you, Apple handles refund requests at reportaproblem.apple.com.
-  - q: What do I need to run it?
-    a: A Mac with macOS 14 or later. Window placement uses the Flincth Apply shortcut, which you install once in Apple Shortcuts; the app walks you through it. Flincth never asks for Accessibility or Screen Recording access.
-  - q: Can it move windows between desktops or into full screen?
+    a: Speed Reader Pro has a 7-day free trial that asks for no payment details and never turns into a charge. Workspace Manager has none; its page shows exactly what it does, and Apple handles refund requests at reportaproblem.apple.com.
+  - q: What do I need to run them?
+    a: Workspace Manager needs a Mac with macOS 14 or later, and moves windows through the Flincth Apply shortcut you install once in Apple Shortcuts. Speed Reader needs an iPhone or iPad with iOS 17 or later.
+  - q: Can Workspace Manager move windows between desktops or into full screen?
     a: No. It places open, non-full-screen windows on the current desktop. It does not move windows between Mission Control desktops or into or out of macOS full screen.
-  - q: Does my clipboard history leave my Mac?
-    a: No. Setups and clipboard history are stored on your Mac and never sent anywhere. The app only goes online if you turn on new-feature announcements, which are off until you do.
+  - q: Can Speed Reader open Kindle or Apple Books purchases?
+    a: No. Those books are protected with DRM, which the app cannot open. It reads DRM-free EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown files, and pasted text.
+  - q: Does my data leave my device?
+    a: Workspace Manager keeps setups and clipboard history on your Mac and never sends them anywhere. Speed Reader keeps your documents, their titles and the text you paste on your device, except in your own iCloud when sync is on. The privacy policy lists what each app sends, such as Speed Reader's usage statistics.
 sitemap:
   lastmod: 2026-11-13
   changefreq: weekly
   priority: 0.9
 ---
-{%- include sale-state.html -%}
+{%- include sale-any.html -%}
 {%- assign _t = site.data.i18n[page.lang] -%}
-{%- capture _regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
-{%- capture _sale %}{% include usd.html amount=sale.price %}{% endcapture -%}
-{%- capture _sale_attrs %} data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}"{% endcapture -%}
+{%- capture _mac_regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
+{%- capture _reader_regular %}{% include usd.html amount=site.data.reader.pro_price %}{% endcapture -%}
 {%- capture _countdown %}<span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span>{% endcapture -%}
+{%- comment -%} The hero's sale state shows while any deal runs; it carries
+  the first running deal's window, which every deal here shares. {%- endcomment -%}
+{%- assign _first_key = sale_on_keys | first -%}
+{%- if sale_any_on %}{% include sale-state.html data=_first_key %}{% endif -%}
+{%- capture _any_attrs %} data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}"{% endcapture -%}
+{%- assign _any_off = sale_off_percent -%}
   <main id="main" class="bf-page">
     <section class="hero wrap bf-hero">
-{%- if sale_on %}
-      <div class="bf-state"{{ _sale_attrs }}>
+{%- if sale_any_on %}
+      <div class="bf-state"{{ _any_attrs }}>
         <img class="bf-tag" src="/assets/black-friday-tag.svg" width="150" height="150" alt="{% include sale-text.html text=_t.sale.tag_alt %}">
-        <h1>Black Friday Mac deal. <span>{{ sale_off_percent }}% discount on Workspace Manager.</span></h1>
-        <p class="hero-copy">Flincth Workspace Manager is a window manager and clipboard manager for macOS in one app. For Black Friday it is {{ _sale }} instead of {{ _regular }} on the Mac App Store, a one-time purchase.</p>
-        <p class="bf-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{{ _sale }}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{{ _regular }}</s> <span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span></p>
-        <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Get it for {{ _sale }} on the Mac App Store</a></div>
-        <p class="micro">{{ _countdown }} <span>·</span> Requires macOS 14 or later <span>·</span> No subscription</p>
+        <h1>Black Friday at Flincth. <span>{{ _any_off }}% discount on Mac and iPhone apps.</span></h1>
+        <p class="hero-copy">Workspace Manager, the window manager and clipboard manager for Mac, and Speed Reader Pro, the speed reading app for iPhone and iPad, are both on sale. One-time prices, no subscription.</p>
+        <div class="bf-deals">
+  {%- for _key in page.deals %}
+    {%- include sale-state.html data=_key %}
+    {%- if sale_on %}
+      {%- capture _item_url %}{% include page-url.html ref=sale_product.id %}{% endcapture %}
+          <article class="bf-deal" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+            <div class="bf-deal-head"><img src="{{ sale_product.icon }}-128.png" width="56" height="56" alt=""><div><span class="bf-deal-platform">{{ _t.platforms[sale_product.platform].name }}</span><h2><a href="#{{ sale_product.id }}">{{ _t.sale.items[sale_product.id].short }}</a></h2></div><span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span></div>
+            <p class="bf-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{% include usd.html amount=sale_regular %}</s></p>
+      {%- if _key == "reader" %}
+            <a class="button primary" href="{{ sale_store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.reader_cta %}</a>
+            <p class="bf-deal-note">Free download; Pro is a one-time in-app purchase. iOS 17 or later.</p>
+      {%- else %}
+            <a class="button primary" href="{{ sale_store_url }}" target="_blank" rel="noopener">Get it for {% include usd.html amount=sale.price %} on the Mac App Store</a>
+            <p class="bf-deal-note">One-time purchase. macOS 14 or later.</p>
+      {%- endif %}
+          </article>
+    {%- endif %}
+  {%- endfor %}
+        </div>
+        <p class="micro">{{ _countdown }} <span>·</span> No account <span>·</span> No subscription</p>
       </div>
 {%- endif %}
-      <div class="bf-state"{% if sale_on %} data-sale-after hidden{% endif %}>
-        <p class="product-badge"><img src="/assets/app-icon-64.png" width="22" height="22" alt="">Flincth Workspace Manager for Mac</p>
-        <h1>Black Friday Mac deals. <span>This year’s deal has ended.</span></h1>
-        <p class="hero-copy">Flincth runs its Black Friday deal on Workspace Manager, the Mac window manager and clipboard manager in one app, each November. Until the next one, it is {{ _regular }} on the Mac App Store, a one-time purchase.</p>
-        <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a></div>
-        <p class="micro">Requires macOS 14 or later <span>·</span> No subscription</p>
+      <div class="bf-state"{% if sale_any_on %} data-sale-after hidden{% endif %}>
+        <h1>Black Friday deals. <span>This year’s deals have ended.</span></h1>
+        <p class="hero-copy">Each November Flincth runs its Black Friday deals on Workspace Manager for Mac and Speed Reader Pro for iPhone and iPad. Until the next ones, Workspace Manager is {{ _mac_regular }} on the Mac App Store, and Speed Reader is a free download with Pro at {{ _reader_regular }}.</p>
+        <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Workspace Manager for Mac</a><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Speed Reader for iPhone and iPad</a></div>
+        <p class="micro">No account <span>·</span> No subscription</p>
       </div>
     </section>
 
-    <section class="features wrap" id="features">
-      <div class="section-heading"><div><h2>What you get{% if sale_on %}<span{{ _sale_attrs }}> for {{ _sale }}</span>{% endif %}.</h2></div><p>One menu bar app that keeps the windows and the clipboard of each kind of work together, and switches both in one step.</p></div>
+    <section class="features wrap bf-app" id="workspace-manager">
+      <div class="section-heading"><div><h2>Workspace Manager for Mac.</h2></div><p>One menu bar app that keeps the windows and the clipboard of each kind of work together, and switches both in one step.</p></div>
       <div class="feature-grid bf-grid">
         <article class="feature"><h3>A desk for each kind of work.</h3><p>Save setups for coding, writing or meetings. Each names its apps and the region of the screen each one belongs to.</p></article>
         <article class="feature"><h3>A clipboard history per setup.</h3><p>Each setup keeps its own text clipboard history, so client notes never turn up in your code.</p></article>
         <article class="feature"><h3>One display or several.</h3><p>Divide each display, ultrawide or external monitor into regions, and put every app back where it belongs after you plug in again.</p></article>
         <article class="feature"><h3>One shortcut to switch.</h3><p>Switch from the menu bar or with your own keyboard shortcut, and the windows and clipboard follow.</p></article>
       </div>
-      <p class="preview-note bf-limits">Windows move through the Flincth Apply shortcut you install once in Apple Shortcuts. Flincth places open windows on the current desktop; it does not move them between Mission Control desktops or into full screen.</p>
+      <p class="preview-note bf-limits">Windows move through the Flincth Apply shortcut you install once in Apple Shortcuts. Flincth places open windows on the current desktop; it does not move them between Mission Control desktops or into full screen. <a href="{% include page-url.html ref="workspace-manager" %}">More about Workspace Manager</a></p>
+    </section>
+
+    <section class="features wrap bf-app" id="speed-reader">
+      <div class="section-heading"><div><h2>Speed Reader Pro for iPhone and iPad.</h2></div><p>Speed Reader shows your own books and documents one word, phrase or short sentence at a time, at the pace you set. Pro takes the limits off.</p></div>
+      <div class="feature-grid bf-grid">
+        <article class="feature"><h3>No daily limits.</h3><p>Read as long as you like, at higher speeds, with as many documents as you want.</p></article>
+        <article class="feature"><h3>Make it yours.</h3><p>Themes, fonts, the focus letter and pause tuning, set the way you read best.</p></article>
+        <article class="feature"><h3>Statistics and goals.</h3><p>See how much and how fast you read, and set goals to keep going.</p></article>
+        <article class="feature"><h3>iCloud sync.</h3><p>Your library and your place carry over between your iPhone and iPad.</p></article>
+      </div>
+      <p class="preview-note bf-limits">Speed Reader reads DRM-free EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown files, and pasted text; it cannot open Kindle or Apple Books purchases. Every reading mode, every format and every accessibility setting are free. <a href="{% include page-url.html ref="speed-reader" %}">More about Speed Reader</a></p>
     </section>
 
     <section class="faq wrap" id="questions"><div><h2>Before you buy.</h2></div><div class="questions">
 {%- for _f in page.faq %}
-      <details><summary>{{ _f.q }}<span>+</span></summary><p>{{ _f.a | replace: "[regular]", _regular }}</p></details>
+      <details><summary>{{ _f.q }}<span>+</span></summary><p>{{ _f.a | replace: "[mac_regular]", _mac_regular | replace: "[reader_regular]", _reader_regular }}</p></details>
 {%- endfor %}
     </div></section>
 
-    <section class="closing wrap" id="availability"><img src="/assets/app-icon-192.png" alt="Flincth app icon" width="88" height="88" loading="lazy">
-{%- if sale_on %}
-      <div class="bf-state"{{ _sale_attrs }}><h2>Get your desk in order for less.</h2><p>{% include sale-text.html text=_t.sale.discount %} on Workspace Manager. {{ _countdown }}</p><div class="closing-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Get it for {{ _sale }} on the Mac App Store</a></div></div>
+    <section class="closing wrap" id="availability">
+{%- if sale_any_on %}
+      <div class="bf-state"{{ _any_attrs }}><h2>Two apps, for less.</h2><p>{{ _any_off }}% discount on Workspace Manager and Speed Reader Pro. {{ _countdown }}</p></div>
 {%- endif %}
-      <div class="bf-state"{% if sale_on %} data-sale-after hidden{% endif %}><h2>Make space for your next thing.</h2><p>Your Mac, a little more you.</p><div class="closing-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Download on the Mac App Store</a></div></div>
-      <span class="micro">Requires macOS 14 or later <span>·</span> No subscription</span>
+      <div class="bf-state"{% if sale_any_on %} data-sale-after hidden{% endif %}><h2>Small apps. Clear purpose.</h2><p>Each one does a single job well.</p></div>
+      <div class="closing-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">Workspace Manager on the Mac App Store</a><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Speed Reader on the App Store</a></div>
+      <span class="micro">No account <span>·</span> No subscription</span>
     </section>
   </main>

@@ -22,21 +22,7 @@ sitemap:
       <p class="hero-copy">Flincth Workspace Manager is a window manager and clipboard manager for macOS.<br class="desktop-break"> Save a window layout and a clipboard history for each kind of<br class="desktop-break"> work, then switch between them from your menu bar.</p>
       <div class="hero-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{% if sale_on %}<span data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">{% include sale-text.html text=_t.sale.hero_cta %}</span><span data-sale-after hidden>Download on the Mac App Store</span>{% else %}Download on the Mac App Store{% endif %}</a><a class="text-link" href="#how">See how it works <span aria-hidden="true">↓</span></a></div>
       <p class="micro">Requires macOS 14 or later <span>·</span> No subscription</p>
-{%- include sale-state.html %}
-{%- if sale_on %}
-  {%- assign _t = site.data.i18n[page.lang] %}
-      <div class="deal" id="deal" role="region" aria-labelledby="deal-title" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
-        <div class="deal-panel">
-          <img class="deal-tag" src="/assets/black-friday-tag.svg" width="260" height="260" alt="{% include sale-text.html text=_t.sale.tag_alt %}">
-          <div class="deal-copy">
-            <h2 id="deal-title">{% include sale-text.html text=_t.sale.heading %}</h2>
-            <p>{% include sale-text.html text=_t.sale.text %}</p>
-            <p class="deal-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{% include usd.html amount=site.data.mac.price %}</s></p>
-            <div class="deal-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.cta %}</a><span class="deal-ends" data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></div>
-          </div>
-        </div>
-      </div>
-{%- endif %}
+{% include sale-panel.html data="mac" heading="heading" text="text" cta="cta" %}
       <div class="product-stage" id="playground">
         <div class="stage-top"><span>A DESK FOR EVERY KIND OF DAY</span><span class="live-label">INTERACTIVE PREVIEW</span></div>
         <div class="desktop" data-setup="code">

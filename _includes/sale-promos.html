@@ -1,0 +1,21 @@
+{%- comment -%}
+  The deal cards (sale-promo.html) of every product with a running sale, or
+  of include.platform's products only, side by side.
+{%- endcomment -%}
+{%- include sale-any.html -%}
+{%- if sale_any_on %}
+  {%- assign _promo_keys = "" %}
+  {%- for _promo_p in site.data.products %}
+    {%- if _promo_p.store_data and sale_on_keys contains _promo_p.store_data %}
+      {%- unless include.platform and _promo_p.platform != include.platform %}{% assign _promo_keys = _promo_keys | append: _promo_p.store_data | append: "," %}{% endunless %}
+    {%- endif %}
+  {%- endfor %}
+  {%- assign _promo_keys = _promo_keys | split: "," %}
+  {%- if _promo_keys.size > 0 %}
+      <div class="sale-promos{% if _promo_keys.size > 1 %} sale-promos-multi{% endif %}">
+    {%- for _promo_key in _promo_keys %}
+{% include sale-promo.html data=_promo_key %}
+    {%- endfor %}
+      </div>
+  {%- endif %}
+{%- endif %}

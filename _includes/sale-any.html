@@ -1,0 +1,16 @@
+{%- comment -%}
+  Sets sale_on_keys, the data files (mac, reader) whose sale is running, in
+  product order, and sale_any_on. It leaves the sale-state.html variables
+  of the last product checked; include sale-state.html again before
+  printing one product's sale.
+{%- endcomment -%}
+{%- assign _sale_keys = "" -%}
+{%- for _sale_p in site.data.products -%}
+  {%- if _sale_p.store_data -%}
+    {%- include sale-state.html data=_sale_p.store_data -%}
+    {%- if sale_on %}{% assign _sale_keys = _sale_keys | append: _sale_p.store_data | append: "," %}{% endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- assign sale_on_keys = _sale_keys | split: "," -%}
+{%- assign sale_any_on = false -%}
+{%- if sale_on_keys.size > 0 %}{% assign sale_any_on = true %}{% endif -%}

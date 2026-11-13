@@ -1,8 +1,11 @@
 {%- comment -%}
   Prints one sale string (include.text, from sale in the translation file)
-  with its placeholders filled in from the sale in _data/mac.yml. Include
-  sale-state.html first.
+  with its placeholders filled in from the sale that sale-state.html last
+  loaded: [name] the sale's name, [price] the sale price, [regular] the
+  usual price, [off] the discount in percent, [item] and [short] the
+  product's names from sale.items in the translation file.
 {%- endcomment -%}
 {%- capture _sale_price %}{% include usd.html amount=sale.price %}{% endcapture -%}
-{%- capture _sale_regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
-{{ include.text | replace: "[name]", sale.name | replace: "[price]", _sale_price | replace: "[regular]", _sale_regular | replace: "[off]", sale_off_percent -}}
+{%- capture _sale_regular %}{% include usd.html amount=sale_regular %}{% endcapture -%}
+{%- assign _sale_item = site.data.i18n[page.lang].sale.items[sale_product.id] -%}
+{{ include.text | replace: "[name]", sale.name | replace: "[price]", _sale_price | replace: "[regular]", _sale_regular | replace: "[off]", sale_off_percent | replace: "[item]", _sale_item.name | replace: "[short]", _sale_item.short -}}

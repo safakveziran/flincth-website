@@ -1,32 +1,37 @@
 {%- comment -%}
-  JSON-LD for the Black Friday page: the app with its current price (the sale
-  price while the sale in _data/mac.yml runs at build time) and the page's
-  FAQ, read from its front matter so the two never differ.
+  JSON-LD for the Black Friday page: each app in its deals with its current
+  price (the sale price while its sale in _data/<deal>.yml runs at build
+  time) and the page's FAQ, read from its front matter so the two never
+  differ.
 {%- endcomment -%}
-{%- include sale-state.html -%}
-{%- capture _regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
-{%- if sale_on %}{% assign _price = sale.price %}{% else %}{% assign _price = site.data.mac.price %}{% endif %}
+{%- capture _mac_regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
+{%- capture _reader_regular %}{% include usd.html amount=site.data.reader.pro_price %}{% endcapture -%}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+{%- for _key in page.deals %}
+  {%- include sale-state.html data=_key %}
+  {%- if sale_on %}{% assign _price = sale.price %}{% else %}{% assign _price = sale_regular %}{% endif %}
+  {%- capture _app_url %}{{ site.url }}{% include page-url.html ref=sale_product.id %}{% endcapture %}
       {
-        "@type": "SoftwareApplication",
-        "@id": "https://flincth.com/mac/workspace-manager#app",
-        "name": "Flincth Workspace Manager",
-        "url": "https://flincth.com/mac/workspace-manager",
-        "image": "https://flincth.com/assets/app-icon.png",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "macOS 14 or later",
+        "@type": {% if _key == "reader" %}"MobileApplication"{% else %}"SoftwareApplication"{% endif %},
+        "@id": "{{ _app_url }}#app",
+        "name": {{ site.data.i18n[page.lang].catalog[sale_product.id].name | jsonify }},
+        "url": "{{ _app_url }}",
+        "image": "{{ site.url }}{{ sale_product.icon }}-192.png",
+        "applicationCategory": {% if _key == "reader" %}"EducationalApplication"{% else %}"UtilitiesApplication"{% endif %},
+        "operatingSystem": {% if _key == "reader" %}"iOS 17 or later"{% else %}"macOS 14 or later"{% endif %},
         "offers": {
           "@type": "Offer",
+          "name": {% if _key == "reader" %}"Flincth Pro (one-time in-app purchase)"{% else %}"One-time purchase"{% endif %},
           "price": {{ _price | jsonify }},
           "priceCurrency": "USD",
-          "availability": "https://schema.org/InStock",
-          "url": {{ site.data.mac.store_url | jsonify }}
+          "url": {{ sale_store_url | jsonify }}
         },
         "publisher": { "@id": "https://flincth.com/#org" }
       },
+{%- endfor %}
       {
         "@type": "Organization",
         "@id": "https://flincth.com/#org",
@@ -42,7 +47,7 @@
           {
             "@type": "Question",
             "name": {{ _f.q | jsonify }},
-            "acceptedAnswer": { "@type": "Answer", "text": {{ _f.a | replace: "[regular]", _regular | jsonify }} }
+            "acceptedAnswer": { "@type": "Answer", "text": {{ _f.a | replace: "[mac_regular]", _mac_regular | replace: "[reader_regular]", _reader_regular | jsonify }} }
           }{% unless forloop.last %},{% endunless %}
 {%- endfor %}
         ]

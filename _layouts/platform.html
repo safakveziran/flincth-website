@@ -15,7 +15,7 @@ layout: default
   <main id="main" class="wrap platform-page">
     <h1>{{ page.heading }}</h1>
     <p class="lead">{{ page.lead }}</p>
-{%- if page.platform == "mac" %}{% include sale-promo.html %}{% endif %}
+{% include sale-promos.html platform=page.platform %}
     <div class="product-cards">
 {%- for _p in _in %}
       {% include product-card.html id=_p.id heading="h2" %}

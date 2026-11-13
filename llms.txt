@@ -91,6 +91,11 @@ An RSVP speed reading app for iPhone and iPad.
   (US{% include usd.html amount=site.data.reader.pro_price %}, Family Sharing included) removes
   them and adds customization, statistics and iCloud sync. A 7-day Pro trial
   never turns into a charge. No subscription.
+{%- include sale-state.html data="reader" %}
+{%- if sale_on %}
+- {{ sale.name }}: Pro is US{% include usd.html amount=sale.price %} ({{ sale_off_percent }}% discount) for a limited time; then US{% include usd.html amount=site.data.reader.pro_price %} again.
+  Deal page: {{ site.url }}/discounts/black-friday#speed-reader
+{%- endif %}
 - Privacy: no account, no server of its own, no AI. Documents stay on the
   device (and in the user's own iCloud with sync on). Usage, purchase and trial events
   and categories of import failures are linked to an app-installation identifier

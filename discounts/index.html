@@ -9,39 +9,47 @@ sitemap:
   priority: 0.8
 ---
 {%- comment -%}
-  Every discount page (a page with discount: <data file>, such as
-  discounts/black-friday.html), as cards. A card whose sale is running
-  shows its price and store button; one whose sale is over says so and
-  links to its page, which keeps its URL for next time. sale.js swaps a
-  running card for its ended version in the browser once the sale ends.
-  Only the Mac app (_data/mac.yml) has a sale block today; sale-state.html
-  reads it.
+  Every deal of every discount page (a page with deals: [data files], such
+  as discounts/black-friday.html), as cards. A running deal shows its price,
+  store button and a link to its section of the discount page. When all of
+  a page's deals have ended, one card says so and links to the page, which
+  keeps its URL for next time. sale.js swaps the running cards for the
+  ended ones in the browser once the sales end.
 {%- endcomment -%}
-{%- include sale-state.html -%}
+{%- include sale-any.html -%}
 {%- assign _t = site.data.i18n[page.lang] -%}
-{%- assign _deals = site.pages | where_exp: "p", "p.discount" | where: "lang", page.lang | sort: "card_title" -%}
-{%- capture _regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
+{%- assign _pages = site.pages | where_exp: "p", "p.deals" | where: "lang", page.lang | sort: "card_title" -%}
   <main id="main" class="wrap platform-page discounts-page">
     <h1>Flincth discounts.</h1>
     <p class="lead">Every deal running on Flincth apps right now. Each one is a one-time price on the app’s own store, with no account or subscription.</p>
     <div class="discount-list">
-{%- for _d in _deals %}
+{%- for _d in _pages %}
   {%- capture _url %}{% include page-url.html ref=_d.ref %}{% endcapture %}
-  {%- if sale_on %}
+  {%- assign _page_on = false %}
+  {%- for _key in _d.deals %}
+    {%- include sale-state.html data=_key %}
+    {%- if sale_on %}
+      {%- assign _page_on = true %}
       <article class="discount-card" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
-        <div class="discount-card-head"><span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span><h2><a href="{{ _url }}">{{ _d.card_title }}</a></h2></div>
-        <p>{% include sale-text.html text=_d.card_text %}</p>
-        <p class="discount-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{{ _regular }}</s></p>
-        <div class="discount-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.cta %}</a><a class="text-link" href="{{ _url }}">Deal details <span aria-hidden="true">→</span></a></div>
+        <div class="discount-card-head"><img src="{{ sale_product.icon }}-128.png" width="48" height="48" alt=""><div><span class="discount-card-sale">{{ sale.name }} <span aria-hidden="true">·</span> {{ _t.platforms[sale_product.platform].name }}</span><h2><a href="{{ _url }}#{{ sale_product.id }}">{{ _t.sale.items[sale_product.id].short }}</a></h2></div><span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span></div>
+        <p class="discount-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{% include usd.html amount=sale_regular %}</s></p>
+      {%- if _key == "reader" %}
+        <p>Speed Reader is a free download; Pro is a one-time in-app purchase that removes the daily limits.</p>
+        <div class="discount-actions"><a class="button primary" href="{{ sale_store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.reader_cta %}</a><a class="text-link" href="{{ _url }}#{{ sale_product.id }}">Deal details <span aria-hidden="true">→</span></a></div>
+      {%- else %}
+        <p>A window manager and clipboard manager for Mac, as a one-time purchase on the Mac App Store.</p>
+        <div class="discount-actions"><a class="button primary" href="{{ sale_store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.cta %}</a><a class="text-link" href="{{ _url }}#{{ sale_product.id }}">Deal details <span aria-hidden="true">→</span></a></div>
+      {%- endif %}
         <p class="micro"><span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></p>
       </article>
-  {%- endif %}
-      <article class="discount-card discount-ended"{% if sale_on %} data-sale-after hidden{% endif %}>
-        <div class="discount-card-head"><h2><a href="{{ _url }}">{{ _d.card_title }}</a></h2></div>
+    {%- endif %}
+  {%- endfor %}
+      <article class="discount-card discount-ended"{% if _page_on %} data-sale-after hidden{% endif %}>
+        <div class="discount-card-head"><div><h2><a href="{{ _url }}">{{ _d.card_title }}</a></h2></div></div>
         <p>{{ _d.card_ended }}</p>
         <div class="discount-actions"><a class="text-link" href="{{ _url }}">See the {{ _d.card_title }} page <span aria-hidden="true">→</span></a></div>
       </article>
 {%- endfor %}
     </div>
-    <p class="discount-empty"{% if sale_on %} data-sale-after hidden{% endif %}>No discounts are running right now. Each app’s page always shows its current price.</p>
+    <p class="discount-empty"{% if sale_any_on %} data-sale-after hidden{% endif %}>No discounts are running right now. Each app’s page always shows its current price.</p>
   </main>

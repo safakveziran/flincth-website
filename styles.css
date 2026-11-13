@@ -456,8 +456,8 @@ h1>span{display:block}
 /* The usual price is struck through with one diagonal line rather than a
    horizontal one, which crossed only the middle of the digits and read as
    "0.00". The line's colour is --strike in dark.css. */
-.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was,.bf-price s{position:relative;display:inline-block;text-decoration:none;line-height:1.1}
-.sale-bar s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.value-was::after,.bf-price s::after{content:"";position:absolute;left:-3%;right:-3%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-26deg);pointer-events:none}
+.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was,.bf-price s,.plan-sale s{position:relative;display:inline-block;text-decoration:none;line-height:1.1}
+.sale-bar s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.value-was::after,.bf-price s::after,.plan-sale s::after{content:"";position:absolute;left:-3%;right:-3%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-26deg);pointer-events:none}
 .sale-bar-short{display:none}
 .nowrap{white-space:nowrap}
 .sale-cta-short{display:none}
@@ -481,7 +481,13 @@ h1>span{display:block}
 .sale-promo-copy{grid-area:copy;display:grid;gap:5px;font-size:16px;line-height:1.45}
 .sale-promo-copy small{font-size:13px}
 .sale-promo-cta{grid-area:cta;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:10px;font-size:15px;font-weight:600;white-space:nowrap}
-.platform-page .sale-promo{margin:28px 0 36px}
+.sale-promos{max-width:920px;margin:40px auto 0}
+.sale-promos .sale-promo{margin:0;max-width:none}
+.sale-promos-multi{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:1040px}
+.sale-promos-multi .sale-promo{grid-template-columns:auto 1fr;grid-template-areas:"off copy" "cta cta";gap:16px 22px;padding:22px 24px}
+.sale-promos-multi .sale-promo-off{font-size:52px}
+.sale-promos-multi .sale-promo-cta{justify-self:start}
+.platform-page .sale-promos{margin:28px 0 36px}
 .product-card-sale{margin:18px 0 0;padding:12px 14px;border:1px solid;border-radius:12px;font-size:14px;line-height:1.5}
 .product-card-sale b{display:block;margin:0 0 2px;font-size:11px}
 .value-was{font-size:.6em;font-weight:550;margin-left:6px}
@@ -520,6 +526,9 @@ h1>span{display:block}
   .sale-promo-copy{font-size:15px}
   .sale-promo-cta{margin-top:6px}
 }
+.sale-promos .sale-promo{min-width:0}
+@media(max-width:900px){.sale-promos-multi{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:700px){.sale-promos-multi .sale-promo{grid-template-columns:minmax(0,1fr);grid-template-areas:"off" "copy" "cta";gap:12px;padding:22px 20px 20px}.sale-promos-multi .sale-promo-off{font-size:48px}.sale-promos-multi .sale-promo-cta{justify-self:stretch}}
 @media(prefers-reduced-motion:reduce){.sale-promo{transition:none}}
 
 /* Black Friday landing page (black-friday.html) */
@@ -560,3 +569,29 @@ html:has(.sale-bar){scroll-padding-top:90px}
 .discount-empty{margin-top:24px}
 .discount-card .micro span{margin:0}
 @media(max-width:700px){.discounts-page{padding-top:44px;padding-bottom:64px}.discount-card{padding:24px}.discount-card h2{font-size:26px}.discount-price strong{font-size:40px}.discount-actions .button{flex:1 1 100%;justify-content:center;white-space:normal;text-align:center}}
+.plan-sale{display:inline-flex;align-items:baseline;flex-wrap:wrap;gap:6px 10px}
+.plan-sale .sale-pill{align-self:center}
+.plan-sale strong{font-size:24px;font-weight:700;letter-spacing:-.02em}
+.discount-card-head img{border-radius:12px;flex-shrink:0}
+.discount-card-head>div{display:grid;gap:2px}
+.discount-card-head .sale-pill{margin-left:auto}
+.discount-card-sale{font-size:13px;font-weight:600}
+.bf-deals{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px;max-width:900px;margin:34px auto 22px;text-align:left}
+.bf-deal{display:flex;flex-direction:column;align-items:flex-start;gap:16px;border:1px solid;border-radius:var(--radius);padding:26px}
+.bf-deal-head{display:flex;align-items:center;gap:14px;width:100%}
+.bf-deal-head img{border-radius:13px;flex-shrink:0}
+.bf-deal-head>div{display:grid;gap:2px}
+.bf-deal-head h2{font-size:24px;margin:0;letter-spacing:-.02em}
+.bf-deal-head h2 a:hover{text-decoration:underline;text-underline-offset:4px}
+.bf-deal-head .sale-pill{margin-left:auto}
+.bf-deal-platform{font-size:13px;font-weight:600}
+.bf-deal .bf-price{justify-content:flex-start;margin:0}
+.bf-deal .bf-price strong{font-size:52px}
+.bf-deal .bf-price s{font-size:24px}
+.bf-deal .button{white-space:normal}
+.bf-deal-note{margin:0;font-size:13px}
+.bf-app{padding-top:90px}
+.bf-app+.bf-app{padding-top:72px}
+.bf-limits a{text-decoration:underline;text-underline-offset:3px}
+.closing .bf-state>h2{margin-top:6px}
+@media(max-width:700px){.bf-deal{padding:22px}.bf-deal .bf-price strong{font-size:44px}.bf-deal .button{width:100%;justify-content:center;text-align:center}.bf-app{padding-top:60px}.bf-app+.bf-app{padding-top:48px}.discount-card-head .sale-pill{margin-left:0}}

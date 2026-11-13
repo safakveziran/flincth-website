@@ -7,3 +7,12 @@ minimum_os: "17.0"
 # Keep it a quoted string with two decimals; the Speed Reader comparison pages
 # print it with _includes/usd.html.
 pro_price: "9.99"
+# A limited-time price for Pro, or nothing; works like the sale block in
+# _data/mac.yml (see the comment there). price is the sale price of Pro.
+sale:
+  name: "Black Friday"
+  price: "3.99"
+  starts: "2026-11-13T00:00:00-08:00"
+  # The end of December 1 in Pacific time, the last US storefront to roll over.
+  ends: "2026-12-02T00:00:00-08:00"
+  og_image: /assets/og-black-friday-reader.png
