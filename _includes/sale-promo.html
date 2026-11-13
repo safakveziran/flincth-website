@@ -8,9 +8,8 @@
   {%- assign _t = site.data.i18n[page.lang] %}
   {%- capture _wm_url %}{% include page-url.html ref="workspace-manager" %}{% endcapture %}
       <a class="sale-promo" href="{{ _wm_url }}#deal" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
-        <img src="/assets/black-friday-tag.svg" width="120" height="120" alt="">
-        <span class="sale-promo-off">{% include sale-text.html text=_t.sale.discount %}</span>
-        <span class="sale-promo-copy"><b>{{ sale.name }}</b><span>{% include sale-text.html text=_t.sale.promo %}</span><small>{% include sale-text.html text=_t.sale.through %} <span data-sale-countdown data-days="{{ _t.sale.ends_in | escape }}" data-last="{{ _t.sale.last_day_left | escape }}"></span></small></span>
+        <span class="sale-promo-off">{% include sale-text.html text=_t.sale.discount_big %}</span>
+        <span class="sale-promo-copy"><b>{{ sale.name }}</b><span>{% include sale-text.html text=_t.sale.promo %}</span><small><span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></small></span>
         <span class="sale-promo-cta">{{ _t.sale.promo_cta }} <span aria-hidden="true">→</span></span>
       </a>
 {%- endif %}

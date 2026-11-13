@@ -31,8 +31,8 @@ sitemap:
           <div class="deal-copy">
             <h2 id="deal-title">{% include sale-text.html text=_t.sale.heading %}</h2>
             <p>{% include sale-text.html text=_t.sale.text %}</p>
-            <p class="deal-price"><span><small>{% include sale-text.html text=_t.sale.now %}</small><strong>{% include usd.html amount=sale.price %}</strong></span><span><small>{{ _t.sale.regular }}</small><s>{% include usd.html amount=site.data.mac.price %}</s></span></p>
-            <div class="deal-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.cta %}</a><span class="deal-ends" data-sale-countdown data-days="{{ _t.sale.ends_in | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{% include sale-text.html text=_t.sale.through %}</span></div>
+            <p class="deal-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{% include usd.html amount=site.data.mac.price %}</s></p>
+            <div class="deal-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.cta %}</a><span class="deal-ends" data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></div>
           </div>
         </div>
       </div>
