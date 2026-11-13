@@ -139,34 +139,57 @@ not_found:
   back: Back to Flincth
   products: See all products
 
-# Limited-time Workspace Manager price (sale in _data/mac.yml). [name] is
-# the sale's name, [price] the sale price, [regular] the usual price, [off]
-# the discount in percent. The copy never names the end date, so the deal
-# does not read as one to come back for; in its last two days the countdown
-# says ends_tomorrow, then last_day_left. Values that hold <b>, <s> or
-# <strong> are rendered as HTML.
+# Limited-time prices (the sale block in _data/mac.yml or _data/reader.yml).
+# [name] is the sale's name, [price] the sale price, [regular] the usual
+# price, [off] the discount in percent, [item] and [short] the product's
+# names from items below. The copy never names the end date, so a deal does
+# not read as one to come back for; in its last two days the countdown says
+# ends_tomorrow, then last_day_left. Values that hold <b>, <s> or <strong>
+# are rendered as HTML.
 sale:
+  # What is on sale, keyed by product id (_data/products.yml).
+  items:
+    workspace-manager:
+      name: Flincth Workspace Manager for Mac
+      short: Workspace Manager
+    speed-reader:
+      name: Flincth Speed Reader Pro for iPhone and iPad
+      short: Speed Reader Pro
   label: "[name] deal"
-  bar: "<b>[name]</b> Flincth Workspace Manager for Mac is <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> for a limited time."
-  bar_short: "<b>[name]</b> Workspace Manager <span class=\"nowrap\"><strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s></span> <small>Limited time</small>"
+  # The deal bar on a product's pages: that product's deal.
+  bar: "<b>[name]</b> [item] is <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> for a limited time."
+  bar_short: "<b>[name]</b> [short] <span class=\"nowrap\"><strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s></span> <small>Limited time</small>"
   bar_cta: Get the deal
   bar_cta_short: Get it
+  # The deal bar on pages of no single product when more than one deal runs.
+  bar_all: "<b>[name]</b> [off]% discount on Workspace Manager for Mac and Speed Reader Pro for iPhone and iPad, for a limited time."
+  bar_all_short: "<b>[name]</b> [off]% discount on <span class=\"nowrap\">Flincth apps</span> <small>Limited time</small>"
+  bar_all_cta: See the deals
+  bar_all_cta_short: Deals
   discount: "[off]% discount"
-  # The large discount on the home and Mac deal card.
+  # The large discount on the deal cards (home page, platform pages).
   discount_big: "[off]%<small>discount</small>"
   hero_cta: "Download for [price] on the Mac App Store"
-  promo: "Flincth Workspace Manager for Mac is now <span class=\"nowrap\"><strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s>.</span>"
+  promo: "[item] is now <span class=\"nowrap\"><strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s>.</span>"
   card: "<b>[name]</b> <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> for a limited time"
+  # The deal panel on Workspace Manager's page.
   heading: "[off]% discount on Workspace Manager, for a limited time."
   text: "For [name], Flincth Workspace Manager is [price] instead of [regular] on the Mac App Store. One purchase includes every feature and every update, with no subscription."
   cta: "Get it for [price]"
+  # The deal panel on Speed Reader's page.
+  reader_heading: "[off]% discount on Speed Reader Pro, for a limited time."
+  reader_text: "For [name], Flincth Pro in Speed Reader is [price] instead of [regular], a one-time in-app purchase with no subscription. The app is a free download, and Pro removes the daily limits."
+  reader_cta: "Download free, get Pro for [price]"
+  # The Pro plan's price on Speed Reader's page.
+  reader_plan: "<strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s>, one-time purchase"
   regular: Usual price
   now: "[name] price"
   limited: Limited time only.
   ends_tomorrow: Ends tomorrow.
   last_day_left: Last day of the deal.
   tag_alt: "[off]% discount price tag"
-  og_image_alt: "Flincth Workspace Manager for Mac, [name]: [price] instead of [regular], for a limited time."
+  og_image_alt: "[item], [name]: [price] instead of [regular], for a limited time."
+  og_image_alt_all: "Flincth [name]: [off]% discount on Workspace Manager for Mac and Speed Reader Pro, for a limited time."
 
 og_image_alt: "Flincth: small apps with a clear purpose, for Mac, iPhone, iPad and your browser."
 og_image_alt_workspace_manager: "Flincth Workspace Manager: a place for every app. Space for every you."

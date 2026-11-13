@@ -25,10 +25,11 @@
   {%- assign page_description = page.description -%}
 {%- endif -%}
 {%- comment -%} A page may set sale_title and sale_description for while the
-  sale in _data/mac.yml runs (sale-state.html); their [price], [regular] and
-  [off] are filled in by sale-text.html. {%- endcomment -%}
+  sale of the first data file in its deals (or mac) runs (sale-state.html);
+  their [price], [regular] and [off] are filled in by sale-text.html. {%- endcomment -%}
 {%- if page.sale_title -%}
-  {%- include sale-state.html -%}
+  {%- assign _title_key = page.deals | first | default: "mac" -%}
+  {%- include sale-state.html data=_title_key -%}
   {%- if sale_on -%}
     {%- capture page_title %}{% include sale-text.html text=page.sale_title %}{% endcapture -%}
     {%- capture page_description %}{% include sale-text.html text=page.sale_description %}{% endcapture -%}
@@ -64,8 +65,8 @@
   <script src="/reader.js?v={{ asset_version }}" defer></script>
 {%- endif %}
   <script src="/nav.js?v={{ asset_version }}" defer></script>
-{%- include sale-state.html %}
-{%- if sale_on %}
+{%- include sale-any.html %}
+{%- if sale_any_on %}
   <script src="/sale.js?v={{ asset_version }}" defer></script>
 {%- endif %}
   <script src="/consent.js?v={{ asset_version }}" defer></script>

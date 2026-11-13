@@ -1,0 +1,25 @@
+{%- comment -%}
+  A product's deal panel, in the hero of its own page above the preview:
+  price tag, heading, text, both prices, store button and "Limited time
+  only." include.data is the product's data file (mac, reader); heading,
+  text and cta are keys under sale in the translation file. Shown only while
+  the sale runs; sale.js removes it once the sale ends.
+{%- endcomment -%}
+{%- include sale-state.html data=include.data -%}
+{%- if sale_on %}
+  {%- assign _t = site.data.i18n[page.lang] %}
+  {%- assign _panel_heading = _t.sale[include.heading] %}
+  {%- assign _panel_text = _t.sale[include.text] %}
+  {%- assign _panel_cta = _t.sale[include.cta] %}
+      <div class="deal" id="deal" role="region" aria-labelledby="deal-title" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+        <div class="deal-panel">
+          <img class="deal-tag" src="/assets/black-friday-tag.svg" width="260" height="260" alt="{% include sale-text.html text=_t.sale.tag_alt %}">
+          <div class="deal-copy">
+            <h2 id="deal-title">{% include sale-text.html text=_panel_heading %}</h2>
+            <p>{% include sale-text.html text=_panel_text %}</p>
+            <p class="deal-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{% include usd.html amount=sale_regular %}</s></p>
+            <div class="deal-actions"><a class="button primary" href="{{ sale_store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_panel_cta %}</a><span class="deal-ends" data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></div>
+          </div>
+        </div>
+      </div>
+{%- endif %}

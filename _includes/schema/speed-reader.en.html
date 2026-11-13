@@ -20,7 +20,7 @@
         "sameAs": [{{ site.data.reader.store_url | jsonify }}],
         "offers": [
           { "@type": "Offer", "name": "Free download", "price": "0", "priceCurrency": "USD" },
-          { "@type": "Offer", "name": "Flincth Pro (one-time in-app purchase)", "price": {{ site.data.reader.pro_price | jsonify }}, "priceCurrency": "USD" }
+          { "@type": "Offer", "name": "Flincth Pro (one-time in-app purchase)", "price": {% include sale-state.html data="reader" %}{% if sale_on %}{{ sale.price | jsonify }}{% else %}{{ site.data.reader.pro_price | jsonify }}{% endif %}, "priceCurrency": "USD" }
         ],
         "featureList": [
           "Word, phrase and short sentence reading modes",

@@ -151,15 +151,17 @@ reading screen are HTML/CSS illustrations, always captioned as such. The
 reader preview plays only when the visitor has not asked for reduced motion. Replace them with real screenshots when they exist.
 
 ### Limited-time deal
-While a sale in `_data/mac.yml` runs: a black bar above the header on every
+While a sale in `_data/mac.yml` or `_data/reader.yml` runs: a black bar above the header on every
 page, which stays at the top of the window while the page scrolls (a red "60% discount" pill, the sale name in red small caps, the sale price in
 white, the usual price struck through, a blue link to the store; under 1180 px
-a shorter line, and on phones a "Get it" button), a black card under the home
-page's hero and the Mac page's lead with a large red "60% discount" that opens the
-Mac App Store, a black panel in Workspace Manager's hero above the preview (a red
-price tag in the brand mark's two-card shape, heading, both prices, one blue
-button, "Limited time only.") with the sale price on the hero button, and a
-black line on its product card.
+a shorter line, and on phones a "Get it" button; on pages of no single product
+with more than one deal, every deal and "See the deals"), black cards under the
+home page's hero (one per deal, side by side) and each platform page's lead
+with a large red "60% discount" that open the store, a black panel in the
+product page's hero above the preview (a red price tag in the brand mark's
+two-card shape, heading, both prices, one blue button, "Limited time only.";
+Workspace Manager's hero button and Speed Reader's Pro plan show the sale
+price too), and a black line on its product card.
 
 **Red marks the deal, nothing else.** The one exception to "One accent", and
 only while a sale runs: red (#e5162a under white text, #ff453a as text on

@@ -1,14 +1,16 @@
 {%- comment -%}
-  The deal as a card that opens Workspace Manager on the Mac App Store, for
-  pages that do not sell it themselves (the home page, the Mac page). Shown only
-  while a sale runs (_data/mac.yml); sale.js removes it once the sale ends.
+  One product's deal as a card that opens its store, for pages that do not
+  sell it themselves: the home page (every running deal) and the platform
+  pages (their own products). include.data is the product's data file (mac,
+  reader). Shown only while its sale runs; sale.js removes it once the sale
+  ends.
 {%- endcomment -%}
-{%- include sale-state.html -%}
+{%- include sale-state.html data=include.data -%}
 {%- if sale_on %}
   {%- assign _t = site.data.i18n[page.lang] %}
-      <a class="sale-promo" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
-        <span class="sale-promo-off">{% include sale-text.html text=_t.sale.discount_big %}</span>
-        <span class="sale-promo-copy"><b>{{ sale.name }}</b><span>{% include sale-text.html text=_t.sale.promo %}</span><small><span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></small></span>
-        <span class="sale-promo-cta">{{ _t.sale.bar_cta }} <span aria-hidden="true">→</span></span>
-      </a>
+        <a class="sale-promo" href="{{ sale_store_url }}" target="_blank" rel="noopener" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+          <span class="sale-promo-off">{% include sale-text.html text=_t.sale.discount_big %}</span>
+          <span class="sale-promo-copy"><b>{{ sale.name }}</b><span>{% include sale-text.html text=_t.sale.promo %}</span><small><span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></small></span>
+          <span class="sale-promo-cta">{{ _t.sale.bar_cta }} <span aria-hidden="true">→</span></span>
+        </a>
 {%- endif %}

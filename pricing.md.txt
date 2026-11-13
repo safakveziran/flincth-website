@@ -45,6 +45,10 @@ Apple sets the local price in other storefronts.
 ### Pro
 
 - Price: {% include usd.html amount=site.data.reader.pro_price %}, one-time in-app purchase
+{%- include sale-state.html data="reader" %}
+{%- if sale_on %}
+- {{ sale.name }} price: {% include usd.html amount=sale.price %} ({{ sale_off_percent }}% discount) for a limited time; the price then returns to {% include usd.html amount=site.data.reader.pro_price %}
+{%- endif %}
 - Includes: no daily limits, higher speeds and unlimited documents; themes,
   fonts, focus letter, pause and chunk tuning; reading statistics and goals;
   iCloud sync between iPhone and iPad

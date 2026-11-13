@@ -1,11 +1,38 @@
 {%- comment -%}
   The deal bar above every page's header while a sale runs (_data/mac.yml,
-  sale-state.html). sale.js removes it once the sale ends and writes the days
-  left into [data-sale-countdown].
+  _data/reader.yml; sale-any.html, sale-state.html). On a page that belongs
+  to a product on sale (page.product), or to a platform with one (page.platform),
+  it shows that product's deal and opens its store. On any other page it shows
+  the one running deal, or, when several run, all of them with a link to
+  /discounts/. Its discount pill links to the Black Friday page. It stays at
+  the top of the window while the page scrolls; sale.js removes it once the
+  sale ends and writes the last days into [data-sale-countdown].
 {%- endcomment -%}
-{%- include sale-state.html -%}
-{%- if sale_on %}
+{%- include sale-any.html -%}
+{%- if sale_any_on %}
+  {%- assign _bar_key = nil %}
+  {%- if page.product %}
+    {%- assign _bar_p = site.data.products | where: "id", page.product | first %}
+    {%- if _bar_p.store_data and sale_on_keys contains _bar_p.store_data %}{% assign _bar_key = _bar_p.store_data %}{% endif %}
+  {%- elsif page.platform %}
+    {%- assign _bar_ps = site.data.products | where: "platform", page.platform %}
+    {%- for _bar_p in _bar_ps %}
+      {%- if _bar_key == nil and _bar_p.store_data and sale_on_keys contains _bar_p.store_data %}{% assign _bar_key = _bar_p.store_data %}{% endif %}
+    {%- endfor %}
+  {%- endif %}
+  {%- assign _first_key = sale_on_keys | first %}
+  {%- if _bar_key == nil and sale_on_keys.size == 1 %}{% assign _bar_key = _first_key %}{% endif %}
+  {%- if _bar_key %}{% include sale-state.html data=_bar_key %}{% else %}{% include sale-state.html data=_first_key %}{% endif %}
+  {%- capture _bf_url %}{% include page-url.html ref="black-friday" %}{% endcapture %}
+  {%- capture _countdown %}<span class="sale-countdown" data-sale-countdown data-tomorrow="{{ t.sale.ends_tomorrow | escape }}" data-last="{{ t.sale.last_day_left | escape }}"></span>{% endcapture %}
   <aside class="sale-bar" aria-label="{% include sale-text.html text=t.sale.label %}" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
-    <div class="wrap sale-bar-inner">{%- capture _bf_url %}{% include page-url.html ref="black-friday" %}{% endcapture %}<a class="sale-pill" href="{{ _bf_url }}"{% if page.ref == "black-friday" %} aria-current="page"{% endif %}>{% include sale-text.html text=t.sale.discount %}</a><p><span class="sale-bar-long">{% include sale-text.html text=t.sale.bar %} <span class="sale-countdown" data-sale-countdown data-tomorrow="{{ t.sale.ends_tomorrow | escape }}" data-last="{{ t.sale.last_day_left | escape }}"></span></span><span class="sale-bar-short">{% include sale-text.html text=t.sale.bar_short %}</span></p><a class="sale-bar-cta" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener"><span class="sale-cta-long">{{ t.sale.bar_cta }}</span><span class="sale-cta-short">{{ t.sale.bar_cta_short }}</span> <span aria-hidden="true">→</span></a></div>
+    <div class="wrap sale-bar-inner"><a class="sale-pill" href="{{ _bf_url }}"{% if page.ref == "black-friday" %} aria-current="page"{% endif %}>{% include sale-text.html text=t.sale.discount %}</a>
+  {%- if _bar_key -%}
+<p><span class="sale-bar-long">{% include sale-text.html text=t.sale.bar %} {{ _countdown }}</span><span class="sale-bar-short">{% include sale-text.html text=t.sale.bar_short %}</span></p><a class="sale-bar-cta" href="{{ sale_store_url }}" target="_blank" rel="noopener"><span class="sale-cta-long">{{ t.sale.bar_cta }}</span><span class="sale-cta-short">{{ t.sale.bar_cta_short }}</span> <span aria-hidden="true">→</span></a>
+  {%- else -%}
+    {%- capture _discounts_url %}{% include page-url.html ref="discounts" %}{% endcapture -%}
+<p><span class="sale-bar-long">{% include sale-text.html text=t.sale.bar_all %} {{ _countdown }}</span><span class="sale-bar-short">{% include sale-text.html text=t.sale.bar_all_short %}</span></p><a class="sale-bar-cta" href="{{ _discounts_url }}"><span class="sale-cta-long">{{ t.sale.bar_all_cta }}</span><span class="sale-cta-short">{{ t.sale.bar_all_cta_short }}</span> <span aria-hidden="true">→</span></a>
+  {%- endif -%}
+</div>
   </aside>
 {%- endif %}

@@ -82,7 +82,7 @@ layout: default
 {%- if page.value %}
       <div class="value-strip">
         <div><span class="value-label">{{ page.value.label }}</span><span class="value-price">{% include usd.html amount=them.price %}</span></div>
-        <div class="value-flincth"><span class="value-label">Flincth Pro, once, for good</span><span class="value-price">{% include usd.html amount=reader.pro_price %}</span></div>
+        <div class="value-flincth"><span class="value-label">Flincth Pro, once, for good</span>{% include sale-state.html data="reader" %}{% if sale_on %}<span class="value-price" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">{% include usd.html amount=sale.price %} <s class="value-was"><span class="visually-hidden">instead of </span>{% include usd.html amount=reader.pro_price %}</s></span><span class="value-price" data-sale-after hidden>{% include usd.html amount=reader.pro_price %}</span>{% else %}<span class="value-price">{% include usd.html amount=reader.pro_price %}</span>{% endif %}</div>
       </div>
 {%- endif %}
       <p class="table-note">{{ page.note | replace: "[checked]", c.checked_reader }}</p>

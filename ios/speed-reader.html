@@ -9,7 +9,7 @@ schema: schema/speed-reader.en.html
 og_image: /assets/og-reader.png
 og_image_alt: og_image_alt_speed_reader
 sitemap:
-  lastmod: 2026-11-07
+  lastmod: 2026-11-13
   changefreq: monthly
   priority: 0.8
 ---
@@ -19,6 +19,8 @@ sitemap:
   analytics consent (§23). Free plan limits are set remotely, so this page
   never prints them. The App Store link and the US Pro price live in _data/reader.yml.
 {%- endcomment -%}
+{%- include sale-state.html data="reader" -%}
+{%- assign _t = site.data.i18n[page.lang] -%}
   <main id="main" class="reader-page">
     <section class="hero wrap">
       <p class="product-badge"><img src="/assets/reader-icon-64.png" width="22" height="22" alt="">Flincth Speed Reader for iPhone and iPad</p>
@@ -27,6 +29,7 @@ sitemap:
       <div class="hero-actions"><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a><a class="text-link" href="#how">See how it works <span aria-hidden="true">↓</span></a></div>
       <p class="micro">iPhone and iPad <span>·</span> iOS 17 or later <span>·</span> No account <span>·</span> No subscription</p>
 
+{% include sale-panel.html data="reader" heading="reader_heading" text="reader_text" cta="reader_cta" %}
       <div class="product-stage reader-stage" id="preview" data-mode="word">
         <div class="stage-top"><span>ONE SPOT. YOUR PACE.</span><span class="live-label">INTERACTIVE PREVIEW</span></div>
         <div class="reader-screen">
@@ -57,7 +60,7 @@ sitemap:
 
     <section class="pricing wrap" id="pricing"><div class="section-heading"><div><h2>Free to start. Pro, once.</h2></div><p>No subscription, now or later.</p></div><div class="plans">
       <article class="plan"><h3>Free</h3><p class="plan-price">Free download</p><ul><li>Every reading mode and every format</li><li>Daily reading time, a few saved documents and a speed cap, enough to try it properly</li><li>Light and dark themes, and a dyslexia-friendly font</li><li>Accessibility settings, always free</li></ul></article>
-      <article class="plan plan-pro"><h3>Pro</h3><p class="plan-price">{% include usd.html amount=site.data.reader.pro_price %}, one-time purchase</p><ul><li>No daily limits, higher speeds and as many documents as you like</li><li>Themes, fonts, focus letter and pause tuning</li><li>Reading statistics and goals</li><li>iCloud sync between your iPhone and iPad</li><li>A 7-day free trial that asks for no payment and never turns into a charge</li><li>Family Sharing included</li></ul></article>
+      <article class="plan plan-pro"><h3>Pro</h3><p class="plan-price">{% include sale-state.html data="reader" %}{% if sale_on %}<span class="plan-sale" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}"><span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span> {% include sale-text.html text=_t.sale.reader_plan %}</span><span data-sale-after hidden>{% include usd.html amount=site.data.reader.pro_price %}, one-time purchase</span>{% else %}{% include usd.html amount=site.data.reader.pro_price %}, one-time purchase{% endif %}</p><ul><li>No daily limits, higher speeds and as many documents as you like</li><li>Themes, fonts, focus letter and pause tuning</li><li>Reading statistics and goals</li><li>iCloud sync between your iPhone and iPad</li><li>A 7-day free trial that asks for no payment and never turns into a charge</li><li>Family Sharing included</li></ul></article>
     </div></section>
 
     <section class="faq wrap" id="questions"><div><h2>Good questions.</h2></div><div class="questions">
