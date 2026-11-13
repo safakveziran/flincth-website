@@ -36,7 +36,7 @@
       },
       {
         "@type": "FAQPage",
-        "@id": "https://flincth.com/black-friday#faq",
+        "@id": "{{ site.url }}{{ page.url | replace: '.html', '' }}#faq",
         "mainEntity": [
 {%- for _f in page.faq %}
           {
