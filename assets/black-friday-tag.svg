@@ -9,9 +9,10 @@
     <path d="M74 44h118a18 18 0 0 1 18 18v138a18 18 0 0 1-18 18H74a18 18 0 0 1-18-18v-74l-12-18 12-18V62a18 18 0 0 1 18-18z" fill="#e5162a"/>
     <circle cx="76" cy="108" r="9" fill="#ff8a80"/>
     <circle cx="76" cy="108" r="4" fill="#090e18"/>
-    <text x="146" y="104" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2.4">BLACK</text>
-    <text x="146" y="124" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2.4">FRIDAY</text>
-    <rect x="102" y="138" width="88" height="2" rx="1" fill="#ffffff" opacity=".45"/>
-    <text x="146" y="188" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="41" font-weight="750" letter-spacing="-1.5">−60%</text>
+    <text x="146" y="94" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2.4">BLACK</text>
+    <text x="146" y="113" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2.4">FRIDAY</text>
+    <rect x="104" y="124" width="84" height="2" rx="1" fill="#ffffff" opacity=".45"/>
+    <text x="146" y="168" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="42" font-weight="750" letter-spacing="-1.5">60%</text>
+    <text x="146" y="192" text-anchor="middle" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="2.2">DISCOUNT</text>
   </g>
 </svg>

@@ -152,10 +152,10 @@ reader preview plays only when the visitor has not asked for reduced motion. Rep
 
 ### Limited-time deal
 While a sale in `_data/mac.yml` runs: a black bar above the header on every
-page (a red discount pill, the sale name in red small caps, the sale price in
+page (a red "60% discount" pill, the sale name in red small caps, the sale price in
 white, the usual price struck through, a blue link to the store; under 1180 px
 a shorter line, and on phones a "Get it" button), a black card under the home
-page's hero and the Mac page's lead with a large red discount that links to
+page's hero and the Mac page's lead with a large red "60% discount" that links to
 the deal, a black panel in Workspace Manager's hero above the preview (a red
 price tag in the brand mark's two-card shape, heading, both prices, one blue
 button, "Limited time only.") with the sale price on the hero button, and a
@@ -163,7 +163,8 @@ black line on its product card.
 
 **Red marks the deal, nothing else.** The one exception to "One accent", and
 only while a sale runs: red (#e5162a under white text, #ff453a as text on
-black) is used for the discount, the sale's name and the price tag. Prices stay
+black) is used for the discount, the sale's name, the price tag and the line
+through each usual price. The discount is written "60% discount", never "−60%". Prices stay
 neutral and every button stays blue. Nothing about the deal is invented: the
 price and the discount come from the data file. The end date is never shown,
 so the deal does not read as one to come back for; the countdown appears only

@@ -453,7 +453,8 @@ h1>span{display:block}
 .sale-bar p{margin:0;font-size:15px;line-height:1.45}
 .sale-bar b,.sale-promo-copy b,.product-card-sale b{font-weight:750;letter-spacing:.08em;text-transform:uppercase;font-size:.85em;margin-right:6px}
 .sale-bar strong,.product-card-sale strong,.sale-promo strong{font-weight:700}
-.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was{text-decoration-thickness:1.5px}
+.sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was{text-decoration-thickness:2px}
+.deal-price s{text-decoration-thickness:3px}
 .sale-bar-short{display:none}
 .nowrap{white-space:nowrap}
 .sale-cta-short{display:none}
@@ -472,7 +473,8 @@ h1>span{display:block}
 .deal-ends{font-size:14px;font-weight:600}
 .sale-promo{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"off copy cta";align-items:center;gap:28px;max-width:920px;margin:40px auto 0;padding:24px 28px 24px 32px;border:1px solid;border-radius:24px;text-align:left;transition:transform .2s,border-color .2s}
 .sale-promo:hover{transform:translateY(-3px)}
-.sale-promo-off{grid-area:off;font-size:60px;font-weight:750;letter-spacing:-.04em;line-height:1}
+.sale-promo-off{grid-area:off;display:grid;justify-items:start;font-size:60px;font-weight:750;letter-spacing:-.04em;line-height:1}
+.sale-promo-off small{font-size:15px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-top:6px}
 .sale-promo-copy{grid-area:copy;display:grid;gap:5px;font-size:16px;line-height:1.45}
 .sale-promo-copy small{font-size:13px}
 .sale-promo-cta{grid-area:cta;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 20px;border-radius:10px;font-size:15px;font-weight:600;white-space:nowrap}
@@ -510,7 +512,8 @@ h1>span{display:block}
   .deal-actions .button{flex:1 1 100%;justify-content:center}
   .deal-ends{flex:1 1 100%;text-align:center}
   .sale-promo{grid-template-columns:auto 1fr;grid-template-areas:"off off" "copy copy" "cta cta";gap:12px;margin-top:32px;padding:22px 20px 20px;border-radius:22px}
-  .sale-promo-off{font-size:48px}
+  .sale-promo-off{display:flex;align-items:baseline;gap:10px;font-size:48px}
+  .sale-promo-off small{margin-top:0}
   .sale-promo-copy{font-size:15px}
   .sale-promo-cta{margin-top:6px}
 }

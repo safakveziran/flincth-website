@@ -292,7 +292,7 @@ footer > a:hover { color: #8db6ff; }
 .sale-pill { background: #e5162a; color: #fff; }
 .sale-bar b, .sale-promo-copy b, .product-card-sale b { color: #ff453a; }
 .sale-promo-off { color: #ff453a; }
-.sale-bar s, .product-card-sale s, .deal-price s, .sale-promo s, .value-was { color: #8695ad; }
+.sale-bar s, .product-card-sale s, .deal-price s, .sale-promo s, .value-was { color: #8695ad; text-decoration-color: #ff453a; }
 .sale-bar strong, .product-card-sale strong, .sale-promo strong { color: var(--ink); }
 .sale-countdown { color: var(--muted); }
 .sale-bar a { background: var(--action); color: #fff; }
