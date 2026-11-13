@@ -1,15 +1,14 @@
 {%- comment -%}
-  The deal as a card that links to Workspace Manager's deal panel, for pages
-  that do not sell it themselves (the home page, the Mac page). Shown only
+  The deal as a card that opens Workspace Manager on the Mac App Store, for
+  pages that do not sell it themselves (the home page, the Mac page). Shown only
   while a sale runs (_data/mac.yml); sale.js removes it once the sale ends.
 {%- endcomment -%}
 {%- include sale-state.html -%}
 {%- if sale_on %}
   {%- assign _t = site.data.i18n[page.lang] %}
-  {%- capture _wm_url %}{% include page-url.html ref="workspace-manager" %}{% endcapture %}
-      <a class="sale-promo" href="{{ _wm_url }}#deal" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+      <a class="sale-promo" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
         <span class="sale-promo-off">{% include sale-text.html text=_t.sale.discount_big %}</span>
         <span class="sale-promo-copy"><b>{{ sale.name }}</b><span>{% include sale-text.html text=_t.sale.promo %}</span><small><span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></small></span>
-        <span class="sale-promo-cta">{{ _t.sale.promo_cta }} <span aria-hidden="true">→</span></span>
+        <span class="sale-promo-cta">{{ _t.sale.bar_cta }} <span aria-hidden="true">→</span></span>
       </a>
 {%- endif %}
