@@ -9,7 +9,7 @@ schema: schema/workspace-manager.en.html
 og_image: /assets/og-image.png
 og_image_alt: og_image_alt_workspace_manager
 sitemap:
-  lastmod: 2026-10-10
+  lastmod: 2026-11-13
   changefreq: monthly
   priority: 1.0
 ---
@@ -33,6 +33,21 @@ sitemap:
       </div>
       <p class="preview-note">Illustrative preview, not an app screenshot. Window placement uses the Flincth Apply shortcut.</p>
     </section>
+{%- include sale-state.html %}
+{%- if sale_on %}
+  {%- assign _t = site.data.i18n[page.lang] %}
+    <section class="deal wrap" id="deal" aria-labelledby="deal-title" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+      <div class="deal-panel">
+        <img class="deal-tag" src="/assets/black-friday-tag.svg" width="260" height="260" alt="{% include sale-text.html text=_t.sale.tag_alt %}">
+        <div class="deal-copy">
+          <h2 id="deal-title">{% include sale-text.html text=_t.sale.heading %}</h2>
+          <p>{% include sale-text.html text=_t.sale.text %}</p>
+          <p class="deal-price"><span><small>{% include sale-text.html text=_t.sale.now %}</small><strong>{% include usd.html amount=sale.price %}</strong></span><span><small>{{ _t.sale.regular }}</small><s>{% include usd.html amount=site.data.mac.price %}</s></span></p>
+          <div class="deal-actions"><a class="button primary" href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{% include sale-text.html text=_t.sale.cta %}</a><span class="deal-ends" data-sale-countdown data-days="{{ _t.sale.ends_in | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{% include sale-text.html text=_t.sale.through %}</span></div>
+        </div>
+      </div>
+    </section>
+{%- endif %}
     <section class="features wrap" id="features">
       <div class="section-heading"><div><h2>Keep the context. Lose the clutter.</h2></div><p>Window management, a clipboard manager and multiple display layouts, kept together in one menu bar app.</p></div>
       <div class="feature-grid">

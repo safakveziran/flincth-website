@@ -34,6 +34,10 @@ layout: null
 - Requirements: macOS 14 or later.
 - Pricing: US{% include usd.html amount=site.data.mac.price %}, a one-time purchase on the Mac App Store. There is no
   subscription, in-app purchase or trial.
+{%- include sale-state.html %}
+{%- if sale_on %}
+- {{ sale.name }}: US{% include usd.html amount=sale.price %} ({{ sale_off_percent }}% off) through {{ sale.last_day }}, {{ sale.ends | date: "%Y" }}; then US{% include usd.html amount=site.data.mac.price %} again.
+{%- endif %}
 - Privacy: no account, no analytics and no server of its own. Setups and
   clipboard history are stored locally and never leave the user's Mac. The
   only network use is optional new-feature announcements (off by default):

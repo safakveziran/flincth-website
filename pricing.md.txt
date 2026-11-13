@@ -17,6 +17,10 @@ Apple sets the local price in other storefronts.
 ## Flincth Workspace Manager (Mac)
 
 - Price: {% include usd.html amount=site.data.mac.price %}, one-time purchase on the Mac App Store
+{%- include sale-state.html %}
+{%- if sale_on %}
+- {{ sale.name }} price: {% include usd.html amount=sale.price %} ({{ sale_off_percent }}% off) through {{ sale.last_day }}, {{ sale.ends | date: "%Y" }}; the price returns to {% include usd.html amount=site.data.mac.price %} afterwards
+{%- endif %}
 - Includes: every feature and every update
 - In-app purchases: none
 - Trial: none
