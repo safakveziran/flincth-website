@@ -152,7 +152,8 @@ reader preview plays only when the visitor has not asked for reduced motion. Rep
 
 ### Limited-time deal
 While a sale in `_data/mac.yml` runs: a black bar above the header on every
-page (a blue discount pill, sale name in small caps, the sale price in blue,
+page (a blue discount pill, sale name in small caps, the sale price in blue;
+under 1180 px a shorter line, and on phones a "Get it" button,
 the usual price struck through, a filled link to the store), a black card under
 the home page's hero and the Mac page's lead that links to the deal, a black
 panel in Workspace Manager's hero above the preview (price tag in the brand

@@ -285,25 +285,23 @@ footer > a:hover { color: #8db6ff; }
 .closing p a { color: #89b2ff; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Limited-time deal: black, the colour of the day, with the site's one blue. */
-.sale-bar { background: #000; color: var(--ink); border-bottom: 1px solid #1f2a3c; }
-.sale-bar s, .product-card-sale s, .deal-price s, .value-was { color: #8695ad; }
-.sale-bar a, .sale-bar strong { color: #89b2ff; }
-.sale-countdown, .deal-ends { color: #c9d7ee; }
-.deal-panel { background: #000; border-color: #22324b; box-shadow: 0 24px 48px -28px #000; }
-.deal-copy h2 { color: var(--ink); }
-.deal-copy > p { color: var(--muted); }
-.deal-price small { color: #8fa0bb; }
-.deal-price strong { color: var(--ink); }
-.product-card-sale { background: #000; border-color: #2b405f; color: #c9d7ee; }
-.product-card-sale b { color: var(--ink); }
-.product-card-sale strong { color: #89b2ff; }
+.sale-bar { background: #000; color: #c9d7ee; border-bottom: 1px solid #1f2a3c; }
+.sale-bar b { color: var(--ink); }
 .sale-pill { background: var(--action); color: #fff; }
+.sale-bar s, .product-card-sale s, .deal-price s, .sale-promo s, .value-was { color: #8695ad; }
+.sale-bar strong, .product-card-sale strong, .sale-promo strong { color: #89b2ff; }
+.sale-countdown { color: var(--muted); }
 .sale-bar a { background: var(--action); color: #fff; }
-.sale-bar a:hover { background: #326af4; text-decoration: none; }
+.sale-bar a:hover { background: #326af4; }
+.deal-panel { background: #000; border-color: #22324b; box-shadow: 0 24px 48px -28px #000; }
+.deal-copy h2, .deal-price strong { color: var(--ink); }
+.deal-copy > p { color: var(--muted); }
+.deal-ends { color: #c9d7ee; }
 .sale-promo { background: #000; border-color: #2b405f; color: var(--muted); box-shadow: 0 24px 48px -28px #000; }
 .sale-promo:hover { border-color: #57729b; }
 .sale-promo-off, .sale-promo-copy b { color: var(--ink); }
-.sale-promo strong { color: #89b2ff; }
-.sale-promo s { color: #8695ad; }
 .sale-promo small { color: #c9d7ee; }
 .sale-promo-cta { background: var(--action); color: #fff; border: 1px solid #527ff2; }
+.sale-promo:hover .sale-promo-cta { background: #326af4; }
+.product-card-sale { background: #000; border-color: #2b405f; color: #c9d7ee; }
+.product-card-sale b { color: var(--ink); }
