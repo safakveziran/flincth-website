@@ -155,8 +155,8 @@ While a sale in `_data/mac.yml` runs: a black bar above the header on every
 page (a red "60% discount" pill, the sale name in red small caps, the sale price in
 white, the usual price struck through, a blue link to the store; under 1180 px
 a shorter line, and on phones a "Get it" button), a black card under the home
-page's hero and the Mac page's lead with a large red "60% discount" that links to
-the deal, a black panel in Workspace Manager's hero above the preview (a red
+page's hero and the Mac page's lead with a large red "60% discount" that opens the
+Mac App Store, a black panel in Workspace Manager's hero above the preview (a red
 price tag in the brand mark's two-card shape, heading, both prices, one blue
 button, "Limited time only.") with the sale price on the hero button, and a
 black line on its product card.
