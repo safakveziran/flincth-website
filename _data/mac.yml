@@ -6,3 +6,22 @@ minimum_os: "14.0"
 # US Mac App Store price, the one place it is set. Keep it a quoted string with
 # two decimals ("9.99", "12.00"); pages print it after a "$" and do sums with it.
 price: "9.99"
+# A limited-time App Store price, or nothing. While the build time falls
+# between starts and ends, the site shows a deal bar above every page's
+# header, a deal panel on Workspace Manager's page, a line on its product
+# card, the sale share image and the sale price in pricing.md, llms.txt and
+# the JSON-LD (_includes/sale-state.html). sale.js also hides all of it in the
+# visitor's browser once ends passes, so the deal disappears on time even
+# without a new build. Set the same window in App Store Connect; delete the
+# block once the sale is over.
+#   price: sale price as a quoted two-decimal string, like price
+#   starts, ends: ISO 8601 times with an offset; ends is exclusive
+#   last_day: the last day the sale price applies, as visitors read it
+sale:
+  name: "Black Friday"
+  price: "3.99"
+  starts: "2026-11-13T00:00:00-08:00"
+  # The end of December 1 in Pacific time, the last US storefront to roll over.
+  ends: "2026-12-02T00:00:00-08:00"
+  last_day: "December 1"
+  og_image: /assets/og-black-friday.png

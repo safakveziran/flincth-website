@@ -1,0 +1,20 @@
+{%- comment -%}
+  Sets sale (the sale block in _data/mac.yml, or nil) and sale_on (true while
+  the build time is inside its window), plus sale_off_percent, the discount
+  rounded down to a whole percent. Pages render the deal only when sale_on is
+  true; sale.js then removes every [data-sale-ends] element in the browser
+  once that time passes, so a page built during the sale stops showing it on
+  time.
+{%- endcomment -%}
+{%- assign sale = site.data.mac.sale -%}
+{%- assign sale_on = false -%}
+{%- assign sale_off_percent = 0 -%}
+{%- if sale and sale.price -%}
+  {%- assign _sale_now = site.time | date: "%s" | plus: 0 -%}
+  {%- assign _sale_start = sale.starts | date: "%s" | plus: 0 -%}
+  {%- assign _sale_end = sale.ends | date: "%s" | plus: 0 -%}
+  {%- if _sale_now >= _sale_start and _sale_now < _sale_end %}{% assign sale_on = true %}{% endif -%}
+  {%- assign _sale_regular = site.data.mac.price | times: 100 | round -%}
+  {%- assign _sale_cents = sale.price | times: 100 | round -%}
+  {%- assign sale_off_percent = _sale_regular | minus: _sale_cents | times: 100 | divided_by: _sale_regular -%}
+{%- endif -%}

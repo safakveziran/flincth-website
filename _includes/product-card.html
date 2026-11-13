@@ -25,6 +25,12 @@
 {%- when "split-view" %}
   <div class="motif motif-panes" aria-hidden="true"><span></span><div><i></i><i></i><i></i></div></div>
 {%- endcase %}
+{%- if _p.id == "workspace-manager" %}
+  {%- include sale-state.html %}
+  {%- if sale_on %}
+  <p class="product-card-sale" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">{% include sale-text.html text=_t.sale.card %}</p>
+  {%- endif %}
+{%- endif %}
   <p class="product-card-meta">{{ _c.meta | replace: " · ", " <span>·</span> " }}</p>
   <div class="product-card-actions">
 {%- if _p.status == "coming" %}

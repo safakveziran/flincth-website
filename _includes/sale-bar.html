@@ -1,0 +1,11 @@
+{%- comment -%}
+  The deal bar above every page's header while a sale runs (_data/mac.yml,
+  sale-state.html). sale.js removes it once the sale ends and writes the days
+  left into [data-sale-countdown].
+{%- endcomment -%}
+{%- include sale-state.html -%}
+{%- if sale_on %}
+  <aside class="sale-bar" aria-label="{% include sale-text.html text=t.sale.label %}" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+    <div class="wrap sale-bar-inner"><p><span class="sale-pill">{% include sale-text.html text=t.sale.discount %}</span> {% include sale-text.html text=t.sale.bar %} <span class="sale-countdown" data-sale-countdown data-days="{{ t.sale.ends_in | escape }}" data-last="{{ t.sale.last_day_left | escape }}"></span></p><a href="{{ site.data.mac.store_url }}" target="_blank" rel="noopener">{{ t.sale.bar_cta }} <span aria-hidden="true">→</span></a></div>
+  </aside>
+{%- endif %}

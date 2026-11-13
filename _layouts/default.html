@@ -54,6 +54,10 @@
   <script src="/reader.js?v={{ asset_version }}" defer></script>
 {%- endif %}
   <script src="/nav.js?v={{ asset_version }}" defer></script>
+{%- include sale-state.html %}
+{%- if sale_on %}
+  <script src="/sale.js?v={{ asset_version }}" defer></script>
+{%- endif %}
   <script src="/consent.js?v={{ asset_version }}" defer></script>
   <script src="/notifications.js?v={{ asset_version }}" defer></script>
 {% include head-meta.html %}

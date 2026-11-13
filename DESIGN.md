@@ -150,6 +150,17 @@ The Workspace Manager desktop, the Split View browser and the Speed Reader
 reading screen are HTML/CSS illustrations, always captioned as such. The
 reader preview plays only when the visitor has not asked for reduced motion. Replace them with real screenshots when they exist.
 
+### Limited-time deal
+While a sale in `_data/mac.yml` runs: a black bar above the header on every
+page (a blue discount pill, sale name in small caps, the sale price in blue,
+the usual price struck through, a filled link to the store), a black card under
+the home page's hero and the Mac page's lead that links to the deal, a black
+panel in Workspace Manager's hero above the preview (price tag in the brand
+mark's two blues, heading, both prices, one primary button, days left) with the
+sale price on the hero button, and a black line on its product card. Black is the day's
+colour and stays neutral; blue remains the only hue. Nothing about the deal is
+invented: the price, the discount and the last day all come from the data file.
+
 ### Navigation
 Header: brand mark and wordmark, Products menu (`<details>`, products grouped
 under platform names that link to the platform pages), then either the

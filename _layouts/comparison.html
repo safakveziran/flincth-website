@@ -82,7 +82,7 @@ layout: default
       </div>
       <div class="value-strip">
         <div><span class="value-label">{{ page.value.label }}</span><span class="value-price">{% include usd.html amount=bundle %}</span></div>
-        <div class="value-flincth"><span class="value-label">{{ page.value.flincth_label | default: "Flincth, both in one app" }}</span><span class="value-price">{% include usd.html amount=mac.price %}</span></div>
+        <div class="value-flincth"><span class="value-label">{{ page.value.flincth_label | default: "Flincth, both in one app" }}</span>{% include sale-state.html %}{% if sale_on %}<span class="value-price" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">{% include usd.html amount=sale.price %} <s class="value-was"><span class="visually-hidden">instead of </span>{% include usd.html amount=mac.price %}</s></span><span class="value-price" data-sale-after hidden>{% include usd.html amount=mac.price %}</span>{% else %}<span class="value-price">{% include usd.html amount=mac.price %}</span>{% endif %}</div>
       </div>
       <p class="table-note">{{ page.note | replace: "[checked]", c.checked }}</p>
     </section>

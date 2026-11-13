@@ -138,6 +138,30 @@ not_found:
   back: Back to Flincth
   products: See all products
 
+# Limited-time Workspace Manager price (sale in _data/mac.yml). [name] is
+# the sale's name, [price] the sale price, [regular] the usual price, [off]
+# the discount in percent, [last_day] the sale's last day and [days] the
+# whole days left. Values that hold <b>, <s> or <strong> are rendered as HTML.
+sale:
+  label: "[name] deal"
+  bar: "<b>[name]</b> Flincth Workspace Manager for Mac is <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> through [last_day]."
+  bar_cta: Get the deal
+  discount: "−[off]%"
+  hero_cta: "Download for [price] on the Mac App Store"
+  promo: "Flincth Workspace Manager for Mac is now <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s>."
+  promo_cta: See the deal
+  card: "<b>[name]</b> <strong>[price]</strong> <s><span class=\"visually-hidden\">instead of </span>[regular]</s> through [last_day]"
+  heading: "[off]% off Workspace Manager, through [last_day]."
+  text: "For [name], Flincth Workspace Manager is [price] instead of [regular] on the Mac App Store. One purchase includes every feature and every update, with no subscription."
+  cta: "Get it for [price]"
+  regular: Usual price
+  now: "[name] price"
+  through: "Through [last_day]."
+  ends_in: "Ends in [days] days."
+  last_day_left: Last day of the deal.
+  tag_alt: "[off]% off price tag"
+  og_image_alt: "Flincth Workspace Manager for Mac, [name]: [price] instead of [regular], through [last_day]."
+
 og_image_alt: "Flincth: small apps with a clear purpose, for Mac, iPhone, iPad and your browser."
 og_image_alt_workspace_manager: "Flincth Workspace Manager: a place for every app. Space for every you."
 og_image_alt_speed_reader: "Flincth Speed Reader for iPhone and iPad: read faster, still understand."
@@ -159,7 +183,7 @@ extension:
   preview:
     label: ONE TAB, ARRANGED YOUR WAY
     live: INTERACTIVE PREVIEW
-    status: "{name} workspace active"
+    status: "[name] workspace active"
     bottom: Three workspaces. One tab.
     hint: Choose a workspace above
     note: Illustrative preview, not a screenshot of the extension. Sites shown are placeholders.
