@@ -311,4 +311,3 @@ a.sale-pill:hover { background: #c41224; }
 .bf-hero [data-sale-ends] h1 > span { color: #ff453a; }
 .bf-price strong { color: var(--ink); }
 .bf-price s { color: #8695ad; text-decoration-color: #ff453a; }
-.bf-value .table-note a { color: var(--blue); }

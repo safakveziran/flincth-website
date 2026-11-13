@@ -35,11 +35,8 @@ sitemap:
 ---
 {%- include sale-state.html -%}
 {%- assign _t = site.data.i18n[page.lang] -%}
-{%- assign c = site.data.competitors -%}
 {%- capture _regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
 {%- capture _sale %}{% include usd.html amount=sale.price %}{% endcapture -%}
-{%- assign _magnet_maccy = c.magnet.price | plus: c.maccy.price -%}
-{%- assign _rectangle_maccy = c.rectangle_pro.price | plus: c.maccy.price -%}
 {%- capture _sale_attrs %} data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}"{% endcapture -%}
 {%- capture _countdown %}<span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span>{% endcapture -%}
   <main id="main" class="bf-page">
@@ -72,16 +69,6 @@ sitemap:
         <article class="feature"><h3>One shortcut to switch.</h3><p>Switch from the menu bar or with your own keyboard shortcut, and the windows and clipboard follow.</p></article>
       </div>
       <p class="preview-note bf-limits">Windows move through the Flincth Apply shortcut you install once in Apple Shortcuts. Flincth places open windows on the current desktop; it does not move them between Mission Control desktops or into full screen.</p>
-    </section>
-
-    <section class="wrap bf-value" id="value">
-      <div class="section-heading"><div><h2>Two apps’ work, one price.</h2></div><p>Most Macs need a window manager and a clipboard manager. Workspace Manager is both, and keeps them in step.</p></div>
-      <div class="value-strip bf-value-strip">
-        <div><span class="value-label">{{ c.magnet.name }} for windows + {{ c.maccy.name }} for the clipboard</span><span class="value-price">{% include usd.html amount=_magnet_maccy %}</span></div>
-        <div><span class="value-label">{{ c.rectangle_pro.name }} for windows + {{ c.maccy.name }} for the clipboard</span><span class="value-price">{% include usd.html amount=_rectangle_maccy %}</span></div>
-        <div class="value-flincth"><span class="value-label">Flincth Workspace Manager, both in one app</span>{% if sale_on %}<span class="value-price"{{ _sale_attrs }}>{{ _sale }} <s class="value-was"><span class="visually-hidden">instead of </span>{{ _regular }}</s></span><span class="value-price" data-sale-after hidden>{{ _regular }}</span>{% else %}<span class="value-price">{{ _regular }}</span>{% endif %}</div>
-      </div>
-      <p class="table-note">One-time US prices, checked {{ c.checked }}: {{ c.magnet.name }} and {{ c.maccy.name }} on the Mac App Store, {{ c.rectangle_pro.name }} on rectangleapp.com. Each app works differently; see how Flincth compares with <a href="{% include page-url.html ref="magnet-alternative" %}">{{ c.magnet.name }}</a>, <a href="{% include page-url.html ref="rectangle-alternative" %}">{{ c.rectangle.name }}</a> and <a href="{% include page-url.html ref="maccy-alternative" %}">{{ c.maccy.name }}</a>.</p>
     </section>
 
     <section class="faq wrap" id="questions"><div><h2>Before you buy.</h2></div><div class="questions">

@@ -530,11 +530,6 @@ h1>span{display:block}
 .bf-grid{grid-template-columns:1fr 1fr}
 .bf-grid .feature h3{font-size:26px;margin-top:0}
 .bf-limits{text-align:left;max-width:80ch;margin-top:18px}
-.bf-value{padding-top:105px}
-.bf-value-strip{grid-template-columns:repeat(3,1fr)}
-.bf-value-strip>div{align-items:flex-start;flex-direction:column;justify-content:space-between}
-.bf-value .table-note a{text-decoration:underline;text-underline-offset:3px}
 .bf-page .faq{padding-top:105px}
 .closing .bf-state>h2{margin-top:26px}
-@media(max-width:900px){.bf-value-strip{grid-template-columns:1fr}.bf-value-strip>div{flex-direction:row;align-items:center}}
-@media(max-width:700px){.bf-tag{width:110px;height:110px}.bf-price strong{font-size:54px}.bf-price s{font-size:24px}.bf-grid{grid-template-columns:1fr}.bf-grid .feature h3{font-size:24px}.bf-value{padding-top:64px}.bf-page .faq{padding-top:64px}.bf-hero .hero-actions .button{white-space:normal;text-align:center;justify-content:center}}
+@media(max-width:700px){.bf-tag{width:110px;height:110px}.bf-price strong{font-size:54px}.bf-price s{font-size:24px}.bf-grid{grid-template-columns:1fr}.bf-grid .feature h3{font-size:24px}.bf-page .faq{padding-top:64px}.bf-hero .hero-actions .button{white-space:normal;text-align:center;justify-content:center}}
