@@ -157,10 +157,12 @@ under 1180 px a shorter line, and on phones a "Get it" button,
 the usual price struck through, a filled link to the store), a black card under
 the home page's hero and the Mac page's lead that links to the deal, a black
 panel in Workspace Manager's hero above the preview (price tag in the brand
-mark's two blues, heading, both prices, one primary button, days left) with the
+mark's two blues, heading, both prices, one primary button, "Limited time only.") with the
 sale price on the hero button, and a black line on its product card. Black is the day's
 colour and stays neutral; blue remains the only hue. Nothing about the deal is
-invented: the price, the discount and the last day all come from the data file.
+invented: the price and the discount come from the data file. The end date is
+never shown, so the deal does not read as one to come back for; the countdown
+appears only in the last two days ("Ends tomorrow.", "Last day of the deal.").
 
 ### Navigation
 Header: brand mark and wordmark, Products menu (`<details>`, products grouped

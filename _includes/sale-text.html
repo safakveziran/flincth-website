@@ -5,5 +5,4 @@
 {%- endcomment -%}
 {%- capture _sale_price %}{% include usd.html amount=sale.price %}{% endcapture -%}
 {%- capture _sale_regular %}{% include usd.html amount=site.data.mac.price %}{% endcapture -%}
-{%- assign _sale_days = include.days | default: "" | append: "" -%}
-{{ include.text | replace: "[name]", sale.name | replace: "[price]", _sale_price | replace: "[regular]", _sale_regular | replace: "[off]", sale_off_percent | replace: "[last_day]", sale.last_day | replace: "[days]", _sale_days -}}
+{{ include.text | replace: "[name]", sale.name | replace: "[price]", _sale_price | replace: "[regular]", _sale_regular | replace: "[off]", sale_off_percent -}}

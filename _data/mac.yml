@@ -16,12 +16,11 @@ price: "9.99"
 # block once the sale is over.
 #   price: sale price as a quoted two-decimal string, like price
 #   starts, ends: ISO 8601 times with an offset; ends is exclusive
-#   last_day: the last day the sale price applies, as visitors read it
+# The copy says "for a limited time" and never names the end date.
 sale:
   name: "Black Friday"
   price: "3.99"
   starts: "2026-11-13T00:00:00-08:00"
   # The end of December 1 in Pacific time, the last US storefront to roll over.
   ends: "2026-12-02T00:00:00-08:00"
-  last_day: "December 1"
   og_image: /assets/og-black-friday.png

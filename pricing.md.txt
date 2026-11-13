@@ -19,7 +19,7 @@ Apple sets the local price in other storefronts.
 - Price: {% include usd.html amount=site.data.mac.price %}, one-time purchase on the Mac App Store
 {%- include sale-state.html %}
 {%- if sale_on %}
-- {{ sale.name }} price: {% include usd.html amount=sale.price %} ({{ sale_off_percent }}% off) through {{ sale.last_day }}, {{ sale.ends | date: "%Y" }}; the price returns to {% include usd.html amount=site.data.mac.price %} afterwards
+- {{ sale.name }} price: {% include usd.html amount=sale.price %} ({{ sale_off_percent }}% off) for a limited time; the price then returns to {% include usd.html amount=site.data.mac.price %}
 {%- endif %}
 - Includes: every feature and every update
 - In-app purchases: none
