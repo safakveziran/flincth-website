@@ -1,0 +1,16 @@
+{%- comment -%}
+  A product's deal as a box inside a blog post or guide:
+  {% include sale-callout.html data="reader" %} (data: mac or reader).
+  Shown only while that sale runs at build time; sale.js removes it once the
+  sale ends, so the post itself never goes out of date.
+{%- endcomment -%}
+{%- include sale-state.html data=include.data -%}
+{%- if sale_on %}
+{%- assign _t = site.data.i18n[page.lang] %}
+{%- capture _bf_url %}{% include page-url.html ref="black-friday" %}{% endcapture %}
+<aside class="sale-callout" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+  <img src="{{ sale_product.icon }}-128.png" alt="" width="52" height="52" loading="lazy">
+  <div><p class="sale-callout-title"><span class="sale-pill">{% include sale-text.html text=_t.sale.discount %}</span> <b>{{ sale.name }}</b></p><p>{% include sale-text.html text=_t.sale.promo %} <span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></p></div>
+  <div class="sale-callout-actions"><a class="button primary" href="{{ sale_store_url }}" target="_blank" rel="noopener">{{ _t.sale.bar_cta }}</a><a class="text-link" href="{{ _bf_url }}#{{ sale_product.id }}">Deal details <span aria-hidden="true">→</span></a></div>
+</aside>
+{%- endif %}

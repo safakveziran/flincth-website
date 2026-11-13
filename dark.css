@@ -334,3 +334,8 @@ a.sale-pill:hover { background: #c41224; }
 .sale-group-price s { color: #8695ad; --strike: #ff453a; }
 .sale-group-cta { background: var(--action); color: #fff; border: 1px solid #527ff2; }
 .sale-group-list a:hover .sale-group-cta { background: #326af4; }
+.sale-callout { background: #000; border-color: #3a1a20; }
+.post-body .sale-callout p { color: var(--muted); }
+.sale-callout-title b { color: #ff453a; }
+.sale-callout strong { color: var(--ink); }
+.sale-callout s { color: #8695ad; --strike: #ff453a; }
