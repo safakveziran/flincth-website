@@ -152,7 +152,7 @@ reader preview plays only when the visitor has not asked for reduced motion. Rep
 
 ### Limited-time deal
 While a sale in `_data/mac.yml` runs: a black bar above the header on every
-page (a red "60% discount" pill, the sale name in red small caps, the sale price in
+page, which stays at the top of the window while the page scrolls (a red "60% discount" pill, the sale name in red small caps, the sale price in
 white, the usual price struck through, a blue link to the store; under 1180 px
 a shorter line, and on phones a "Get it" button), a black card under the home
 page's hero and the Mac page's lead with a large red "60% discount" that opens the

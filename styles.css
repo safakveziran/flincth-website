@@ -536,3 +536,9 @@ h1>span{display:block}
 .bf-page .faq{padding-top:105px}
 .closing .bf-state>h2{margin-top:26px}
 @media(max-width:700px){.bf-tag{width:110px;height:110px}.bf-price strong{font-size:54px}.bf-price s{font-size:24px}.bf-grid{grid-template-columns:1fr}.bf-grid .feature h3{font-size:24px}.bf-page .faq{padding-top:64px}.bf-hero .hero-actions .button{white-space:normal;text-align:center;justify-content:center}}
+/* The deal bar stays at the top of the window while the page scrolls. It sits
+   under the skip link (z-index 10), the consent banner and the Products menu,
+   and anchor jumps leave room for it. */
+.sale-bar{position:sticky;top:0;z-index:9}
+html:has(.sale-bar){scroll-padding-top:90px}
+@media(max-width:700px){html:has(.sale-bar){scroll-padding-top:96px}}
