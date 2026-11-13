@@ -457,7 +457,7 @@ h1>span{display:block}
    horizontal one, which crossed only the middle of the digits and read as
    "0.00". The line's colour is --strike in dark.css. */
 .sale-bar s,.product-card-sale s,.deal-price s,.sale-promo s,.value-was,.bf-price s{position:relative;display:inline-block;text-decoration:none;line-height:1.1}
-.sale-bar s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.value-was::after,.bf-price s::after{content:"";position:absolute;left:-6%;right:-6%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-14deg);pointer-events:none}
+.sale-bar s::after,.product-card-sale s::after,.deal-price s::after,.sale-promo s::after,.value-was::after,.bf-price s::after{content:"";position:absolute;left:-3%;right:-3%;top:50%;height:max(2px,.09em);margin-top:max(-1px,-.045em);border-radius:2px;background:var(--strike,currentColor);transform:rotate(-26deg);pointer-events:none}
 .sale-bar-short{display:none}
 .nowrap{white-space:nowrap}
 .sale-cta-short{display:none}
