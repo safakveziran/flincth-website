@@ -311,3 +311,8 @@ a.sale-pill:hover { background: #c41224; }
 .bf-hero [data-sale-ends] h1 > span { color: #ff453a; }
 .bf-price strong { color: var(--ink); }
 .bf-price s { color: #8695ad; --strike: #ff453a; }
+.discount-card { background: #000; border-color: #3a1a20; }
+.discount-card.discount-ended { background: var(--surface); border-color: var(--line); }
+.discount-card h2, .discount-price strong { color: var(--ink); }
+.discount-card p { color: var(--muted); }
+.discount-price s { color: #8695ad; --strike: #ff453a; }

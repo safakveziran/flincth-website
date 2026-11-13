@@ -25,6 +25,7 @@
       <li><a href="{{ support_url }}"{% if page.ref == "support" %} aria-current="page"{% endif %}>{{ t.footer.support }}</a></li>
       <li><a href="/guides/"{% if page.ref == "guides" or page.layout == "guide" or page.layout == "guide-list" %} aria-current="page"{% endif %}>{{ t.footer.guides }}</a></li>
       <li><a href="/blog/"{% if page.ref == "blog" or page.layout == "post" %} aria-current="page"{% endif %}>{{ t.footer.blog }}</a></li>
+      <li><a href="/discounts/"{% if page.ref == "discounts" or page.discount %} aria-current="page"{% endif %}>{{ t.footer.discounts }}</a></li>
     </ul></nav>
     <nav class="footer-col" aria-label="{{ t.footer.legal }}"><p class="footer-title">{{ t.footer.legal }}</p><ul>
       <li><a href="{{ privacy_url }}"{% if page.ref == "privacy" %} aria-current="page"{% endif %}>{{ t.footer.privacy }}</a></li>
