@@ -323,3 +323,14 @@ a.sale-pill:hover { background: #c41224; }
 .bf-deal-head h2 { color: var(--ink); }
 .bf-deal-platform, .discount-card-sale, .bf-deal-note { color: #8fa0bb; }
 .bf-limits a { color: var(--blue); }
+.sale-group { background: #000; border-color: #3a1a20; box-shadow: 0 24px 48px -28px #000; color: var(--muted); }
+.sale-group .sale-promo-off, .sale-group-name b, .sale-group-price strong { color: var(--ink); }
+.sale-group .sale-promo-off { color: #ff453a; }
+.sale-group-label b { color: #ff453a; }
+.sale-group-label small { color: #c9d7ee; }
+.sale-group-list a { background: #0b111c; border-color: #22324b; }
+.sale-group-list a:hover { border-color: #57729b; }
+.sale-group-name small { color: #8fa0bb; }
+.sale-group-price s { color: #8695ad; --strike: #ff453a; }
+.sale-group-cta { background: var(--action); color: #fff; border: 1px solid #527ff2; }
+.sale-group-list a:hover .sale-group-cta { background: #326af4; }

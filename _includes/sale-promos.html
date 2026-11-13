@@ -1,6 +1,10 @@
 {%- comment -%}
-  The deal cards (sale-promo.html) of every product with a running sale, or
-  of include.platform's products only, side by side.
+  The running deals as cards that open the store, under the home page's hero
+  (every product) and a platform page's lead (include.platform's products).
+  One deal: its card (sale-promo.html). Several: one card that says the
+  discount, the sale's name and "Limited time only." once, then a row per
+  product (icon, name, platform, both prices, "Get it"), so nothing repeats.
+  sale.js removes each row, and the card, once its sale ends.
 {%- endcomment -%}
 {%- include sale-any.html -%}
 {%- if sale_any_on %}
@@ -11,11 +15,24 @@
     {%- endif %}
   {%- endfor %}
   {%- assign _promo_keys = _promo_keys | split: "," %}
-  {%- if _promo_keys.size > 0 %}
-      <div class="sale-promos{% if _promo_keys.size > 1 %} sale-promos-multi{% endif %}">
+  {%- assign _promo_first = _promo_keys | first %}
+  {%- if _promo_keys.size == 1 %}
+      <div class="sale-promos">
+{% include sale-promo.html data=_promo_first %}
+      </div>
+  {%- elsif _promo_keys.size > 1 %}
+    {%- assign _t = site.data.i18n[page.lang] %}
+    {%- include sale-state.html data=_promo_first %}
+      <div class="sale-promos">
+        <div class="sale-group" data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}">
+          <div class="sale-group-head"><span class="sale-promo-off">{% include sale-text.html text=_t.sale.discount_big %}</span><span class="sale-group-label"><b>{{ sale.name }}</b><small><span data-sale-countdown data-tomorrow="{{ _t.sale.ends_tomorrow | escape }}" data-last="{{ _t.sale.last_day_left | escape }}">{{ _t.sale.limited }}</span></small></span></div>
+          <ul class="sale-group-list">
     {%- for _promo_key in _promo_keys %}
-{% include sale-promo.html data=_promo_key %}
+      {%- include sale-state.html data=_promo_key %}
+            <li data-sale-starts="{{ sale.starts }}" data-sale-ends="{{ sale.ends }}"><a href="{{ sale_store_url }}" target="_blank" rel="noopener"><img src="{{ sale_product.icon }}-128.png" width="48" height="48" alt=""><span class="sale-group-name"><b>{{ _t.sale.items[sale_product.id].short }}</b><small>{{ _t.platforms[sale_product.platform].name }}</small></span><span class="sale-group-price"><strong><span class="visually-hidden">{% include sale-text.html text=_t.sale.now %}: </span>{% include usd.html amount=sale.price %}</strong> <s><span class="visually-hidden">{{ _t.sale.regular }}: </span>{% include usd.html amount=sale_regular %}</s></span><span class="sale-group-cta">{{ _t.sale.bar_cta_short }}<span class="visually-hidden"> {{ _t.sale.items[sale_product.id].name }}</span> <span aria-hidden="true">→</span></span></a></li>
     {%- endfor %}
+          </ul>
+        </div>
       </div>
   {%- endif %}
 {%- endif %}

@@ -156,7 +156,8 @@ page, which stays at the top of the window while the page scrolls (a red "60% di
 white, the usual price struck through, a blue link to the store; under 1180 px
 a shorter line, and on phones a "Get it" button; on pages of no single product
 with more than one deal, every deal and "See the deals"), black cards under the
-home page's hero (one per deal, side by side) and each platform page's lead
+home page's hero (with several deals, one card that says the discount and the
+sale once, then a row per app with icon, prices and "Get it") and each platform page's lead
 with a large red "60% discount" that open the store, a black panel in the
 product page's hero above the preview (a red price tag in the brand mark's
 two-card shape, heading, both prices, one blue button, "Limited time only.";
