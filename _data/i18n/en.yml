@@ -297,7 +297,7 @@ extension_any:
   what_2_copy: A site that refuses to sit inside another page can open as a real window lined up with its pane, or as a card that opens a normal tab.
   what_3_title: Workspaces you switch.
   what_3_copy: Save each arrangement under a name and move between them with a click or a keyboard shortcut.
-  privacy: No access to any website when you install it, no analytics and no account.
+  privacy: Website access is optional. Usage statistics can be switched off. No account.
   privacy_link: How website access works
   guides_link: Step-by-step guides
 
