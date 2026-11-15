@@ -80,7 +80,7 @@ That design has a few consequences worth knowing:
 
 ## What Flincth keeps, and what it doesn't
 
-Flincth Split View collects no data and makes no network requests of its own. Your workspaces and the addresses in your panes are stored in your browser, on your device. The accounts you sign in to in a separate-session pane are between you, the site and your browser; Flincth never sees the passwords or cookies.
+In version 1.1.0, optional usage statistics are enabled by default unless previously disabled, with an immediate off switch in Settings. Firefox also requires native optional data permission. Workspace URLs, titles, searches and document contents are never sent. See the [privacy policy](/privacy#extension). Your workspaces and the addresses in your panes are stored in your browser, on your device. The accounts you sign in to in a separate-session pane are between you, the site and your browser; Flincth never sees the passwords or cookies.
 
 ---
 

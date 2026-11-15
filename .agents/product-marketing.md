@@ -125,7 +125,7 @@ None yet (pre-launch). Collect beta testers' words before adding testimonials.
 **Value themes:**
 | Theme | Proof |
 |-------|-------|
-| Local by design | No account, analytics or own server; setups and clipboard never leave the Mac (Mac); no data collected (extension) |
+| Local by design | No account, analytics or own server; setups and clipboard never leave the Mac (Mac); workspace contents stay local; optional usage statistics with a Settings off switch (extension) |
 | Honest limits | Site and support page state every platform limit |
 
 ## Goals

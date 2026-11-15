@@ -91,12 +91,12 @@ coming one ships.
   collects no data. Supported files and pasted text only: no direct web-page
   link import, scanned PDFs without a text layer or DRM-protected books.
 - Split View is live on the Chrome Web Store, Microsoft Edge Add-ons and
-  Firefox Add-ons (Firefox 140+). It collects no data and makes no network requests of its own.
+  Firefox Add-ons (Firefox 140+). Version 1.1.0 adds Presentation covers, cascading resizing and local file panes. Workspace contents stay local; optional GA4 usage statistics default on with an immediate Settings off switch and Firefox native optional consent. Never claim it has no analytics.
 - Vocabulary: Workspace Manager says *setup* (code says workspace); Split View
   says *workspace*. Keep them apart on the site.
 - The website itself uses Google Analytics in consent mode (cookie opt-in in
   the EEA, UK, Switzerland and Türkiye; opt-out elsewhere) and opt-in OneSignal
-  web push. Neither product does.
+  web push. Each product has its own data practices as described in its privacy section.
 
 ## Brand Commitments
 

@@ -54,6 +54,8 @@
       </div>
     </section>
 
+{% include split-view-new-features.html %}
+
     <section class="privacy-band"><div class="wrap privacy-inner"><h2>{{ x.privacy_title }}</h2><div><p>{{ b.privacy_copy | default: x.privacy_copy | replace: "[browser]", b.name }}</p><span class="privacy-caption">{{ x.privacy_caption }}</span> <a class="privacy-link" href="{{ privacy_url }}#extension">{{ x.privacy_link }} <span aria-hidden="true">→</span></a></div></div></section>
 
     <section class="how wrap" id="how"><div class="section-heading"><div><h2>{{ x.how_title }}</h2></div><p>{{ x.how_copy }}</p></div><div class="steps"><article><span>01</span><h3>{{ x.step1_title }}</h3><p>{{ x.step1_copy }}</p></article><article><span>02</span><h3>{{ x.step2_title }}</h3><p>{{ b.step2_copy | default: x.step2_copy | replace: "[browser]", b.name }}</p></article><article><span>03</span><h3>{{ x.step3_title }}</h3><p>{{ x.step3_copy }}</p></article></div></section>

@@ -88,7 +88,7 @@ Flincth saves each arrangement as a **workspace** and switches between them with
 
 A split screen extension sees which sites you put in its panes, so here is what Flincth Split View doesn't do with that:
 
-- It collects no data and makes no network requests of its own. There are no analytics in it.
+- In version 1.1.0, optional usage statistics are enabled by default unless previously disabled, with an immediate off switch in Settings. Firefox also requires native optional data permission. Workspace URLs, titles, searches and document contents are never sent. See the [privacy policy](/privacy#extension).
 - Your workspaces, layouts and the addresses in your panes are stored in your browser, on your device.
 - Website access is optional. Without it, you can still build and arrange workspaces; their sites simply stay inactive until you allow it. You can take the access back in your browser's extension settings at any time.
 

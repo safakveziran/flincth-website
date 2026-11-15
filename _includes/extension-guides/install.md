@@ -34,8 +34,8 @@ Access is for all websites because the sites you put in panes, and the places th
 ## What access is used for, and what it isn't
 
 - Flincth uses it to show sites **inside its own tab**. Your ordinary tabs are untouched.
-- It never reads cookies, page content, passwords or anything you type into a site. Bundled code inside the panes only keeps track of each pane's address, so **Back** and **Forward** work.
-- Flincth collects no data and connects to no server. Your workspaces stay in {{ gb.name }}'s local storage on your device.
+- It never reads cookies, page content, passwords or anything you type into a site. Bundled code reads each pane's address, HTML title and favicon URL locally, so **Back** and **Forward** work.
+- Workspaces and selected file copies stay in this browser profile. Optional usage statistics are enabled by default unless previously disabled; switch them off immediately in Settings. Firefox additionally requires native optional data permission. No workspace URLs, searches, titles or document contents are sent.
 
 Some sites still need a normal browser window for sign-in, whatever access you give. [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane) explains what to do.
 

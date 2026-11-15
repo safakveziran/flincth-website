@@ -64,7 +64,13 @@ Workspaces you switch away from stay loaded, a few at a time, so a half-written 
 
 In the toolbar popup, hover over the workspace and click the delete icon. Its layout and site assignments are removed, and any attached windows it owns are closed.
 
+## Make room across the whole split
+
+In version 1.1.0, enlarging a pane pushes its neighbours toward their minimum size, rather than shrinking just the adjacent pane. This works in horizontal and vertical layouts, with two to eight panes. Resizing preserves the loaded pages.
+
 ## Next
 
 - [Keyboard shortcuts for Flincth in {{ gb.name }}]({{ g }}/keyboard-shortcuts)
 - [When a site won't show in a pane]({{ g }}/when-a-site-wont-show-in-a-pane)
+- [Present one pane at a time]({{ g }}/presentation-mode)
+- [Open local files in panes]({{ g }}/open-local-files)

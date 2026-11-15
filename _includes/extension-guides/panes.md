@@ -40,3 +40,7 @@ Some sites refuse to be shown inside another page, and some need a sign-in that 
 
 - [Keyboard shortcuts for Flincth in {{ gb.name }}]({{ g }}/keyboard-shortcuts)
 - [Flincth Split View for {{ gb.name }}](/browser/split-view/{{ page.platform }})
+
+## Make room across the whole split
+
+In version 1.1.0, enlarging a pane pushes its neighbours toward their minimum size, rather than shrinking just the adjacent pane. This works in horizontal and vertical layouts, with two to eight panes. Resizing preserves the loaded pages.

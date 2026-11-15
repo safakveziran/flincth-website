@@ -34,12 +34,13 @@ Your workspaces live in {{ gb.name }}'s local storage on this device. Flincth ha
 **Import.** On the other computer, or in another browser where Flincth is installed, open **Settings → Backup**, click **Import workspaces** and choose the file.
 
 - Imported workspaces are **added** next to the ones already there. Nothing is replaced.
+- Local file bytes and analytics identifiers are not part of the export. Select missing file copies again after moving to another profile.
 - Website access isn't part of the file. Each browser keeps it per device, so you'll be asked for it again on the new one.
 - If the file is damaged or isn't a Flincth export, nothing is imported and your existing workspaces are left alone.
 
 ## Privacy
 
-Flincth collects no data and connects to no server. The settings page says so too, and the code is published unobfuscated so anyone can check. Read the [privacy policy](/privacy) for the details.
+Usage statistics are enabled by default unless you previously disabled them. Settings opens on installation/update with an explanation and an immediate off switch; you do not need to save the switch separately. Firefox also requires its native optional technical and interaction data permission. Private contexts never send statistics. Fixed interactions and random installation/session identifiers go to Google, never workspace URLs, titles, searches, file names, paths or document contents. Turning statistics off clears local identifiers and stops future requests, not statistics already received by Google. Read the [privacy policy](/privacy#extension) for details.
 
 ## Next
 

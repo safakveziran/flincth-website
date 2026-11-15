@@ -119,12 +119,8 @@ All three store listings use the name "Flincth Split View".
 - **Pane modes.** A pane shows its site embedded in the tab, as a real browser
   window aligned to the pane (for sites that refuse embedding or need the
   user's signed-in session), or as a launcher card that opens a normal tab.
-- **Privacy.** Collects no data and makes no network requests of its own. No
-  site access is requested at install. In every browser (1.0.3) the extension
-  then offers optional access to all websites, which can be skipped; it is used
-  only inside the extension's own tab. Access can be revoked in the browser's
-  extension settings. Optional history access, requested only from an explicit
-  action, powers address suggestions.
+- **Version 1.1.0.** Cascading resizing pushes neighbouring panes toward their minimum size in both orientations. Presentation mode covers inactive panes with frosted glass, title and favicon. Covered pages keep running. Choose/drop local images, HTML, PDF and text (50 MB/file); copies persist in this browser profile. Copied HTML is static; original file URLs require local-file access. Exports contain references, not file bytes.
+- **Privacy.** Workspaces and local files stay on device. Optional GA4 statistics default on unless previously disabled, with an immediate Settings off switch; Firefox also requires native optional data permission. Fixed interactions, random client/session identifiers and browser/version are sent, never workspace URLs, searches, titles or file contents. Google receives connection metadata. Private contexts excluded; advertising personalization disabled. Optional website and history permissions are revocable. See https://flincth.com/privacy#extension.
 - **Availability.** Chrome: on the Chrome Web Store,
   https://chromewebstore.google.com/detail/flincth/blkacdknkggnilgkmlmjemacfmnmdkhp
   Microsoft Edge: on Microsoft Edge Add-ons,

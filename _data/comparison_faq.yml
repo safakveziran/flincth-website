@@ -14,9 +14,9 @@ extension:
 - q: Why does a site sometimes open as a window instead of a pane?
   a: Some sites refuse to be shown inside another page, and a site in a pane does not see your signed-in session. For those, Flincth opens a real browser window and keeps it lined up with the pane, so the site works exactly as it does in a normal tab.
 - q: What does Flincth ask permission for?
-  a: Nothing when you install it. Flincth then offers to enable all websites, so panes can show almost any site; you can choose Not now and still organize workspaces. Access is used only inside Flincth’s own tab and can be revoked in your browser’s extension settings.
+  a: Website access is optional. Flincth offers to enable all websites, so panes can show almost any site; you can choose Not now and still organize workspaces. Access is used only inside Flincth’s own tab and can be revoked in your browser’s extension settings.
 - q: Does Flincth collect any data?
-  a: No. Your workspaces are stored in your browser on your own device. Flincth has no account, no analytics and makes no network requests of its own.
+  a: Workspaces and local file copies stay in your browser profile. Optional usage statistics send fixed interactions and random identifiers to Google, never workspace URLs, titles or document contents. Statistics are enabled by default unless previously disabled and can be switched off in Settings. Firefox also requires native optional data permission. No account is needed.
 reader:
 - q: Can Flincth Speed Reader open Kindle or Apple Books purchases?
   a: No. Those books are protected with DRM, which the app cannot open. It reads DRM-free EPUB, PDF with a text layer, DOCX, TXT, RTF and Markdown, plus pasted text. Scanned PDFs without a text layer are not supported.

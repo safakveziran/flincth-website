@@ -60,8 +60,8 @@ catalog:
     short: Split View
     note: One tab, split into saved workspaces
     category: Split-screen tabs for Chrome, Firefox and Edge
-    description: Split one browser tab into panes with a site in each, save the arrangement as a workspace, and switch with a click or a shortcut.
-    meta: Free · Collects no data · No account
+    description: "Keep websites and local files in saved split workspaces. Resize panes together and present one pane at a time."
+    meta: Free · Local workspaces · No account
     cta: Choose your browser
 
 # One entry per platform in _data/platforms.yml. The platform page itself
@@ -208,7 +208,7 @@ extension:
   hero_title: One tab. <span>Every site you need.</span>
   hero_copy: Flincth Split View for [browser] splits a single tab into panes, puts a different site in each one, and saves the arrangement as a workspace. Switch workspaces with a click or a shortcut.
   hero_more: See how it works
-  micro: No data collected · No account · No server
+  micro: Free · Local workspaces · No account
   preview:
     label: ONE TAB, ARRANGED YOUR WAY
     live: INTERACTIVE PREVIEW
@@ -236,7 +236,7 @@ extension:
   features_title: Every site in view. Every time.
   features_copy: Stop rebuilding the same four tabs side by side. Arrange them once, then switch.
   feature_split_title: Up to eight sites in one tab.
-  feature_split_copy: "[browser]’s built-in split view puts two tabs side by side. Flincth divides one tab into as many as eight panes: start from a layout or split any pane in two, then drag the dividers until each site has room. The proportions are saved when you let go."
+  feature_split_copy: "[browser]’s built-in split view puts two tabs side by side. Flincth divides one tab into as many as eight panes. Drag a divider and neighbouring panes make room together, down to their minimum size, in horizontal and vertical layouts. Your proportions are saved when you let go."
   feature_modes_title: Some sites say no. Flincth has a plan B.
   feature_modes_copy: Each pane shows its site in whichever way that site allows.
   mode_embed: Inside the tab, for most sites
@@ -248,7 +248,7 @@ extension:
   feature_alive_title: Leave mid-thought. Come back to it.
   feature_alive_copy: Recent workspaces stay loaded while you are away, so a half-typed reply or a paused video is still there when you switch back.
   privacy_title: Asks for nothing <span>it doesn’t need.</span>
-  privacy_copy: No access to any site when you install it. [browser] asks for website access only when you choose to allow it, and you can revoke it in [browser]’s extension settings. No analytics, no account, no server.
+  privacy_copy: "Website access is optional and can be revoked in [browser]’s extension settings. Workspaces and local file copies stay in this browser profile. Optional usage statistics are enabled by default unless previously disabled; turn them off immediately in Settings. No account is needed."
   privacy_caption: YOUR WORKSPACES STAY IN YOUR BROWSER.
   privacy_link: Read the privacy policy
   how_title: Arrange it once. Switch all day.
@@ -267,7 +267,7 @@ extension:
   faq_permission_q: How does website access work?
   faq_permission_a: Installing Flincth gives it access to no website. [browser] asks for access only when you allow it, and you can revoke it in [browser]’s extension settings. Some sites still need a normal window.
   faq_data_q: Does Flincth see what I do on those sites?
-  faq_data_a: It never reads cookies, page content or form data. Bundled code tracks each pane’s address and provides Back and Forward. Workspaces and their latest addresses are stored in [browser] on your own device; nothing is sent to Flincth.
+  faq_data_a: "Bundled pane controls read the current address, HTML title and favicon URL locally, never website body text, cookies, passwords or form values. Workspaces and selected file copies stay on your device. Optional statistics send fixed interactions and random installation/session identifiers to Google, never URLs, titles, searches or file contents. Turn statistics off in Settings; Firefox also requires its native data permission."
   faq_keys_q: Where do I set keyboard shortcuts?
   others_title: Split View, wherever you browse.
   closing_title: Make room in a single tab.
@@ -281,18 +281,18 @@ extension:
 # title, description, name, os and label also feed the page's JSON-LD.
 extension_any:
   title: "Flincth Split View: Split Screen for Chrome, Firefox, Edge"
-  description: "Flincth Split View splits one browser tab into panes with a site in each and switches saved workspaces. Free for Chrome, Firefox and Edge."
+  description: "A free split screen extension for Chrome, Firefox and Edge. Save workspaces, resize panes together, present one pane at a time and open local files."
   name: your browser
   os: "Chrome, Firefox, Microsoft Edge"
   label: Flincth Split View
   hero_title: Split screen, <span>in a single tab.</span>
-  hero_copy: A free extension that puts several websites side by side in one browser tab and remembers each arrangement as a workspace. Pick your browser to install it.
+  hero_copy: "Put websites and local documents side by side in one browser tab. Save each arrangement as a workspace, then switch between working and presenting. Free for Chrome, Firefox and Edge."
   pick_title: Pick your browser.
   pick_copy: It is the same extension everywhere. Website access and shortcuts differ a little between browsers, so each one has its own page with the details.
   details: "[browser] details"
   what_title: What it does.
   what_1_title: Several sites, one tab.
-  what_1_copy: Divide a tab into as many as eight panes and give each its own address. Drag the dividers until every site has room.
+  what_1_copy: "Divide a tab into as many as eight panes. Drag a divider and neighbouring panes make room together, in horizontal or vertical layouts."
   what_2_title: A plan B for stubborn sites.
   what_2_copy: A site that refuses to sit inside another page can open as a real window lined up with its pane, or as a card that opens a normal tab.
   what_3_title: Workspaces you switch.
@@ -303,42 +303,42 @@ extension_any:
 
 extension_chrome:
   title: "Flincth Split View for Chrome: Split Screen in One Tab"
-  description: "A split screen extension for Chrome: Flincth Split View puts up to eight sites in one tab, saves each layout as a workspace and switches in a click."
+  description: "Split one Chrome tab into up to eight panes. Save workspaces, present one pane at a time and open local files with Flincth Split View."
   name: Chrome
   label: Flincth Split View for Chrome
   status: Available on the Chrome Web Store
   store_cta: Add to Chrome
   availability_q: Where do I get it for Chrome?
   availability_a: From the Chrome Web Store, using the Add to Chrome button on this page. Installing it asks for no access to any site; right after installation Flincth offers to enable all websites, and you can skip that until you need it.
-  privacy_copy: No access to any site when you install it. Flincth then offers to enable all websites; choose Not now and you can still organize workspaces, and Chrome asks again when you activate a site. Access is used only inside Flincth’s own tab and can be revoked in Chrome’s extension settings. No analytics, no account, no server.
+  privacy_copy: "Website access is optional and can be revoked in Chrome’s extension settings. Workspaces and local file copies stay in this browser profile. Optional usage statistics are enabled by default unless previously disabled; turn them off immediately in Settings. No account is needed."
   step2_copy: Type an address or pick one of your open tabs. If you skipped website access at install, Chrome asks for it now.
   faq_permission_a: Installing Flincth gives it access to no website. Right after installation it offers to enable all websites, so panes can show any site and follow redirects. You can choose Not now and still organize workspaces; activating a site asks again, and without access sites stay inactive. The access is used only inside Flincth’s own tab, where framing headers are removed so sites can display in panes. Revoke it any time in Chrome’s extension settings (chrome://extensions → Flincth Split View → Details → Site access). Some sites still need a normal window for sign-in.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Chrome, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at chrome://extensions/shortcuts.
 
 extension_firefox:
   title: "Flincth Split View for Firefox: Split Screen in One Tab"
-  description: "A split screen extension for Firefox: Flincth Split View puts up to eight sites in one tab, saves each layout as a workspace and switches in a click."
+  description: "Split one Firefox tab into up to eight panes. Save workspaces, present one pane at a time and open local files with Flincth Split View."
   name: Firefox
   label: Flincth Split View for Firefox
   status: Available on Firefox Add-ons
   store_cta: Add to Firefox
   availability_q: Where do I get it for Firefox?
   availability_a: From Firefox Add-ons, using the Add to Firefox button on this page. It needs Firefox 140 or later. Installing it asks for no access to any site; right after installation Flincth offers to enable all websites, and you can skip that until you need it.
-  privacy_copy: No access to any site when you install it. Flincth then offers to enable all websites; choose Not now and you can still organize workspaces, and Firefox asks again when you activate a site. Access is used only inside Flincth’s own tab and can be revoked in Firefox’s add-on settings. No analytics, no account, no server.
+  privacy_copy: "Website access is optional and can be revoked in Firefox’s extension settings. Workspaces and local file copies stay in this browser profile. Optional usage statistics are enabled by default unless previously disabled; turn them off immediately in Settings. No account is needed. Firefox additionally requires its native optional technical and interaction data permission."
   step2_copy: Type an address or pick one of your open tabs. If you skipped website access at install, Firefox asks for it now.
   faq_permission_a: Installing Flincth gives it access to no website. Right after installation it offers to enable all websites, so panes can show any site and follow redirects. You can choose Not now and still organize workspaces; activating a site asks again, and without access sites stay inactive. The access is used only inside Flincth’s own tab, where framing headers are removed so most sites can display in panes. Revoke it any time in Add-ons and themes → Flincth Split View → Permissions. Some sites and sign-in flows still need a normal window.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Firefox, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys under Manage Extension Shortcuts in about:addons.
 
 extension_edge:
   title: "Flincth Split View for Edge: Split Screen in One Tab"
-  description: "A split screen extension for Edge: Flincth Split View puts up to eight sites in one tab, saves each layout as a workspace and switches in a click."
+  description: "Split one Edge tab into up to eight panes. Save workspaces, present one pane at a time and open local files with Flincth Split View."
   name: Edge
   label: Flincth Split View for Microsoft Edge
   status: Available on Microsoft Edge Add-ons
   store_cta: Add to Edge
   availability_q: Where do I get it for Edge?
   availability_a: From Microsoft Edge Add-ons, using the Add to Edge button on this page. Installing it asks for no access to any site; right after installation Flincth offers to enable all websites, and you can skip that until you need it.
-  privacy_copy: No access to any site when you install it. Flincth then offers to enable all websites; choose Not now and you can still organize workspaces, and Edge asks again when you activate a site. Access is used only inside Flincth’s own tab and can be revoked in Edge’s extension settings. No analytics, no account, no server.
+  privacy_copy: "Website access is optional and can be revoked in Edge’s extension settings. Workspaces and local file copies stay in this browser profile. Optional usage statistics are enabled by default unless previously disabled; turn them off immediately in Settings. No account is needed."
   step2_copy: Type an address or pick one of your open tabs. If you skipped website access at install, Edge asks for it now.
   faq_permission_a: Installing Flincth gives it access to no website. Right after installation it offers to enable all websites, so panes can show any site and follow redirects. You can choose Not now and still organize workspaces; activating a site asks again, and without access sites stay inactive. The access is used only inside Flincth’s own tab, where framing headers are removed so sites can display in panes. Revoke it any time in Edge’s extension settings (edge://extensions → Flincth Split View → Details → Site access). Some sites still need a normal window for sign-in.
   keys_a: Give each workspace its own shortcut when you create or edit it; those work while the Flincth tab is focused. Four more reach a workspace from anywhere in Edge, even while you are typing in a pane. Choose which workspace each one opens in Flincth’s settings, and set their keys at edge://extensions/shortcuts.
