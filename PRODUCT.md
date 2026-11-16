@@ -58,8 +58,9 @@ coming one ships.
   on your device" as a brand-wide promise; say it on the product's own page.
 - **Workspace Manager:** one action changes the whole desk: which apps are open, where
   their windows sit across displays, and which clipboard history is active. No
-  Accessibility permission, no account; setups and clipboard never leave the Mac
-  (the only network use is opt-in feature announcements); windows move only
+  account; setups and clipboard never leave the Mac. Version 1.2 usage statistics
+  default on with a persistent Settings opt-out; announcements are separately opt-in.
+  Accessibility is only for explicit clipboard paste; windows move only
   through the user's own "Flincth Apply" Shortcut.
 - **Split View:** one tab holds several sites, and a site that refuses to be
   embedded or needs a signed-in session runs as a real window lined up with its
@@ -78,9 +79,11 @@ coming one ships.
 ## Capabilities and Constraints
 
 - Workspace Manager: Mac App Store only; macOS 14+; US$9.99 one-time. No account, own server,
-  subscription or trial. Only network use: opt-in new-feature announcements
-  through OneSignal (push identifier and IP address; never setups or clipboard).
-  Never write "no network access".
+  subscription or trial. Version 1.2 sends installation-linked Firebase usage
+  statistics by default; disable in General Settings. Includes fixed interaction
+  events, lifecycle/device metadata and IP-derived approximate location, never
+  setups or clipboard. OneSignal feature announcements are separately opt-in.
+  Never claim no analytics or no network access. See privacy.html.
 - Window placement needs the user-installed "Flincth Apply" Shortcut. Windows
   never cross Mission Control desktops and never enter or leave full screen.
 - Speed Reader: iOS 17+, free with a one-time Pro purchase and a 7-day $0

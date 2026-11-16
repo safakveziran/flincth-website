@@ -39,11 +39,15 @@ layout: null
 - {{ sale.name }}: US{% include usd.html amount=sale.price %} ({{ sale_off_percent }}% discount) for a limited time; then US{% include usd.html amount=site.data.mac.price %} again.
   Deal page: {{ site.url }}/discounts/black-friday; every current discount: {{ site.url }}/discounts/
 {%- endif %}
-- Privacy: no account, no analytics and no server of its own. Setups and
-  clipboard history are stored locally and never leave the user's Mac. The
-  only network use is optional new-feature announcements (off by default):
-  when turned on, the Mac's push notification identifier is shared with
-  OneSignal to deliver them.
+- Privacy: no account or server of its own. Setups and clipboard history stay
+  locally on the Mac. Version 1.2 adds default-on Firebase usage statistics,
+  with a persistent off switch in Settings > General > Usage statistics.
+  Fixed events, installation/lifecycle data and device metadata are sent;
+  approximate location may be derived from IP. No setup names, clipboard text,
+  application identifiers, paths or window details are in custom events.
+  Advertising personalization and IDFV collection are disabled. Optional
+  feature announcements separately use OneSignal and are off by default.
+  Details: https://flincth.com/privacy.html#workspace-manager
 
 ### What it does
 
