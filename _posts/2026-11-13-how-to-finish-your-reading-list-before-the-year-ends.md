@@ -3,6 +3,7 @@ title: "How to Finish Your Reading List Before the Year Ends"
 seo_title: "How to Read More Books Before the End of the Year"
 description: "Behind on your reading goal? See what a book really takes, find the minutes, pick the right books, and read the lighter ones faster without losing the story."
 product: speed-reader
+medium_url: https://medium.com/@flincth/how-to-read-more-books-before-the-end-of-the-year-flincthbehind-on-your-reading-goal-51a8657a3b00
 ---
 
 It's the middle of November, and the reading goal you set in January is looking optimistic. The pile on your nightstand hasn't moved since summer. There are about seven weeks left.
