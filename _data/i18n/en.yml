@@ -104,6 +104,7 @@ notify:
   ios_hint: "On iPhone or iPad, tap Share, then Add to Home Screen. Open Flincth from your Home Screen and the “[button]” button will appear."
 
 footer:
+  social: Follow Flincth
   help: Help
   legal: Legal
   privacy: Privacy

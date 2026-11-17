@@ -14,7 +14,8 @@
         "name": "Flincth",
         "url": "https://flincth.com/",
         "logo": "https://flincth.com/assets/flincth-mark-512.png",
-        "email": "support@flincth.com"
+        "email": "support@flincth.com",
+        "sameAs": [{% for profile in site.data.social %}{{ profile.url | jsonify }}{% unless forloop.last %}, {% endunless %}{% endfor %}]
       },
       {
         "@type": "WebSite",

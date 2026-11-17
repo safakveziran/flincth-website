@@ -1,5 +1,5 @@
 {%- comment -%}
-  Footer in three groups: products (every product in _data/products.yml,
+  Footer with social profiles and three groups: products (every product in _data/products.yml,
   under its platform), help and legal. The Notifications link stays hidden
   until notifications.js confirms push support; language links appear only
   once a page exists in more than one language.
@@ -7,7 +7,16 @@
 {%- capture privacy_url %}{% include page-url.html ref="privacy" %}{% endcapture -%}
 {%- capture support_url %}{% include page-url.html ref="support" %}{% endcapture -%}
   <footer class="wrap site-footer">
-    <div class="footer-brand"><a class="brand" href="{{ home_link }}"><img src="/assets/flincth-mark.svg" width="28" height="28" alt=""><span class="wordmark" translate="no">flincth</span></a><p class="footer-note">{{ t.footer.note }}</p><p class="footer-copy">© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</p></div>
+    <div class="footer-brand">
+      <a class="brand" href="{{ home_link }}"><img src="/assets/flincth-mark.svg" width="28" height="28" alt=""><span class="wordmark" translate="no">flincth</span></a>
+      <p class="footer-note">{{ t.footer.note }}</p>
+      <nav class="footer-social" aria-label="{{ t.footer.social }}">
+        {%- for profile in site.data.social %}
+        <a href="{{ profile.url }}" target="_blank" rel="me noopener noreferrer">{{ profile.name }}</a>
+        {%- endfor %}
+      </nav>
+      <p class="footer-copy">© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</p>
+    </div>
     <nav class="footer-col" aria-label="{{ t.products.label }}"><p class="footer-title">{{ t.products.label }}</p><ul>
 {%- for _platform in site.data.platforms %}
   {%- assign _in = site.data.products | where: "platform", _platform.id %}
