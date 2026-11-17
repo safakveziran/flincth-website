@@ -2,6 +2,7 @@
 title: "A Year-End Mac Reset: How to Set Up Your Mac for Focused Work"
 seo_title: "How to Set Up Your Mac for Focused Work"
 description: "A year-end Mac reset: clear the desktop, name the kinds of work you do, give each its own windows and clipboard, and switch between them in one step."
+medium_url: https://medium.com/@flincth/how-to-set-up-your-mac-for-focused-work-flinctha-year-end-mac-reset-clear-the-desktop-name-the-4f79ef46487d
 ---
 
 Every December I do the same thing. I look at my Mac, see forty open windows, a desktop full of screenshots and a clipboard full of things I copied in October, and I wonder how it got like this.

@@ -5,6 +5,7 @@ description: "Flincth Workspace Manager 1.2 adds Quick Shifter: press Control-Op
 product: workspace-manager
 og_image: /assets/og-image.png
 og_image_alt: og_image_alt_workspace_manager
+medium_url: https://medium.com/@flincth/quick-shifter-switch-mac-setups-from-one-shortcut-flincthflincth-workspace-manager-1-2-2425cdd9f67e
 ---
 
 [Flincth Workspace Manager](/mac/workspace-manager) 1.2 is out on the [Mac App Store]({{ site.data.mac.store_url }}), and it brings one new feature: **Quick Shifter**.
