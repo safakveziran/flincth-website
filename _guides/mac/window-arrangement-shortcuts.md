@@ -4,7 +4,7 @@ seo_title: "Mac Window Arrangement Shortcuts and Their Limits"
 description: "The keyboard shortcuts macOS Sequoia added for tiling windows, how to move a window to another display, and what to use when one window isn't enough."
 order: 9
 platform: mac
-updated: 2026-10-10
+updated: 2026-11-17
 ---
 
 macOS Sequoia (15) and later can tile windows from the keyboard. This guide lists the keys, how to send a window to another display, and where the built-in tools stop.
@@ -47,7 +47,7 @@ The shortcuts arrange the window you are in, one or two at a time. They don't:
 - remember an arrangement or put it back after a monitor reconnects,
 - open the apps you need or hide the ones you don't.
 
-That is what Flincth Workspace Manager does. A **setup** places each app's windows across all your screens and switches its clipboard history; give it a shortcut such as <kbd>⇧⌘D</kbd> and one press arranges the whole desk. It works alongside the tiling keys rather than replacing them. Start with [How to Create Your First Setup](/guides/mac/create-your-first-setup), or see [how to make your Mac remember window positions](/guides/mac/remember-window-positions-on-multiple-monitors).
+That is what Flincth Workspace Manager does. A **setup** places each app's windows across all your screens and switches its clipboard history; give it a shortcut such as <kbd>⇧⌘D</kbd> and one press arranges the whole desk, or press <kbd>⌃⌥⌘S</kbd> to pick any setup from [Quick Shifter](/guides/mac/switch-setups-with-quick-shifter). It works alongside the tiling keys rather than replacing them. Start with [How to Create Your First Setup](/guides/mac/create-your-first-setup), or see [how to make your Mac remember window positions](/guides/mac/remember-window-positions-on-multiple-monitors).
 
 ## Next
 
