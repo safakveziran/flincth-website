@@ -58,8 +58,14 @@ layout: null
   locally. Only text is kept.
 - **Displays.** Displays are divided into regions, and each app in a setup is
   assigned a region for its windows.
-- **Switching.** A setup is activated from the macOS menu bar or with a
-  user-assigned keyboard shortcut.
+- **Switching.** A setup is activated from the macOS menu bar, with a
+  user-assigned keyboard shortcut, or from Quick Shifter.
+- **Quick Shifter (version 1.2).** A radial setup picker opened from the menu
+  bar or with the fixed global shortcut Control-Option-Command-S. Each segment
+  shows a setup's name and app icons; click or Return activates it, Esc closes
+  it. Up to eight setups per page, with page controls beyond that. Setups that
+  cannot be used with the currently connected displays are not listed. Liquid
+  Glass on macOS 26 and later, a translucent background on macOS 14-15.
 
 ### Requirements and limits
 

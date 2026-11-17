@@ -2,7 +2,7 @@
 title: "How to Create Your First Setup in Flincth"
 description: "Build a setup in Workspace Manager: choose a layout, put an app in each region, decide what happens to everything else, then switch to it."
 order: 2
-updated: 2026-10-06
+updated: 2026-11-17
 platform: mac
 redirect_from: /guides/create-your-first-setup
 ---
@@ -67,11 +67,12 @@ Flincth never quits an app and never minimises one. Hiding is the strongest thin
 
 ## 6. Switch to it
 
-There are three ways:
+There are four ways:
 
 - Click the Flincth icon in the menu bar and choose the setup.
 - In Workspace Manager, click **Activate**, or double-click the setup in the sidebar.
 - Give it a keyboard shortcut (below).
+- Press <kbd>⌃⌥⌘S</kbd> to open **Quick Shifter** and pick it from the circle (version 1.2 and later). See [Switch Setups with Quick Shifter](/guides/mac/switch-setups-with-quick-shifter).
 
 Flincth opens the apps that aren't running, moves each window into its region and hides the rest. The active setup gets a checkmark in the menu.
 

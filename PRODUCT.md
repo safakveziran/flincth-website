@@ -37,7 +37,9 @@ grouped by platform; each product has its own page at `/<platform>/<slug>`
 - **Flincth Workspace Manager** (`/mac/workspace-manager`): a sandboxed menu
   bar app. A *setup* chooses apps and keep/hide rules; switching setups places
   their windows into regions across displays and switches to that setup's own
-  text clipboard history.
+  text clipboard history. Version 1.2 adds Quick Shifter, a radial setup picker
+  on the fixed shortcut ⌃⌥⌘S that lists only setups usable with the connected
+  displays.
 - **Flincth Split View** (`/browser/split-view/`, a page per browser): an
   extension that splits one tab into panes, puts a site in each, saves that as
   a workspace and switches workspaces with a click or shortcut. All three store listings use this name since 1.0.3.
