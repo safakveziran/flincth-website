@@ -75,6 +75,7 @@ a one-time Pro with Family Sharing, a $0 trial and no AI.
 ## Differentiation
 **Key differentiators:**
 - Window layout and clipboard history switch together, per setup.
+- Quick Shifter (1.2): one shortcut (⌃⌥⌘S) opens a circle of setups, recognised by name and app icons.
 - No Accessibility permission, no account; setups and clipboard never leave the Mac (only network use: opt-in feature announcements); sandboxed, Mac App Store only.
 - Applies a layout once when you switch, then leaves your windows alone.
 - Extension: with access allowed, most sites that refuse embedding load in panes
