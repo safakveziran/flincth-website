@@ -12,7 +12,7 @@
       <p class="footer-note">{{ t.footer.note }}</p>
       <nav class="footer-social" aria-label="{{ t.footer.social }}">
         {%- for profile in site.data.social %}
-        <a href="{{ profile.url }}" target="_blank" rel="me noopener noreferrer">{{ profile.name }}</a>
+        <a href="{{ profile.url }}" target="_blank" rel="me noopener noreferrer" aria-label="{{ profile.name }}" title="{{ profile.name }}">{% include social-icon.html name=profile.icon %}</a>
         {%- endfor %}
       </nav>
       <p class="footer-copy">© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</p>
