@@ -15,7 +15,10 @@
         <a href="{{ profile.url }}" target="_blank" rel="me noopener noreferrer" aria-label="{{ profile.name }}" title="{{ profile.name }}">{% include social-icon.html name=profile.icon %}</a>
         {%- endfor %}
       </nav>
-      <a class="footer-directory-badge" href="https://macpip.com/apps/flincth-workspace-manager?ref=badge" target="_blank" rel="noopener noreferrer"><img src="https://macpip.com/badge-dark.svg" width="190" height="52" alt="Listed on MacPip" loading="lazy" referrerpolicy="no-referrer"></a>
+      <div class="footer-directories">
+        <a class="footer-directory-badge" href="https://macpip.com/apps/flincth-workspace-manager?ref=badge" target="_blank" rel="noopener noreferrer"><img src="https://macpip.com/badge-dark.svg" width="190" height="52" alt="Listed on MacPip" loading="lazy" referrerpolicy="no-referrer"></a>
+        <a class="footer-directory-badge" href="https://ipip.fyi/apps/flincth-speed-reader?ref=badge" target="_blank" rel="noopener noreferrer"><img src="https://ipip.fyi/badge/flincth-speed-reader.svg?theme=dark" width="220" height="56" alt="Flincth Speed Reader on iPip" loading="lazy" referrerpolicy="no-referrer"></a>
+      </div>
       <p class="footer-copy">© <span id="year">{{ site.time | date: "%Y" }}</span> Flincth</p>
     </div>
     <nav class="footer-col" aria-label="{{ t.products.label }}"><p class="footer-title">{{ t.products.label }}</p><ul>
