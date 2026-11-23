@@ -2,6 +2,7 @@
 title: "A focused Mac and iPhone workflow without another subscription"
 description: "Build a repeatable desk, keep research together and read your own documents with a practical workflow across Mac, browser, iPhone and iPad."
 product: workspace-manager
+medium_url: https://medium.com/@flincth/a-focused-mac-and-iphone-workflow-without-another-subscription-4317bc9e0b91
 date: 2026-11-24T01:08:31+03:00
 updated: 2026-11-24
 ---
