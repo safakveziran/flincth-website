@@ -611,6 +611,11 @@ html:has(.sale-bar){scroll-padding-top:90px}
 .bf-app{padding-top:90px}
 .bf-app+.bf-app{padding-top:72px}
 .bf-limits a{text-decoration:underline;text-underline-offset:3px}
+.bf-store-proof{margin:0 auto 32px;max-width:900px}
+.bf-store-proof img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:16px}
+.bf-store-proof figcaption{margin-top:12px;color:var(--muted);font-size:14px;line-height:1.6;text-align:center}
+.bf-store-proof-reader{max-width:520px}
+.bf-store-proof-reader img{max-width:240px;margin-inline:auto}
 .closing .bf-state>h2{margin-top:6px}
 @media(max-width:700px){.bf-deal{padding:22px}.bf-deal .bf-price strong{font-size:44px}.bf-deal .button{width:100%;justify-content:center;text-align:center}.bf-app{padding-top:60px}.bf-app+.bf-app{padding-top:48px}.discount-card-head .sale-pill{margin-left:0}}
 .sale-callout{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px 22px;margin:36px 0;padding:22px 24px;border:1px solid;border-radius:20px}
