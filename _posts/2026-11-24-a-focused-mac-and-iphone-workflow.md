@@ -22,7 +22,7 @@ Try arranging these desks manually first. If a layout does not help you work, sa
 
 [Flincth Workspace Manager](/mac/workspace-manager) stores named setups with app layouts and a separate text clipboard history for each. Switching setups changes the active desk and the clipboard context together. A copied writing reference does not have to share the same history as snippets from a coding session.
 
-![Official App Store artwork showing a saved Workspace Manager layout](/assets/workspace-manager-store-layout.png)
+<img src="/assets/workspace-manager-store-layout.png" alt="Official App Store artwork showing a saved Workspace Manager layout" style="max-width:100%;height:auto" loading="lazy">
 
 Install the **Flincth Apply** Shortcut during setup: it performs window placement. This is a layout applied when you switch, rather than continuous automatic tiling. Windows stay on their current Mission Control desktop, and Flincth does not enter or leave full screen for them.
 
@@ -44,7 +44,7 @@ Choose one document before you stop working. A vague reading backlog is harder t
 
 [Flincth Speed Reader](/ios/speed-reader) opens your own DRM-free EPUB, PDF and DOCX documents on iPhone and iPad. Word, phrase and sentence modes give you different ways to display the text. Adjust the pace to the material, and return to difficult passages when needed. The app is a reading tool, not a guarantee of faster comprehension.
 
-![Official Speed Reader App Store artwork showing the reading interface](/assets/reader-store-reading.jpg)
+<img src="/assets/reader-store-reading.jpg" alt="Official Speed Reader App Store artwork showing the reading interface" style="max-width:100%;height:auto" loading="lazy">
 
 PDFs need selectable text: a scan without a text layer is not ready for this workflow. DRM-protected books are not supported. A web-page link is not a direct document import.
 
