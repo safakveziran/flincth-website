@@ -39,6 +39,9 @@ layout: default
       <div class="hero-actions">{{ actions }}</div>
     </section>
 
+{% if page.illustration %}
+    <figure class="wrap comparison-illustration"><img src="{{ page.illustration }}" alt="{{ page.illustration_alt | escape }}" width="760" height="360"><figcaption>Concept illustration, not an app screenshot. <a href="/guides/{{ page.store_browser }}/split-a-tab-into-three-or-more-panes">Create your first multi-pane workspace →</a></figcaption></figure>
+{% else %}
     <section class="wrap compare-modes" aria-label="How each one shows several sites">
       <article class="mode">
         <div class="mode-desk" aria-hidden="true">
@@ -61,6 +64,7 @@ layout: default
       </article>
     </section>
     <p class="wrap preview-note compare-note">Illustrative diagrams, not screenshots.</p>
+{% endif %}
 
     <section class="wrap compare-table-section" id="glance">
       <div class="section-heading"><h2>{{ page.table.title }}</h2><p>{{ page.table.intro }}</p></div>
@@ -75,6 +79,7 @@ layout: default
         </table>
       </div>
       <p class="table-note">{{ page.note | replace: "[checked]", site.data.competitors.checked_extensions }}</p>
+{% for source in page.sources %}<p class="table-note"><a href="{{ source.url }}" target="_blank" rel="noopener">{{ source.label }} ↗</a></p>{% endfor %}
     </section>
 
     <section class="wrap compare-fit">
@@ -107,6 +112,6 @@ layout: default
 {%- endfor %}
     </div></section>
 
-    <section class="closing wrap"><img src="/assets/extension-icon.png" alt="Flincth extension icon" width="88" height="88" loading="lazy"><h2>The whole task, in one tab.</h2><p>Split it, save it, switch with a click.</p><div class="closing-actions">{{ actions }}</div><span class="micro">Free <span>·</span> No account <span>·</span> No data collected</span></section>
+    <section class="closing wrap"><img src="/assets/extension-icon.png" alt="Flincth extension icon" width="88" height="88" loading="lazy"><h2>The whole task, in one tab.</h2><p>Split it, save it, switch with a click.</p><div class="closing-actions">{{ actions }}</div><span class="micro">{{ page.closing_micro | default: "Free · No account · Usage statistics can be disabled in Settings" }}</span></section>
 {% include schema/comparison.html faq=_faq %}
   </main>

@@ -626,3 +626,7 @@ html:has(.sale-bar){scroll-padding-top:90px}
 .sale-callout-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px}
 .post-body .sale-callout a{text-decoration:none}
 @media(max-width:700px){.sale-callout{grid-template-columns:auto minmax(0,1fr);padding:20px}.sale-callout-actions{grid-column:1/-1}.sale-callout-actions .button{flex:1 1 100%;justify-content:center}}
+/* Static comparison diagrams stay readable and labelled at every size. */
+.comparison-illustration { margin-top: 32px; margin-bottom: 48px; }
+.comparison-illustration img { display: block; width: 100%; height: auto; border-radius: 24px; }
+.comparison-illustration figcaption { margin-top: 12px; color: #a5b3ca; font-size: 14px; line-height: 1.6; }

@@ -5,7 +5,7 @@
 # Plain text only: no HTML, so the JSON-LD and the page say the same thing.
 mac:
 - q: Why does Flincth need a shortcut instead of Accessibility access?
-  a: Flincth is sandboxed and never asks for Accessibility access. It moves windows through the “Flincth Apply” shortcut, which you install once in Apple Shortcuts. The app walks you through it.
+  a: Window placement uses the user-installed “Flincth Apply” shortcut in Apple Shortcuts. Optional one-step clipboard paste may require Accessibility access; Copy Only is available without it. The app guides you through the relevant setup.
 - q: Can Flincth move windows between desktops?
   a: No. It places ordinary windows on the current desktop and does not move them between Mission Control desktops or into or out of full screen.
 - q: Does Flincth snap windows when I drag them?

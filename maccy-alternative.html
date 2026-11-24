@@ -2,23 +2,28 @@
 layout: comparison
 product: workspace-manager
 title: Maccy alternative for Mac | Flincth
-description: "Looking for a Maccy alternative? Flincth keeps a clipboard history for each kind of work and sets up the windows that go with it."
+description: "Compare Maccy’s searchable clipboard with Flincth’s per-setup text history and saved window layouts. See format, permission and pricing differences."
 ref: maccy-alternative
 # Comparison pages are linked only from sitemap.xml and llms.txt, never from
 # the navigation, footer or other pages.
 comparison: true
 sitemap:
-  lastmod: 2026-10-02
+  lastmod: 2026-11-24
   changefreq: monthly
   priority: 0.6
 
 competitor: maccy
 heading: ["Maccy remembers what you copied.", "Flincth remembers what you were doing."]
-lead: "Maccy puts everything you copy into one long list, from every project at once. Flincth keeps a clipboard history for each kind of work, and switching to it also moves every app’s window into place and hides the apps you don’t need."
+lead: "Maccy is a dedicated, searchable clipboard manager. Flincth Workspace Manager is an alternative when you want text clipboard history grouped by setup, with a saved window layout for the same work. Maccy also handles images and files; Flincth’s clipboard is text-only."
+illustration: /assets/maccy-setup-history-illustration.svg
+illustration_alt: "Concept diagram contrasting one searchable clipboard history with text histories grouped by setup."
+permission_note: "Window placement uses the user-installed Flincth Apply Shortcut. Optional one-step clipboard paste may require Accessibility access; Copy Only remains available without it."
+related_guide: /guides/mac/per-setup-clipboard-history
+related_guide_label: "See how per-setup clipboard history works"
 mode:
   style: clipboard
-  title: "Maccy: one list for everything."
-  text: "Client notes, code, travel plans and drafts all land in the same history. Finding the right snippet means searching past everything else you copied that week."
+  title: "Maccy: a focused clipboard manager."
+  text: "Search previous clipboard items with the keyboard. Maccy is free and open source on GitHub; its Mac App Store version supports development."
 table:
   title: "A clipboard that knows the work."
   intro: "Maccy keeps a clipboard. Flincth keeps a clipboard for each kind of work, and the desk that goes with it."
@@ -35,9 +40,9 @@ rows:
   - label: "Hides the apps you don’t need"
     flincth: [yes, "Apps outside the setup can hide when you switch"]
     them: [no, "Not available"]
-  - label: "Works without Accessibility access"
-    flincth: [yes, "Nothing to grant for the clipboard"]
-    them: [no, "Needed for automatic paste"]
+  - label: "Automatic paste uses Accessibility access"
+    flincth: [yes, "Optional one-step paste; Copy Only is available"]
+    them: [yes, "Required for automatic paste"]
   - label: "History stays on your Mac"
     flincth: [yes, "Never sent anywhere"]
     them: [yes, "Stored on your Mac"]
@@ -47,13 +52,15 @@ rows:
   - label: "No subscription"
     flincth: [yes, "Pay once"]
     them: [yes, "Pay once, or free"]
-value:
-  label: "Maccy + a window manager such as Magnet"
-  sum: [maccy, magnet]
-note: "Maccy also keeps images, files and rich text, and is free and open source on GitHub; the Mac App Store version is sold to support its development. Flincth’s clipboard keeps text. US Mac App Store prices, checked on [checked]."
+note: "Maccy facts checked against maccy.app and its official GitHub repository on November 24, 2026. Maccy is free from GitHub; Flincth is a separate one-time Mac App Store purchase, with no subscription or trial. Store prices depend on region."
+sources:
+  - label: "Maccy official website"
+    url: "https://maccy.app/"
+  - label: "Maccy on GitHub"
+    url: "https://github.com/p0deje/Maccy"
 reasons:
-  title: "Why people move to Flincth."
-  intro: "One long clipboard is fine until you are juggling three projects. Then the right snippet is always somewhere further down."
+  title: "Choose by the work you need to keep."
+  intro: "Use a dedicated clipboard manager for a general searchable history. Use Flincth when the text history should change with your apps and window layout."
 fit_both: "Want images and files in your clipboard history too? Maccy keeps those. Flincth keeps the text you copy with the work it belongs to, and sets up the desk around it."
 faq:
   - q: "Is Flincth a Maccy alternative?"

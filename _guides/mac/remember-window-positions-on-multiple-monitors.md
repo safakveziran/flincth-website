@@ -1,67 +1,63 @@
 ---
-title: "How to Make a Mac Remember Window Positions on Multiple Monitors"
-seo_title: "Make a Mac Remember Window Positions on Multiple Monitors"
-description: "macOS forgets where your windows were when a monitor disconnects. Why it happens, what macOS offers, and how to put every window back with one shortcut."
+title: "Restore Mac Window Positions on Multiple Monitors"
+seo_title: "Restore Mac Window Positions on Multiple Monitors"
+description: "Save a Mac window layout for your displays, then restore it on demand after reconnecting. Learn the setup steps, display matching and window limits."
 order: 7
 platform: mac
-updated: 2026-10-10
+updated: 2026-11-24
 ---
 
-You unplug your MacBook from the desk, or the external display sleeps, and every window piles onto the laptop screen. Plug back in and they stay there. You drag them back one by one.
+**To restore a saved window arrangement after reconnecting your monitors, reconnect the same displays, wait until macOS detects them, then activate the matching setup in Flincth Workspace Manager.** It applies your saved layout when you ask; reconnecting alone does not trigger it.
 
-This guide explains why macOS does this and how to get your arrangement back in one step.
+You need macOS 14 or later, the paid Mac App Store app, and the user-installed **Flincth Apply Shortcut**. Flincth works with ordinary windows on the current desktop, rather than moving windows between Spaces or into full screen.
 
-## Why your windows move
+<figure class="comparison-illustration"><img src="/assets/reconnect-displays-illustration.svg" alt="Concept diagram: save a layout, reconnect the matching displays, then activate the saved setup." width="760" height="360"><figcaption>Concept illustration, not an app screenshot. Restoration is user-triggered.</figcaption></figure>
 
-macOS has no memory of where windows sat on each arrangement of displays. When a display disconnects, macOS moves its windows onto the screens that remain. When the display comes back, nothing moves them back.
+## First check your displays and windows
 
-It happens more often than unplugging a cable:
+A disconnected display, a dock waking up or an app reopening can leave windows somewhere different from your saved arrangement. Check **System Settings → Displays** to make sure all expected screens are connected and arranged as you intend. Wait for a dock or monitor to finish waking before applying a layout.
 
-- closing the lid or undocking a MacBook,
-- a monitor or a dock going to sleep, or waking up in a different order,
-- switching the display's input, or a cable that briefly drops the signal.
+macOS window tiling can help you arrange individual windows. Flincth adds a saved setup containing app placements and text clipboard context. If you only need to arrange one window, you may not need a separate saved setup. See [Mac window arrangement shortcuts](/guides/mac/window-arrangement-shortcuts).
 
-## What macOS gives you
+## Save a setup for the displays you use together
 
-macOS Sequoia added window tiling: drag a window to the edge of a screen, or use **Window → Move & Resize**, to fill a half or a quarter. It is handy for one or two windows at a time, but it doesn't save an arrangement or restore one after a display comes back. [Mac window arrangement shortcuts](/guides/mac/window-arrangement-shortcuts) lists the keys.
+1. Connect the laptop and external displays you want this setup to use.
+2. Open **Workspace Manager…** from the Flincth menu bar icon and create a setup, such as *Desk*.
+3. Select a screen, add placement regions with **Add Area** or a layout preset, and choose the app for each region. Repeat for the other screens.
+4. Install the current **Flincth Apply Shortcut** using the app’s instructions. Flincth checks that the required helper is available before activation.
+5. Activate the setup once and check the result. An app’s minimum window size or an unavailable window can prevent a placement; inspect the activation summary instead of assuming every window moved.
 
-So the fix is to save the arrangement somewhere and put it back on demand.
+For the full walkthrough, use [Create Your First Setup](/guides/mac/create-your-first-setup) and [Install the Flincth Apply Shortcut](/guides/mac/install-the-flincth-apply-shortcut).
 
-## Save the arrangement as a setup
+## Restore the layout after reconnecting
 
-In Flincth Workspace Manager, a **setup** records which apps belong to a kind of work and where each one's windows go, across all your screens.
+Reconnect the same displays and wait for macOS to recognise them. Choose the saved setup from the Flincth menu, use its assigned shortcut, or open **Quick Shifter** with <kbd>⌃⌥⌘S</kbd> and select it.
 
-1. Connect your displays the way you use them at your desk.
-2. Click the Flincth icon in the menu bar and choose **Workspace Manager…**, then create a setup, for example *Desk*.
-3. Select each screen and pick a layout for it, then put an app in each region with **Choose App**.
-4. Click **Add Shortcut** and type a key. The shortcut is <kbd>⇧⌘</kbd> plus that key, for example <kbd>⇧⌘D</kbd>.
+Activation places the setup’s available windows into their saved regions through the Shortcut and applies its app visibility rules. It also brings forward the setup’s text clipboard history. It does not continuously rearrange windows while you work.
 
-The full step-by-step version is in [How to Create Your First Setup](/guides/mac/create-your-first-setup) and [Window Layouts for Two Displays or an Ultrawide Monitor](/guides/mac/layouts-for-two-displays-and-ultrawide-monitors).
+[Learn Quick Shifter’s mouse and keyboard controls](/guides/mac/switch-setups-with-quick-shifter).
 
-## Put everything back after you reconnect
+## Why is my setup unavailable?
 
-Plug in, wait for the displays to come up, and press the setup's shortcut (or choose it from the Flincth menu). Flincth opens any app in the setup that isn't running, moves every window back into its region on the right screen, and hides the apps that don't belong.
+Flincth requires a match with the setup’s saved displays. A missing saved display, an unmatched display or an extra connected screen prevents activation before apps are changed. Unavailable setups are hidden from the menu and Quick Shifter; the editor retains them for inspection and editing.
 
-Flincth doesn't move windows by itself the moment a display appears. Displays often connect in stages, and windows jumping around while you are typing is worse than one keystroke. It puts things back when you ask.
+Check the cable, dock, input and **System Settings → Displays**, then reconnect the expected screens. Do not try to squeeze a two-display setup onto the laptop alone. Create a separate *Laptop* setup for that arrangement, and activate the setup that matches your current screens.
 
-## One setup for the desk, one for the road
+See [Layouts for Two Displays or an Ultrawide Monitor](/guides/mac/layouts-for-two-displays-and-ultrawide-monitors).
 
-A setup belongs to the screens that were connected when you made it, and Flincth activates it only when exactly those screens are there. That keeps a two-monitor layout from being squeezed onto a laptop screen.
+## Limits to check before relying on a layout
 
-If you work both docked and on the go, make two:
+- **Mission Control desktops:** Flincth arranges ordinary windows on the current desktop. It does not move windows to another desktop.
+- **Full screen:** leave macOS full screen before placing a window. Flincth does not enter or leave full screen for you.
+- **Window sizes:** an app can enforce a minimum size larger than its saved region. Check reported placement failures.
+- **Shortcut setup:** window placement needs the installed Flincth Apply helper. Optional one-step clipboard paste has a separate Accessibility permission; this is not a blanket permission-free promise.
+- **Timing:** reconnect first, then activate. Flincth does not automatically restore a layout just because a display appears.
 
-- *Desk* for the laptop plus external displays,
-- *Laptop* for the built-in screen alone.
+## Put a saved layout to work
 
-Right-click *Desk* in Workspace Manager's sidebar, choose **Duplicate Workspace**, and lay out the copy for the laptop. Undock and press the laptop setup's shortcut; dock again and press the desk one.
-
-## What it can and can't move
-
-- It arranges windows on the **desktop you're on**. No app can move a window to another Mission Control desktop.
-- It doesn't move windows in **full screen**. Leave full screen with <kbd>⌃⌘F</kbd> first.
-- Windows move through the **Flincth Apply** shortcut you add to Apple Shortcuts once, so it never needs Accessibility access to move them. See [How to Install the Flincth Apply Shortcut](/guides/mac/install-the-flincth-apply-shortcut).
+[Get Flincth Workspace Manager on the Mac App Store]({{ site.data.mac.store_url }}). It is a one-time paid app with no subscription or trial; check your storefront for the current local price.
 
 ## Next
 
-- [Put your desk back with Not Flincth](/guides/mac/restore-your-desk-with-not-flincth)
+- [Restore your previous arrangement with Not Flincth](/guides/mac/restore-your-desk-with-not-flincth)
 - [Example setups for coding, writing and meetings](/guides/mac/example-setups-for-coding-writing-and-meetings)
