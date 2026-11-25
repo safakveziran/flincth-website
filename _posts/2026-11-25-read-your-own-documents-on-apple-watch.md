@@ -2,6 +2,7 @@
 title: "Read your own documents on Apple Watch with Flincth Speed Reader"
 description: "Download a document from your paired iPhone, choose a comfortable pace and take a short offline reading break with Speed Reader on Apple Watch."
 product: speed-reader
+medium_url: https://medium.com/@flincth/read-your-own-documents-on-apple-watch-with-flincth-speed-reader-1750eefec733
 date: 2026-11-25T04:20:00+03:00
 updated: 2026-11-25
 ---
