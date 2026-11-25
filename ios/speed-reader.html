@@ -9,7 +9,7 @@ schema: schema/speed-reader.en.html
 og_image: /assets/og-reader.png
 og_image_alt: og_image_alt_speed_reader
 sitemap:
-  lastmod: 2026-11-13
+  lastmod: 2026-11-25
   changefreq: monthly
   priority: 0.8
 ---
@@ -54,7 +54,18 @@ sitemap:
       </div>
     </section>
 
-    <section class="privacy-band"><div class="wrap privacy-inner"><h2>What you read <span>stays yours.</span></h2><div><p>Documents are processed on your iPhone or iPad and never sent to Flincth. With Pro sync on, they travel only to your own iCloud. No account, no ads, no AI.</p><span class="privacy-caption">NEVER YOUR DOCUMENTS, TITLES OR FILE NAMES.</span> <a class="privacy-link" href="{% include page-url.html ref="privacy" %}#speed-reader">Read the privacy policy <span aria-hidden="true">→</span></a></div></div></section>
+    <section class="wrap" id="apple-watch" style="padding-block:64px">
+      <div class="section-heading"><div><h2>A short reading break. On your wrist.</h2></div><p>New in Speed Reader 1.1: Apple Watch support, included in the free app with your existing Free or Pro limits.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><img src="/assets/reader-watch/01-wrist.png" alt="Authentic Speed Reader Watch artwork showing one-word reading" width="368" height="448" loading="lazy" style="max-width:100%;height:auto"><h3>Download, then read offline.</h3><p>Browse your library on Watch and download documents from your paired iPhone. Once downloaded, read without keeping the phone connected.</p></article>
+        <article class="feature"><img src="/assets/reader-watch/02-library.png" alt="Speed Reader Watch library with document reading progress" width="368" height="448" loading="lazy" style="max-width:100%;height:auto"><h3>Your library, ready for a break.</h3><p>Refresh the Watch library after adding documents on iPhone. See progress beside your documents. Watch is a companion, not a standalone file importer.</p></article>
+        <article class="feature"><img src="/assets/reader-watch/03-focus.png" alt="Speed Reader Watch word display with highlighted focus letter" width="368" height="448" loading="lazy" style="max-width:100%;height:auto"><h3>One word. Your pace.</h3><p>Watch uses word mode. Tap to pause and bring back the reading controls; adjust speed with the minus and plus buttons. Phrase and sentence reading remain available on iPhone and iPad.</p></article>
+      </div>
+      <p>Requires watchOS 10 or later and a paired iPhone with iOS 17 or later. Documents added on iPad can reach the paired iPhone through optional Pro iCloud Sync. Watch support adds no new purchase or subscription.</p>
+      <p><a class="text-link" href="/guides/ios/read-on-apple-watch">Set up reading on Apple Watch →</a> · <a href="/blog/read-your-own-documents-on-apple-watch">Read the practical Watch walkthrough</a></p>
+    </section>
+
+    <section class="privacy-band"><div class="wrap privacy-inner"><h2>What you read <span>stays yours.</span></h2><div><p>Documents are processed on your devices and never sent to Flincth. Downloaded Watch copies transfer from your paired iPhone. With Pro sync on, they travel only to your own iCloud. No account, no ads, no AI.</p><span class="privacy-caption">NEVER YOUR DOCUMENTS, TITLES OR FILE NAMES.</span> <a class="privacy-link" href="{% include page-url.html ref="privacy" %}#speed-reader">Read the privacy policy <span aria-hidden="true">→</span></a></div></div></section>
 
     <section class="how wrap" id="how"><div class="section-heading"><div><h2>Open it. Set the pace. Read.</h2></div><p>Three steps from a file to your fastest page yet.</p></div><div class="steps"><article><span>01</span><h3>Add a document.</h3><p>Open an EPUB, PDF or DOCX from Files, share a supported document from another app, or paste text into Quick Read.</p></article><article><span>02</span><h3>Choose how it moves.</h3><p>Pick word, phrase or sentence mode and set your speed in words per minute.</p></article><article><span>03</span><h3>Read, pause, continue.</h3><p>Tap to pause and see the context. Your place is saved for the next time you open it.</p></article></div></section>
 
@@ -71,10 +82,10 @@ sitemap:
       <details><summary>Is there a subscription?<span>+</span></summary><p>No. The app is free to download, with daily limits. Pro is a one-time purchase ({% include usd.html amount=site.data.reader.pro_price %} in the US) that removes them. The 7-day Pro trial asks for no payment details and never turns into a charge.</p></details>
       <details><summary>Do speed reading apps actually work?<span>+</span></summary><p>For many kinds of text, yes, within limits: research finds that comprehension drops as speed rises, especially with dense material. Phrase and sentence modes, natural pauses and a context view when you pause are there to soften that. We wrote up <a href="/blog/do-speed-reading-apps-work">what the research says</a>.</p></details>
       <details><summary>Does it use AI?<span>+</span></summary><p>No. There are no AI features of any kind, in the cloud or on the device. Text is split by punctuation and simple rules that work in any language.</p></details>
-      <details><summary>Does it collect data?<span>+</span></summary><p>Your documents, their titles, file names and the text you paste never leave your device, except to your own iCloud when sync is on. Google Analytics for Firebase records usage, purchase and trial events and categories of import failures, linked to an app-installation identifier. It can derive approximate location from your IP address. In the EU, the UK and Switzerland, usage statistics stay off unless you agree; elsewhere you can turn them off in Settings → Privacy. Remote settings are fetched separately using a Firebase installation identifier. News and offers use OneSignal only if you turn them on. See the <a href="{% include page-url.html ref="privacy" %}#speed-reader">privacy policy</a> for details.</p></details>
+      <details><summary>Does it collect data?<span>+</span></summary><p>Your reading content is not sent to Flincth. Documents can transfer to your paired Apple Watch, or to your own iCloud when Pro sync is on. Google Analytics for Firebase records usage, purchase and trial events and categories of import failures, linked to an app-installation identifier. It can derive approximate location from your IP address. In the EU, the UK and Switzerland, usage statistics stay off unless you agree; elsewhere you can turn them off in Settings → Privacy. Remote settings are fetched separately using a Firebase installation identifier. News and offers use OneSignal only if you turn them on. See the <a href="{% include page-url.html ref="privacy" %}#speed-reader">privacy policy</a> for details.</p></details>
     </div></section>
 
-    <section class="closing wrap" id="availability"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Now on iPhone and iPad.</p><div class="closing-actions"><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a></div><span class="micro">iOS 17 or later <span>·</span> No account <span>·</span> No subscription</span></section>
+    <section class="closing wrap" id="availability"><img src="/assets/reader-icon-192.png" alt="Flincth Speed Reader app icon" width="88" height="88" loading="lazy"><h2>Read your next book faster.</h2><p>Now on iPhone and iPad, with an Apple Watch companion.</p><div class="closing-actions"><a class="button primary" href="{{ site.data.reader.store_url }}" target="_blank" rel="noopener">Download on the App Store</a></div><span class="micro">iOS 17 or later <span>·</span> No account <span>·</span> No subscription</span></section>
 
     <script type="application/json" id="reader-data">
     {

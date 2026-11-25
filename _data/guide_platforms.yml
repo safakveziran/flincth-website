@@ -14,7 +14,7 @@
   name: Speed Reader
   kicker: iPhone and iPad app
   icon: /assets/reader-icon-128.png
-  note: Add your own books and documents, choose a reading mode, sync between iPhone and iPad, and get the most from Pro.
+  note: Add your own documents, choose a reading mode, sync iPhone and iPad, or download from your paired iPhone to read on Apple Watch.
 - id: chrome
   name: Split View
   kicker: Chrome extension

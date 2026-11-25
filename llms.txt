@@ -87,7 +87,7 @@ layout: null
 
 ## Flincth Speed Reader (iPhone and iPad)
 
-An RSVP speed reading app for iPhone and iPad.
+An RSVP speed reading app for iPhone and iPad. Version 1.1 adds an Apple Watch companion (watchOS 10+, paired iPhone required): download documents from iPhone and read them offline in word mode. Watch support uses existing Free/Pro limits; no separate subscription.
 
 - Page: https://flincth.com/ios/speed-reader
 - Availability: on the App Store, {{ site.data.reader.store_url }}
